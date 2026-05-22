@@ -270,18 +270,21 @@ interface ApiResponse<T> {
 }
 ```
 
-### Custom Hooks Pattern
+### Composable Pattern (Vue/Nuxt)
 
 ```typescript
-export function useDebounce<T>(value: T, delay: number): T {
-  const [debouncedValue, setDebouncedValue] = useState<T>(value)
+export function useDebounce<T>(value: Ref<T>, delay: number): Readonly<Ref<T>> {
+  const debouncedValue = ref<T>(value.value) as Ref<T>
 
-  useEffect(() => {
-    const handler = setTimeout(() => setDebouncedValue(value), delay)
-    return () => clearTimeout(handler)
-  }, [value, delay])
+  watch(value, () => {
+    const handler = setTimeout(() => {
+      debouncedValue.value = value.value
+    }, delay)
 
-  return debouncedValue
+    onScopeDispose(() => clearTimeout(handler))
+  })
+
+  return readonly(debouncedValue)
 }
 ```
 

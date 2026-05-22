@@ -11,7 +11,7 @@
     },
     "nuxt-ui": {
       "type": "remote",
-      "url": "https://ui.nxt.com/mcp",
+      "url": "https://ui.nuxt.com/mcp",
       "enabled": true,
       "description": "Nuxt UI component documentation and examples"
     },
@@ -129,6 +129,46 @@
         "webfetch": "allow",
         "skill": {
           "*": "allow"
+        },
+        "mcp": {}
+      }
+    },
+    "ci3": {
+      "description": "CodeIgniter 3 MVC fullstack developer for REST API, JWT, MySQL/PostgreSQL (subagent of IT Leader)",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/agents/code-igniter-3-fullstack.md}",
+      "model": "opencode/claude-sonnet-4.5",
+      "temperature": 0.3,
+      "color": "#84cc16",
+      "permission": {
+        "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
+        "bash": {
+          "*": "ask",
+          "git status": "allow",
+          "git diff": "allow",
+          "git log*": "allow"
+        },
+        "mcp": {}
+      }
+    },
+    "laravel": {
+      "description": "Laravel backend engineer for REST API, Service/Repository, JWT, MySQL/PostgreSQL (subagent of IT Leader)",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/agents/laravel-advanced.md}",
+      "model": "opencode/claude-sonnet-4.5",
+      "temperature": 0.3,
+      "color": "#f97316",
+      "permission": {
+        "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
+        "bash": {
+          "*": "ask",
+          "git status": "allow",
+          "git diff": "allow",
+          "git log*": "allow"
         },
         "mcp": {}
       }

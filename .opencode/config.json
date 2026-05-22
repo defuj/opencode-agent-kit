@@ -1,5 +1,30 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "formatter": true,
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "edit": "allow",
+    "bash": {
+      "*": "ask",
+      "git status": "allow",
+      "git diff": "allow",
+      "git log*": "allow",
+      "grep *": "allow"
+    },
+    "webfetch": "allow",
+    "skill": {
+      "*": "allow"
+    },
+    "todowrite": "allow",
+    "question": "allow",
+    "doom_loop": "ask",
+    "external_directory": "ask"
+  },
   "instructions": [
     ".opencode/instructions/INSTRUCTIONS.md",
     ".opencode/skills/coding-standards/SKILL.md",
@@ -55,26 +80,27 @@
       "color": "#8b5cf6",
       "permission": {
         "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
         "bash": {
           "*": "ask",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow",
-          "git status": "allow",
-          "git diff": "allow",
-          "git log*": "allow",
           "npx playwright*": "allow"
-        },
-        "webfetch": "allow",
-        "skill": {
-          "*": "allow"
         },
         "mcp": {
           "nuxt": "allow",
           "nuxt-ui": "allow",
           "figma": "ask",
           "playwright": "allow"
+        },
+        "task": {
+          "*": "allow",
+          "general": "allow",
+          "explore": "allow",
+          "scout": "allow"
         }
       }
     },
@@ -85,20 +111,15 @@
       "color": "#3b82f6",
       "permission": {
         "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
         "bash": {
           "*": "ask",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow",
-          "git status": "allow",
-          "git diff": "allow",
-          "git log*": "allow",
           "npx playwright*": "allow"
-        },
-        "webfetch": "allow",
-        "skill": {
-          "*": "allow"
         },
         "mcp": {
           "nuxt": "allow",
@@ -115,19 +136,50 @@
       "color": "#10b981",
       "permission": {
         "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
         "bash": {
           "*": "ask",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
-          "yarn *": "allow",
+          "yarn *": "allow"
+        },
+        "mcp": {}
+      }
+    },
+    "ci3": {
+      "description": "CodeIgniter 3 MVC fullstack developer for REST API, JWT, MySQL/PostgreSQL (subagent of IT Leader)",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/agents/code-igniter-3-fullstack.md}",
+      "color": "#84cc16",
+      "permission": {
+        "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
+        "bash": {
+          "*": "ask",
           "git status": "allow",
           "git diff": "allow",
           "git log*": "allow"
         },
+        "mcp": {}
+      }
+    },
+    "laravel": {
+      "description": "Laravel backend engineer for REST API, Service/Repository, JWT, MySQL/PostgreSQL (subagent of IT Leader)",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/agents/laravel-advanced.md}",
+      "color": "#f97316",
+      "permission": {
+        "edit": "allow",
         "webfetch": "allow",
-        "skill": {
-          "*": "allow"
+        "skill": { "*": "allow" },
+        "bash": {
+          "*": "ask",
+          "git status": "allow",
+          "git diff": "allow",
+          "git log*": "allow"
         },
         "mcp": {}
       }
@@ -139,15 +191,13 @@
       "color": "#f59e0b",
       "permission": {
         "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
         "bash": {
           "*": "ask",
           "git status": "allow",
           "git diff": "allow",
           "git log*": "allow"
-        },
-        "webfetch": "allow",
-        "skill": {
-          "*": "allow"
         },
         "mcp": {
           "stitch": "allow",
@@ -163,20 +213,15 @@
       "color": "#ef4444",
       "permission": {
         "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
         "bash": {
           "*": "ask",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow",
-          "git status": "allow",
-          "git diff": "allow",
-          "git log*": "allow",
           "npx playwright*": "allow"
-        },
-        "webfetch": "allow",
-        "skill": {
-          "*": "allow"
         },
         "mcp": {
           "playwright": "allow"
@@ -190,19 +235,14 @@
       "color": "#06b6d4",
       "permission": {
         "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
         "bash": {
           "*": "ask",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
-          "yarn *": "allow",
-          "git status": "allow",
-          "git diff": "allow",
-          "git log*": "allow"
-        },
-        "webfetch": "allow",
-        "skill": {
-          "*": "allow"
+          "yarn *": "allow"
         },
         "mcp": {}
       }
@@ -214,20 +254,15 @@
       "color": "#6366f1",
       "permission": {
         "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
         "bash": {
           "*": "ask",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow",
-          "git status": "allow",
-          "git diff": "allow",
-          "git log*": "allow",
           "docker *": "allow"
-        },
-        "webfetch": "allow",
-        "skill": {
-          "*": "allow"
         },
         "mcp": {}
       }
@@ -239,15 +274,13 @@
       "color": "#84cc16",
       "permission": {
         "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
         "bash": {
           "*": "ask",
           "git status": "allow",
           "git diff": "allow",
           "git log*": "allow"
-        },
-        "webfetch": "allow",
-        "skill": {
-          "*": "allow"
         },
         "mcp": {
           "nuxt": "allow"
