@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "jetpack-compose",
+  "owner": "thebushidocollective",
+  "repo": "han",
+  "path": "plugins/specialized/android/skills/jetpack-compose",
+  "branch": "main",
+  "sha": "45811b8c857bdb6562eff2927580f16088cdfdc1",
+  "source": "manual"
+}

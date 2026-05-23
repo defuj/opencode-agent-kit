@@ -1067,6 +1067,8 @@ export function useMarketData(marketId: Ref<string>) {
 
 ## Design & Aesthetics Philosophy
 
+This project uses **Impeccable** (impeccable.style) design intelligence. Impeccable's shared design laws are automatically applied to every UI you build. The `frontend-design` skill is pre-loaded with these principles.
+
 ### Design Thinking Process
 
 Before implementing any UI:

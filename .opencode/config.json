@@ -28,7 +28,8 @@
   "instructions": [
     ".opencode/instructions/INSTRUCTIONS.md",
     ".opencode/skills/coding-standards/SKILL.md",
-    ".opencode/skills/security-review/SKILL.md"
+    ".opencode/skills/security-review/SKILL.md",
+    ".opencode/skills/frontend-design/SKILL.md"
   ],
   "mcp": {
     "nuxt": {
