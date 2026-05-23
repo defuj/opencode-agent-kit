@@ -104,8 +104,8 @@
         }
       }
     },
-    "frontend": {
-      "description": "Expert frontend developer for Nuxt.js, Vue, and modern web technologies with MCP integration (subagent of IT Leader)",
+    "frontend-nuxt": {
+      "description": "Expert Vue/Nuxt frontend developer for Nuxt.js, Vue 3, Nuxt UI, and modern web technologies with MCP integration (subagent of IT Leader)",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/nuxt-frontend-developer.md}",
       "color": "#3b82f6",
@@ -124,6 +124,29 @@
         "mcp": {
           "nuxt": "allow",
           "nuxt-ui": "allow",
+          "figma": "ask",
+          "playwright": "allow"
+        }
+      }
+    },
+    "frontend-react": {
+      "description": "Expert React/Next.js frontend developer for React 19, Next.js 15, Vite, shadcn/ui, and modern web technologies (subagent of IT Leader)",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/agents/react-frontend-developer.md}",
+      "color": "#06b6d4",
+      "permission": {
+        "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
+        "bash": {
+          "*": "ask",
+          "npm *": "allow",
+          "pnpm *": "allow",
+          "bun *": "allow",
+          "yarn *": "allow",
+          "npx playwright*": "allow"
+        },
+        "mcp": {
           "figma": "ask",
           "playwright": "allow"
         }
