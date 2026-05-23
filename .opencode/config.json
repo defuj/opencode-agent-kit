@@ -309,6 +309,46 @@
           "nuxt": "allow"
         }
       }
+    },
+    "android": {
+      "description": "Expert Android developer for Kotlin, Jetpack Compose, XML, Material Design 3, and Google Play (subagent of IT Leader)",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/agents/android-developer.md}",
+      "color": "#22c55e",
+      "permission": {
+        "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
+        "bash": {
+          "*": "ask",
+          "./gradlew *": "allow",
+          "gradle *": "allow"
+        },
+        "mcp": {
+          "figma": "ask",
+          "playwright": "allow"
+        }
+      }
+    },
+    "flutter": {
+      "description": "Expert Flutter developer for Dart, Flutter SDK, Material Design 3, Firebase, and cross-platform mobile apps (subagent of IT Leader)",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/agents/flutter-developer.md}",
+      "color": "#0284c7",
+      "permission": {
+        "edit": "allow",
+        "webfetch": "allow",
+        "skill": { "*": "allow" },
+        "bash": {
+          "*": "ask",
+          "flutter *": "allow",
+          "dart *": "allow"
+        },
+        "mcp": {
+          "figma": "ask",
+          "playwright": "allow"
+        }
+      }
     }
   }
 }
