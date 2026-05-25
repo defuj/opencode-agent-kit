@@ -28,7 +28,8 @@
   "instructions": [
     ".opencode/instructions/INSTRUCTIONS.md",
     ".opencode/skills/coding-standards/SKILL.md",
-    ".opencode/skills/security-review/SKILL.md"
+    ".opencode/skills/security-review/SKILL.md",
+    ".opencode/skills/frontend-design/SKILL.md"
   ],
   "mcp": {
     "nuxt": {
@@ -68,6 +69,15 @@
       },
       "enabled": false,
       "description": "Google Stitch AI design generation (requires STITCH_API_KEY)"
+    },
+    "postman": {
+      "type": "remote",
+      "url": "https://mcp.postman.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${POSTMAN_API_KEY}"
+      },
+      "enabled": true,
+      "description": "Postman API management for collections, requests, and documentation"
     }
   },
   "agent": {
@@ -75,7 +85,6 @@
       "description": "IT Leader & Technical Project Manager — analyzes requirements, designs architecture, decomposes tasks, delegates to subagents, and unifies outputs",
       "mode": "primary",
       "prompt": "{file:.opencode/agents/it-leader.md}",
-      "model": "opencode/claude-sonnet-4.5",
       "temperature": 0.4,
       "color": "#8b5cf6",
       "permission": {
@@ -94,6 +103,7 @@
         "nuxt-ui_*": "allow",
         "figma_*": "ask",
         "playwright_*": "allow",
+        "postman_*": "allow",
         "task": { "*": "allow" }
       }
     },
@@ -156,7 +166,8 @@
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow"
-        }
+        },
+        "postman_*": "allow"
       }
     },
     "ci3": {
@@ -173,7 +184,8 @@
           "git status": "allow",
           "git diff": "allow",
           "git log*": "allow"
-        }
+        },
+        "postman_*": "allow"
       }
     },
     "laravel": {
@@ -190,7 +202,8 @@
           "git status": "allow",
           "git diff": "allow",
           "git log*": "allow"
-        }
+        },
+        "postman_*": "allow"
       }
     },
     "designer": {

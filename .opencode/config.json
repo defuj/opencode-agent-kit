@@ -85,7 +85,6 @@
       "description": "IT Leader & Technical Project Manager — analyzes requirements, designs architecture, decomposes tasks, delegates to subagents, and unifies outputs",
       "mode": "primary",
       "prompt": "{file:.opencode/agents/it-leader.md}",
-      "model": "opencode/claude-sonnet-4.5",
       "temperature": 0.4,
       "color": "#8b5cf6",
       "permission": {
