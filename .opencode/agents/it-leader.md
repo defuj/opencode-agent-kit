@@ -771,7 +771,7 @@ Use:
 | Ambiguous requirements | ✅ Yes | Clarify with structured options |
 | General feedback | ✅ Yes | Offer options like "Looks good" / "Needs changes" |
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```markdown
 Use question tool with:
@@ -789,6 +789,29 @@ questions: [
   }
 ]
 ```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+For questions where the user can select MULTIPLE options, use `multiple: true`:
+
+```markdown
+questions: [
+  {
+    header: "Features",
+    question: "Which features should be included in this sprint?",
+    multiple: true,
+    options: [
+      { label: "User Auth (Recommended)", description: "Login, register, JWT tokens" },
+      { label: "Admin Dashboard", description: "User management, stats overview" },
+      { label: "API Documentation", description: "Swagger/OpenAPI endpoint docs" },
+      { label: "Email Notifications", description: "Welcome emails, password reset" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+When `multiple: true`, the user can select several options at once. The result returns an array of selected labels.
 
 ### Examples of TUI Questions
 

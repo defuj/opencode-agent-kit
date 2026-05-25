@@ -1429,7 +1429,7 @@ When encountering blockers or conflicting requirements:
 4. **Cross-agent conflicts**: If frontend and backend contracts don't align, document the mismatch and escalate to IT Leader.
 5. **Security concerns**: If a request introduces security risk, stop implementation, flag it to the user with options, and request a security review.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 When clarification is needed, use this pattern:
 
@@ -1442,6 +1442,26 @@ questions: [
       { label: "Minimal & clean (Recommended)", description: "Light spacing, simple hierarchy" },
       { label: "Bold & vibrant", description: "Large typography, accent colors" },
       { label: "Follow existing pattern", description: "Match current app style" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```
+questions: [
+  {
+    header: "States",
+    question: "Which UI states should this component handle?",
+    multiple: true,
+    options: [
+      { label: "Loading (Recommended)", description: "Skeleton/spinner during fetch" },
+      { label: "Empty (Recommended)", description: "No data placeholder" },
+      { label: "Error", description: "Error message with retry" },
+      { label: "Success", description: "Normal data display" },
+      { label: "Edge cases", description: "Long text, many items, special chars" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }

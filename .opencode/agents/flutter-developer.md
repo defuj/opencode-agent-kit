@@ -414,6 +414,46 @@ flutter analyze                          # Static analysis
 dart run build_runner build              # Code generation
 ```
 
+## TUI Question Protocol
+
+Use the question tool for any clarification or choice.
+
+### Question Tool Template (Single-Select)
+
+```
+questions: [
+  {
+    header: "State Management",
+    question: "Which state management approach should we use?",
+    options: [
+      { label: "Bloc (Recommended)", description: "Structured, testable, scalable" },
+      { label: "Riverpod", description: "Simpler, no BuildContext needed" },
+      { label: "Provider", description: "Legacy but stable" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```
+questions: [
+  {
+    header: "Features",
+    question: "Which features should be included in this screen?",
+    multiple: true,
+    options: [
+      { label: "Pull-to-Refresh (Recommended)", description: "RefreshControl for list/data" },
+      { label: "Infinite Scroll (Recommended)", description: "Load more on scroll" },
+      { label: "Offline Support", description: "Cached data when offline" },
+      { label: "Animations", description: "Hero, transitions, micro-interactions" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
 ## MCP (Model Context Protocol) Integration
 
 ### Available MCP Servers

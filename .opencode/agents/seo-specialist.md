@@ -389,7 +389,7 @@ app/pages/
 
 Use the question tool for any clarification or choice.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```markdown
 questions: [
@@ -400,6 +400,26 @@ questions: [
       { label: "Meta tags (Recommended)", description: "Title, description, OG, structured data" },
       { label: "Core Web Vitals", description: "LCP, INP, CLS optimization" },
       { label: "Full audit", description: "Complete SEO review" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```markdown
+questions: [
+  {
+    header: "Pages",
+    question: "Which pages need SEO optimization?",
+    multiple: true,
+    options: [
+      { label: "Homepage (Recommended)", description: "Primary landing page" },
+      { label: "Product/Service Pages (Recommended)", description: "Core business pages" },
+      { label: "Blog/Articles", description: "Content pages for organic traffic" },
+      { label: "Landing Pages", description: "Campaign-specific pages" },
+      { label: "All Pages", description: "Full site SEO audit" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }

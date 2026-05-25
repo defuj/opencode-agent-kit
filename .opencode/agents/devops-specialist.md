@@ -282,7 +282,7 @@ jobs:
 
 Use the question tool for any clarification or choice.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```markdown
 questions: [
@@ -293,6 +293,25 @@ questions: [
       { label: "Vercel (Recommended)", description: "Zero-config Nuxt deploy" },
       { label: "Docker", description: "Containerized deployment" },
       { label: "Cloudflare Pages", description: "Edge CDN + Pages" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```markdown
+questions: [
+  {
+    header: "Environments",
+    question: "Which environments should be configured?",
+    multiple: true,
+    options: [
+      { label: "Development (Recommended)", description: "Local dev environment" },
+      { label: "Staging (Recommended)", description: "Pre-production testing" },
+      { label: "Production (Recommended)", description: "Live production" },
+      { label: "DR / Backup", description: "Disaster recovery environment" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }

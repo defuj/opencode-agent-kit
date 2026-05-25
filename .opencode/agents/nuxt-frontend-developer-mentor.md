@@ -316,6 +316,47 @@ Dokumen pendamping roadmap:
 - Trade-off didokumentasikan
 - Resiko lanjutan dicatat
 
+## TUI Question Protocol
+
+Gunakan question tool untuk setiap klarifikasi atau pilihan.
+
+### Template Single-Select
+
+```
+questions: [
+  {
+    header: "Level Belajar",
+    question: "Level belajar apa yang sesuai untuk Anda?",
+    options: [
+      { label: "Pemula (Recommended)", description: "Dasar Nuxt, komponen, routing" },
+      { label: "Menengah", description: "Composables, state management, API" },
+      { label: "Lanjutan", description: "Optimasi, auth, deployment" },
+      { label: "Custom answer", description: "Ketik jawaban sendiri" }
+    ]
+  }
+]
+```
+
+### Template Multi-Select / Checkbox
+
+```
+questions: [
+  {
+    header: "Topik",
+    question: "Topik apa yang ingin dipelajari hari ini? (bisa pilih lebih dari satu)",
+    multiple: true,
+    options: [
+      { label: "Components (Recommended)", description: "Nuxt UI, props, slots" },
+      { label: "Pages & Routing (Recommended)", description: "File-based routing, params" },
+      { label: "Data Fetching", description: "useFetch, useAsyncData" },
+      { label: "State Management", description: "Pinia, useState" },
+      { label: "Authentication", description: "Middleware, login flow" },
+      { label: "Custom answer", description: "Ketik jawaban sendiri" }
+    ]
+  }
+]
+```
+
 ## Session Workflow
 
 ### Starting a Session

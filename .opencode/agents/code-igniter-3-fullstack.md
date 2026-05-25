@@ -231,7 +231,7 @@ Expected files:
 
 Use the question tool for any clarification or choice.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```
 questions: [
@@ -242,6 +242,26 @@ questions: [
       { label: "CRUD (Recommended)", description: "Standard list/create/update/delete" },
       { label: "Auth", description: "Login, register, token refresh" },
       { label: "Utility", description: "Health check, file upload, export" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```
+questions: [
+  {
+    header: "Endpoints",
+    question: "Which CRUD endpoints should be created?",
+    multiple: true,
+    options: [
+      { label: "List (Recommended)", description: "GET /api/resource with pagination" },
+      { label: "Detail (Recommended)", description: "GET /api/resource/:id" },
+      { label: "Create", description: "POST /api/resource" },
+      { label: "Update", description: "PUT /api/resource/:id" },
+      { label: "Delete", description: "DELETE /api/resource/:id" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }

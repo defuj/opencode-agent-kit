@@ -889,7 +889,7 @@ When encountering blockers or conflicting requirements:
 4. **Cross-agent conflicts**: Document mismatch and escalate to IT Leader.
 5. **Security concerns**: Stop implementation, flag with options, request security review.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```markdown
 questions: [
@@ -899,6 +899,25 @@ questions: [
     options: [
       { label: "Server Component (Recommended)", description: "Fetch on server, less JS" },
       { label: "Client Component", description: "Interactive, more JS" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```markdown
+questions: [
+  {
+    header: "Optimizations",
+    question: "Which performance optimizations should be applied?",
+    multiple: true,
+    options: [
+      { label: "Code Splitting (Recommended)", description: "Lazy load heavy components" },
+      { label: "Image Optimization (Recommended)", description: "Next/Image, lazy loading" },
+      { label: "Memoization", description: "useMemo, useCallback, React.memo" },
+      { label: "Bundle Analysis", description: "Analyze and reduce bundle size" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }

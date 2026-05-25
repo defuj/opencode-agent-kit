@@ -210,7 +210,7 @@ For implementation tasks, end with concise structure:
 
 Use the question tool for any clarification or choice.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```markdown
 questions: [
@@ -220,6 +220,25 @@ questions: [
     options: [
       { label: "Yes (Recommended)", description: "JWT required" },
       { label: "No", description: "Public endpoint" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```markdown
+questions: [
+  {
+    header: "Middleware",
+    question: "Which middleware should be applied to these endpoints?",
+    multiple: true,
+    options: [
+      { label: "Auth (Recommended)", description: "JWT verification" },
+      { label: "Validation", description: "Request DTO validation" },
+      { label: "Rate Limiting", description: "Throttle requests" },
+      { label: "Logging", description: "Request/response logging" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }

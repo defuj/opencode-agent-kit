@@ -330,7 +330,7 @@ For every review request, end with this structure:
 
 Use the question tool for any clarification or choice.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```markdown
 questions: [
@@ -341,6 +341,26 @@ questions: [
       { label: "Balanced (Recommended)", description: "Standard feature review" },
       { label: "Fast", description: "Quick single-file check" },
       { label: "Thorough", description: "Full audit" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```markdown
+questions: [
+  {
+    header: "Review Areas",
+    question: "Which areas should be reviewed?",
+    multiple: true,
+    options: [
+      { label: "Code Quality (Recommended)", description: "Readability, patterns, conventions" },
+      { label: "Security (Recommended)", description: "Auth, injection, secrets" },
+      { label: "Performance", description: "Bundle size, queries, caching" },
+      { label: "Accessibility", description: "A11y, ARIA, keyboard nav" },
+      { label: "Testing", description: "Coverage, edge cases, test quality" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }

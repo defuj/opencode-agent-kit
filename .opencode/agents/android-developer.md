@@ -302,6 +302,47 @@ fun AppNavHost(navController: NavHostController = rememberNavController()) {
 ./gradlew :app:dependencies              # Check dependency tree
 ```
 
+## TUI Question Protocol
+
+Use the question tool for any clarification or choice.
+
+### Question Tool Template (Single-Select)
+
+```
+questions: [
+  {
+    header: "Architecture",
+    question: "Which architecture pattern should we use?",
+    options: [
+      { label: "MVVM + Clean (Recommended)", description: "ViewModel, Repository, UseCase" },
+      { label: "MVI", description: "Unidirectional data flow" },
+      { label: "MVP", description: "Legacy but still valid" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```
+questions: [
+  {
+    header: "Components",
+    question: "Which UI components are needed for this screen?",
+    multiple: true,
+    options: [
+      { label: "TopAppBar (Recommended)", description: "Action bar with navigation" },
+      { label: "BottomNavigation (Recommended)", description: "Bottom nav bar" },
+      { label: "FloatingActionButton", description: "Primary CTA button" },
+      { label: "LazyColumn/Grid", description: "Scrollable list or grid" },
+      { label: "Dialogs/BottomSheets", description: "Modal overlays" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
 ## MCP (Model Context Protocol) Integration
 
 ### Available MCP Servers

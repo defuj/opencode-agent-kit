@@ -624,7 +624,7 @@ For every design request, end with this structure:
 
 Use the question tool for any clarification or choice.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```markdown
 questions: [
@@ -635,6 +635,26 @@ questions: [
       { label: "Professional (Recommended)", description: "Clean, neutral, enterprise" },
       { label: "Playful", description: "Friendly, colorful, approachable" },
       { label: "Minimal", description: "Sparse, calm, content-first" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```markdown
+questions: [
+  {
+    header: "Screens",
+    question: "Which screens do you need designs for?",
+    multiple: true,
+    options: [
+      { label: "Landing Page (Recommended)", description: "Hero, features, CTA" },
+      { label: "Dashboard (Recommended)", description: "Overview, stats, charts" },
+      { label: "Auth Pages", description: "Login, register, forgot password" },
+      { label: "Settings", description: "Profile, preferences" },
+      { label: "Mobile Views", description: "Responsive mobile layouts" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }

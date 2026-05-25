@@ -558,7 +558,7 @@ For every task, respond with:
 
 Use the question tool for any clarification or choice.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```
 questions: [
@@ -571,6 +571,26 @@ questions: [
       { label: "Livewire component", description: "Dynamic UI without JS framework" },
       { label: "Database only", description: "Migration, model, relationships" },
       { label: "Artisan command", description: "Custom artisan command" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```
+questions: [
+  {
+    header: "Artisan Commands",
+    question: "Which scaffolding commands should be run?",
+    multiple: true,
+    options: [
+      { label: "Migration (Recommended)", description: "php artisan make:migration" },
+      { label: "Model (Recommended)", description: "php artisan make:model" },
+      { label: "Controller", description: "php artisan make:controller" },
+      { label: "Seeder", description: "php artisan make:seeder" },
+      { label: "Form Request", description: "php artisan make:request" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }

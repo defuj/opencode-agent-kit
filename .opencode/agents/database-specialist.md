@@ -278,7 +278,7 @@ For every database request, end with this structure:
 
 Use the question tool for any clarification or choice.
 
-### Question Tool Template
+### Question Tool Template (Single-Select)
 
 ```markdown
 questions: [
@@ -289,6 +289,25 @@ questions: [
       { label: "Low (Recommended)", description: "Additive only, no drops" },
       { label: "Medium", description: "Backfill + staged removal" },
       { label: "High", description: "Allow destructive change with downtime" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+### Question Tool Template (Multi-Select / Checkbox)
+
+```markdown
+questions: [
+  {
+    header: "Indexes",
+    question: "Which columns should be indexed?",
+    multiple: true,
+    options: [
+      { label: "Foreign Keys (Recommended)", description: "All FK columns for JOIN perf" },
+      { label: "Frequently Queried (Recommended)", description: "Columns used in WHERE/ORDER BY" },
+      { label: "Unique Constraints", description: "Columns needing uniqueness" },
+      { label: "Composite Indexes", description: "Multi-column query patterns" },
       { label: "Custom answer", description: "Type your own response" }
     ]
   }
