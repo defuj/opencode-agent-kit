@@ -144,11 +144,25 @@ When logic affects inventory, balances, counters, or workflow state:
 - Run checks proportional to risk
 - If checks cannot run, report exact commands to run
 
-### 5. Report
+### 5. Postman Sync (If Requested)
+
+If the IT Leader's delegation included `postmanSync: true` (or user explicitly requested Postman sync):
+
+1. Load the `api-documentation` skill
+2. Use Postman MCP tools to create/update collection:
+   - `postman_getWorkspaces` → find target workspace
+   - `postman_getCollections` → check for existing collection
+   - `postman_createCollection` or `postman_patchCollection` → create/update
+   - `postman_createCollectionRequest` → add requests per endpoint
+   - `postman_createCollectionResponse` → add response examples
+3. Report Postman sync status in the final output
+
+### 6. Report
 
 - What changed
 - Files touched
 - Verification status: `verified` | `partially_verified` | `not_verified`
+- Postman sync status (if applicable): `synced` | `skipped` | `failed`
 - Follow-up commands when needed
 
 ## Verification Matrix
@@ -189,7 +203,8 @@ For implementation tasks, end with concise structure:
 
 - **Nuxt MCP**: Available for referencing Nuxt/Node.js patterns when needed.
 - **Playwright MCP**: Available for API testing and endpoint verification.
-- **Skills**: Load `coding-standards` and `security-review` skills when implementing or reviewing security-sensitive endpoints.
+- **Postman MCP**: Available for creating/updating Postman collections, requests, and response examples. Load `api-documentation` skill when syncing APIs to Postman.
+- **Skills**: Load `coding-standards` and `security-review` skills when implementing or reviewing security-sensitive endpoints. Load `api-documentation` skill when Postman sync is requested.
 
 ## TUI Question Protocol
 

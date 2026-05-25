@@ -270,6 +270,7 @@ When unifying subagent outputs, verify:
 - File paths and imports are correct
 - No conflicting changes between subagents
 - Verification status from all subagents is acceptable
+- Postman collection created/updated if sync was requested
 
 ## Definition of Done (DoD)
 
@@ -586,6 +587,29 @@ When multiple subagents can work simultaneously without waiting for each other.
 - Auth requirements
 - Pagination/filtering (if any)
 - Types/interfaces
+
+### Post-Contract: Postman Sync (Optional)
+
+After the API contract is defined, load the `api-documentation` skill and ask the user:
+
+```markdown
+questions: [
+  {
+    header: "Postman Sync",
+    question: "Do you also want to create/update this API collection in Postman?",
+    options: [
+      { label: "Yes (Recommended)", description: "Create Postman collection with all endpoints, requests, and response examples" },
+      { label: "No", description: "Skip Postman sync" },
+      { label: "Custom answer", description: "Type your own response" }
+    ]
+  }
+]
+```
+
+If Yes:
+1. Include `postmanSync: true` in the delegation message to backend subagents
+2. The backend agent will create/update the Postman collection after implementing endpoints
+3. Refer to `api-documentation` skill for full Postman sync workflow
 
 ```markdown
 ## Shared API Contract
