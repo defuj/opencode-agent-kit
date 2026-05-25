@@ -6,6 +6,28 @@
 
 Panduan ini menjelaskan cara menggunakan agent di repo ini, termasuk skill yang perlu diinstall agar agent berjalan optimal.
 
+---
+
+## Instalasi Cepat (NPM Package)
+
+**Cara termudah** — install ke project mana pun dengan satu perintah:
+
+```bash
+npx opencode-agent-kit init
+```
+
+Ini akan menyalin konfigurasi agent, skills, commands, dan rules ke project Anda.
+
+Atau install global:
+
+```bash
+npm install -g opencode-agent-kit
+cd /path/to/your-project
+opencode-agent-kit init
+```
+
+---
+
 ## Gambaran Singkat
 
 Repo ini berisi konfigurasi OpenCode untuk tim IT lengkap dengan arsitektur **Leader → Subagent**:
@@ -165,9 +187,20 @@ Setelah copy `.opencode/` ke project, command berikut tersedia:
 
 ## Cara Menggunakan Folder `.opencode`
 
-### Di Project Baru
+### Di Project Baru (Rekomendasi — NPM Package)
 
-Copy seluruh folder `.opencode/` ke project yang sedang dikerjakan:
+Cara termudah adalah menggunakan npm package:
+
+```bash
+cd /path/to/your-project
+npx opencode-agent-kit init
+```
+
+Ini akan mengcopy `opencode.json`, `.opencode/`, dan `AGENTS.md` secara otomatis.
+
+### Manual Copy
+
+Atau copy langsung dari repo ini:
 
 ```bash
 cp -R .opencode/ /path/to/your-project/
