@@ -1,24 +1,24 @@
 <p align="center">
-  <img src="assets/banner.png" alt="AI Agent System Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/defuj/software-developer-team-agent/main/assets/banner.png" alt="Opencode Agent KIT Banner" width="100%">
 </p>
 
 # Opencode Agent KIT (Software Developer) — Setup Guide
 
-Panduan ini menjelaskan cara menggunakan agent di repo ini, termasuk skill yang perlu diinstall agar agent berjalan optimal.
+Complete setup guide for the **Opencode Agent KIT** — a portable multi-stack AI agent system for OpenCode. Includes 13 specialized agents, 62 skill playbooks, 36 slash commands, and 6 MCP servers.
 
 ---
 
-## Instalasi Cepat (NPM Package)
+## Quick Install
 
-**Cara termudah** — install ke project mana pun dengan satu perintah:
+**One command** — installs into any project:
 
 ```bash
 npx opencode-agent-kit init
 ```
 
-Ini akan menyalin konfigurasi agent, skills, commands, dan rules ke project Anda.
+This copies the full agent configuration, skills, commands, and rules into your project.
 
-Atau install global:
+Global install:
 
 ```bash
 npm install -g opencode-agent-kit
@@ -28,13 +28,13 @@ opencode-agent-kit init
 
 ---
 
-## Gambaran Singkat
+## Overview
 
-Repo ini berisi konfigurasi OpenCode untuk tim IT lengkap dengan arsitektur **Leader → Subagent**:
+This repository contains a complete OpenCode agent configuration with **Leader → Subagent** architecture for software development teams.
 
 ### Agent Config
 
-- **Active config**: `.opencode/config.json`
+- **Active config**: `opencode.json` (source of truth)
 - Agent prompts: `.opencode/agents/`
   - `it-leader.md` — IT Leader & Technical Project Manager (primary)
   - `nuxt-frontend-developer.md` — Frontend Developer (Nuxt/Vue) — `@frontend-nuxt`
@@ -50,67 +50,66 @@ Repo ini berisi konfigurasi OpenCode untuk tim IT lengkap dengan arsitektur **Le
   - `android-developer.md` — Android Developer (Kotlin/Compose) — `@android`
   - `flutter-developer.md` — Flutter Developer (Dart) — `@flutter`
   - `nuxt-frontend-developer-mentor.md` — Nuxt mentor (standalone)
-- Dokumentasi internal: `.opencode/agent-docs/`
+- Internal documentation: `.opencode/agent-docs/`
   - Frontend Nuxt: `.opencode/agent-docs/frontend/nuxt/`
   - Frontend React: `.opencode/agent-docs/frontend/react/`
   - Backend Node: `.opencode/agent-docs/backend/node/`
-- Skill lokal: `.opencode/skills/` (61 skill tersinkron)
+- Local skills: `.opencode/skills/` (62 skill playbooks)
 - Contexts: `.opencode/contexts/` (dev, research, review)
 
-Tim didesain untuk:
+Designed for:
 
 - **Frontend (Vue)**: Nuxt 4 + Nuxt UI + Vue 3 Composition API + TypeScript
 - **Frontend (React)**: React 19 + Next.js 15 (App Router) + TypeScript + shadcn/ui
-- **Backend**: Node.js + Express 5 + Prisma + PostgreSQL — atau — Laravel 10+ / CodeIgniter 3
-- **Mobile**: Android (Kotlin + Jetpack Compose) — atau — Flutter (Dart)
-- Workflow operasional tim (scope-safe, verification status, commit/PR policy)
-- Mentoring terstruktur 30 hari untuk transisi ke stack Nuxt modern
+- **Backend**: Node.js + Express 5 + Prisma + PostgreSQL — or — Laravel 10+ / CodeIgniter 3
+- **Mobile**: Android (Kotlin + Jetpack Compose) — or — Flutter (Dart)
+- Operational workflow (scope-safe, verification status, commit/PR policy)
+- Structured 30-day mentoring for Nuxt stack transition
 
-## Prasyarat
+## Prerequisites
 
-- OpenCode CLI sudah terpasang
-- Akses ke repository ini
-- Node.js + npm/pnpm/yarn/bun sesuai kebutuhan proyek
+- OpenCode CLI installed
+- Node.js + npm/pnpm/yarn/bun
 
-## Integrasi dengan OpenCode Built-in Agents
+## Integration with Built-in Agents
 
-OpenCode memiliki **built-in agents** yang sudah tersedia secara global. Project ini **tidak mendefinisikan ulang** agent yang sudah ada — melainkan fokus pada **specialized agents** untuk berbagai stack pengembangan.
+OpenCode has **built-in agents** available globally. This KIT **does not redefine** existing agents — it focuses on **specialized agents** for each development stack.
 
 ### Built-in Agents (Global)
 
-| Built-in Agent         | Model    | Fungsi                                                 | Usage                                      |
-| ---------------------- | -------- | ------------------------------------------------------ | ------------------------------------------ |
-| `planner`              | opus-4.5 | Detailed planning, architectural decisions             | `/plan` atau `@planner`                    |
-| `architect`            | opus-4.5 | System design, scalability analysis                    | `@architect`                               |
-| `code-reviewer`        | opus-4.5 | Quality, security, maintainability review              | `/code-review` atau `@code-reviewer`       |
-| `security-reviewer`    | opus-4.5 | Vulnerability detection                                | `/security` atau `@security-reviewer`      |
-| `tdd-guide`            | opus-4.5 | TDD workflow, 80%+ coverage enforcement                | `/tdd` atau `@tdd-guide`                   |
-| `build-error-resolver` | opus-4.5 | Fix TypeScript/build errors                            | `/build-fix` atau `@build-error-resolver`  |
-| `e2e-runner`           | opus-4.5 | Playwright E2E test generation & execution             | `/e2e` atau `@e2e-runner`                  |
-| `refactor-cleaner`     | opus-4.5 | Dead code removal, consolidation                       | `/refactor-clean` atau `@refactor-cleaner` |
-| `database-reviewer`    | opus-4.5 | PostgreSQL query optimization, Supabase best practices | `@database-reviewer`                       |
+| Built-in Agent         | Model    | Role                                                   | Usage                                    |
+| ---------------------- | -------- | ------------------------------------------------------ | ---------------------------------------- |
+| `planner`              | opus-4.5 | Detailed planning, architectural decisions             | `/plan` or `@planner`                    |
+| `architect`            | opus-4.5 | System design, scalability analysis                    | `@architect`                             |
+| `code-reviewer`        | opus-4.5 | Quality, security, maintainability review              | `/code-review` or `@code-reviewer`       |
+| `security-reviewer`    | opus-4.5 | Vulnerability detection                                | `/security` or `@security-reviewer`      |
+| `tdd-guide`            | opus-4.5 | TDD workflow, 80%+ coverage enforcement                | `/tdd` or `@tdd-guide`                   |
+| `build-error-resolver` | opus-4.5 | Fix TypeScript/build errors                            | `/build-fix` or `@build-error-resolver`  |
+| `e2e-runner`           | opus-4.5 | Playwright E2E test generation & execution             | `/e2e` or `@e2e-runner`                  |
+| `refactor-cleaner`     | opus-4.5 | Dead code removal, consolidation                       | `/refactor-clean` or `@refactor-cleaner` |
+| `database-reviewer`    | opus-4.5 | PostgreSQL query optimization, Supabase best practices | `@database-reviewer`                     |
 
-### Custom Agents (Project-specific)
+### Custom Agents (KIT-specific)
 
-Dibawah adalah **specialized agents** yang TIDAK tersedia di built-in OpenCode:
+Specialized agents **not available** in built-in OpenCode:
 
-| Agent                 | File                          | Fungsi                                         | Ketika Dipakai             |
-| --------------------- | ----------------------------- | ---------------------------------------------- | -------------------------- |
-| **IT Leader**         | `it-leader.md`                | Orchestration, task decomposition, integration | Semua request besar        |
-| **Frontend (Vue)**    | `nuxt-frontend-developer.md`  | Nuxt/Vue implementation + MCP integration      | Implementasi Vue/Nuxt      |
-| **Frontend (React)**  | `react-frontend-developer.md` | React/Next.js implementation                   | Implementasi React/Next.js |
-| **Backend (Node)**    | `node-backend-developer.md`   | Node/Express/Prisma implementation             | Implementasi Node.js API   |
-| **Backend (Laravel)** | `laravel-advanced.md`         | Laravel full-stack (Blade, Livewire, API)      | Implementasi Laravel       |
-| **Backend (CI3)**     | `code-igniter-3-fullstack.md` | CodeIgniter 3 MVC monolith                     | Implementasi CI3           |
-| **Designer**          | `ui-ux-designer.md`           | Design system, Stitch, Figma, DESIGN.md        | Design tasks               |
-| **Reviewer**          | `code-reviewer.md`            | Code quality, security audit, testing          | Review tasks               |
-| **Database**          | `database-specialist.md`      | PostgreSQL, schema, Prisma, migrations         | Database tasks             |
-| **DevOps**            | `devops-specialist.md`        | CI/CD, Docker, monitoring, infrastructure      | Deployment tasks           |
-| **SEO**               | `seo-specialist.md`           | Meta tags, structured data, Core Web Vitals    | SEO optimization           |
-| **Android**           | `android-developer.md`        | Kotlin, Jetpack Compose, Gradle, Play Store    | Android native development |
-| **Flutter**           | `flutter-developer.md`        | Dart, Flutter SDK, Material 3, Firebase        | Cross-platform mobile      |
+| Agent                 | File                          | Role                                           | When to Use                  |
+| --------------------- | ----------------------------- | ---------------------------------------------- | ---------------------------- |
+| **IT Leader**         | `it-leader.md`                | Orchestration, task decomposition, integration | All complex requests         |
+| **Frontend (Vue)**    | `nuxt-frontend-developer.md`  | Nuxt/Vue implementation + MCP integration      | Vue/Nuxt implementation      |
+| **Frontend (React)**  | `react-frontend-developer.md` | React/Next.js implementation                   | React/Next.js implementation |
+| **Backend (Node)**    | `node-backend-developer.md`   | Node/Express/Prisma implementation             | Node.js API implementation   |
+| **Backend (Laravel)** | `laravel-advanced.md`         | Laravel full-stack (Blade, Livewire, API)      | Laravel implementation       |
+| **Backend (CI3)**     | `code-igniter-3-fullstack.md` | CodeIgniter 3 MVC monolith                     | CI3 implementation           |
+| **Designer**          | `ui-ux-designer.md`           | Design system, Stitch, Figma, DESIGN.md        | Design tasks                 |
+| **Reviewer**          | `code-reviewer.md`            | Code quality, security audit, testing          | Review tasks                 |
+| **Database**          | `database-specialist.md`      | PostgreSQL, schema, Prisma, migrations         | Database tasks               |
+| **DevOps**            | `devops-specialist.md`        | CI/CD, Docker, monitoring, infrastructure      | Deployment tasks             |
+| **SEO**               | `seo-specialist.md`           | Meta tags, structured data, Core Web Vitals    | SEO optimization             |
+| **Android**           | `android-developer.md`        | Kotlin, Jetpack Compose, Gradle, Play Store    | Android native development   |
+| **Flutter**           | `flutter-developer.md`        | Dart, Flutter SDK, Material 3, Firebase        | Cross-platform mobile        |
 
-### Integrasi Workflow
+### Workflow
 
 ```
 User Request
@@ -148,9 +147,9 @@ User Request
          └──────────────────────────────────────────┘
 ```
 
-### Built-in Commands Available
+### Available Commands
 
-Setelah copy `.opencode/` ke project, command berikut tersedia:
+After installing `.opencode/`, the following slash commands are available:
 
 ```bash
 # Planning & Architecture
@@ -175,61 +174,57 @@ Setelah copy `.opencode/` ke project, command berikut tersedia:
 /update-codemaps                     # Update code references
 
 # Database
-# (built-in database-reviewer bisa dipakai untuk query optimization)
+@database-reviewer                   # Query optimization
 
 # Mobile
 /android-build [variant]              # Build Android (debug/release/bundle)
 /android-test [type]                  # Run Android tests (unit/instrumented)
 /flutter-build [target]               # Build Flutter (apk/appbundle/ios/web)
 /flutter-test [type]                  # Run Flutter tests with coverage
-/gpc-release [track]                  # Publish to Google Play (internal/alpha/beta/production)
+/gpc-release [track]                  # Publish to Google Play
 ```
 
-## Cara Menggunakan Folder `.opencode`
+## Using the `.opencode/` Folder
 
-### Di Project Baru (Rekomendasi — NPM Package)
-
-Cara termudah adalah menggunakan npm package:
+### New Project (NPM Package — Recommended)
 
 ```bash
 cd /path/to/your-project
 npx opencode-agent-kit init
 ```
 
-Ini akan mengcopy `opencode.json`, `.opencode/`, dan `AGENTS.md` secara otomatis.
+This automatically copies `opencode.json`, `.opencode/`, and `AGENTS.md` with smart merging.
 
 ### Manual Copy
-
-Atau copy langsung dari repo ini:
 
 ```bash
 cp -R .opencode/ /path/to/your-project/
 ```
 
-Atau jika ingin hanya config:
+Or just the config:
 
 ```bash
 cp .opencode/config.json /path/to/your-project/.opencode/config.json
 ```
 
-### Konfigurasi yang Di-copy
+### What Gets Copied
 
-| File/Folder                    | Apa yang Dicopy                 | Mandatory        |
-| ------------------------------ | ------------------------------- | ---------------- |
-| `config.json`                  | Agent definitions, MCP settings | Ya               |
-| `agents/`                      | Custom agent prompts            | Ya               |
-| `instructions/INSTRUCTIONS.md` | Global rules untuk semua agent  | Ya               |
-| `skills/`                      | Domain-specific skills          | Direkomendasikan |
-| `contexts/`                    | Project context                 | Opsional         |
-| `commands/`                    | Custom slash commands           | Opsional         |
-| `rules/`                       | Coding rules                    | Opsional         |
-| `hooks/`                       | Automation hooks                | Opsional         |
+| File/Folder               | Content                         | Required    |
+| ------------------------- | ------------------------------- | ----------- |
+| `opencode.json`           | Agent definitions, MCP settings | Yes         |
+| `.opencode/agents/`       | Custom agent prompts            | Yes         |
+| `.opencode/instructions/` | Global rules for all agents     | Yes         |
+| `.opencode/skills/`       | Domain-specific skills          | Recommended |
+| `.opencode/contexts/`     | Project context                 | Optional    |
+| `.opencode/commands/`     | Custom slash commands           | Optional    |
+| `.opencode/rules/`        | Coding rules                    | Optional    |
+| `.opencode/hooks/`        | Automation hooks                | Optional    |
 
-### Integrasi dengan Global OpenCode
+### Integration with Global OpenCode
 
-Project config ini **tidak perlu memodifikasi** konfigurasi global Anda. Cukup copy `.opencode/` ke project dan semua agent + commands akan tersedia.
+This project config **does not modify** your global configuration. Just copy `.opencode/` to your project and all agents + commands become available.
 
-Jika ingin tetap menggunakan agent dari konfigurasi global (bukan yang di project), cukup rename file di project:
+To use a global agent instead of the project one, rename the file:
 
 ```bash
 mv .opencode/agents/code-reviewer.md .opencode/agents/code-reviewer-custom.md
@@ -237,101 +232,93 @@ mv .opencode/agents/code-reviewer.md .opencode/agents/code-reviewer-custom.md
 
 ### Override Built-in Agents
 
-Jika ingin **customize** built-in agent untuk project ini, bisa dibuat agent dengan **nama yang sama** di `.opencode/agents/`. Priority: project-level agents override built-in.
+To **customize** a built-in agent, create an agent with the **same name** in `.opencode/agents/`. Project-level agents override built-in ones.
 
-Contoh override `code-reviewer` untuk fokus Nuxt:
+## Available Agents
 
-```markdown
-# .opencode/agents/code-reviewer.md
+13 agents (13 registered in config) with **Leader → Subagent** architecture:
 
-# Override built-in code-reviewer untuk Nuxt-specific review
-```
+| Agent                           | File                          | Mode        | Role                                                                 |
+| ------------------------------- | ----------------------------- | ----------- | -------------------------------------------------------------------- |
+| **IT Leader**                   | `it-leader.md`                | **primary** | Requirements analysis, architecture, task decomposition, integration |
+| Frontend Developer (Vue/Nuxt)   | `nuxt-frontend-developer.md`  | subagent    | Vue/Nuxt implementation (components, composables, Nuxt UI, E2E)      |
+| Frontend Developer (React/Next) | `react-frontend-developer.md` | subagent    | React/Next.js implementation (Server Components, shadcn/ui, E2E)     |
+| Backend Developer (Node.js)     | `node-backend-developer.md`   | subagent    | Node.js API (Express, Prisma, DTO, auth)                             |
+| Backend Developer (Laravel)     | `laravel-advanced.md`         | subagent    | Laravel (Blade, Livewire, REST API, Service Layer)                   |
+| CodeIgniter 3 Fullstack         | `code-igniter-3-fullstack.md` | subagent    | CI3 MVC, REST API, JWT                                               |
+| UI/UX Designer                  | `ui-ux-designer.md`           | subagent    | Design system, Figma, Stitch, accessibility, DESIGN.md               |
+| Code Reviewer / QA              | `code-reviewer.md`            | subagent    | Code quality review, security audit, testing strategy, verification  |
+| Database Specialist             | `database-specialist.md`      | subagent    | PostgreSQL schema, query optimization, Prisma, migrations            |
+| DevOps / Infrastructure         | `devops-specialist.md`        | subagent    | CI/CD, deployment, Docker, monitoring, infrastructure                |
+| SEO Specialist                  | `seo-specialist.md`           | subagent    | Meta tags, structured data, Core Web Vitals, content optimization    |
+| Android Developer               | `android-developer.md`        | subagent    | Kotlin, Jetpack Compose, Material 3, Gradle, Play Store              |
+| Flutter Developer               | `flutter-developer.md`        | subagent    | Dart, Flutter SDK, Material 3, Firebase, cross-platform              |
 
-## Agent yang Tersedia
+### How It Works
 
-Repo ini menyediakan 13 agent (12 terdaftar di `config.json` + 1 standalone mentor) dengan arsitektur **Leader → Subagent**:
+1. User gives requirements to the **IT Leader** (primary agent, auto-activated)
+2. IT Leader analyzes, designs architecture, and breaks into tasks
+3. IT Leader delegates tasks to the appropriate subagents
+4. IT Leader integrates results and reports to the user
 
-| Agent                           | File                          | Mode        | Tujuan                                                                 |
-| ------------------------------- | ----------------------------- | ----------- | ---------------------------------------------------------------------- |
-| **IT Leader**                   | `it-leader.md`                | **primary** | Analisis requirement, arsitektur, pembagian tugas, delegasi, integrasi |
-| Frontend Developer (Vue/Nuxt)   | `nuxt-frontend-developer.md`  | subagent    | Implementasi Vue/Nuxt (komponen, composable, Nuxt UI, E2E)             |
-| Frontend Developer (React/Next) | `react-frontend-developer.md` | subagent    | Implementasi React/Next.js (Server Components, shadcn/ui, E2E)         |
-| Backend Developer (Node.js)     | `node-backend-developer.md`   | subagent    | Implementasi Node.js API (Express, Prisma, DTO, auth)                  |
-| Backend Developer (Laravel)     | `laravel-advanced.md`         | subagent    | Implementasi Laravel (Blade, Livewire, REST API, Service Layer)        |
-| CodeIgniter 3 Fullstack         | `code-igniter-3-fullstack.md` | subagent    | Implementasi CI3 (MVC, REST API, JWT)                                  |
-| UI/UX Designer                  | `ui-ux-designer.md`           | subagent    | Design system, Figma, Stitch, accessibility, DESIGN.md                 |
-| Code Reviewer / QA              | `code-reviewer.md`            | subagent    | Code quality review, security audit, testing strategy, verification    |
-| Database Specialist             | `database-specialist.md`      | subagent    | PostgreSQL schema, query optimization, Prisma, migrations              |
-| DevOps / Infrastructure         | `devops-specialist.md`        | subagent    | CI/CD, deployment, Docker, monitoring, infrastructure                  |
-| SEO Specialist                  | `seo-specialist.md`           | subagent    | Meta tags, structured data, Core Web Vitals, content optimization      |
-| Android Developer               | `android-developer.md`        | subagent    | Kotlin, Jetpack Compose, Material 3, Gradle, Play Store                |
-| Flutter Developer               | `flutter-developer.md`        | subagent    | Dart, Flutter SDK, Material 3, Firebase, cross-platform                |
-
-### Cara Kerja
-
-1. User memberikan requirement ke **IT Leader** (primary agent, otomatis aktif)
-2. IT Leader menganalisis, merancang arsitektur, dan memecah menjadi task
-3. IT Leader mendelegasikan task ke subagent yang sesuai
-4. IT Leader mengintegrasikan hasil dari subagent dan melaporkan ke user
-
-Untuk task kecil yang langsung tahu subagent-nya, bisa langsung mention subagent:
+For small tasks, mention subagents directly:
 
 ```text
-@frontend-nuxt Tambahkan UButton "Simpan" di ProfileHeader.vue.
-@frontend-react Buat server component ProductList dengan fetch dari API.
-@backend Add endpoint POST /api/markets dengan DTO validation.
-@laravel Buat halaman CRUD produk lengkap dengan Blade + Livewire.
-@ci3 Buat REST API untuk produk dengan JWT auth.
-@designer Review UX flow halaman checkout dan generate DESIGN.md.
-@reviewer Audit security untuk authentication module.
-@database Optimasi query untuk listing markets dengan pagination.
-@devops Setup CI/CD pipeline untuk deployment ke Vercel.
-@seo Implementasi meta tags dan structured data untuk halaman produk.
-@android Buat halaman login dengan Jetpack Compose + ViewModel.
-@flutter Buat screen product list dengan Bloc pattern.
+@frontend-nuxt Add a UButton "Save" in ProfileHeader.vue.
+@frontend-react Create a server component ProductList with API fetch.
+@backend Add endpoint POST /api/markets with DTO validation.
+@laravel Build a CRUD product page with Blade + Livewire.
+@ci3 Build a REST API for products with JWT auth.
+@designer Review UX flow for checkout page and generate DESIGN.md.
+@reviewer Audit security for the authentication module.
+@database Optimize query for market listing with pagination.
+@devops Setup CI/CD pipeline for Vercel deployment.
+@seo Implement meta tags and structured data for product pages.
+@android Build a login screen with Jetpack Compose + ViewModel.
+@flutter Build a product list screen with Bloc pattern.
 ```
 
-## Model yang Direkomendasikan
+## Recommended Models
 
-Setiap agent bisa pakai model berbeda berdasarkan kompleksitas tugas. Subagent akan **inherit model dari primary** jika tidak diset. Berikut rekomendasi per agent:
+Each agent can use a different model based on task complexity. Subagents **inherit the model** from the primary agent if not set.
 
-| Agent         | Tugas                                     | Model Recommended            | Model Alternatif             | Alasan                                                              |
-| ------------- | ----------------------------------------- | ---------------------------- | ---------------------------- | ------------------------------------------------------------------- |
-| **IT Leader** | Orchestration, arsitektur, planning       | `opencode/claude-opus-4.7`   | `opencode/claude-opus-4.5`   | Butuh reasoning dalam, analisis kompleks, koordinasi multi-subagent |
-| **Frontend**  | Implementasi komponen, halaman, logic     | `opencode/claude-sonnet-4.5` | `opencode/claude-sonnet-4.6` | Keseimbangan reasoning & efisiensi untuk coding                     |
-| **Backend**   | API, DTO, controller, database ops        | `opencode/claude-sonnet-4.5` | `opencode/claude-sonnet-4.6` | Keseimbangan reasoning & efisiensi untuk coding                     |
-| **Designer**  | Design system, eksplorasi visual, handoff | `opencode/claude-sonnet-4`   | `openai/gpt-5`               | Kreativitas dengan reasoning cukup                                  |
-| **Reviewer**  | Security audit, code review detail        | `opencode/claude-opus-4.5`   | `openai/o3`                  | Analisis mendalam, deteksi pattern halus                            |
-| **Database**  | Schema design, query optimization         | `opencode/claude-sonnet-4.5` | `opencode/claude-sonnet-4`   | Kebutuhan reasoning cukup, fokus precision                          |
-| **DevOps**    | CI/CD config, scripts, monitoring         | `opencode/claude-haiku-4.5`  | `openai/gpt-4.1-mini`        | Task lebih straightforward, efisiensi tinggi                        |
-| **Android**   | Kotlin, Compose, Gradle, Play Store       | `opencode/claude-sonnet-4.5` | `opencode/claude-haiku-4.5`  | Keseimbangan reasoning & efisiensi                                  |
-| **Flutter**   | Dart, Flutter SDK, cross-platform         | `opencode/claude-sonnet-4.5` | `opencode/claude-haiku-4.5`  | Keseimbangan reasoning & efisiensi                                  |
-| **SEO**       | Research, meta tags, structured data      | `openai/gpt-5.1-codex-mini`  | `openai/gpt-5-nano`          | Task lebih research-focused, tidak perlu deep coding                |
+| Agent         | Role                                       | Recommended Model            | Alternative Model            | Rationale                                                     |
+| ------------- | ------------------------------------------ | ---------------------------- | ---------------------------- | ------------------------------------------------------------- |
+| **IT Leader** | Orchestration, architecture, planning      | `opencode/claude-opus-4.7`   | `opencode/claude-opus-4.5`   | Deep reasoning, complex analysis, multi-subagent coordination |
+| **Frontend**  | Component implementation, pages, logic     | `opencode/claude-sonnet-4.5` | `opencode/claude-sonnet-4.6` | Balanced reasoning & efficiency for coding                    |
+| **Backend**   | API, DTO, controller, database operations  | `opencode/claude-sonnet-4.5` | `opencode/claude-sonnet-4.6` | Balanced reasoning & efficiency for coding                    |
+| **Designer**  | Design system, visual exploration, handoff | `opencode/claude-sonnet-4`   | `openai/gpt-5`               | Creativity with sufficient reasoning                          |
+| **Reviewer**  | Security audit, detailed code review       | `opencode/claude-opus-4.5`   | `openai/o3`                  | Deep analysis, subtle pattern detection                       |
+| **Database**  | Schema design, query optimization          | `opencode/claude-sonnet-4.5` | `opencode/claude-sonnet-4`   | Moderate reasoning, precision-focused                         |
+| **DevOps**    | CI/CD config, scripts, monitoring          | `opencode/claude-haiku-4.5`  | `openai/gpt-4.1-mini`        | Straightforward tasks, high efficiency                        |
+| **Android**   | Kotlin, Compose, Gradle, Play Store        | `opencode/claude-sonnet-4.5` | `opencode/claude-haiku-4.5`  | Balanced reasoning & efficiency                               |
+| **Flutter**   | Dart, Flutter SDK, cross-platform          | `opencode/claude-sonnet-4.5` | `opencode/claude-haiku-4.5`  | Balanced reasoning & efficiency                               |
+| **SEO**       | Research, meta tags, structured data       | `openai/gpt-5.1-codex-mini`  | `openai/gpt-5-nano`          | Research-focused, no deep coding needed                       |
 
-### Tier Model
+### Model Tiers
 
-| Tier                   | Model                                      | Use Case                                     |
+| Tier                   | Models                                     | Use Case                                     |
 | ---------------------- | ------------------------------------------ | -------------------------------------------- |
 | **Tier 1** (Premium)   | `claude-opus-4.7`, `claude-opus-4.5`       | Orchestration, deep analysis, security audit |
-| **Tier 2** (Balanced)  | `claude-sonnet-4.5/4.6`, `claude-sonnet-4` | Implementasi kompleks, design, database      |
-| **Tier 3** (Efficient) | `claude-haiku-4.5`, `gpt-4.1-mini`         | Task langsung, scripts, config files         |
-| **Tier 4** (Fast)      | `gpt-5-nano`, `gpt-5.1-codex-mini`         | Research, content, optimasi costs            |
+| **Tier 2** (Balanced)  | `claude-sonnet-4.5/4.6`, `claude-sonnet-4` | Complex implementation, design, database     |
+| **Tier 3** (Efficient) | `claude-haiku-4.5`, `gpt-4.1-mini`         | Direct tasks, scripts, config files          |
+| **Tier 4** (Fast)      | `gpt-5-nano`, `gpt-5.1-codex-mini`         | Research, content, cost optimization         |
 
-### Cara Ganti Model
+### Changing Models
 
-1. **Untuk semua agent** — set `model` di level primary agent (IT Leader)
-2. **Per agent** — set `model` di config agent masing-masing
-3. **Quick override** — pakai flag `--model` saat run opencode
+1. **All agents** — set `model` at the primary agent (IT Leader) level
+2. **Per agent** — set `model` in each agent's config
+3. **Quick override** — use `--model` flag when running opencode
 
-Lihat `.opencode/config.example.json` untuk contoh konfigurasi lengkap per model.
+See `.opencode/config.example.json` for a complete per-model configuration example.
 
-## Skill yang Digunakan Agent
+## Skills
 
-Skill tersimpan di `.opencode/skills/` (lokal dalam repo), jadi developer lain tidak perlu mencari skill satu per satu.
+Skills are stored in `.opencode/skills/` (local in the repo) — no need to search for them individually.
 
-### Skill per Agent
+### Skills per Agent
 
-| Agent                      | Skill Utama                                                                                                                                                                                                                                    |
+| Agent                      | Key Skills                                                                                                                                                                                                                                     |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | IT Leader                  | coding-standards, backend-patterns, frontend-patterns                                                                                                                                                                                          |
 | Frontend Developer (Vue)   | coding-standards, frontend-patterns, frontend-design, web-design-guidelines, nuxt-ui, tdd-workflow                                                                                                                                             |
@@ -345,9 +332,9 @@ Skill tersimpan di `.opencode/skills/` (lokal dalam repo), jadi developer lain t
 | **Android Developer**      | coding-standards, android-jetpack-compose, edge-to-edge, navigation-3, firebase-basics, play-billing, camera1-to-camerax, r8-analyzer, migrate-xml-views-to-jetpack-compose, gpc-setup, gpc-release-flow, gpc-preflight, gpc-vitals-monitoring |
 | **Flutter Developer**      | coding-standards, flutter (patterns), 10 Flutter skills, 9 Dart skills, firebase-basics                                                                                                                                                        |
 
-### Skill yang tidak perlu untuk operasional tim ini
+### Skills Not Required for Core Stack
 
-Skill backend/lintas bahasa di bawah tidak diperlukan untuk stack utama Nuxt + Node.js:
+The following cross-language skills are not needed for the primary Nuxt + Node.js stack:
 
 - `springboot-*`, `java-*`, `jpa-patterns`
 - `django-*`
@@ -355,28 +342,28 @@ Skill backend/lintas bahasa di bawah tidak diperlukan untuk stack utama Nuxt + N
 - `python-*`
 - `clickhouse-io`
 
-Catatan: skill tersebut boleh tetap disimpan jika tim memang butuh multi-stack, tapi tidak wajib untuk stack utama.
+These can be kept if your team uses multi-stack, but are optional.
 
-### Skill lain yang tersedia di repo
+### Other Skills Available
 
-- `configure-ecc` — installer untuk Everything Claude Code
-- `continuous-learning` / `continuous-learning-v2` — pattern learning dari session
-- `eval-harness` — formal evaluation framework
-- `iterative-retrieval` — context retrieval pattern
-- `strategic-compact` — manual context compaction
-- `verification-loop` — verification cycle untuk agent
-- `nutrient-document-processing` — document processing API
-- `project-guidelines-example` — contoh panduan proyek
+- `configure-ecc` — Everything Claude Code installer
+- `continuous-learning` / `continuous-learning-v2` — Session pattern learning
+- `eval-harness` — Formal evaluation framework
+- `iterative-retrieval` — Context retrieval pattern
+- `strategic-compact` — Manual context compaction
+- `verification-loop` — Agent verification cycle
+- `nutrient-document-processing` — Document processing API
+- `project-guidelines-example` — Project guidelines example
 
-## Lokasi Skill
+## Skill Locations
 
-OpenCode membaca skill dari:
+OpenCode reads skills from:
 
 - `~/.opencode/skills/`
 - `~/.agents/skills/`
-- `.opencode/skills/` (lokal di repo ini)
+- `.opencode/skills/` (local in the repo)
 
-Verifikasi cepat:
+Quick verification:
 
 ```bash
 ls ~/.opencode/skills
@@ -384,11 +371,9 @@ ls ~/.agents/skills
 ls .opencode/skills
 ```
 
-Pastikan semua skill wajib tersedia.
+## Installing Skills from `.opencode/skills/`
 
-## Cara Install Skill dari Folder `.opencode/skills/` Repo
-
-Jika skill belum ada di mesin developer, copy dari repo ini ke direktori skill lokal:
+If skills are not yet on your machine, copy them from this repo:
 
 ```bash
 mkdir -p ~/.opencode/skills
@@ -401,7 +386,7 @@ cp -R ./.opencode/skills/security-review ~/.opencode/skills/
 cp -R ./.opencode/skills/tdd-workflow ~/.opencode/skills/
 ```
 
-Opsional:
+Optional:
 
 ```bash
 cp -R ./.opencode/skills/building-components ~/.opencode/skills/
@@ -410,7 +395,7 @@ cp -R ./.opencode/skills/vercel-composition-patterns ~/.opencode/skills/
 
 ### Mobile Skills
 
-Jika mengerjakan mobile development, install juga skill berikut:
+For mobile development:
 
 ```bash
 # Flutter patterns & task skills
@@ -427,64 +412,56 @@ cp -R ./.opencode/skills/jetpack-compose ~/.opencode/skills/
 cp -R ./.opencode/skills/firebase-basics ~/.opencode/skills/
 ```
 
-## MCP yang Digunakan Agent
+## MCP Servers
 
-Dari `.opencode/config.json`, agent memakai MCP berikut:
+From `.opencode/config.json`, agents use the following MCP servers:
 
-| MCP          | Type   | Status   | Deskripsi                                            |
+| MCP          | Type   | Status   | Description                                          |
 | ------------ | ------ | -------- | ---------------------------------------------------- |
-| `nuxt`       | remote | enabled  | Dokumentasi Nuxt, blog, deployment guide             |
-| `nuxt-ui`    | remote | enabled  | Dokumentasi & contoh komponen Nuxt UI                |
+| `nuxt`       | remote | enabled  | Nuxt documentation, blog, deployment guide           |
+| `nuxt-ui`    | remote | enabled  | Nuxt UI component docs & examples                    |
 | `playwright` | stdio  | enabled  | Browser automation & E2E testing                     |
 | `postman`    | remote | enabled  | Postman API management (collections, requests, docs) |
-| `figma`      | stdio  | disabled | Akses Figma design file (opsional)                   |
-| `stitch`     | remote | disabled | Google Stitch AI design generation (opsional)        |
+| `figma`      | stdio  | disabled | Figma design file access (optional)                  |
+| `stitch`     | remote | disabled | Google Stitch AI design generation (optional)        |
 
-Jika ingin pakai Figma MCP:
+To enable Figma MCP:
 
 ```bash
 export FIGMA_ACCESS_TOKEN="your-token"
 ```
 
-Jika ingin pakai Google Stitch MCP:
+To enable Google Stitch MCP:
 
 ```bash
 # Get API key from https://stitch.withgoogle.com/settings/api-keys
 export STITCH_API_KEY="your-api-key"
 ```
 
-## Setup Global Config OpenCode
+## Global Config Setup
 
-Agar agent, skill, commands, dan rules tersedia di semua project, copy ke direktori global OpenCode.
+To make agents, skills, commands, and rules available across all projects, copy to the global OpenCode directory.
 
-### macOS & Linux/Ubuntu
+### macOS & Linux
 
-Path global: `~/.opencode/`
+Global path: `~/.opencode/`
 
 ```bash
-# Buat direktori global jika belum ada
 mkdir -p ~/.opencode/skills ~/.opencode/commands ~/.opencode/rules ~/.opencode/contexts
-
-# Copy dari project ke global
-cp -R .opencode/config.json ~/.opencode/opencode.json            # Config global
-cp -R .opencode/skills/* ~/.opencode/skills/                      # Skills
-cp -R .opencode/commands/* ~/.opencode/commands/                  # Commands
-cp -R .opencode/rules/* ~/.opencode/rules/                        # Rules
-cp -R .opencode/contexts/* ~/.opencode/contexts/                  # Contexts
+cp -R .opencode/config.json ~/.opencode/opencode.json
+cp -R .opencode/skills/* ~/.opencode/skills/
+cp -R .opencode/commands/* ~/.opencode/commands/
+cp -R .opencode/rules/* ~/.opencode/rules/
+cp -R .opencode/contexts/* ~/.opencode/contexts/
 ```
 
 ### Windows (PowerShell)
 
-Path global: `$env:USERPROFILE\.opencode\`
-
 ```powershell
-# Buat direktori global jika belum ada
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.opencode\skills"
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.opencode\commands"
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.opencode\rules"
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.opencode\contexts"
-
-# Copy dari project ke global
 Copy-Item -Recurse .opencode\config.json "$env:USERPROFILE\.opencode\opencode.json"
 Copy-Item -Recurse .opencode\skills\* "$env:USERPROFILE\.opencode\skills\"
 Copy-Item -Recurse .opencode\commands\* "$env:USERPROFILE\.opencode\commands\"
@@ -492,7 +469,7 @@ Copy-Item -Recurse .opencode\rules\* "$env:USERPROFILE\.opencode\rules\"
 Copy-Item -Recurse .opencode\contexts\* "$env:USERPROFILE\.opencode\contexts\"
 ```
 
-### Windows (Command Prompt)
+### Windows (CMD)
 
 ```cmd
 mkdir "%USERPROFILE%\.opencode\skills"
@@ -509,40 +486,40 @@ xcopy /E /I /Y .opencode\contexts "%USERPROFILE%\.opencode\contexts\"
 ### Verify Setup
 
 ```bash
-opencode doctor                    # Cek status konfigurasi
-ls ~/.opencode/                    # Cek direktori global (macOS/Linux)
+opencode doctor
+ls ~/.opencode/
 ```
 
-### Priority Konfigurasi
+### Config Priority
 
 ```
 User Session
     │
     ▼
-Project-level config (.opencode/config.json)   ← Tertinggi
+Project-level config (.opencode/config.json)   ← Highest
     │
     ▼
 Global config (~/.opencode/opencode.json)
     │
     ▼
-OpenCode defaults                               ← Terendah
+OpenCode defaults                               ← Lowest
 ```
 
-Project config override global, global override defaults. Instructions digabungkan dari semua level.
+Project config overrides global, global overrides defaults. Instructions are merged from all levels.
 
-## Cara Menggunakan Folder Pendukung
+## Using Supporting Folders
 
 ### `.opencode/contexts/`
 
-Berisi konteks reusable proyek:
+Reusable project contexts:
 
-- `dev.md` — konteks development
-- `research.md` — konteks riset
-- `review.md` — konteks code review
+- `dev.md` — Development context
+- `research.md` — Research context
+- `review.md` — Code review context
 
-Rujuk konteks ini saat membuat prompt supaya agent tidak keluar jalur. Update saat ada perubahan requirement produk/arsitektur.
+Reference these contexts when prompting to keep agents focused. Update when requirements change.
 
-Instal ke lokal jika ingin reuse context lintas repo:
+Install locally for cross-repo reuse:
 
 ```bash
 mkdir -p ~/.opencode/contexts
@@ -551,248 +528,239 @@ cp -R ./.opencode/contexts/* ~/.opencode/contexts/
 
 ### `.opencode/commands/`, `.opencode/rules/`, `.opencode/hooks/`
 
-Folder-folder ini ada di dalam `.opencode/` dan berisi:
+These folders contain:
 
-- **`commands/`** — Command/prompt siap pakai (slash command internal tim)
-- **`rules/`** — Aturan operasional/coding yang harus dipatuhi
-- **`hooks/`** — Automasi lifecycle (pre-task/post-task, validasi)
+- **`commands/`** — Ready-to-use prompt commands (team slash commands)
+- **`rules/`** — Operational/coding rules
+- **`hooks/`** — Lifecycle automation (pre-task/post-task, validation)
 
-Folder-folder ini **bukan** otomatis aktif. Developer perlu copy/sinkron ke environment lokal masing-masing jika diperlukan.
+These are **not** auto-activated. Developers need to copy/sync to their local environment.
 
-Instal commands:
+Install commands:
 
 ```bash
 mkdir -p ~/.opencode/commands
 cp -R ./.opencode/commands/* ~/.opencode/commands/
 ```
 
-Instal rules (ikuti README di `rules/` — copy per direktori, jangan di-flatten).
+Install rules (follow README in `rules/` — copy per directory, don't flatten).
 
-Hooks: aktifkan hanya jika environment lokal mendukung hook dependencies-nya. File `hooks/hooks.json` memanggil script via `CLAUDE_PLUGIN_ROOT`.
+Hooks: only activate if your local environment supports the dependencies. `hooks/hooks.json` calls scripts via `CLAUDE_PLUGIN_ROOT`.
 
-### Praktik Tim yang Disarankan
+### Recommended Practices
 
-- Gunakan `commands/` untuk pekerjaan rutin.
-- Gunakan `rules/` sebagai standar wajib saat implementasi dan review.
-- Gunakan `contexts/` untuk prompt yang lebih presisi.
-- Perlakukan `hooks/` sebagai konfigurasi bersama tim (perubahan perlu sinkronisasi).
+- Use `commands/` for routine work
+- Use `rules/` as mandatory standards during implementation and review
+- Use `contexts/` for more precise prompting
+- Treat `hooks/` as team-shared configuration (changes need sync)
 
-## Cara Pakai
+## Usage
 
-### Workflow Utama (via IT Leader)
+### Main Workflow (via IT Leader)
 
-IT Leader adalah **primary agent** — otomatis aktif saat session dimulai. Berikan requirement ke IT Leader:
+The IT Leader is the **primary agent** — auto-activated when a session starts. Give it your requirements:
 
 ```text
-Buat fitur marketplace dengan halaman listing, detail, dan form create.
-Backend API untuk CRUD markets dengan pagination dan filter.
-Setup CI/CD pipeline dan optimasi SEO.
+Build a marketplace feature with listing, detail, and create pages.
+Backend API for CRUD markets with pagination and filters.
+Setup CI/CD pipeline and SEO optimization.
 ```
 
-IT Leader akan:
+The IT Leader will:
 
-1. Analisis requirement dan definisikan scope
-2. Rancang arsitektur (data flow, API contract, component structure)
-3. Pecah menjadi task dan delegasikan ke subagent yang sesuai
-4. Integrasikan hasil dan laporkan status
+1. Analyze requirements and define scope
+2. Design architecture (data flow, API contract, component structure)
+3. Break into tasks and delegate to the right subagents
+4. Integrate results and report status
 
-### Direct Call ke Subagent (untuk task kecil)
+### Direct Subagent Calls (small tasks)
 
-Untuk task kecil yang sudah jelas subagent-nya, bisa langsung mention:
-
-```text
-@frontend-nuxt Tambahkan UButton "Simpan" di app/components/profile/ProfileHeader.vue.
-Task tiny, minimal diff, jangan ubah file lain.
-```
+For small tasks, mention subagents directly:
 
 ```text
-@frontend-nuxt Implementasikan filter status di halaman markets.
-Gunakan pola useApi yang sudah ada dan laporkan verification status.
+@frontend-nuxt Add a UButton "Save" in app/components/profile/ProfileHeader.vue.
+Task tiny, minimal diff, don't touch other files.
 ```
 
 ```text
-@backend Add endpoint POST /api/markets dengan DTO validation.
+@frontend-nuxt Implement status filters on the markets page.
+Use the existing useApi pattern and report verification status.
 ```
 
 ```text
-@designer Buat design system untuk halaman produk dengan Nuxt UI.
+@backend Add endpoint POST /api/markets with DTO validation.
 ```
 
 ```text
-@reviewer Audit security untuk authentication module.
+@designer Create a design system for the product page with Nuxt UI.
 ```
 
 ```text
-@database Optimasi query untuk listing markets dengan pagination.
+@reviewer Audit security for the authentication module.
 ```
 
 ```text
-@devops Setup CI/CD pipeline untuk deployment ke Vercel.
+@database Optimize query for market listing with pagination.
 ```
 
 ```text
-@seo Implementasi meta tags dan structured data untuk halaman produk.
+@devops Setup CI/CD pipeline for Vercel deployment.
 ```
 
-## Standar Output Agent
+```text
+@seo Implement meta tags and structured data for product pages.
+```
 
-Agent ini dikonfigurasi untuk selalu melaporkan:
+## Agent Output Standards
 
-- perubahan yang dibuat
-- file yang disentuh
-- status verifikasi: `verified` / `partially_verified` / `not_verified`
-- command manual jika verifikasi penuh tidak bisa dijalankan
+Agents are configured to always report:
 
-## Kebijakan Operasional Penting
+- Changes made
+- Files touched
+- Verification status: `verified` / `partially_verified` / `not_verified`
+- Manual commands if full verification cannot be run
 
-- Tidak commit kecuali diminta user
-- Tidak buat PR kecuali diminta user
-- Tidak push kecuali diminta user
-- Tidak menyentuh file di luar scope request
+## Operational Policies
 
-Detail SOP tim ada di: `.opencode/agent-docs/frontend/nuxt/TEAM_OPERATING_GUIDE.md`
+- No commits unless requested by the user
+- No PRs unless requested by the user
+- No pushes unless requested by the user
+- No touching files outside the request scope
 
-## Dokumentasi Lengkap
+Detailed SOP: `.opencode/agent-docs/frontend/nuxt/TEAM_OPERATING_GUIDE.md`
 
-Dokumentasi agent tersedia di `.opencode/agent-docs/frontend/nuxt/`:
+## Documentation
 
-| Dokumen                   | Isi                                |
-| ------------------------- | ---------------------------------- |
-| `INDEX.md`                | Navigasi lengkap semua dokumentasi |
-| `README.md`               | User guide lengkap                 |
-| `QUICK_START.md`          | Mulai dalam 5 menit                |
-| `EXAMPLES.md`             | 50+ contoh praktis                 |
-| `API_PATTERNS.md`         | Panduan useApi composable          |
-| `WORKFLOWS.md`            | 8 workflow detail                  |
-| `CHEATSHEET.md`           | Quick reference                    |
-| `MCP_GUIDE.md`            | Panduan integrasi MCP              |
-| `TESTING_GUIDE.md`        | Testing & validasi                 |
-| `TEAM_OPERATING_GUIDE.md` | SOP tim                            |
-| `SUMMARY.md`              | Ringkasan instalasi                |
-| `COMPLETION_REPORT.md`    | Laporan penyelesaian               |
-| `README_AGENTS.md`        | Overview agent                     |
-| `README_DOCS.md`          | Overview dokumentasi               |
+Agent documentation is available at `.opencode/agent-docs/frontend/nuxt/`:
 
-### Dokumentasi Mentor
+| Document                  | Content                       |
+| ------------------------- | ----------------------------- |
+| `INDEX.md`                | Full documentation navigation |
+| `README.md`               | Complete user guide           |
+| `QUICK_START.md`          | Start in 5 minutes            |
+| `EXAMPLES.md`             | 50+ practical examples        |
+| `API_PATTERNS.md`         | useApi composable guide       |
+| `WORKFLOWS.md`            | 8 detailed workflows          |
+| `CHEATSHEET.md`           | Quick reference               |
+| `MCP_GUIDE.md`            | MCP integration guide         |
+| `TESTING_GUIDE.md`        | Testing & validation          |
+| `TEAM_OPERATING_GUIDE.md` | Team SOP                      |
+| `SUMMARY.md`              | Installation summary          |
+| `COMPLETION_REPORT.md`    | Completion report             |
+| `README_AGENTS.md`        | Agent overview                |
+| `README_DOCS.md`          | Documentation overview        |
 
-| Dokumen                          | Isi                     |
+### Mentor Documentation
+
+| Document                         | Content                 |
 | -------------------------------- | ----------------------- |
-| `MENTOR_CURRICULUM_30_DAYS.md`   | Roadmap belajar 30 hari |
-| `MENTOR_CURRICULUM_CHECKLIST.md` | Checklist harian        |
-| `MENTOR_WEEKLY_ASSIGNMENTS.md`   | Tugas mingguan + rubrik |
+| `MENTOR_CURRICULUM_30_DAYS.md`   | 30-day learning roadmap |
+| `MENTOR_CURRICULUM_CHECKLIST.md` | Daily checklist         |
+| `MENTOR_WEEKLY_ASSIGNMENTS.md`   | Weekly tasks + rubric   |
 
-### Dokumentasi Backend
+### Backend Documentation
 
-| Dokumen                               | Isi                 |
+| Document                              | Content             |
 | ------------------------------------- | ------------------- |
-| `backend/README.md`                   | Overview backend    |
-| `backend/node/BACKEND_QUICK_START.md` | Quick start backend |
-| `backend/node/BACKEND_PATTERNS.md`    | Pola backend        |
+| `backend/README.md`                   | Backend overview    |
+| `backend/node/BACKEND_QUICK_START.md` | Backend quick start |
+| `backend/node/BACKEND_PATTERNS.md`    | Backend patterns    |
 
-## Referensi Cepat
+## Quick Reference
 
-- Config aktif: `.opencode/config.json`
-- Config contoh (model per agent): `.opencode/config.example.json`
-- Prompt IT Leader (primary): `.opencode/agents/it-leader.md`
-- Prompt frontend (Nuxt): `.opencode/agents/nuxt-frontend-developer.md`
-- Prompt frontend (React): `.opencode/agents/react-frontend-developer.md`
-- Prompt backend (Node): `.opencode/agents/node-backend-developer.md`
-- Prompt backend (Laravel): `.opencode/agents/laravel-advanced.md`
-- Prompt backend (CI3): `.opencode/agents/code-igniter-3-fullstack.md`
-- Prompt designer subagent: `.opencode/agents/ui-ux-designer.md`
-- Prompt reviewer subagent: `.opencode/agents/code-reviewer.md`
-- Prompt database subagent: `.opencode/agents/database-specialist.md`
-- Prompt devops subagent: `.opencode/agents/devops-specialist.md`
-- Prompt seo subagent: `.opencode/agents/seo-specialist.md`
-- Prompt android subagent: `.opencode/agents/android-developer.md`
-- Prompt flutter subagent: `.opencode/agents/flutter-developer.md`
-- Commands mobile: `.opencode/commands/android-build/`, `android-test/`, `flutter-build/`, `flutter-test/`, `gpc-release/`
-- Rules mobile: `.opencode/rules/android/`, `flutter/`, `mobile/`
-- Dokumentasi utama: `.opencode/agent-docs/frontend/nuxt/README.md`
+- Active config: `opencode.json`
+- Example config (per-model): `.opencode/config.example.json`
+- IT Leader prompt (primary): `.opencode/agents/it-leader.md`
+- Frontend (Nuxt) prompt: `.opencode/agents/nuxt-frontend-developer.md`
+- Frontend (React) prompt: `.opencode/agents/react-frontend-developer.md`
+- Backend (Node) prompt: `.opencode/agents/node-backend-developer.md`
+- Backend (Laravel) prompt: `.opencode/agents/laravel-advanced.md`
+- Backend (CI3) prompt: `.opencode/agents/code-igniter-3-fullstack.md`
+- Designer prompt: `.opencode/agents/ui-ux-designer.md`
+- Reviewer prompt: `.opencode/agents/code-reviewer.md`
+- Database prompt: `.opencode/agents/database-specialist.md`
+- DevOps prompt: `.opencode/agents/devops-specialist.md`
+- SEO prompt: `.opencode/agents/seo-specialist.md`
+- Android prompt: `.opencode/agents/android-developer.md`
+- Flutter prompt: `.opencode/agents/flutter-developer.md`
+- Mobile commands: `.opencode/commands/android-build/`, `android-test/`, `flutter-build/`, `flutter-test/`, `gpc-release/`
+- Mobile rules: `.opencode/rules/android/`, `flutter/`, `mobile/`
+- Main docs: `.opencode/agent-docs/frontend/nuxt/README.md`
 - Quick start: `.opencode/agent-docs/frontend/nuxt/QUICK_START.md`
-- Index dokumentasi: `.opencode/agent-docs/frontend/nuxt/INDEX.md`
+- Docs index: `.opencode/agent-docs/frontend/nuxt/INDEX.md`
 
-## Troubleshooting Instalasi Skill
+## Troubleshooting
 
-### 1) Skill tidak muncul saat dicek
+### 1) Skills not found
 
-**Gejala:** nama skill tidak terlihat saat `ls ~/.opencode/skills` atau `ls ~/.agents/skills`.
+**Symptom:** skill name not visible when running `ls ~/.opencode/skills` or `ls ~/.agents/skills`.
 
-**Langkah perbaikan:**
-
-1. Pastikan path home benar:
+**Fix:**
 
 ```bash
 echo $HOME
-```
-
-2. Cek direktori skill:
-
-```bash
 ls ~/.opencode/skills
 ls ~/.agents/skills
 ls .opencode/skills
 ```
 
-3. Jika belum ada, install/copy skill ke salah satu direktori tersebut.
+If missing, copy skills to one of those directories.
 
-### 2) Skill ada, tapi agent tidak memakainya
+### 2) Skill exists but agent doesn't use it
 
-**Gejala:** agent tidak memuat skill yang seharusnya dipakai.
+**Symptom:** agent doesn't load the expected skill.
 
-**Langkah perbaikan:**
+**Fix:**
 
-1. Panggil skill secara eksplisit di prompt:
+1. Call the skill explicitly in the prompt:
 
 ```text
-@frontend Load skill `nuxt-ui` lalu implementasikan form ini.
+@frontend Load skill `nuxt-ui` then implement this form.
 ```
 
-2. Mulai session baru OpenCode setelah update skill/konfigurasi.
-3. Pastikan nama skill persis sama dengan folder skill.
+2. Start a new OpenCode session after updating skills/config.
+3. Ensure the skill name matches the skill folder exactly.
 
-### 3) Permission command diblokir
+### 3) Command permission blocked
 
-**Gejala:** agent tidak bisa menjalankan command tertentu (test/build/lint).
+**Symptom:** agent can't run certain commands (test/build/lint).
 
-**Langkah perbaikan:**
+**Fix:**
 
-1. Cek policy di `.opencode/config.json` pada bagian `agent.frontend.permission`.
-2. Izinkan command yang dibutuhkan (mis. `pnpm *`, `npm *`, atau command spesifik).
-3. Jalankan ulang task; agent akan melaporkan `verification status` sesuai izin yang tersedia.
+1. Check policy in `opencode.json` under `agent.<name>.permission`.
+2. Allow required commands (e.g., `pnpm *`, `npm *`, or specific commands).
+3. Re-run the task; the agent will report verification status.
 
-### 4) MCP tidak tersedia atau gagal dipakai
+### 4) MCP not available
 
-**Gejala:** lookup Nuxt/Nuxt UI docs tidak berjalan.
+**Symptom:** Nuxt/Nuxt UI docs lookup fails.
 
-**Langkah perbaikan:**
+**Fix:**
 
-1. Cek `mcp` di `.opencode/config.json` pastikan `enabled: true` untuk `nuxt` dan `nuxt-ui`.
-2. Pastikan koneksi internet aktif (karena MCP Nuxt/Nuxt UI remote).
-3. Untuk Figma MCP, pastikan token terpasang:
+1. Check `mcp` in `opencode.json` — ensure `enabled: true` for `nuxt` and `nuxt-ui`.
+2. Ensure internet connection is active (remote MCP).
+3. For Figma MCP, set the token:
 
 ```bash
 export FIGMA_ACCESS_TOKEN="your-token"
 ```
 
-### 5) Output agent terlalu verbose atau terlalu luas
+### 5) Agent output too verbose
 
-**Gejala:** perubahan melebar atau penjelasan terlalu panjang.
+**Symptom:** changes spill over or explanations are too long.
 
-**Langkah perbaikan:**
-
-Gunakan batasan langsung di prompt:
+**Fix:** Add constraints directly in the prompt:
 
 ```text
-Task tiny. Minimal diff. Ubah 1 file ini saja. Jawaban ringkas.
+Task tiny. Minimal diff. Change 1 file only. Brief answer.
 ```
 
-### 6) Konvensi proyek tidak diikuti
+### 6) Project conventions not followed
 
-**Gejala:** style/pattern yang dipakai tidak sesuai kode existing.
+**Symptom:** style/patterns don't match existing code.
 
-**Langkah perbaikan:**
+**Fix:**
 
-1. Sebutkan konvensi secara eksplisit di prompt (mis. "gunakan useApi", "jangan ubah naming").
-2. Referensikan file contoh yang harus diikuti.
-3. Minta agent melakukan revisi dengan scope sempit pada file terkait.
+1. State conventions explicitly in the prompt (e.g., "use useApi", "don't change naming").
+2. Reference example files to follow.
+3. Ask the agent to revise with a narrow scope on related files.
