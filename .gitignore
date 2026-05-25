@@ -1,0 +1,11 @@
+node_modules/
+package-lock.json
+bun.lock
+pnpm-lock.yaml
+*.tgz
+package.json
+yarn.lock
+bin
+template
+.npmignore
+AGENTS.md
