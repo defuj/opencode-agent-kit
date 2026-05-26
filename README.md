@@ -50,10 +50,10 @@ This repository contains a complete OpenCode agent configuration with **Leader �
   - `android-developer.md` — Android Developer (Kotlin/Compose) — `@android`
   - `flutter-developer.md` — Flutter Developer (Dart) — `@flutter`
   - `nuxt-frontend-developer-mentor.md` — Nuxt mentor (standalone)
-- Internal documentation: `.opencode/agent-docs/`
-  - Frontend Nuxt: `.opencode/agent-docs/frontend/nuxt/`
-  - Frontend React: `.opencode/agent-docs/frontend/react/`
-  - Backend Node: `.opencode/agent-docs/backend/node/`
+- Internal documentation: `.opencode/docs/`
+  - Frontend Nuxt: `.opencode/docs/frontend/nuxt/`
+  - Frontend React: `.opencode/docs/frontend/react/`
+  - Backend Node: `.opencode/docs/backend/node/`
 - Local skills: `.opencode/skills/` (62 skill playbooks)
 - Contexts: `.opencode/contexts/` (dev, research, review)
 
@@ -627,11 +627,11 @@ Agents are configured to always report:
 - No pushes unless requested by the user
 - No touching files outside the request scope
 
-Detailed SOP: `.opencode/agent-docs/frontend/nuxt/TEAM_OPERATING_GUIDE.md`
+Detailed SOP: `.opencode/docs/frontend/nuxt/TEAM_OPERATING_GUIDE.md`
 
 ## Documentation
 
-Agent documentation is available at `.opencode/agent-docs/frontend/nuxt/`:
+Agent documentation is available at `.opencode/docs/frontend/nuxt/`:
 
 | Document                  | Content                       |
 | ------------------------- | ----------------------------- |
@@ -685,9 +685,9 @@ Agent documentation is available at `.opencode/agent-docs/frontend/nuxt/`:
 - Flutter prompt: `.opencode/agents/flutter-developer.md`
 - Mobile commands: `.opencode/commands/android-build/`, `android-test/`, `flutter-build/`, `flutter-test/`, `gpc-release/`
 - Mobile rules: `.opencode/rules/android/`, `flutter/`, `mobile/`
-- Main docs: `.opencode/agent-docs/frontend/nuxt/README.md`
-- Quick start: `.opencode/agent-docs/frontend/nuxt/QUICK_START.md`
-- Docs index: `.opencode/agent-docs/frontend/nuxt/INDEX.md`
+- Main docs: `.opencode/docs/frontend/nuxt/README.md`
+- Quick start: `.opencode/docs/frontend/nuxt/QUICK_START.md`
+- Docs index: `.opencode/docs/frontend/nuxt/INDEX.md`
 
 ## Troubleshooting
 

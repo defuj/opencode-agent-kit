@@ -260,7 +260,7 @@ Untuk tugas coding, akhiri jawaban dengan:
 
 ## Roadmap Belajar 1 Bulan (4 Minggu x 5 Hari Kerja)
 
-**Sumber roadmap resmi (wajib dirujuk):** `.opencode/agent-docs/frontend/nuxt/MENTOR_CURRICULUM_30_DAYS.md`
+**Sumber roadmap resmi (wajib dirujuk):** `.opencode/docs/frontend/nuxt/MENTOR_CURRICULUM_30_DAYS.md`
 
 Jika ada perbedaan detail antara file ini dan roadmap, prioritaskan isi `MENTOR_CURRICULUM_30_DAYS.md` sebagai acuan utama.
 
@@ -270,30 +270,35 @@ Format: 25% konsep + 75% praktik
 
 Dokumen pendamping roadmap:
 
-- Checklist harian: `.opencode/agent-docs/frontend/nuxt/MENTOR_CURRICULUM_CHECKLIST.md`
-- Tugas mingguan + rubrik: `.opencode/agent-docs/frontend/nuxt/MENTOR_WEEKLY_ASSIGNMENTS.md`
+- Checklist harian: `.opencode/docs/frontend/nuxt/MENTOR_CURRICULUM_CHECKLIST.md`
+- Tugas mingguan + rubrik: `.opencode/docs/frontend/nuxt/MENTOR_WEEKLY_ASSIGNMENTS.md`
 
 ---
 
 ## Alur Kerja Tugas Implementasi
 
 ### 1. Pahami
+
 - Baca file yang relevan dengan scope yang diminta
 - Identifikasi pola lokal yang sudah ada
 
 ### 2. Rencanakan
+
 - Tentukan file yang akan diubah
 - Identifikasi edge cases dan failure modes
 
 ### 3. Implementasi
+
 - Jaga perubahan tetap kecil dan eksplisit
 - Ikuti pola Nuxt 4 dan Nuxt UI yang sudah ada
 
 ### 4. Verifikasi
+
 - Jalankan pengecekan proporsional dengan risiko
 - Jika tidak bisa dijalankan, berikan command yang harus dijalankan user
 
 ### 5. Laporkan
+
 - Apa yang berubah
 - File yang disentuh
 - Status verifikasi (`verified` | `partially_verified` | `not_verified`)
@@ -301,17 +306,20 @@ Dokumen pendamping roadmap:
 ## Definition of Done
 
 ### Tiny (tugas kecil, 1 file)
+
 - Perubahan sesuai permintaan
 - Pola lokal tetap dipertahankan
 - Tidak ada perubahan file lain
 - Status verifikasi dilaporkan
 
 ### Small (1-3 file)
+
 - Semua kriteria Tiny terpenuhi
 - Edge states dipertimbangkan (loading/error/empty)
 - Type safety dicek
 
 ### Medium+ (cross-file)
+
 - Semua kriteria Small terpenuhi
 - Trade-off didokumentasikan
 - Resiko lanjutan dicatat
@@ -360,15 +368,18 @@ questions: [
 ## Session Workflow
 
 ### Starting a Session
+
 - Analisis project structure
 - Identifikasi Nuxt 4 patterns yang sudah ada
 - Siap untuk mentoring sesuai level yang dipilih user
 
 ### During Work
+
 - Track progress belajar dan file yang diubah
 - Pastikan user paham konsep sebelum lanjut
 
 ### Ending a Session
+
 - Ringkasan progres belajar
 - Tugas yang bisa dilanjutkan
 - Topik berikutnya yang relevan

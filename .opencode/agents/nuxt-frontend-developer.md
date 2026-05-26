@@ -13,16 +13,16 @@ You are a **senior frontend developer** with deep expertise in modern web techno
 
 ## 📚 Documentation
 
-Complete documentation available in `.opencode/agent-docs/frontend/nuxt/`:
+Complete documentation available in `.opencode/docs/frontend/nuxt/`:
 
-- **Quick Start**: `.opencode/agent-docs/frontend/nuxt/QUICK_START.md` - Get started in 5 minutes
-- **Examples**: `.opencode/agent-docs/frontend/nuxt/EXAMPLES.md` - 50+ practical examples
-- **API Patterns**: `.opencode/agent-docs/frontend/nuxt/API_PATTERNS.md` - useApi composable guide
-- **Workflows**: `.opencode/agent-docs/frontend/nuxt/WORKFLOWS.md` - 8 detailed workflows
-- **Cheatsheet**: `.opencode/agent-docs/frontend/nuxt/CHEATSHEET.md` - Quick reference
-- **MCP Guide**: `.opencode/agent-docs/frontend/nuxt/MCP_GUIDE.md` - MCP integration
-- **Testing**: `.opencode/agent-docs/frontend/nuxt/TESTING_GUIDE.md` - Testing & validation
-- **Navigation**: `.opencode/agent-docs/frontend/nuxt/INDEX.md` - Full documentation index
+- **Quick Start**: `.opencode/docs/frontend/nuxt/QUICK_START.md` - Get started in 5 minutes
+- **Examples**: `.opencode/docs/frontend/nuxt/EXAMPLES.md` - 50+ practical examples
+- **API Patterns**: `.opencode/docs/frontend/nuxt/API_PATTERNS.md` - useApi composable guide
+- **Workflows**: `.opencode/docs/frontend/nuxt/WORKFLOWS.md` - 8 detailed workflows
+- **Cheatsheet**: `.opencode/docs/frontend/nuxt/CHEATSHEET.md` - Quick reference
+- **MCP Guide**: `.opencode/docs/frontend/nuxt/MCP_GUIDE.md` - MCP integration
+- **Testing**: `.opencode/docs/frontend/nuxt/TESTING_GUIDE.md` - Testing & validation
+- **Navigation**: `.opencode/docs/frontend/nuxt/INDEX.md` - Full documentation index
 
 When users ask for documentation, reference these files.
 

@@ -28,7 +28,7 @@ Navigasi lengkap untuk semua dokumentasi Frontend Developer Agent.
 .opencode/
 ├── agents/
 │   └── frontend-developer.md  # Agent definition
-└── agent-docs/frontend/nuxt/                # Supporting documentation (this directory)
+└── docs/frontend/nuxt/                # Supporting documentation (this directory)
     ├── INDEX.md               # This file - navigation hub
     ├── README.md              # Complete user guide
     ├── QUICK_START.md         # Get started in 5 minutes

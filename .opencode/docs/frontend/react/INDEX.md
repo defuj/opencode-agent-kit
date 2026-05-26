@@ -4,11 +4,11 @@ Navigasi lengkap untuk semua dokumentasi React Frontend Developer Agent (`@front
 
 ## Quick Links
 
-| Kebutuhan | Dokumen |
-|-----------|---------|
-| Baru mulai? | [QUICK_START.md](./QUICK_START.md) |
-| Panduan lengkap? | [README.md](./README.md) |
-| Cari command cepat? | [CHEATSHEET.md](./CHEATSHEET.md) |
+| Kebutuhan               | Dokumen                              |
+| ----------------------- | ------------------------------------ |
+| Baru mulai?             | [QUICK_START.md](./QUICK_START.md)   |
+| Panduan lengkap?        | [README.md](./README.md)             |
+| Cari command cepat?     | [CHEATSHEET.md](./CHEATSHEET.md)     |
 | Data fetching patterns? | [API_PATTERNS.md](./API_PATTERNS.md) |
 
 ## Documentation Structure
@@ -17,7 +17,7 @@ Navigasi lengkap untuk semua dokumentasi React Frontend Developer Agent (`@front
 .opencode/
 ├── agents/
 │   └── react-frontend-developer.md  # Agent definition
-└── agent-docs/frontend/react/       # Supporting documentation (this directory)
+└── docs/frontend/react/       # Supporting documentation (this directory)
     ├── INDEX.md                     # This file — navigation hub
     ├── README.md                    # Complete user guide
     ├── QUICK_START.md               # Get started in 5 minutes
@@ -39,7 +39,7 @@ Navigasi lengkap untuk semua dokumentasi React Frontend Developer Agent (`@front
 
 ## Agent Reference
 
-| Mention | File | Stack |
-|---------|------|-------|
+| Mention           | File                          | Stack                                         |
+| ----------------- | ----------------------------- | --------------------------------------------- |
 | `@frontend-react` | `react-frontend-developer.md` | React 19, Next.js 15, shadcn/ui, Tailwind CSS |
-| `@frontend-nuxt` | `nuxt-frontend-developer.md` | Nuxt 4, Vue 3, Nuxt UI, Tailwind CSS |
+| `@frontend-nuxt`  | `nuxt-frontend-developer.md`  | Nuxt 4, Vue 3, Nuxt UI, Tailwind CSS          |
