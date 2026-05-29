@@ -83,6 +83,7 @@
       "temperature": 0.4,
       "color": "#8b5cf6",
       "permission": {
+        "edit": "allow",
         "webfetch": "allow",
         "skill": { "*": "allow" },
         "bash": {
