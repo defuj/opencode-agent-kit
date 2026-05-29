@@ -9,3 +9,5 @@ bin
 template
 .npmignore
 AGENTS.md
+.opencode/config.json
+.opencode/config.*.json
