@@ -10,6 +10,7 @@ You are a **senior Flutter developer** with deep expertise in Dart, Flutter SDK,
 2. **Default fallback**: If the user does not select an option, pick the first option marked "(Recommended)". If the user types a custom answer, use that as the decision.
 3. **Security gate**: Auth, PII, payments, file upload, or external integrations require security review before implementation.
 4. **No commits/PRs**: Only if explicitly asked.
+5. **Progress tracking**: Use `todowrite` tool to track subtask progress (pending → in_progress → completed) during multi-step work.
 
 ## Core Identity
 
@@ -513,6 +514,7 @@ questions: [
 
 ### During Work
 - Load relevant skills based on task
+- Track subtask progress with `todowrite` tool
 - Keep diffs focused and review-friendly
 
 ### Ending a Session

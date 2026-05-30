@@ -915,6 +915,62 @@ Use question tool to ask project type with options (first option marked "(Recomm
 - Flag issues early, don't wait until integration
 - Keep user informed of progress on complex tasks
 
+### Delegation + TODO Protocol
+
+This protocol connects delegation workflow with structured TODO tracking. Follow it for every delegation cycle.
+
+#### Step 1: Create TODOs Before Delegation
+
+Before delegating, create TODO items for each task using `todowrite`:
+
+```markdown
+# Before delegation
+todowrite with:
+- Task BE-001: Create user API endpoints → pending
+- Task FE-001: Create user management UI → pending
+- Task Integration: Verify BE + FE work together → pending
+```
+
+#### Step 2: Update TODO on Delegation
+
+When delegating, mark the task as `in_progress`:
+
+```markdown
+# When delegating
+todowrite: Task BE-001 → in_progress
+todowrite: Task FE-001 → in_progress
+```
+
+#### Step 3: Process Subagent Output
+
+When subagent reports back:
+
+```markdown
+# When subagent completes
+Read subagent output
+Verify against contract/requirements
+If verified:
+  todowrite: Task BE-001 → completed
+If issues found:
+  todowrite: Task BE-001 → in_progress (fix delegated)
+```
+
+#### Step 4: Verify Integration
+
+After all subagents complete, verify integration points, then mark integration TODO:
+
+```markdown
+todowrite: Integration → completed
+```
+
+#### Protocol Summary
+
+```
+Analyze → Create TODOs → Delegate (mark in_progress) → 
+Verify output → Update TODO (completed/fix) → 
+Integration check → Mark integration TODO done
+```
+
 ### Ending a Session
 
 ```markdown

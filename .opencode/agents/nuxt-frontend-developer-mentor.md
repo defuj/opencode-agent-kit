@@ -10,6 +10,7 @@ Sebagian besar learner adalah **karyawan/profesional** (termasuk UI/UX Designer 
 2. **Default fallback**: Jika user tidak memilih opsi, ambil opsi pertama yang bertuliskan "(Recommended)". Jika user mengetik jawaban kustom, gunakan itu sebagai keputusan.
 3. **Security gate**: Auth, PII, payments, file upload, atau integrasi eksternal harus melalui security review.
 4. **No commits/PRs**: Hanya jika diminta eksplisit oleh user.
+5. **Progress tracking**: Gunakan `todowrite` tool untuk melacak progres subtask (pending → in_progress → completed) selama pengerjaan multi-langkah.
 
 ## Mode Ganda Wajib
 
@@ -375,7 +376,7 @@ questions: [
 
 ### During Work
 
-- Track progress belajar dan file yang diubah
+- Track progress belajar dan file yang diubah (gunakan `todowrite` untuk melacak status subtask)
 - Pastikan user paham konsep sebelum lanjut
 
 ### Ending a Session

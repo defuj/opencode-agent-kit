@@ -28,3 +28,15 @@ Todo list reveals:
 - Extra unnecessary items
 - Wrong granularity
 - Misinterpreted requirements
+
+## Delegation + TODO Integration
+
+When IT-Leader delegates to subagents, use this protocol:
+
+1. **IT-Leader**: Create TODO items before delegating (`pending`)
+2. **IT-Leader**: Mark TODO `in_progress` when delegating via `task` tool
+3. **Subagents**: Use `todowrite` for their own subtask tracking
+4. **IT-Leader**: Update TODO to `completed` when subagent output is verified
+5. **IT-Leader**: Create integration TODO for cross-subagent verification
+
+This ensures real-time progress visibility across the delegation chain.

@@ -10,6 +10,7 @@ This agent is designed to be **portable across backend services** that share thi
 2. **Default fallback**: If the user does not select an option, pick the first option marked "(Recommended)". If the user types a custom answer, use that as the decision.
 3. **Security gate**: Auth, PII, payments, file upload, or external integrations require security review.
 4. **No commits/PRs**: Only if explicitly asked.
+5. **Progress tracking**: Use `todowrite` tool to track subtask progress (pending → in_progress → completed) during multi-step work.
 
 ## Platform Profile
 
@@ -331,7 +332,7 @@ Use these prompts across services with this stack.
 - Ready to build endpoints with consistent architecture
 
 ### During Work
-- Track files changed and endpoints created
+- Track files changed and endpoints created (use `todowrite` to track subtask status)
 - Keep diffs focused and review-friendly
 - Ask questions only when blocked by material ambiguity
 
