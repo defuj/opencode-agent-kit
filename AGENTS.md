@@ -1,6 +1,6 @@
-# Frontend Developer Nuxt — OpenCode Agent System
+# Agent Kit — OpenCode Agent System
 
-This is a meta-project containing OpenCode agent configurations, skills, rules, and commands for a multi-stack development agent system. It covers Nuxt/Vue frontend, React/Next.js frontend, Node.js backend, Laravel, CodeIgniter 3, mobile (Android + Flutter), and supporting roles (design, review, database, devops, SEO). There is no actual application source code — all content is configuration and documentation for AI agent orchestration.
+This is the Agent Kit: a portable meta-project containing OpenCode agent configurations, skills, rules, and commands for a multi-stack development agent system. It covers Nuxt/Vue frontend, React/Next.js frontend, Node.js backend, Laravel, CodeIgniter 3, mobile (Android + Flutter), and supporting roles (design, review, database, devops, SEO). There is no actual application source code — all content is configuration and documentation for AI agent orchestration.
 
 ## Project Structure
 
