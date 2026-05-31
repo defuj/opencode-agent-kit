@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/defuj/ai-agent-kit/main/assets/og-image-2.webp" alt="AI Agent KIT Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/defuj/ai-agent-kit/main/assets/og-image-3.webp" alt="AI Agent KIT Banner" width="100%">
 </p>
 
 # Agent Kit — Setup Guide
@@ -787,11 +787,11 @@ npx ai-agent-kit init --platform both
 
 ### What Gets Installed
 
-| File/Folder | Content |
-|---|---|
-| `.github/agents/` | 13 agent profiles (`.agent.md` files) |
-| `.github/hooks/` | Session hooks for audit logging |
-| `.github/workflows/` | Copilot setup steps workflow |
+| File/Folder          | Content                               |
+| -------------------- | ------------------------------------- |
+| `.github/agents/`    | 13 agent profiles (`.agent.md` files) |
+| `.github/hooks/`     | Session hooks for audit logging       |
+| `.github/workflows/` | Copilot setup steps workflow          |
 
 ### MCP Configuration
 
@@ -812,21 +812,21 @@ For Playwright MCP, add this to your repo **Settings > Copilot > Cloud agent > M
 
 ### Available Agents
 
-| Agent | Command |
-|---|---|
-| IT Leader | `@it-leader` |
-| Nuxt Frontend | `@frontend-nuxt` |
-| React Frontend | `@frontend-react` |
-| Node Backend | `@backend` |
-| Laravel Backend | `@laravel` |
-| CodeIgniter 3 | `@ci3` |
-| UI/UX Designer | `@designer` |
-| Code Reviewer | `@reviewer` |
-| Database Specialist | `@database` |
-| DevOps Engineer | `@devops` |
-| SEO Specialist | `@seo` |
-| Android Developer | `@android` |
-| Flutter Developer | `@flutter` |
+| Agent               | Command           |
+| ------------------- | ----------------- |
+| IT Leader           | `@it-leader`      |
+| Nuxt Frontend       | `@frontend-nuxt`  |
+| React Frontend      | `@frontend-react` |
+| Node Backend        | `@backend`        |
+| Laravel Backend     | `@laravel`        |
+| CodeIgniter 3       | `@ci3`            |
+| UI/UX Designer      | `@designer`       |
+| Code Reviewer       | `@reviewer`       |
+| Database Specialist | `@database`       |
+| DevOps Engineer     | `@devops`         |
+| SEO Specialist      | `@seo`            |
+| Android Developer   | `@android`        |
+| Flutter Developer   | `@flutter`        |
 
 ### Using Agents
 
