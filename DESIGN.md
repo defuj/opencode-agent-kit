@@ -1,4 +1,4 @@
-# Design System — Opencode Agent KIT Landing Page
+# Design System — AI Agent KIT Landing Page
 
 > Single-page landing for `index.html`. Tailwind CSS via CDN + custom CSS classes.
 
@@ -89,7 +89,7 @@
 
 | Context | Color | Example |
 |---------|-------|---------|
-| Hero title | `oklch(0.92 0.005 260)` | "Opencode Agent KIT" |
+| Hero title | `oklch(0.92 0.005 260)` | "AI Agent KIT" |
 | Section heading | `oklch(0.92 0.005 260)` | "13 Agents, One Mission" |
 | Body paragraph | `oklch(0.55 0.01 260)` | Description text |
 | Muted description | `text-white/25` | Section subtitles |
