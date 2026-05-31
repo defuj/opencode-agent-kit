@@ -2,21 +2,23 @@
   <img src="https://raw.githubusercontent.com/defuj/software-developer-team-agent/main/assets/og-image-2.webp" alt="Opencode Agent KIT Banner" width="100%">
 </p>
 
-# Opencode Agent KIT (Software Developer) — Setup Guide
+# Agent Kit — Setup Guide
 
-Complete setup guide for the **Opencode Agent KIT** — a portable multi-stack AI agent system for OpenCode. Includes 13 specialized agents, 62 skill playbooks, 36 slash commands, and 6 MCP servers.
+Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 13 specialized agents, 62 skill playbooks, 36 slash commands, and 6 MCP servers.
+
+```bash
+npx opencode-agent-kit init    # One command. Full team.
+```
 
 ---
 
 ## Quick Install
 
-**One command** — installs into any project:
-
 ```bash
 npx opencode-agent-kit init
 ```
 
-This copies the full agent configuration, skills, commands, and rules into your project.
+This copies the full agent configuration, skills, commands, and rules into your project. Smart merging preserves your existing setup.
 
 Global install:
 
@@ -29,6 +31,8 @@ opencode-agent-kit init
 ---
 
 ## Overview
+
+Think of Agent Kit as an AI development team you install into any OpenCode project. An **IT Leader** orchestrates 12 specialized subagents — each one an expert in their stack. You describe what to build; the team handles the rest.
 
 This repository contains a complete OpenCode agent configuration with **Leader → Subagent** architecture for software development teams.
 
@@ -256,12 +260,12 @@ To **customize** a built-in agent, create an agent with the **same name** in `.o
 
 ### How It Works
 
-1. User gives requirements to the **IT Leader** (primary agent, auto-activated)
-2. IT Leader analyzes, designs architecture, and breaks into tasks
-3. IT Leader delegates tasks to the appropriate subagents
-4. IT Leader integrates results and reports to the user
+1. You describe what you need — a feature, a bug fix, a full app
+2. The **IT Leader** analyzes requirements, designs architecture, and breaks the work into tasks
+3. Tasks are delegated to the right subagents — frontend, backend, mobile, designer, reviewer
+4. The IT Leader integrates results and reports back with verification status
 
-For small tasks, mention subagents directly:
+For small tasks, mention subagents directly with `@mention`:
 
 ```text
 @frontend-nuxt Add a UButton "Save" in ProfileHeader.vue.
