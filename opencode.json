@@ -72,8 +72,15 @@
         "Authorization": "Bearer ${SONARQUBE_TOKEN}",
         "SONARQUBE_TOOLSETS": "analysis,issues,security-hotspots,quality-gates,rules,duplications,measures,dependency-risks,coverage,sources,languages,portfolios,system,webhooks"
       }
+    },
+    "agentmemory": {
+      "type": "local",
+      "command": ["bash", ".opencode/hooks/agentmemory-start.sh"],
+      "enabled": true,
+      "description": "Persistent cross-session memory with 53 tools (save, recall, smart search, sessions, file history, lessons)"
     }
   },
+  "plugin": [".opencode/plugins/agentmemory-capture.ts"],
   "agent": {
     "leader": {
       "description": "IT Leader & Technical Project Manager — analyzes requirements, designs architecture, decomposes tasks, delegates to subagents, and unifies outputs",
@@ -98,6 +105,7 @@
         "figma_*": "ask",
         "playwright_*": "allow",
         "postman_*": "allow",
+        "agentmemory_*": "allow",
         "task": { "*": "allow" }
       }
     },
@@ -121,7 +129,8 @@
         "nuxt_*": "allow",
         "nuxt-ui_*": "allow",
         "figma_*": "ask",
-        "playwright_*": "allow"
+        "playwright_*": "allow",
+        "agentmemory_*": "allow"
       }
     },
     "frontend-react": {
@@ -142,7 +151,8 @@
           "npx playwright*": "allow"
         },
         "figma_*": "ask",
-        "playwright_*": "allow"
+        "playwright_*": "allow",
+        "agentmemory_*": "allow"
       }
     },
     "backend": {
@@ -161,7 +171,8 @@
           "bun *": "allow",
           "yarn *": "allow"
         },
-        "postman_*": "allow"
+        "postman_*": "allow",
+        "agentmemory_*": "allow"
       }
     },
     "ci3": {
@@ -179,7 +190,8 @@
           "git diff": "allow",
           "git log*": "allow"
         },
-        "postman_*": "allow"
+        "postman_*": "allow",
+        "agentmemory_*": "allow"
       }
     },
     "laravel": {
@@ -197,7 +209,8 @@
           "git diff": "allow",
           "git log*": "allow"
         },
-        "postman_*": "allow"
+        "postman_*": "allow",
+        "agentmemory_*": "allow"
       }
     },
     "designer": {
@@ -217,7 +230,8 @@
         },
         "stitch_*": "allow",
         "figma_*": "ask",
-        "nuxt-ui_*": "allow"
+        "nuxt-ui_*": "allow",
+        "agentmemory_*": "allow"
       }
     },
     "reviewer": {
@@ -237,7 +251,8 @@
           "yarn *": "allow",
           "npx playwright*": "allow"
         },
-        "playwright_*": "allow"
+        "playwright_*": "allow",
+        "agentmemory_*": "allow"
       }
     },
     "database": {
@@ -255,7 +270,8 @@
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow"
-        }
+        },
+        "agentmemory_*": "allow"
       }
     },
     "devops": {
@@ -274,7 +290,8 @@
           "bun *": "allow",
           "yarn *": "allow",
           "docker *": "allow"
-        }
+        },
+        "agentmemory_*": "allow"
       }
     },
     "seo": {
@@ -292,7 +309,8 @@
           "git diff": "allow",
           "git log*": "allow"
         },
-        "nuxt_*": "allow"
+        "nuxt_*": "allow",
+        "agentmemory_*": "allow"
       }
     },
     "android": {
@@ -310,7 +328,8 @@
           "gradle *": "allow"
         },
         "figma_*": "ask",
-        "playwright_*": "allow"
+        "playwright_*": "allow",
+        "agentmemory_*": "allow"
       }
     },
     "flutter": {
@@ -328,7 +347,8 @@
           "dart *": "allow"
         },
         "figma_*": "ask",
-        "playwright_*": "allow"
+        "playwright_*": "allow",
+        "agentmemory_*": "allow"
       }
     }
   }

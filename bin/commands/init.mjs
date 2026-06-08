@@ -222,6 +222,28 @@ export async function init(options) {
     }
   }
 
+  // 7.6 Install agentmemory globally
+  if (!skipInstall) {
+    console.log(`  🧠 Installing agentmemory (persistent memory)...`);
+    try {
+      execSync(`agentmemory --version`, { stdio: "pipe" });
+      console.log(`     ✓ agentmemory already installed`);
+    } catch {
+      try {
+        execSync(`npm install -g @agentmemory/agentmemory`, {
+          stdio: "pipe",
+          timeout: 60000,
+        });
+        console.log(`     ✓ agentmemory installed globally`);
+      } catch (err) {
+        console.error(`  ⚠  agentmemory global install failed: ${err.message}`);
+        console.error(
+          `    Run "npm install -g @agentmemory/agentmemory" manually`,
+        );
+      }
+    }
+  }
+
   // 8. Update .gitignore
   const gitignorePath = join(targetDir, ".gitignore");
   const gitignoreEntries = [
@@ -268,8 +290,12 @@ export async function init(options) {
   console.log(`       • .opencode/commands/  — 35+ slash commands`);
   console.log(`       • .opencode/rules/     — Scoped coding rules`);
   console.log(`       • .opencode/contexts/  — Dev/review/research contexts`);
-  console.log(`       • .opencode/docs/— Agent documentation`);
+  console.log(`       • .opencode/docs/     — Agent documentation`);
+  console.log(`       • .opencode/plugins/  — agentmemory capture plugin (22 hooks)`);
+  console.log(`       • .opencode/hooks/    — agentmemory auto-start wrapper`);
+  console.log(`       • agentmemory (global) — Persistent cross-session memory`);
   console.log(`\n     Next steps:`);
   console.log(`       cd ${targetDir}`);
-  console.log(`       opencode\n`);
+  console.log(`       opencode              # agentmemory auto-starts on first use`);
+  console.log(`       # Viewer: http://localhost:3113`);
 }

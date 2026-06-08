@@ -4,7 +4,7 @@
 
 # Agent Kit — Setup Guide
 
-Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 13 specialized agents, 62 skill playbooks, 37 slash commands, and 7 MCP servers.
+Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 13 specialized agents, 63 skill playbooks, 39 slash commands, and 8 MCP servers.
 
 ```bash
 npx opencode-agent-kit init    # One command. Full team.
@@ -191,6 +191,10 @@ After installing `.opencode/`, the following slash commands are available:
 
 # Quality
 /sonarqube-scan [options]             # SonarQube quality scan (issues, security, coverage)
+
+# Memory
+/recall [query]                       # Search past observations and lessons
+/remember [text]                      # Save insight/decision to persistent memory
 ```
 
 ## Using the `.opencode/` Folder
@@ -340,6 +344,7 @@ Skills are stored in `.opencode/skills/` (local in the repo) — no need to sear
 | SEO Specialist             | frontend-patterns, web-design-guidelines, nuxt-ui                                                                                                                                                                                              |
 | **Android Developer**      | coding-standards, android-jetpack-compose, edge-to-edge, navigation-3, firebase-basics, play-billing, camera1-to-camerax, r8-analyzer, migrate-xml-views-to-jetpack-compose, gpc-setup, gpc-release-flow, gpc-preflight, gpc-vitals-monitoring |
 | **Flutter Developer**      | coding-standards, flutter (patterns), 10 Flutter skills, 9 Dart skills, firebase-basics                                                                                                                                                        |
+| **All Agents**             | agentmemory (persistent cross-session memory, 53 MCP tools)                                                                                                                                                                                   |
 
 ### Skills Not Required for Core Stack
 
@@ -363,6 +368,7 @@ These can be kept if your team uses multi-stack, but are optional.
 - `verification-loop` — Agent verification cycle
 - `nutrient-document-processing` — Document processing API
 - `project-guidelines-example` — Project guidelines example
+- `agentmemory` — Persistent cross-session memory with 53 MCP tools
 
 ## Skill Locations
 
@@ -431,14 +437,24 @@ From `.opencode/config.json`, agents use the following MCP servers:
 | `nuxt-ui`    | remote | enabled  | Nuxt UI component docs & examples                    |
 | `playwright` | stdio  | enabled  | Browser automation & E2E testing                     |
 | `postman`    | remote | enabled  | Postman API management (collections, requests, docs) |
-| `figma`      | stdio  | disabled | Figma design file access (optional)                  |
+| `figma`      | remote | disabled | Figma design file access (optional)                  |
 | `stitch`     | remote | disabled | Google Stitch AI design generation (optional)        |
+| `agentmemory`| local  | enabled  | Persistent cross-session memory (53 memory tools)    |
 
 To enable Figma MCP:
 
 ```bash
 export FIGMA_ACCESS_TOKEN="your-token"
 ```
+
+To enable agentmemory:
+
+```bash
+npm install -g @agentmemory/agentmemory
+agentmemory                    # Start the memory server on :3111
+```
+
+Open `http://localhost:3113` for the real-time memory viewer.
 
 To enable Google Stitch MCP:
 

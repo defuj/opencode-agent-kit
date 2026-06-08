@@ -380,6 +380,55 @@ flutter analyze                          # Static analysis
 
 ---
 
+## Agentmemory: Persistent Cross-Session Memory
+
+agentmemory provides persistent memory for all agents. It captures session history, saves decisions/insights, and injects relevant context from past sessions into the current session.
+
+### Prerequisites
+
+```bash
+npm install -g @agentmemory/agentmemory   # Install globally
+agentmemory                                # Start server on :3111
+```
+
+### MCP Tools (53 tools)
+
+All agents have access to agentmemory MCP tools prefixed with `agentmemory_memory_`:
+
+| Tool | Purpose |
+|------|---------|
+| `memory_save` | Save insights, decisions, facts to long-term memory |
+| `memory_recall` | Search past observations by keywords |
+| `memory_smart_search` | Hybrid semantic+keyword search for conceptual queries |
+| `memory_sessions` | List recent sessions with status and observation counts |
+| `memory_file_history` | Get past observations about specific files |
+| `memory_lesson_save` | Save a lesson learned with confidence scoring |
+| `memory_lesson_recall` | Search lessons by query, sorted by confidence |
+| `memory_governance_delete` | Delete specific memories (requires confirmation) |
+| `memory_patterns` | Detect recurring patterns across sessions |
+| `memory_consolidate` | Run 4-tier memory consolidation pipeline |
+
+### Available Commands
+
+- `/recall [query]` — Search past observations and lessons
+- `/remember [text]` — Explicitly save an insight to long-term memory
+
+### Auto-Capture Plugin
+
+The `agentmemory-capture.ts` plugin (registered in `opencode.json`) captures 22 lifecycle events automatically:
+- Session lifecycle: created, idle, compacted, updated, deleted, error
+- Messages & prompts: user messages, assistant responses, removed messages
+- Parts & steps: subagent starts, tool calls, reasoning, step-finish, patches, compaction events
+- File enrichment: auto-injects file-specific context into system prompt
+- Permissions: captures permission prompts and replies
+- Tasks & commands: captures todo changes and command execution
+
+### Skills
+
+The `agentmemory` skill (`.opencode/skills/agentmemory/SKILL.md`) teaches agents when and how to use the memory tools effectively.
+
+---
+
 ## opencode-agent-kit Version Check
 
 If `.opencode/.kit-version` exists, your agent toolkit has a recorded installed version.
