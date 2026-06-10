@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.1] - 2025-06-09
+
+### Added
+
+- **74 skill playbooks** (was 61) — 13 new agent-specific skills + agentmemory linked to all 14 agents
+- **Skill-to-agent mapping** — 127 explicit skill references across all agent prompts
+- **Cross-stack optional skills** — 15 skills available on-demand for django, golang, python, springboot, java stacks
+
+### Changed
+
+- **Global install** — multi-OS instructions (macOS/Linux, Windows PowerShell, CMD)
+- **Path resolution** — 3-tier fallback for template discovery (npx, global, local dev)
+- **SonarQube agent** — registered in config, MCP enabled, permissions added
+
+---
+
 ## [1.1.0] - 2025-06-09
 
 ### Added
