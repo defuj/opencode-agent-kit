@@ -1,878 +1,2569 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agent Kit — 31 Specialized AI Agents for OpenCode</title>
-  <meta name="description" content="A portable multi-stack AI agent system for OpenCode. 31 specialized agents, 201 skill playbooks, 46 CLI commands, 8 MCP servers, and persistent agentmemory." />
-  <meta name="keywords" content="opencode-agent-kit, opencode, AI agents, software development, agentmemory, nuxt, react, flutter, android, laravel, devops" />
-  <meta name="author" content="defuj" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://github.com/defuj/opencode-agent-kit" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0e14'/><text x='16' y='22' text-anchor='middle' fill='%23d4a04a' font-size='16' font-weight='800' font-family='system-ui'>K</text></svg>" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Kit — 31 Specialized AI Agents for OpenCode</title>
+    <meta
+      name="description"
+      content="A portable multi-stack AI agent system for OpenCode. 31 specialized agents, 201 skill playbooks, 46 CLI commands, 8 MCP servers, and persistent agentmemory."
+    />
+    <meta
+      name="keywords"
+      content="opencode-agent-kit, opencode, AI agents, software development, agentmemory, nuxt, react, flutter, android, laravel, devops"
+    />
+    <meta name="author" content="defuj" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://github.com/defuj/opencode-agent-kit" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0e14'/><text x='16' y='22' text-anchor='middle' fill='%23d4a04a' font-size='16' font-weight='800' font-family='system-ui'>K</text></svg>"
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Agent Kit — 31 Specialized AI Agents for OpenCode" />
-  <meta property="og:description" content="31 agents, 201 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/defuj/opencode-agent-kit/main/assets/og-image-2.webp" />
-  <meta property="og:url" content="https://github.com/defuj/opencode-agent-kit" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Agent Kit" />
-  <meta property="og:locale" content="en_US" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Agent Kit — 31 Specialized AI Agents for OpenCode" />
+    <meta
+      property="og:description"
+      content="31 agents, 201 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team."
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/defuj/opencode-agent-kit/main/assets/og-image-2.webp"
+    />
+    <meta property="og:url" content="https://github.com/defuj/opencode-agent-kit" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Agent Kit" />
+    <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Agent Kit — 31 Specialized AI Agents for OpenCode" />
-  <meta name="twitter:description" content="31 agents, 201 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team." />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agent Kit — 31 Specialized AI Agents for OpenCode" />
+    <meta
+      name="twitter:description"
+      content="31 agents, 201 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team."
+    />
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">{
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"Agent Kit — opencode-agent-kit",
-    "description":"A portable multi-stack AI agent system for OpenCode with 31 specialized agents, 201 skill playbooks, 46 CLI commands, and persistent cross-session memory.",
-    "applicationCategory":"DeveloperApplication",
-    "operatingSystem":"macOS, Linux, Windows",
-    "author":{"@type":"Person","name":"defuj"},
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
-  }</script>
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Agent Kit — opencode-agent-kit",
+        "description": "A portable multi-stack AI agent system for OpenCode with 31 specialized agents, 201 skill playbooks, 46 CLI commands, and persistent cross-session memory.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Linux, Windows",
+        "author": { "@type": "Person", "name": "defuj" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body {
-      font-family:'Inter', system-ui, sans-serif;
-      background:#06060a;
-      color:#8a8aa0;
-      -webkit-font-smoothing:antialiased;
-      overflow-x:hidden;
-    }
-    ::selection { background:rgba(212,160,74,0.25); color:#f0f0f8; }
-    h1,h2,h3,h4 { font-family:'Inter', system-ui, sans-serif; color:#e8e8f0; }
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    /* ── Ambient Glows ── */
-    .ambient {
-      position:fixed; pointer-events:none; border-radius:50%; z-index:0;
-    }
-    .ambient-gold {
-      width:600px; height:600px; top:-200px; right:-100px;
-      background:radial-gradient(circle, rgba(212,160,74,0.04), transparent 70%);
-    }
-    .ambient-violet {
-      width:500px; height:500px; bottom:10%; left:-150px;
-      background:radial-gradient(circle, rgba(139,108,246,0.03), transparent 70%);
-    }
-    .ambient-rose {
-      width:400px; height:400px; top:50%; right:5%;
-      background:radial-gradient(circle, rgba(224,96,112,0.015), transparent 70%);
-    }
+      /* ── Theme Variables ── */
+      :root {
+        --bg-primary: #06060a;
+        --bg-secondary: #0e0e16;
+        --bg-tertiary: rgba(14, 14, 22, 0.6);
+        --text-primary: #e8e8f0;
+        --text-secondary: #8a8aa0;
+        --text-muted: #6a6a80;
+        --text-bright: #b0b0c8;
+        --text-white: #f0f0f8;
+        --border-subtle: rgba(255, 255, 255, 0.04);
+        --border-hover: rgba(255, 255, 255, 0.08);
+        --nav-bg: rgba(6, 6, 10, 0.85);
+        --nav-bdr: rgba(255, 255, 255, 0.03);
+        --terminal-bg: #06060a;
+        --marquee-bg: rgba(255, 255, 255, 0.005);
+        --marquee-bdr: rgba(255, 255, 255, 0.02);
+        --card-gold-from: rgba(212, 160, 74, 0.04);
+        --card-gold-bdr: rgba(212, 160, 74, 0.15);
+        --card-hover-bdr: rgba(212, 160, 74, 0.25);
+        --footer-divider: rgba(255, 255, 255, 0.03);
+        --selection-bg: rgba(212, 160, 74, 0.25);
+        --gold: #d4a04a;
+        --gold-light: #e8b85e;
+        --violet: #8b6cf6;
+        --violet-light: #a78bfa;
+        --memory: #4ac8b8;
+        --memory-light: #6ee7b7;
+      }
+      [data-theme='light'] {
+        --bg-primary: #f6f5f0;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: rgba(255, 255, 255, 0.85);
+        --text-primary: #1a1a2e;
+        --text-secondary: #6b6b80;
+        --text-muted: #8888a0;
+        --text-bright: #4a4a60;
+        --text-white: #1a1a2e;
+        --border-subtle: rgba(0, 0, 0, 0.06);
+        --border-hover: rgba(0, 0, 0, 0.1);
+        --nav-bg: rgba(255, 255, 255, 0.85);
+        --nav-bdr: rgba(0, 0, 0, 0.04);
+        --terminal-bg: #f0efe8;
+        --marquee-bg: rgba(0, 0, 0, 0.015);
+        --marquee-bdr: rgba(0, 0, 0, 0.03);
+        --card-gold-from: rgba(212, 160, 74, 0.06);
+        --card-gold-bdr: rgba(212, 160, 74, 0.2);
+        --card-hover-bdr: rgba(212, 160, 74, 0.35);
+        --footer-divider: rgba(0, 0, 0, 0.04);
+        --selection-bg: rgba(212, 160, 74, 0.2);
+      }
 
-    /* ── Animations ── */
-    .fade-up {
-      opacity:0; transform:translateY(30px);
-      transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
-    }
-    .fade-up.visible { opacity:1; transform:translateY(0); }
-    .fade-up-d1 { transition-delay:0.1s; }
-    .fade-up-d2 { transition-delay:0.2s; }
-    .fade-up-d3 { transition-delay:0.3s; }
-    .fade-up-d4 { transition-delay:0.4s; }
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-secondary);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      ::selection {
+        background: var(--selection-bg);
+        color: var(--text-primary);
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: 'Inter', system-ui, sans-serif;
+        color: var(--text-primary);
+      }
 
-    @keyframes float {
-      0%,100% { transform:translateY(0); }
-      50% { transform:translateY(-16px); }
-    }
-    .float-slow { animation:float 7s ease-in-out infinite; }
-    .float-med { animation:float 5s ease-in-out infinite 1s; }
+      /* ── Ambient Glows ── */
+      .ambient {
+        position: fixed;
+        pointer-events: none;
+        border-radius: 50%;
+        z-index: 0;
+      }
+      .ambient-gold {
+        width: 600px;
+        height: 600px;
+        top: -200px;
+        right: -100px;
+        background: radial-gradient(circle, rgba(212, 160, 74, 0.04), transparent 70%);
+      }
+      .ambient-violet {
+        width: 500px;
+        height: 500px;
+        bottom: 10%;
+        left: -150px;
+        background: radial-gradient(circle, rgba(139, 108, 246, 0.03), transparent 70%);
+      }
+      .ambient-rose {
+        width: 400px;
+        height: 400px;
+        top: 50%;
+        right: 5%;
+        background: radial-gradient(circle, rgba(224, 96, 112, 0.015), transparent 70%);
+      }
 
-    @keyframes pulse-dot {
-      0%,100% { opacity:0.4; transform:scale(1); }
-      50% { opacity:1; transform:scale(1.3); }
-    }
-    .pulse-dot { animation:pulse-dot 2.5s ease-in-out infinite; }
+      /* ── Animations ── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fade-up-d1 {
+        transition-delay: 0.1s;
+      }
+      .fade-up-d2 {
+        transition-delay: 0.2s;
+      }
+      .fade-up-d3 {
+        transition-delay: 0.3s;
+      }
+      .fade-up-d4 {
+        transition-delay: 0.4s;
+      }
 
-    @keyframes countPop {
-      0% { transform:scale(1); }
-      50% { transform:scale(1.08); }
-      100% { transform:scale(1); }
-    }
-    .count-pop { animation:countPop 0.4s cubic-bezier(0.16,1,0.3,1); }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-16px);
+        }
+      }
+      .float-slow {
+        animation: float 7s ease-in-out infinite;
+      }
+      .float-med {
+        animation: float 5s ease-in-out infinite 1s;
+      }
 
-    /* ── Card ── */
-    .card {
-      background:rgba(14,14,22,0.6);
-      border:1px solid rgba(255,255,255,0.04);
-      border-radius:16px;
-      backdrop-filter:blur(8px);
-      transition:border-color 0.3s, transform 0.35s cubic-bezier(0.16,1,0.3,1);
-    }
-    .card:hover {
-      border-color:rgba(255,255,255,0.08);
-      transform:translateY(-2px);
-    }
-    .card-gold {
-      border-color:rgba(212,160,74,0.15);
-      background:linear-gradient(135deg, rgba(212,160,74,0.04), rgba(14,14,22,0.6));
-    }
-    .card-gold:hover { border-color:rgba(212,160,74,0.25); }
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.3);
+        }
+      }
+      .pulse-dot {
+        animation: pulse-dot 2.5s ease-in-out infinite;
+      }
 
-    /* ── Gradient Text ── */
-    .gradient-gold {
-      background:linear-gradient(135deg, #d4a04a, #e8b85e, #d4a04a);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-    }
-    .gradient-violet {
-      background:linear-gradient(135deg, #8b6cf6, #a78bfa);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-    }
-    .gradient-memory {
-      background:linear-gradient(135deg, #4ac8b8, #6ee7b7);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-    }
+      @keyframes countPop {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.08);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .count-pop {
+        animation: countPop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-    /* ── Section Divider ── */
-    .divider {
-      height:1px;
-      background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
-    }
+      /* ── Card ── */
+      .card {
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-subtle);
+        border-radius: 16px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        transition:
+          border-color 0.3s,
+          transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .card:hover {
+        border-color: var(--border-hover);
+        transform: translateY(-2px);
+      }
+      .card-gold {
+        border-color: var(--card-gold-bdr);
+        background: linear-gradient(135deg, var(--card-gold-from), var(--bg-tertiary));
+      }
+      .card-gold:hover {
+        border-color: var(--card-hover-bdr);
+      }
 
-    /* ── Agent Dot Grid ── */
-    .agent-dot {
-      width:32px; height:32px;
-      border-radius:8px;
-      display:inline-flex; align-items:center; justify-content:center;
-      font-size:9px; font-weight:700; font-family:'JetBrains Mono', monospace;
-      transition:transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
-      cursor:default; position:relative;
-    }
-    .agent-dot:hover {
-      transform:scale(1.35);
-      z-index:10;
-    }
-    .agent-dot[data-tip]:hover::after {
-      content:attr(data-tip);
-      position:absolute; bottom:calc(100% + 6px);
-      left:50%; transform:translateX(-50%);
-      background:#14141c; color:#d0d0e0;
-      padding:4px 10px; border-radius:6px;
-      font-size:10px; font-weight:500; white-space:nowrap;
-      border:1px solid rgba(255,255,255,0.06);
-      z-index:20;
-    }
+      /* ── Gradient Text ── */
+      .gradient-gold {
+        background: linear-gradient(135deg, #d4a04a, #e8b85e, #d4a04a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .gradient-violet {
+        background: linear-gradient(135deg, #8b6cf6, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .gradient-memory {
+        background: linear-gradient(135deg, #4ac8b8, #6ee7b7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
 
-    /* ── Timeline ── */
-    .timeline-line {
-      position:absolute; left:19px; top:40px; bottom:0;
-      width:2px;
-      background:linear-gradient(180deg, rgba(212,160,74,0.3), rgba(212,160,74,0.05));
-    }
+      /* ── Section Divider ── */
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          color-mix(in srgb, var(--text-muted) 20%, transparent) 50%,
+          transparent 100%
+        );
+      }
 
-    /* ── Terminal ── */
-    .terminal {
-      background:#06060a; border:1px solid rgba(255,255,255,0.04);
-      border-radius:12px; overflow:hidden;
-    }
-    .terminal-dot { width:8px; height:8px; border-radius:50%; }
+      /* ── Theme-aware tag chips ── */
+      .tag-chip {
+        background: color-mix(in srgb, var(--text-muted) 12%, transparent);
+        color: var(--text-secondary);
+      }
 
-    /* ── Memory Feature ── */
-    .memory-grid-item {
-      background:rgba(74,200,184,0.03);
-      border:1px solid rgba(74,200,184,0.08);
-      border-radius:12px; padding:16px;
-      transition:border-color 0.3s, background 0.3s;
-    }
-    .memory-grid-item:hover {
-      border-color:rgba(74,200,184,0.18);
-      background:rgba(74,200,184,0.05);
-    }
+      /* ── Agent Dot Grid ── */
+      .agent-dot {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 9px;
+        font-weight: 700;
+        font-family: 'JetBrains Mono', monospace;
+        transition:
+          transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.25s;
+        cursor: default;
+        position: relative;
+      }
+      .agent-dot:hover {
+        transform: scale(1.35);
+        z-index: 10;
+      }
+      .agent-dot[data-tip]:hover::after {
+        content: attr(data-tip);
+        position: absolute;
+        bottom: calc(100% + 6px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--bg-secondary);
+        color: var(--text-bright);
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 10px;
+        font-weight: 500;
+        white-space: nowrap;
+        border: 1px solid var(--border-subtle);
+        z-index: 20;
+      }
 
-    /* ── Marquee ── */
-    @keyframes marquee {
-      0% { transform:translateX(0); }
-      100% { transform:translateX(-50%); }
-    }
-    .marquee-track { animation:marquee 40s linear infinite; }
-    .marquee-track:hover { animation-play-state:paused; }
+      /* ── Timeline ── */
+      .timeline-line {
+        position: absolute;
+        left: 19px;
+        top: 40px;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, rgba(212, 160, 74, 0.3), rgba(212, 160, 74, 0.05));
+      }
 
-    /* ── Scrollbar ── */
-    ::-webkit-scrollbar { width:5px; }
-    ::-webkit-scrollbar-track { background:transparent; }
-    ::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.06); border-radius:3px; }
+      /* ── Terminal ── */
+      .terminal {
+        background: var(--terminal-bg);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .terminal-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
 
-    /* ── Responsive ── */
-    @media (max-width:639px) {
-      .agent-dot { width:28px; height:28px; font-size:8px; border-radius:6px; }
-    }
-  </style>
-</head>
-<body>
+      /* ── Memory Feature ── */
+      .memory-grid-item {
+        background: color-mix(in srgb, var(--memory) 6%, var(--bg-primary));
+        border: 1px solid color-mix(in srgb, var(--memory) 15%, var(--border-subtle));
+        border-radius: 12px;
+        padding: 16px;
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .memory-grid-item:hover {
+        border-color: color-mix(in srgb, var(--memory) 25%, var(--border-hover));
+        background: color-mix(in srgb, var(--memory) 10%, var(--bg-primary));
+      }
 
-<div class="ambient ambient-gold"></div>
-<div class="ambient ambient-violet"></div>
-<div class="ambient ambient-rose"></div>
+      /* ── Marquee ── */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .marquee-track {
+        animation: marquee 40s linear infinite;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
 
-<!-- ════════════════ NAV ════════════════ -->
-<nav class="fixed top-0 left-0 right-0 z-50" style="background:rgba(6,6,10,0.85); backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,0.03);">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-2.5">
-      <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(212,160,74,0.1);">
-        <span class="text-xs font-bold font-mono" style="color:#d4a04a;">K</span>
-      </div>
-      <span class="font-semibold text-sm tracking-tight" style="color:#e8e8f0;">Agent Kit</span>
-    </a>
-    <div class="hidden sm:flex items-center gap-6">
-      <a href="#agents" class="text-xs font-medium uppercase tracking-wider" style="color:#6a6a80; transition:color 0.2s;" onmouseover="this.style.color='#d4a04a'" onmouseout="this.style.color='#6a6a80'">Agents</a>
-      <a href="#memory" class="text-xs font-medium uppercase tracking-wider" style="color:#6a6a80; transition:color 0.2s;" onmouseover="this.style.color='#4ac8b8'" onmouseout="this.style.color='#6a6a80'">Memory</a>
-      <a href="#capabilities" class="text-xs font-medium uppercase tracking-wider" style="color:#6a6a80; transition:color 0.2s;" onmouseover="this.style.color='#d4a04a'" onmouseout="this.style.color='#6a6a80'">Capabilities</a>
-      <a href="#install" class="text-xs font-medium uppercase tracking-wider" style="color:#6a6a80; transition:color 0.2s;" onmouseover="this.style.color='#d4a04a'" onmouseout="this.style.color='#6a6a80'">Install</a>
-    </div>
-    <div class="flex items-center gap-1.5">
-      <a href="https://github.com/defuj/opencode-agent-kit" target="_blank" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium" style="background:rgba(255,255,255,0.03); color:#8a8aa0; border:1px solid rgba(255,255,255,0.04); transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(212,160,74,0.2)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.04)'">
-        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        <span>GitHub</span>
-      </a>
-      <a href="https://github.com/defuj/opencode-agent-kit" target="_blank" class="sm:hidden p-2 rounded-lg" style="color:#6a6a80;" aria-label="GitHub">
-        <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      </a>
-      <button id="mobile-btn" class="sm:hidden p-2 rounded-lg" style="color:#6a6a80;" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-  </div>
-  <div id="mobile-menu" class="hidden sm:hidden px-4 pb-4 space-y-2">
-    <a href="#agents" class="block px-3 py-2 rounded-lg text-xs" style="color:#8a8aa0;">Agents</a>
-    <a href="#memory" class="block px-3 py-2 rounded-lg text-xs" style="color:#8a8aa0;">Memory</a>
-    <a href="#capabilities" class="block px-3 py-2 rounded-lg text-xs" style="color:#8a8aa0;">Capabilities</a>
-    <a href="#install" class="block px-3 py-2 rounded-lg text-xs" style="color:#8a8aa0;">Install</a>
-    <a href="https://github.com/defuj/opencode-agent-kit" target="_blank" class="block px-3 py-2 rounded-lg text-xs" style="color:#d4a04a;">GitHub →</a>
-  </div>
-</nav>
+      /* ── Scrollbar ── */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: color-mix(in srgb, var(--text-muted) 30%, transparent);
+        border-radius: 3px;
+      }
 
-<!-- ════════════════ HERO ════════════════ -->
-<section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full relative z-10">
+      /* ── Theme Toggle ── */
+      .theme-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border-subtle);
+        background: var(--bg-secondary);
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all 0.25s;
+      }
+      .theme-btn:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        background: color-mix(in srgb, var(--gold) 8%, var(--bg-secondary));
+      }
 
-    <div class="text-center max-w-4xl mx-auto">
-      <!-- Badge -->
-      <div class="fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-8" style="background:rgba(139,108,246,0.06); border:1px solid rgba(139,108,246,0.1); color:#8b6cf6;">
-        <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background:#8b6cf6;"></span>
-        v1.2.0 &mdash; Open Source &mdash; 31 Agents
-      </div>
+      /* ── Light mode ambient adjustments ── */
+      [data-theme='light'] .ambient-gold {
+        background: radial-gradient(circle, rgba(212, 160, 74, 0.06), transparent 70%);
+      }
+      [data-theme='light'] .ambient-violet {
+        background: radial-gradient(circle, rgba(139, 108, 246, 0.04), transparent 70%);
+      }
+      [data-theme='light'] .ambient-rose {
+        background: radial-gradient(circle, rgba(224, 96, 112, 0.025), transparent 70%);
+      }
 
-      <!-- Headline -->
-      <h1 class="fade-up text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight">
-        <span class="gradient-gold">Your AI</span><br />
-        <span class="gradient-violet">Development Team</span><br />
-        <span style="color:#e8e8f0;">One Command Away</span>
-      </h1>
+      /* ── Nav link theme-aware hover ── */
+      .nav-link {
+        color: var(--text-muted) !important;
+        transition: color 0.2s;
+      }
+      .nav-link:hover {
+        color: var(--gold) !important;
+      }
+      .nav-link-memory:hover {
+        color: var(--memory) !important;
+      }
+      .nav-link-memory {
+        color: var(--text-muted) !important;
+        transition: color 0.2s;
+      }
 
-      <p class="fade-up fade-up-d1 mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed" style="color:#8a8aa0;">
-        A portable multi-stack AI agent system for <strong style="color:#b0b0c8;">OpenCode</strong>.
-        31 specialized agents, 201 skill playbooks, 46 CLI commands, and 
-        <strong style="color:#4ac8b8;">persistent cross-session memory</strong>.
-      </p>
+      /* ── Responsive ── */
+      @media (max-width: 639px) {
+        .agent-dot {
+          width: 28px;
+          height: 28px;
+          font-size: 8px;
+          border-radius: 6px;
+        }
+      }
+    </style>
 
-      <!-- CTA -->
-      <div class="fade-up fade-up-d2 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#install" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all" style="background:#d4a04a; color:#08080c;" onmouseover="this.style.background='#e8b85e'" onmouseout="this.style.background='#d4a04a'">
-          <span class="font-mono text-xs">npx opencode-agent-kit init</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    <!-- Theme script (blocking, prevents FOUC) -->
+    <script>
+      !(function () {
+        var e = localStorage.getItem('theme');
+        if (!e) {
+          e = window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', e);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="ambient ambient-gold"></div>
+    <div class="ambient ambient-violet"></div>
+    <div class="ambient ambient-rose"></div>
+
+    <!-- ════════════════ NAV ════════════════ -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50"
+      style="
+        background: var(--nav-bg);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--nav-bdr);
+      "
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2.5">
+          <div
+            class="w-8 h-8 rounded-lg flex items-center justify-center"
+            style="background: rgba(212, 160, 74, 0.1)"
+          >
+            <span class="text-xs font-bold font-mono" style="color: #d4a04a">K</span>
+          </div>
+          <span class="font-semibold text-sm tracking-tight" style="color: var(--text-primary)"
+            >Agent Kit</span
+          >
         </a>
-        <a href="#agents" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium transition-all" style="border:1px solid rgba(255,255,255,0.06); color:#b0b0c8;" onmouseover="this.style.borderColor='rgba(212,160,74,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
-          Explore the Team
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-        </a>
-      </div>
-
-      <!-- Stats -->
-      <div class="fade-up fade-up-d3 mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
-        <div class="card p-5 text-center">
-          <div class="text-3xl sm:text-4xl font-black gradient-gold counter" data-target="31">0</div>
-          <div class="text-xs mt-1.5 font-medium uppercase tracking-wider" style="color:#6a6a80;">Specialized Agents</div>
+        <div class="hidden sm:flex items-center gap-6">
+          <a href="#agents" class="nav-link text-xs font-medium uppercase tracking-wider">Agents</a>
+          <a href="#memory" class="nav-link-memory text-xs font-medium uppercase tracking-wider"
+            >Memory</a
+          >
+          <a href="#capabilities" class="nav-link text-xs font-medium uppercase tracking-wider"
+            >Capabilities</a
+          >
+          <a href="#install" class="nav-link text-xs font-medium uppercase tracking-wider"
+            >Install</a
+          >
         </div>
-        <div class="card p-5 text-center">
-          <div class="text-3xl sm:text-4xl font-black gradient-violet counter" data-target="201">0</div>
-          <div class="text-xs mt-1.5 font-medium uppercase tracking-wider" style="color:#6a6a80;">Skill Playbooks</div>
-        </div>
-        <div class="card p-5 text-center">
-          <div class="text-3xl sm:text-4xl font-black counter" style="color:#e8e8f0;" data-target="46">0</div>
-          <div class="text-xs mt-1.5 font-medium uppercase tracking-wider" style="color:#6a6a80;">CLI Commands</div>
-        </div>
-        <div class="card p-5 text-center">
-          <div class="text-3xl sm:text-4xl font-black counter" style="color:#4ac8b8;" data-target="53">0</div>
-          <div class="text-xs mt-1.5 font-medium uppercase tracking-wider" style="color:#6a6a80;">Memory Tools</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="fade-up fade-up-d4 mt-16 flex justify-center">
-      <div class="float-slow flex flex-col items-center gap-2" style="color:#6a6a80;">
-        <span class="text-[10px] font-mono uppercase tracking-widest">Scroll</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-<!-- ════════════════ AGENTS ════════════════ -->
-<section id="agents" class="relative py-20 sm:py-28">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style="background:rgba(212,160,74,0.08); color:#d4a04a; border:1px solid rgba(212,160,74,0.1);">The Team</span>
-      <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">31 Agents, <span class="gradient-gold">One Mission</span></h2>
-      <p class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed" style="color:#8a8aa0;">
-        From architecture to deployment. Each agent is a domain specialist. The IT Leader orchestrates them all.
-      </p>
-    </div>
-
-    <!-- Agent Groups -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!-- Core Frontend & Backend -->
-      <div class="fade-up card p-5">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="w-2 h-2 rounded-full" style="background:#3b82f6;"></span>
-          <h3 class="text-sm font-semibold" style="color:#e8e8f0;">Core Frontend &amp; Backend</h3>
-        </div>
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(139,92,246,0.1); color:#8b5cf6;">primary</span><span style="color:#b0b0c8;">IT Leader</span><span class="font-mono" style="color:#6a6a80;">@leader</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(59,130,246,0.1); color:#3b82f6;">vue</span><span style="color:#b0b0c8;">Nuxt Frontend</span><span class="font-mono" style="color:#6a6a80;">@frontend-nuxt</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(6,182,212,0.1); color:#06b6d4;">react</span><span style="color:#b0b0c8;">React Frontend</span><span class="font-mono" style="color:#6a6a80;">@frontend-react</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(16,185,129,0.1); color:#10b981;">node</span><span style="color:#b0b0c8;">Node Backend</span><span class="font-mono" style="color:#6a6a80;">@backend</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(217,119,6,0.1); color:#d97706;">laravel</span><span style="color:#b0b0c8;">Laravel Backend</span><span class="font-mono" style="color:#6a6a80;">@laravel</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(132,204,22,0.1); color:#84cc16;">ci3</span><span style="color:#b0b0c8;">CodeIgniter 3</span><span class="font-mono" style="color:#6a6a80;">@ci3</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(55,118,171,0.1); color:#3776AB;">python</span><span style="color:#b0b0c8;">Python Developer</span><span class="font-mono" style="color:#6a6a80;">@python</span></div>
-        </div>
-      </div>
-
-      <!-- Mobile & Design -->
-      <div class="fade-up fade-up-d1 card p-5">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="w-2 h-2 rounded-full" style="background:#22c55e;"></span>
-          <h3 class="text-sm font-semibold" style="color:#e8e8f0;">Mobile &amp; Design</h3>
-        </div>
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(34,197,94,0.1); color:#22c55e;">android</span><span style="color:#b0b0c8;">Android Developer</span><span class="font-mono" style="color:#6a6a80;">@android</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(2,132,199,0.1); color:#0284c7;">flutter</span><span style="color:#b0b0c8;">Flutter Developer</span><span class="font-mono" style="color:#6a6a80;">@flutter</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(240,81,56,0.1); color:#f05138;">swift</span><span style="color:#b0b0c8;">Swift/iOS Developer</span><span class="font-mono" style="color:#6a6a80;">@swift</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(245,158,11,0.1); color:#f59e0b;">design</span><span style="color:#b0b0c8;">UI/UX Designer</span><span class="font-mono" style="color:#6a6a80;">@designer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(99,102,241,0.1); color:#6366f1;">devops</span><span style="color:#b0b0c8;">DevOps Engineer</span><span class="font-mono" style="color:#6a6a80;">@devops</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(132,204,22,0.1); color:#84cc16;">seo</span><span style="color:#b0b0c8;">SEO Specialist</span><span class="font-mono" style="color:#6a6a80;">@seo</span></div>
-        </div>
-      </div>
-
-      <!-- Languages & Systems -->
-      <div class="fade-up fade-up-d2 card p-5">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="w-2 h-2 rounded-full" style="background:#8b6cf6;"></span>
-          <h3 class="text-sm font-semibold" style="color:#e8e8f0;">Languages &amp; Systems</h3>
-        </div>
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(55,118,171,0.1); color:#3776AB;">py</span><span style="color:#b0b0c8;">Python Reviewer</span><span class="font-mono" style="color:#6a6a80;">@python-reviewer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(222,165,132,0.1); color:#dea584;">rs</span><span style="color:#b0b0c8;">Rust Developer + Reviewer</span><span class="font-mono" style="color:#6a6a80;">@rust / @rust-reviewer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(0,89,156,0.1); color:#00599C;">cpp</span><span style="color:#b0b0c8;">C++ Developer + Reviewer</span><span class="font-mono" style="color:#6a6a80;">@cpp / @cpp-reviewer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(81,43,212,0.1); color:#512bd4;">net</span><span style="color:#b0b0c8;">C# / .NET Developer</span><span class="font-mono" style="color:#6a6a80;">@dotnet</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(221,0,49,0.1); color:#dd0031;">ng</span><span style="color:#b0b0c8;">Angular Developer</span><span class="font-mono" style="color:#6a6a80;">@angular</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(236,72,153,0.1); color:#ec4899;">agent</span><span style="color:#b0b0c8;">Agent Engineer</span><span class="font-mono" style="color:#6a6a80;">@agent-engineer</span></div>
-        </div>
-      </div>
-
-      <!-- Quality & Reviewers -->
-      <div class="fade-up card p-5">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="w-2 h-2 rounded-full" style="background:#ef4444;"></span>
-          <h3 class="text-sm font-semibold" style="color:#e8e8f0;">Quality &amp; Reviewers</h3>
-        </div>
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(239,68,68,0.1); color:#ef4444;">qa</span><span style="color:#b0b0c8;">General Code Reviewer</span><span class="font-mono" style="color:#6a6a80;">@reviewer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(237,139,0,0.1); color:#ed8b00;">java</span><span style="color:#b0b0c8;">Java Reviewer</span><span class="font-mono" style="color:#6a6a80;">@java-reviewer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(119,119,180,0.1); color:#777bb4;">php</span><span style="color:#b0b0c8;">PHP Reviewer</span><span class="font-mono" style="color:#6a6a80;">@php-reviewer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(127,82,255,0.1); color:#7f52ff;">kt</span><span style="color:#b0b0c8;">Kotlin Reviewer</span><span class="font-mono" style="color:#6a6a80;">@kotlin-reviewer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(0,173,216,0.1); color:#00add8;">go</span><span style="color:#b0b0c8;">Go Reviewer</span><span class="font-mono" style="color:#6a6a80;">@go-reviewer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(234,179,8,0.1); color:#eab308;">sq</span><span style="color:#b0b0c8;">SonarQube Quality</span><span class="font-mono" style="color:#6a6a80;">@sonarqube</span></div>
+        <div class="flex items-center gap-1.5">
+          <a
+            href="https://github.com/defuj/opencode-agent-kit"
+            target="_blank"
+            class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium github-btn"
+            style="
+              background: color-mix(in srgb, var(--text-muted) 8%, transparent);
+              color: var(--text-secondary);
+              border: 1px solid var(--border-subtle);
+              transition: all 0.2s;
+            "
+            onmouseover="
+              this.style.borderColor = 'rgba(212,160,74,0.2)';
+              this.style.color = '#d4a04a';
+            "
+            onmouseout="
+              this.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue(
+                '--border-subtle',
+              );
+              this.style.color = getComputedStyle(document.documentElement).getPropertyValue(
+                '--text-secondary',
+              );
+            "
+          >
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              id="theme-icon-sun"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              id="theme-icon-moon"
+              style="display: none"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </button>
+          <a
+            href="https://github.com/defuj/opencode-agent-kit"
+            target="_blank"
+            class="sm:hidden p-2 rounded-lg"
+            style="color: var(--text-muted)"
+            aria-label="GitHub"
+          >
+            <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+          </a>
+          <button
+            id="mobile-btn"
+            class="sm:hidden p-2 rounded-lg"
+            style="color: var(--text-muted)"
+            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
         </div>
       </div>
-
-      <!-- Database & Infrastructure -->
-      <div class="fade-up fade-up-d1 card p-5">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="w-2 h-2 rounded-full" style="background:#06b6d4;"></span>
-          <h3 class="text-sm font-semibold" style="color:#e8e8f0;">Database &amp; Infrastructure</h3>
-        </div>
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(6,182,212,0.1); color:#06b6d4;">db</span><span style="color:#b0b0c8;">Database Specialist</span><span class="font-mono" style="color:#6a6a80;">@database</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(99,102,241,0.1); color:#6366f1;">infra</span><span style="color:#b0b0c8;">DevOps / CI/CD</span><span class="font-mono" style="color:#6a6a80;">@devops</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(99,102,241,0.1); color:#6366f1;">docs</span><span style="color:#b0b0c8;">Docs Lookup</span><span class="font-mono" style="color:#6a6a80;">@docs-lookup</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(139,92,246,0.1); color:#8b5cf6;">harness</span><span style="color:#b0b0c8;">Harness Optimizer</span><span class="font-mono" style="color:#6a6a80;">@harness-optimizer</span></div>
-          <div class="flex items-center gap-2 text-xs"><span class="px-1.5 py-0.5 rounded text-[10px] font-mono" style="background:rgba(236,72,153,0.1); color:#ec4899;">loop</span><span style="color:#b0b0c8;">Loop Operator</span><span class="font-mono" style="color:#6a6a80;">@loop-operator</span></div>
-        </div>
+      <div id="mobile-menu" class="hidden sm:hidden px-4 pb-4 space-y-2">
+        <a
+          href="#agents"
+          class="block px-3 py-2 rounded-lg text-xs"
+          style="color: var(--text-secondary)"
+          >Agents</a
+        >
+        <a
+          href="#memory"
+          class="block px-3 py-2 rounded-lg text-xs"
+          style="color: var(--text-secondary)"
+          >Memory</a
+        >
+        <a
+          href="#capabilities"
+          class="block px-3 py-2 rounded-lg text-xs"
+          style="color: var(--text-secondary)"
+          >Capabilities</a
+        >
+        <a
+          href="#install"
+          class="block px-3 py-2 rounded-lg text-xs"
+          style="color: var(--text-secondary)"
+          >Install</a
+        >
+        <a
+          href="https://github.com/defuj/opencode-agent-kit"
+          target="_blank"
+          class="block px-3 py-2 rounded-lg text-xs"
+          style="color: var(--gold)"
+          >GitHub →</a
+        >
       </div>
+    </nav>
 
-      <!-- Agent Dot Grid -->
-      <div class="fade-up fade-up-d2 card p-5 lg:col-span-1">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-2 h-2 rounded-full" style="background:#d4a04a;"></span>
-          <h3 class="text-sm font-semibold" style="color:#e8e8f0;">All 31 Agents</h3>
-        </div>
-        <div class="flex flex-wrap gap-1.5">
-          <span class="agent-dot" style="background:rgba(139,92,246,0.15); color:#8b5cf6;" data-tip="IT Leader">TL</span>
-          <span class="agent-dot" style="background:rgba(59,130,246,0.15); color:#3b82f6;" data-tip="Nuxt Frontend">NU</span>
-          <span class="agent-dot" style="background:rgba(6,182,212,0.15); color:#06b6d4;" data-tip="React Frontend">RE</span>
-          <span class="agent-dot" style="background:rgba(16,185,129,0.15); color:#10b981;" data-tip="Node Backend">ND</span>
-          <span class="agent-dot" style="background:rgba(217,119,6,0.15); color:#d97706;" data-tip="Laravel">LA</span>
-          <span class="agent-dot" style="background:rgba(132,204,22,0.15); color:#84cc16;" data-tip="CodeIgniter 3">CI</span>
-          <span class="agent-dot" style="background:rgba(55,118,171,0.15); color:#3776AB;" data-tip="Python">PY</span>
-          <span class="agent-dot" style="background:rgba(34,197,94,0.15); color:#22c55e;" data-tip="Android">AN</span>
-          <span class="agent-dot" style="background:rgba(2,132,199,0.15); color:#0284c7;" data-tip="Flutter">FL</span>
-          <span class="agent-dot" style="background:rgba(240,81,56,0.15); color:#f05138;" data-tip="Swift/iOS">SW</span>
-          <span class="agent-dot" style="background:rgba(245,158,11,0.15); color:#f59e0b;" data-tip="UI/UX Designer">DE</span>
-          <span class="agent-dot" style="background:rgba(99,102,241,0.15); color:#6366f1;" data-tip="DevOps">DV</span>
-          <span class="agent-dot" style="background:rgba(132,204,22,0.15); color:#84cc16;" data-tip="SEO">SE</span>
-          <span class="agent-dot" style="background:rgba(222,165,132,0.15); color:#dea584;" data-tip="Rust">RS</span>
-          <span class="agent-dot" style="background:rgba(0,89,156,0.15); color:#00599C;" data-tip="C++">CP</span>
-          <span class="agent-dot" style="background:rgba(81,43,212,0.15); color:#512bd4;" data-tip=".NET">DN</span>
-          <span class="agent-dot" style="background:rgba(221,0,49,0.15); color:#dd0031;" data-tip="Angular">NG</span>
-          <span class="agent-dot" style="background:rgba(236,72,153,0.15); color:#ec4899;" data-tip="Agent Engineer">AE</span>
-          <span class="agent-dot" style="background:rgba(239,68,68,0.15); color:#ef4444;" data-tip="Code Reviewer">RV</span>
-          <span class="agent-dot" style="background:rgba(237,139,0,0.15); color:#ed8b00;" data-tip="Java Reviewer">JV</span>
-          <span class="agent-dot" style="background:rgba(119,119,180,0.15); color:#777bb4;" data-tip="PHP Reviewer">PH</span>
-          <span class="agent-dot" style="background:rgba(127,82,255,0.15); color:#7f52ff;" data-tip="Kotlin Reviewer">KT</span>
-          <span class="agent-dot" style="background:rgba(0,173,216,0.15); color:#00add8;" data-tip="Go Reviewer">GO</span>
-          <span class="agent-dot" style="background:rgba(55,118,171,0.15); color:#3776AB;" data-tip="Python Reviewer">PR</span>
-          <span class="agent-dot" style="background:rgba(222,165,132,0.15); color:#dea584;" data-tip="Rust Reviewer">RR</span>
-          <span class="agent-dot" style="background:rgba(0,89,156,0.15); color:#00599C;" data-tip="C++ Reviewer">CR</span>
-          <span class="agent-dot" style="background:rgba(6,182,214,0.15); color:#06b6d4;" data-tip="Database">DB</span>
-          <span class="agent-dot" style="background:rgba(234,179,8,0.15); color:#eab308;" data-tip="SonarQube">SQ</span>
-          <span class="agent-dot" style="background:rgba(99,102,241,0.15); color:#6366f1;" data-tip="Docs Lookup">DL</span>
-          <span class="agent-dot" style="background:rgba(139,92,246,0.15); color:#8b5cf6;" data-tip="Harness Optimizer">HO</span>
-          <span class="agent-dot" style="background:rgba(236,72,153,0.15); color:#ec4899;" data-tip="Loop Operator">LO</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-<!-- ════════════════ AGENTMEMORY ════════════════ -->
-<section id="memory" class="relative py-20 sm:py-28">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style="background:rgba(74,200,184,0.08); color:#4ac8b8; border:1px solid rgba(74,200,184,0.1);">
-        <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background:#4ac8b8; display:inline-block; margin-right:6px;"></span>
-        agentmemory
-      </span>
-      <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">Agents That <span class="gradient-memory">Remember Everything</span></h2>
-      <p class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed" style="color:#8a8aa0;">
-        Powered by <a href="https://github.com/rohitg00/agentmemory" target="_blank" style="color:#4ac8b8; text-decoration:underline; text-underline-offset:3px;">agentmemory</a> &mdash; persistent cross-session memory that never forgets.
-      </p>
-    </div>
-
-    <!-- Memory value props -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-      <div class="fade-up memory-grid-item">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background:rgba(74,200,184,0.1);">
-          <svg class="w-5 h-5" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-        </div>
-        <h4 class="text-sm font-semibold mb-1" style="color:#e8e8f0;">53 Memory Tools</h4>
-        <p class="text-xs leading-relaxed" style="color:#6a6a80;">Save, recall, smart search, file history, lessons, patterns &mdash; 53 MCP tools for complete memory control.</p>
-      </div>
-
-      <div class="fade-up fade-up-d1 memory-grid-item">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background:rgba(74,200,184,0.1);">
-          <svg class="w-5 h-5" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h4 class="text-sm font-semibold mb-1" style="color:#e8e8f0;">Cross-Session Persistence</h4>
-        <p class="text-xs leading-relaxed" style="color:#6a6a80;">Start a new session tomorrow and your agents remember decisions, insights, and code context from yesterday.</p>
-      </div>
-
-      <div class="fade-up fade-up-d2 memory-grid-item">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background:rgba(74,200,184,0.1);">
-          <svg class="w-5 h-5" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-        </div>
-        <h4 class="text-sm font-semibold mb-1" style="color:#e8e8f0;">Auto-Learning</h4>
-        <p class="text-xs leading-relaxed" style="color:#6a6a80;">22 lifecycle hooks auto-capture sessions, decisions, and lessons. Your agents get smarter with every interaction.</p>
-      </div>
-
-      <div class="fade-up fade-up-d3 memory-grid-item">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background:rgba(74,200,184,0.1);">
-          <svg class="w-5 h-5" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-        </div>
-        <h4 class="text-sm font-semibold mb-1" style="color:#e8e8f0;">Real-Time Viewer</h4>
-        <p class="text-xs leading-relaxed" style="color:#6a6a80;">Dashboard at <code style="color:#4ac8b8;">localhost:3113</code> shows memory state, patterns, and consolidated insights in real time.</p>
-      </div>
-    </div>
-
-    <!-- How it works timeline -->
-    <div class="fade-up card card-gold p-6 sm:p-8">
-      <div class="grid sm:grid-cols-3 gap-6">
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3" style="background:rgba(74,200,184,0.1);">
-            <span class="font-bold font-mono text-sm" style="color:#4ac8b8;">1</span>
+    <!-- ════════════════ HERO ════════════════ -->
+    <section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+          <!-- Badge -->
+          <div
+            class="fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-8"
+            style="
+              background: rgba(139, 108, 246, 0.06);
+              border: 1px solid rgba(139, 108, 246, 0.1);
+              color: #8b6cf6;
+            "
+          >
+            <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background: #8b6cf6"></span>
+            v1.2.0 &mdash; Open Source &mdash; 31 Agents
           </div>
-          <h4 class="text-sm font-semibold mb-1" style="color:#e8e8f0;">Agent Captures</h4>
-          <p class="text-xs leading-relaxed" style="color:#6a6a80;">22 lifecycle events are auto-captured — sessions, messages, decisions, errors, tool calls, and file interactions.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3" style="background:rgba(74,200,184,0.1);">
-            <span class="font-bold font-mono text-sm" style="color:#4ac8b8;">2</span>
+
+          <!-- Headline -->
+          <h1
+            class="fade-up text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight"
+          >
+            <span class="gradient-gold">Your AI</span><br />
+            <span class="gradient-violet">Development Team</span><br />
+            <span style="color: var(--text-primary)">One Command Away</span>
+          </h1>
+
+          <p
+            class="fade-up fade-up-d1 mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            A portable multi-stack AI agent system for
+            <strong style="color: var(--text-bright)">OpenCode</strong>. 31 specialized agents, 201
+            skill playbooks, 46 CLI commands, and
+            <strong style="color: #4ac8b8">persistent cross-session memory</strong>.
+          </p>
+
+          <!-- CTA -->
+          <div
+            class="fade-up fade-up-d2 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <a
+              href="#install"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
+              style="background: #d4a04a; color: #08080c"
+              onmouseover="this.style.background = '#e8b85e'"
+              onmouseout="this.style.background = '#d4a04a'"
+            >
+              <span class="font-mono text-xs">npx opencode-agent-kit init</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </a>
+            <a
+              href="#agents"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium transition-all"
+              style="border: 1px solid var(--border-subtle); color: var(--text-bright)"
+              onmouseover="this.style.borderColor = 'rgba(212,160,74,0.3)'"
+              onmouseout="
+                this.style.borderColor = getComputedStyle(
+                  document.documentElement,
+                ).getPropertyValue('--border-subtle')
+              "
+            >
+              Explore the Team
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </a>
           </div>
-          <h4 class="text-sm font-semibold mb-1" style="color:#e8e8f0;">Memory Stored</h4>
-          <p class="text-xs leading-relaxed" style="color:#6a6a80;">Insights and patterns are saved to persistent storage with metadata, confidence scores, and session context.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3" style="background:rgba(74,200,184,0.1);">
-            <span class="font-bold font-mono text-sm" style="color:#4ac8b8;">3</span>
+
+          <!-- Stats -->
+          <div
+            class="fade-up fade-up-d3 mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto"
+          >
+            <div class="card p-5 text-center">
+              <div class="text-3xl sm:text-4xl font-black gradient-gold counter" data-target="31">
+                0
+              </div>
+              <div
+                class="text-xs mt-1.5 font-medium uppercase tracking-wider"
+                style="color: var(--text-muted)"
+              >
+                Specialized Agents
+              </div>
+            </div>
+            <div class="card p-5 text-center">
+              <div
+                class="text-3xl sm:text-4xl font-black gradient-violet counter"
+                data-target="201"
+              >
+                0
+              </div>
+              <div
+                class="text-xs mt-1.5 font-medium uppercase tracking-wider"
+                style="color: var(--text-muted)"
+              >
+                Skill Playbooks
+              </div>
+            </div>
+            <div class="card p-5 text-center">
+              <div
+                class="text-3xl sm:text-4xl font-black counter"
+                style="color: var(--text-primary)"
+                data-target="46"
+              >
+                0
+              </div>
+              <div
+                class="text-xs mt-1.5 font-medium uppercase tracking-wider"
+                style="color: var(--text-muted)"
+              >
+                CLI Commands
+              </div>
+            </div>
+            <div class="card p-5 text-center">
+              <div
+                class="text-3xl sm:text-4xl font-black counter"
+                style="color: #4ac8b8"
+                data-target="53"
+              >
+                0
+              </div>
+              <div
+                class="text-xs mt-1.5 font-medium uppercase tracking-wider"
+                style="color: var(--text-muted)"
+              >
+                Memory Tools
+              </div>
+            </div>
           </div>
-          <h4 class="text-sm font-semibold mb-1" style="color:#e8e8f0;">Smart Recall</h4>
-          <p class="text-xs leading-relaxed" style="color:#6a6a80;">Hybrid semantic+keyword search injects relevant past observations into the current agent session automatically.</p>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="fade-up fade-up-d4 mt-16 flex justify-center">
+          <div class="float-slow flex flex-col items-center gap-2" style="color: var(--text-muted)">
+            <span class="text-[10px] font-mono uppercase tracking-widest">Scroll</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Memory Tools Table -->
-    <div class="fade-up fade-up-d1 mt-8 card p-6">
-      <h4 class="text-sm font-semibold mb-4" style="color:#e8e8f0;">53 MCP Memory Tools at Your Fingertips</h4>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-        <div class="px-3 py-2 rounded-lg text-xs font-mono" style="background:rgba(74,200,184,0.03); border:1px solid rgba(74,200,184,0.06); color:#8a8aa0;">memory_save</div>
-        <div class="px-3 py-2 rounded-lg text-xs font-mono" style="background:rgba(74,200,184,0.03); border:1px solid rgba(74,200,184,0.06); color:#8a8aa0;">memory_recall</div>
-        <div class="px-3 py-2 rounded-lg text-xs font-mono" style="background:rgba(74,200,184,0.03); border:1px solid rgba(74,200,184,0.06); color:#8a8aa0;">memory_smart_search</div>
-        <div class="px-3 py-2 rounded-lg text-xs font-mono" style="background:rgba(74,200,184,0.03); border:1px solid rgba(74,200,184,0.06); color:#8a8aa0;">memory_sessions</div>
-        <div class="px-3 py-2 rounded-lg text-xs font-mono" style="background:rgba(74,200,184,0.03); border:1px solid rgba(74,200,184,0.06); color:#8a8aa0;">memory_file_history</div>
-        <div class="px-3 py-2 rounded-lg text-xs font-mono" style="background:rgba(74,200,184,0.03); border:1px solid rgba(74,200,184,0.06); color:#8a8aa0;">memory_lesson_save</div>
-        <div class="px-3 py-2 rounded-lg text-xs font-mono" style="background:rgba(74,200,184,0.03); border:1px solid rgba(74,200,184,0.06); color:#8a8aa0;">memory_lesson_recall</div>
-        <div class="px-3 py-2 rounded-lg text-xs font-mono" style="background:rgba(74,200,184,0.03); border:1px solid rgba(74,200,184,0.06); color:#8a8aa0;">memory_patterns</div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+
+    <!-- ════════════════ AGENTS ════════════════ -->
+    <section id="agents" class="relative py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
+            style="
+              background: rgba(212, 160, 74, 0.08);
+              color: #d4a04a;
+              border: 1px solid rgba(212, 160, 74, 0.1);
+            "
+            >The Team</span
+          >
+          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
+            31 Agents, <span class="gradient-gold">One Mission</span>
+          </h2>
+          <p
+            class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            From architecture to deployment. Each agent is a domain specialist. The IT Leader
+            orchestrates them all.
+          </p>
+        </div>
+
+        <!-- Agent Groups -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Core Frontend & Backend -->
+          <div class="fade-up card p-5">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full" style="background: #3b82f6"></span>
+              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+                Core Frontend &amp; Backend
+              </h3>
+            </div>
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6"
+                  >primary</span
+                ><span style="color: var(--text-bright)">IT Leader</span
+                ><span class="font-mono" style="color: var(--text-muted)">@leader</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(59, 130, 246, 0.1); color: #3b82f6"
+                  >vue</span
+                ><span style="color: var(--text-bright)">Nuxt Frontend</span
+                ><span class="font-mono" style="color: var(--text-muted)">@frontend-nuxt</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(6, 182, 212, 0.1); color: #06b6d4"
+                  >react</span
+                ><span style="color: var(--text-bright)">React Frontend</span
+                ><span class="font-mono" style="color: var(--text-muted)">@frontend-react</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(16, 185, 129, 0.1); color: #10b981"
+                  >node</span
+                ><span style="color: var(--text-bright)">Node Backend</span
+                ><span class="font-mono" style="color: var(--text-muted)">@backend</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(217, 119, 6, 0.1); color: #d97706"
+                  >laravel</span
+                ><span style="color: var(--text-bright)">Laravel Backend</span
+                ><span class="font-mono" style="color: var(--text-muted)">@laravel</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(132, 204, 22, 0.1); color: #84cc16"
+                  >ci3</span
+                ><span style="color: var(--text-bright)">CodeIgniter 3</span
+                ><span class="font-mono" style="color: var(--text-muted)">@ci3</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(55, 118, 171, 0.1); color: #3776ab"
+                  >python</span
+                ><span style="color: var(--text-bright)">Python Developer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@python</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile & Design -->
+          <div class="fade-up fade-up-d1 card p-5">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full" style="background: #22c55e"></span>
+              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+                Mobile &amp; Design
+              </h3>
+            </div>
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(34, 197, 94, 0.1); color: #22c55e"
+                  >android</span
+                ><span style="color: var(--text-bright)">Android Developer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@android</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(2, 132, 199, 0.1); color: #0284c7"
+                  >flutter</span
+                ><span style="color: var(--text-bright)">Flutter Developer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@flutter</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(240, 81, 56, 0.1); color: #f05138"
+                  >swift</span
+                ><span style="color: var(--text-bright)">Swift/iOS Developer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@swift</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(245, 158, 11, 0.1); color: #f59e0b"
+                  >design</span
+                ><span style="color: var(--text-bright)">UI/UX Designer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@designer</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1"
+                  >devops</span
+                ><span style="color: var(--text-bright)">DevOps Engineer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@devops</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(132, 204, 22, 0.1); color: #84cc16"
+                  >seo</span
+                ><span style="color: var(--text-bright)">SEO Specialist</span
+                ><span class="font-mono" style="color: var(--text-muted)">@seo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages & Systems -->
+          <div class="fade-up fade-up-d2 card p-5">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full" style="background: #8b6cf6"></span>
+              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+                Languages &amp; Systems
+              </h3>
+            </div>
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(55, 118, 171, 0.1); color: #3776ab"
+                  >py</span
+                ><span style="color: var(--text-bright)">Python Reviewer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@python-reviewer</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(222, 165, 132, 0.1); color: #dea584"
+                  >rs</span
+                ><span style="color: var(--text-bright)">Rust Developer + Reviewer</span
+                ><span class="font-mono" style="color: var(--text-muted)"
+                  >@rust / @rust-reviewer</span
+                >
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(0, 89, 156, 0.1); color: #00599c"
+                  >cpp</span
+                ><span style="color: var(--text-bright)">C++ Developer + Reviewer</span
+                ><span class="font-mono" style="color: var(--text-muted)"
+                  >@cpp / @cpp-reviewer</span
+                >
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(81, 43, 212, 0.1); color: #512bd4"
+                  >net</span
+                ><span style="color: var(--text-bright)">C# / .NET Developer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@dotnet</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(221, 0, 49, 0.1); color: #dd0031"
+                  >ng</span
+                ><span style="color: var(--text-bright)">Angular Developer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@angular</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(236, 72, 153, 0.1); color: #ec4899"
+                  >agent</span
+                ><span style="color: var(--text-bright)">Agent Engineer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@agent-engineer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quality & Reviewers -->
+          <div class="fade-up card p-5">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full" style="background: #ef4444"></span>
+              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+                Quality &amp; Reviewers
+              </h3>
+            </div>
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(239, 68, 68, 0.1); color: #ef4444"
+                  >qa</span
+                ><span style="color: var(--text-bright)">General Code Reviewer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@reviewer</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(237, 139, 0, 0.1); color: #ed8b00"
+                  >java</span
+                ><span style="color: var(--text-bright)">Java Reviewer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@java-reviewer</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(119, 119, 180, 0.1); color: #777bb4"
+                  >php</span
+                ><span style="color: var(--text-bright)">PHP Reviewer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@php-reviewer</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(127, 82, 255, 0.1); color: #7f52ff"
+                  >kt</span
+                ><span style="color: var(--text-bright)">Kotlin Reviewer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@kotlin-reviewer</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(0, 173, 216, 0.1); color: #00add8"
+                  >go</span
+                ><span style="color: var(--text-bright)">Go Reviewer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@go-reviewer</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(234, 179, 8, 0.1); color: #eab308"
+                  >sq</span
+                ><span style="color: var(--text-bright)">SonarQube Quality</span
+                ><span class="font-mono" style="color: var(--text-muted)">@sonarqube</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database & Infrastructure -->
+          <div class="fade-up fade-up-d1 card p-5">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full" style="background: #06b6d4"></span>
+              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+                Database &amp; Infrastructure
+              </h3>
+            </div>
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(6, 182, 212, 0.1); color: #06b6d4"
+                  >db</span
+                ><span style="color: var(--text-bright)">Database Specialist</span
+                ><span class="font-mono" style="color: var(--text-muted)">@database</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1"
+                  >infra</span
+                ><span style="color: var(--text-bright)">DevOps / CI/CD</span
+                ><span class="font-mono" style="color: var(--text-muted)">@devops</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1"
+                  >docs</span
+                ><span style="color: var(--text-bright)">Docs Lookup</span
+                ><span class="font-mono" style="color: var(--text-muted)">@docs-lookup</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6"
+                  >harness</span
+                ><span style="color: var(--text-bright)">Harness Optimizer</span
+                ><span class="font-mono" style="color: var(--text-muted)">@harness-optimizer</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
+                  style="background: rgba(236, 72, 153, 0.1); color: #ec4899"
+                  >loop</span
+                ><span style="color: var(--text-bright)">Loop Operator</span
+                ><span class="font-mono" style="color: var(--text-muted)">@loop-operator</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agent Dot Grid -->
+          <div class="fade-up fade-up-d2 card p-5 lg:col-span-1">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full" style="background: #d4a04a"></span>
+              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+                All 31 Agents
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="agent-dot"
+                style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6"
+                data-tip="IT Leader"
+                >TL</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(59, 130, 246, 0.15); color: #3b82f6"
+                data-tip="Nuxt Frontend"
+                >NU</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(6, 182, 212, 0.15); color: #06b6d4"
+                data-tip="React Frontend"
+                >RE</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(16, 185, 129, 0.15); color: #10b981"
+                data-tip="Node Backend"
+                >ND</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(217, 119, 6, 0.15); color: #d97706"
+                data-tip="Laravel"
+                >LA</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(132, 204, 22, 0.15); color: #84cc16"
+                data-tip="CodeIgniter 3"
+                >CI</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(55, 118, 171, 0.15); color: #3776ab"
+                data-tip="Python"
+                >PY</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(34, 197, 94, 0.15); color: #22c55e"
+                data-tip="Android"
+                >AN</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(2, 132, 199, 0.15); color: #0284c7"
+                data-tip="Flutter"
+                >FL</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(240, 81, 56, 0.15); color: #f05138"
+                data-tip="Swift/iOS"
+                >SW</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(245, 158, 11, 0.15); color: #f59e0b"
+                data-tip="UI/UX Designer"
+                >DE</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(99, 102, 241, 0.15); color: #6366f1"
+                data-tip="DevOps"
+                >DV</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(132, 204, 22, 0.15); color: #84cc16"
+                data-tip="SEO"
+                >SE</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(222, 165, 132, 0.15); color: #dea584"
+                data-tip="Rust"
+                >RS</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(0, 89, 156, 0.15); color: #00599c"
+                data-tip="C++"
+                >CP</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(81, 43, 212, 0.15); color: #512bd4"
+                data-tip=".NET"
+                >DN</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(221, 0, 49, 0.15); color: #dd0031"
+                data-tip="Angular"
+                >NG</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(236, 72, 153, 0.15); color: #ec4899"
+                data-tip="Agent Engineer"
+                >AE</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(239, 68, 68, 0.15); color: #ef4444"
+                data-tip="Code Reviewer"
+                >RV</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(237, 139, 0, 0.15); color: #ed8b00"
+                data-tip="Java Reviewer"
+                >JV</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(119, 119, 180, 0.15); color: #777bb4"
+                data-tip="PHP Reviewer"
+                >PH</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(127, 82, 255, 0.15); color: #7f52ff"
+                data-tip="Kotlin Reviewer"
+                >KT</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(0, 173, 216, 0.15); color: #00add8"
+                data-tip="Go Reviewer"
+                >GO</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(55, 118, 171, 0.15); color: #3776ab"
+                data-tip="Python Reviewer"
+                >PR</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(222, 165, 132, 0.15); color: #dea584"
+                data-tip="Rust Reviewer"
+                >RR</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(0, 89, 156, 0.15); color: #00599c"
+                data-tip="C++ Reviewer"
+                >CR</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(6, 182, 214, 0.15); color: #06b6d4"
+                data-tip="Database"
+                >DB</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(234, 179, 8, 0.15); color: #eab308"
+                data-tip="SonarQube"
+                >SQ</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(99, 102, 241, 0.15); color: #6366f1"
+                data-tip="Docs Lookup"
+                >DL</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6"
+                data-tip="Harness Optimizer"
+                >HO</span
+              >
+              <span
+                class="agent-dot"
+                style="background: rgba(236, 72, 153, 0.15); color: #ec4899"
+                data-tip="Loop Operator"
+                >LO</span
+              >
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="mt-3 text-xs" style="color:#6a6a80;">
-        <span class="font-mono text-[10px] px-1.5 py-0.5 rounded" style="background:rgba(74,200,184,0.06); color:#4ac8b8;">/recall</span> Search past observations 
-        <span class="font-mono text-[10px] px-1.5 py-0.5 rounded ml-2" style="background:rgba(74,200,184,0.06); color:#4ac8b8;">/remember</span> Save an insight
-      </p>
-    </div>
-  </div>
-</section>
+    </section>
 
-<div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
 
-<!-- ════════════════ CAPABILITIES ════════════════ -->
-<section id="capabilities" class="relative py-20 sm:py-28">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style="background:rgba(139,108,246,0.08); color:#8b6cf6; border:1px solid rgba(139,108,246,0.1);">Capabilities</span>
-      <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">Everything Your <span class="gradient-violet">AI Team</span> Needs</h2>
-      <p class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed" style="color:#8a8aa0;">Pre-configured and ready. Zero setup friction.</p>
-    </div>
+    <!-- ════════════════ AGENTMEMORY ════════════════ -->
+    <section id="memory" class="relative py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
+            style="
+              background: rgba(74, 200, 184, 0.08);
+              color: #4ac8b8;
+              border: 1px solid rgba(74, 200, 184, 0.1);
+            "
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full pulse-dot"
+              style="background: #4ac8b8; display: inline-block; margin-right: 6px"
+            ></span>
+            agentmemory
+          </span>
+          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
+            Agents That <span class="gradient-memory">Remember Everything</span>
+          </h2>
+          <p
+            class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            Powered by
+            <a
+              href="https://github.com/rohitg00/agentmemory"
+              target="_blank"
+              style="color: #4ac8b8; text-decoration: underline; text-underline-offset: 3px"
+              >agentmemory</a
+            >
+            &mdash; persistent cross-session memory that never forgets.
+          </p>
+        </div>
 
-    <div class="grid sm:grid-cols-3 gap-4">
-      <!-- MCP Servers -->
-      <div class="fade-up card p-6">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(212,160,74,0.1);">
-          <svg class="w-5 h-5" style="color:#d4a04a;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-        </div>
-        <h3 class="text-base font-semibold mb-2" style="color:#e8e8f0;">8 MCP Servers</h3>
-        <p class="text-xs leading-relaxed mb-4" style="color:#6a6a80;">Model Context Protocol servers for real-time docs, browser automation, API management, and quality scanning.</p>
-        <div class="flex flex-wrap gap-1.5">
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(59,130,246,0.1); color:#3b82f6;">Nuxt</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(6,182,212,0.1); color:#06b6d4;">Nuxt UI</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(16,185,129,0.1); color:#10b981;">Playwright</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(239,68,68,0.1); color:#ef4444;">Postman</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(234,179,8,0.1); color:#eab308;">SonarQube</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(74,200,184,0.1); color:#4ac8b8;">agentmemory</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(255,255,255,0.04); color:#6a6a80;">Figma</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(255,255,255,0.04); color:#6a6a80;">Stitch</span>
-        </div>
-      </div>
+        <!-- Memory value props -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <div class="fade-up memory-grid-item">
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+              style="background: rgba(74, 200, 184, 0.1)"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #4ac8b8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                />
+              </svg>
+            </div>
+            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+              53 Memory Tools
+            </h4>
+            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
+              Save, recall, smart search, file history, lessons, patterns &mdash; 53 MCP tools for
+              complete memory control.
+            </p>
+          </div>
 
-      <!-- Skills -->
-      <div class="fade-up fade-up-d1 card p-6">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(139,108,246,0.1);">
-          <svg class="w-5 h-5" style="color:#8b6cf6;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-        </div>
-        <h3 class="text-base font-semibold mb-2" style="color:#e8e8f0;">201 Skill Playbooks</h3>
-        <p class="text-xs leading-relaxed mb-4" style="color:#6a6a80;">Domain-specific expertise for every stack. Pre-loaded or loaded on-demand. Coding standards, security, testing, design, and more.</p>
-        <div class="flex flex-wrap gap-1.5">
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(255,255,255,0.04); color:#8a8aa0;">coding-standards</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(255,255,255,0.04); color:#8a8aa0;">security-review</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(255,255,255,0.04); color:#8a8aa0;">tdd-workflow</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(255,255,255,0.04); color:#8a8aa0;">impeccable</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(255,255,255,0.04); color:#8a8aa0;">+ 197 more</span>
-        </div>
-      </div>
+          <div class="fade-up fade-up-d1 memory-grid-item">
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+              style="background: rgba(74, 200, 184, 0.1)"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #4ac8b8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+              Cross-Session Persistence
+            </h4>
+            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
+              Start a new session tomorrow and your agents remember decisions, insights, and code
+              context from yesterday.
+            </p>
+          </div>
 
-      <!-- Commands -->
-      <div class="fade-up fade-up-d2 card p-6">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(74,200,184,0.1);">
-          <svg class="w-5 h-5" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        </div>
-        <h3 class="text-base font-semibold mb-2" style="color:#e8e8f0;">46 CLI Commands</h3>
-        <p class="text-xs leading-relaxed mb-4" style="color:#6a6a80;">Slash commands for planning, testing, reviewing, building, deploying, and managing your agent ecosystem.</p>
-        <div class="flex flex-wrap gap-1.5">
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(212,160,74,0.1); color:#d4a04a;">/plan</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(212,160,74,0.1); color:#d4a04a;">/tdd</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(239,68,68,0.1); color:#ef4444;">/code-review</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(139,108,246,0.1); color:#8b6cf6;">/security</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(16,185,129,0.1); color:#10b981;">/e2e</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(74,200,184,0.1); color:#4ac8b8;">/sonarqube-scan</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="fade-up fade-up-d2 memory-grid-item">
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+              style="background: rgba(74, 200, 184, 0.1)"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #4ac8b8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              </svg>
+            </div>
+            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+              Auto-Learning
+            </h4>
+            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
+              22 lifecycle hooks auto-capture sessions, decisions, and lessons. Your agents get
+              smarter with every interaction.
+            </p>
+          </div>
 
-<div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-<!-- ════════════════ USING AGENT MEMORY ════════════════ -->
-<section class="relative py-16 sm:py-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="fade-up card card-gold p-6 sm:p-8">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-        <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0" style="background:rgba(74,200,184,0.1);">
-          <svg class="w-6 h-6" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <div class="fade-up fade-up-d3 memory-grid-item">
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+              style="background: rgba(74, 200, 184, 0.1)"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #4ac8b8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+            </div>
+            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+              Real-Time Viewer
+            </h4>
+            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
+              Dashboard at <code style="color: #4ac8b8">localhost:3113</code> shows memory state,
+              patterns, and consolidated insights in real time.
+            </p>
+          </div>
         </div>
-        <div class="flex-1">
-          <h3 class="text-base font-semibold mb-1" style="color:#e8e8f0;">Memory in Action</h3>
-          <p class="text-xs leading-relaxed" style="color:#8a8aa0;">
-            After <code class="font-mono text-[11px]" style="color:#d4a04a;">npx opencode-agent-kit init</code>, agentmemory auto-starts with OpenCode.
-            Use <code class="font-mono text-[11px]" style="color:#4ac8b8;">/recall</code> to search past observations,
-            <code class="font-mono text-[11px]" style="color:#4ac8b8;">/remember</code> to save insights.
-            View memory at <code class="font-mono text-[11px]" style="color:#4ac8b8;">localhost:3113</code>.
+
+        <!-- How it works timeline -->
+        <div class="fade-up card card-gold p-6 sm:p-8">
+          <div class="grid sm:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div
+                class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3"
+                style="background: rgba(74, 200, 184, 0.1)"
+              >
+                <span class="font-bold font-mono text-sm" style="color: #4ac8b8">1</span>
+              </div>
+              <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+                Agent Captures
+              </h4>
+              <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
+                22 lifecycle events are auto-captured — sessions, messages, decisions, errors, tool
+                calls, and file interactions.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3"
+                style="background: rgba(74, 200, 184, 0.1)"
+              >
+                <span class="font-bold font-mono text-sm" style="color: #4ac8b8">2</span>
+              </div>
+              <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+                Memory Stored
+              </h4>
+              <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
+                Insights and patterns are saved to persistent storage with metadata, confidence
+                scores, and session context.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3"
+                style="background: rgba(74, 200, 184, 0.1)"
+              >
+                <span class="font-bold font-mono text-sm" style="color: #4ac8b8">3</span>
+              </div>
+              <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+                Smart Recall
+              </h4>
+              <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
+                Hybrid semantic+keyword search injects relevant past observations into the current
+                agent session automatically.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Memory Tools Table -->
+        <div class="fade-up fade-up-d1 mt-8 card p-6">
+          <h4 class="text-sm font-semibold mb-4" style="color: var(--text-primary)">
+            53 MCP Memory Tools at Your Fingertips
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            <div
+              class="px-3 py-2 rounded-lg text-xs font-mono"
+              style="
+                background: rgba(74, 200, 184, 0.03);
+                border: 1px solid rgba(74, 200, 184, 0.06);
+                color: var(--text-secondary);
+              "
+            >
+              memory_save
+            </div>
+            <div
+              class="px-3 py-2 rounded-lg text-xs font-mono"
+              style="
+                background: rgba(74, 200, 184, 0.03);
+                border: 1px solid rgba(74, 200, 184, 0.06);
+                color: var(--text-secondary);
+              "
+            >
+              memory_recall
+            </div>
+            <div
+              class="px-3 py-2 rounded-lg text-xs font-mono"
+              style="
+                background: rgba(74, 200, 184, 0.03);
+                border: 1px solid rgba(74, 200, 184, 0.06);
+                color: var(--text-secondary);
+              "
+            >
+              memory_smart_search
+            </div>
+            <div
+              class="px-3 py-2 rounded-lg text-xs font-mono"
+              style="
+                background: rgba(74, 200, 184, 0.03);
+                border: 1px solid rgba(74, 200, 184, 0.06);
+                color: var(--text-secondary);
+              "
+            >
+              memory_sessions
+            </div>
+            <div
+              class="px-3 py-2 rounded-lg text-xs font-mono"
+              style="
+                background: rgba(74, 200, 184, 0.03);
+                border: 1px solid rgba(74, 200, 184, 0.06);
+                color: var(--text-secondary);
+              "
+            >
+              memory_file_history
+            </div>
+            <div
+              class="px-3 py-2 rounded-lg text-xs font-mono"
+              style="
+                background: rgba(74, 200, 184, 0.03);
+                border: 1px solid rgba(74, 200, 184, 0.06);
+                color: var(--text-secondary);
+              "
+            >
+              memory_lesson_save
+            </div>
+            <div
+              class="px-3 py-2 rounded-lg text-xs font-mono"
+              style="
+                background: rgba(74, 200, 184, 0.03);
+                border: 1px solid rgba(74, 200, 184, 0.06);
+                color: var(--text-secondary);
+              "
+            >
+              memory_lesson_recall
+            </div>
+            <div
+              class="px-3 py-2 rounded-lg text-xs font-mono"
+              style="
+                background: rgba(74, 200, 184, 0.03);
+                border: 1px solid rgba(74, 200, 184, 0.06);
+                color: var(--text-secondary);
+              "
+            >
+              memory_patterns
+            </div>
+          </div>
+          <p class="mt-3 text-xs" style="color: var(--text-muted)">
+            <span
+              class="font-mono text-[10px] px-1.5 py-0.5 rounded"
+              style="background: rgba(74, 200, 184, 0.06); color: #4ac8b8"
+              >/recall</span
+            >
+            Search past observations
+            <span
+              class="font-mono text-[10px] px-1.5 py-0.5 rounded ml-2"
+              style="background: rgba(74, 200, 184, 0.06); color: #4ac8b8"
+              >/remember</span
+            >
+            Save an insight
           </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
 
-<!-- ════════════════ INSTALL ════════════════ -->
-<section id="install" class="relative py-20 sm:py-28">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style="background:rgba(212,160,74,0.08); color:#d4a04a; border:1px solid rgba(212,160,74,0.1);">Install</span>
-      <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">One Command. <span class="gradient-gold">Full Team.</span></h2>
-      <p class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed" style="color:#8a8aa0;">
-        Run this in your project directory. Works on macOS, Linux, and Windows.
-      </p>
-    </div>
-
-    <!-- Quick install -->
-    <div class="fade-up max-w-2xl mx-auto">
-      <div class="card card-gold p-6 sm:p-8">
-        <div class="flex items-center gap-3 mb-5">
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono" style="background:rgba(212,160,74,0.12); color:#d4a04a; border:1px solid rgba(212,160,74,0.15);">quick start</span>
-          <h3 class="text-sm font-semibold" style="color:#e8e8f0;">Install in any project</h3>
+    <!-- ════════════════ CAPABILITIES ════════════════ -->
+    <section id="capabilities" class="relative py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
+            style="
+              background: rgba(139, 108, 246, 0.08);
+              color: #8b6cf6;
+              border: 1px solid rgba(139, 108, 246, 0.1);
+            "
+            >Capabilities</span
+          >
+          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
+            Everything Your <span class="gradient-violet">AI Team</span> Needs
+          </h2>
+          <p
+            class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            Pre-configured and ready. Zero setup friction.
+          </p>
         </div>
 
-        <div class="terminal mb-5">
-          <div class="flex items-center gap-1.5 px-4 pt-3 pb-2" style="border-bottom:1px solid rgba(255,255,255,0.03);">
-            <span class="terminal-dot" style="background:#e06070;"></span>
-            <span class="terminal-dot" style="background:#d4a04a;"></span>
-            <span class="terminal-dot" style="background:#4ac8b8;"></span>
-            <span class="text-[10px] ml-2 font-mono" style="color:#6a6a80;">terminal</span>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <!-- MCP Servers -->
+          <div class="fade-up card p-6">
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+              style="background: rgba(212, 160, 74, 0.1)"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #d4a04a"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                />
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold mb-2" style="color: var(--text-primary)">
+              8 MCP Servers
+            </h3>
+            <p class="text-xs leading-relaxed mb-4" style="color: var(--text-muted)">
+              Model Context Protocol servers for real-time docs, browser automation, API management,
+              and quality scanning.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(59, 130, 246, 0.1); color: #3b82f6"
+                >Nuxt</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(6, 182, 212, 0.1); color: #06b6d4"
+                >Nuxt UI</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(16, 185, 129, 0.1); color: #10b981"
+                >Playwright</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(239, 68, 68, 0.1); color: #ef4444"
+                >Postman</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(234, 179, 8, 0.1); color: #eab308"
+                >SonarQube</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(74, 200, 184, 0.1); color: #4ac8b8"
+                >agentmemory</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="
+                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
+                  color: var(--text-muted);
+                "
+                >Figma</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="
+                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
+                  color: var(--text-muted);
+                "
+                >Stitch</span
+              >
+            </div>
           </div>
-          <pre class="px-4 py-3 font-mono text-xs leading-relaxed overflow-x-auto" style="color:#b0b0c8;"><span style="color:#d4a04a;">$</span> npx opencode-agent-kit init
-<span style="color:#6a6a80;"># Run inside your project directory</span>
-<span style="color:#6a6a80;"># macOS / Linux / Windows (WSL)</span>
-<span style="color:#8a8aa0;">  ✓ Copying .opencode/ configuration</span>
-<span style="color:#8a8aa0;">  ✓ Merging opencode.json</span>
-<span style="color:#8a8aa0;">  ✓ Installing dependencies</span>
-<span style="color:#8a8aa0;">  ✓ Setting up agentmemory (53 tools)</span>
+
+          <!-- Skills -->
+          <div class="fade-up fade-up-d1 card p-6">
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+              style="background: rgba(139, 108, 246, 0.1)"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #8b6cf6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold mb-2" style="color: var(--text-primary)">
+              201 Skill Playbooks
+            </h3>
+            <p class="text-xs leading-relaxed mb-4" style="color: var(--text-muted)">
+              Domain-specific expertise for every stack. Pre-loaded or loaded on-demand. Coding
+              standards, security, testing, design, and more.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="
+                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
+                  color: var(--text-secondary);
+                "
+                >coding-standards</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="
+                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
+                  color: var(--text-secondary);
+                "
+                >security-review</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="
+                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
+                  color: var(--text-secondary);
+                "
+                >tdd-workflow</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="
+                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
+                  color: var(--text-secondary);
+                "
+                >impeccable</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="
+                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
+                  color: var(--text-secondary);
+                "
+                >+ 197 more</span
+              >
+            </div>
+          </div>
+
+          <!-- Commands -->
+          <div class="fade-up fade-up-d2 card p-6">
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+              style="background: rgba(74, 200, 184, 0.1)"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #4ac8b8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold mb-2" style="color: var(--text-primary)">
+              46 CLI Commands
+            </h3>
+            <p class="text-xs leading-relaxed mb-4" style="color: var(--text-muted)">
+              Slash commands for planning, testing, reviewing, building, deploying, and managing
+              your agent ecosystem.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(212, 160, 74, 0.1); color: #d4a04a"
+                >/plan</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(212, 160, 74, 0.1); color: #d4a04a"
+                >/tdd</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(239, 68, 68, 0.1); color: #ef4444"
+                >/code-review</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(139, 108, 246, 0.1); color: #8b6cf6"
+                >/security</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(16, 185, 129, 0.1); color: #10b981"
+                >/e2e</span
+              >
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="background: rgba(74, 200, 184, 0.1); color: #4ac8b8"
+                >/sonarqube-scan</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+
+    <!-- ════════════════ USING AGENT MEMORY ════════════════ -->
+    <section class="relative py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="fade-up card card-gold p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+            <div
+              class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
+              style="background: rgba(74, 200, 184, 0.1)"
+            >
+              <svg
+                class="w-6 h-6"
+                style="color: #4ac8b8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-base font-semibold mb-1" style="color: var(--text-primary)">
+                Memory in Action
+              </h3>
+              <p class="text-xs leading-relaxed" style="color: var(--text-secondary)">
+                After
+                <code class="font-mono text-[11px]" style="color: #d4a04a"
+                  >npx opencode-agent-kit init</code
+                >, agentmemory auto-starts with OpenCode. Use
+                <code class="font-mono text-[11px]" style="color: #4ac8b8">/recall</code> to search
+                past observations,
+                <code class="font-mono text-[11px]" style="color: #4ac8b8">/remember</code> to save
+                insights. View memory at
+                <code class="font-mono text-[11px]" style="color: #4ac8b8">localhost:3113</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+
+    <!-- ════════════════ INSTALL ════════════════ -->
+    <section id="install" class="relative py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
+            style="
+              background: rgba(212, 160, 74, 0.08);
+              color: #d4a04a;
+              border: 1px solid rgba(212, 160, 74, 0.1);
+            "
+            >Install</span
+          >
+          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
+            One Command. <span class="gradient-gold">Full Team.</span>
+          </h2>
+          <p
+            class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            Run this in your project directory. Works on macOS, Linux, and Windows.
+          </p>
+        </div>
+
+        <!-- Quick install -->
+        <div class="fade-up max-w-2xl mx-auto">
+          <div class="card card-gold p-6 sm:p-8">
+            <div class="flex items-center gap-3 mb-5">
+              <span
+                class="px-2 py-0.5 rounded text-[10px] font-mono"
+                style="
+                  background: rgba(212, 160, 74, 0.12);
+                  color: #d4a04a;
+                  border: 1px solid rgba(212, 160, 74, 0.15);
+                "
+                >quick start</span
+              >
+              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+                Install in any project
+              </h3>
+            </div>
+
+            <div class="terminal mb-5">
+              <div
+                class="flex items-center gap-1.5 px-4 pt-3 pb-2"
+                style="border-bottom: 1px solid var(--border-subtle)"
+              >
+                <span class="terminal-dot" style="background: #e06070"></span>
+                <span class="terminal-dot" style="background: #d4a04a"></span>
+                <span class="terminal-dot" style="background: #4ac8b8"></span>
+                <span class="text-[10px] ml-2 font-mono" style="color: var(--text-muted)"
+                  >terminal</span
+                >
+              </div>
+              <pre
+                class="px-4 py-3 font-mono text-xs leading-relaxed overflow-x-auto"
+                style="color: var(--text-bright)"
+              ><span style="color:#d4a04a;">$</span> npx opencode-agent-kit init
+<span style="color:var(--text-muted);"># Run inside your project directory</span>
+<span style="color:var(--text-muted);"># macOS / Linux / Windows (WSL)</span>
+<span style="color:var(--text-secondary);">  ✓ Copying .opencode/ configuration</span>
+<span style="color:var(--text-secondary);">  ✓ Merging opencode.json</span>
+<span style="color:var(--text-secondary);">  ✓ Installing dependencies</span>
+<span style="color:var(--text-secondary);">  ✓ Setting up agentmemory (53 tools)</span>
 <span style="color:#4ac8b8;">  ✦ 31 agents ready. Run opencode to start.</span>
 
-<span style="color:#6a6a80;"># Windows (PowerShell)</span>
-<span style="color:#d4a04a;">PS&gt;</span> <span style="color:#b0b0c8;">npx opencode-agent-kit init</span></pre>
+<span style="color:var(--text-muted);"># Windows (PowerShell)</span>
+<span style="color:#d4a04a;">PS&gt;</span> <span style="color:var(--text-bright);">npx opencode-agent-kit init</span></pre>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+              <div class="flex items-center gap-2" style="color: var(--text-muted)">
+                <svg
+                  class="w-3.5 h-3-5 shrink-0"
+                  style="color: #4ac8b8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Copies .opencode/
+              </div>
+              <div class="flex items-center gap-2" style="color: var(--text-muted)">
+                <svg
+                  class="w-3.5 h-3-5 shrink-0"
+                  style="color: #4ac8b8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Merges existing config
+              </div>
+              <div class="flex items-center gap-2" style="color: var(--text-muted)">
+                <svg
+                  class="w-3.5 h-3-5 shrink-0"
+                  style="color: #4ac8b8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Installs agentmemory
+              </div>
+              <div class="flex items-center gap-2" style="color: var(--text-muted)">
+                <svg
+                  class="w-3.5 h-3-5 shrink-0"
+                  style="color: #4ac8b8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Auto-start with opencode
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-          <div class="flex items-center gap-2" style="color:#6a6a80;">
-            <svg class="w-3.5 h-3-5 shrink-0" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Copies .opencode/
+        <!-- Other commands -->
+        <div class="fade-up fade-up-d1 mt-6 grid sm:grid-cols-3 gap-4">
+          <div class="card p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <div
+                class="w-7 h-7 rounded-lg flex items-center justify-center"
+                style="background: rgba(139, 108, 246, 0.1)"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  style="color: #8b6cf6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                  />
+                </svg>
+              </div>
+              <h4 class="text-sm font-semibold" style="color: var(--text-primary)">Upgrade</h4>
+            </div>
+            <div class="terminal">
+              <pre
+                class="px-3 py-2 font-mono text-[11px]"
+                style="color: var(--text-bright)"
+              ><span style="color:#8b6cf6;">$</span> npx opencode-agent-kit upgrade</pre>
+            </div>
+            <p class="mt-2 text-[11px]" style="color: var(--text-muted)">
+              Check and apply the latest version.
+            </p>
           </div>
-          <div class="flex items-center gap-2" style="color:#6a6a80;">
-            <svg class="w-3.5 h-3-5 shrink-0" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Merges existing config
+
+          <div class="card p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <div
+                class="w-7 h-7 rounded-lg flex items-center justify-center"
+                style="background: rgba(74, 200, 184, 0.1)"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  style="color: #4ac8b8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+              </div>
+              <h4 class="text-sm font-semibold" style="color: var(--text-primary)">Doctor</h4>
+            </div>
+            <div class="terminal">
+              <pre
+                class="px-3 py-2 font-mono text-[11px]"
+                style="color: var(--text-bright)"
+              ><span style="color:#4ac8b8;">$</span> npx opencode-agent-kit doctor</pre>
+            </div>
+            <p class="mt-2 text-[11px]" style="color: var(--text-muted)">
+              Diagnose setup and fix common issues.
+            </p>
           </div>
-          <div class="flex items-center gap-2" style="color:#6a6a80;">
-            <svg class="w-3.5 h-3-5 shrink-0" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Installs agentmemory
-          </div>
-          <div class="flex items-center gap-2" style="color:#6a6a80;">
-            <svg class="w-3.5 h-3-5 shrink-0" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Auto-start with opencode
+
+          <div class="card p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <div
+                class="w-7 h-7 rounded-lg flex items-center justify-center"
+                style="background: rgba(224, 96, 112, 0.1)"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  style="color: #e06070"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </div>
+              <h4 class="text-sm font-semibold" style="color: var(--text-primary)">Uninstall</h4>
+            </div>
+            <div class="terminal">
+              <pre
+                class="px-3 py-2 font-mono text-[11px]"
+                style="color: var(--text-bright)"
+              ><span style="color:#e06070;">$</span> npx opencode-agent-kit uninstall</pre>
+            </div>
+            <p class="mt-2 text-[11px]" style="color: var(--text-muted)">
+              Clean removal from your project.
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Other commands -->
-    <div class="fade-up fade-up-d1 mt-6 grid sm:grid-cols-3 gap-4">
-      <div class="card p-5">
-        <div class="flex items-center gap-2 mb-3">
-          <div class="w-7 h-7 rounded-lg flex items-center justify-center" style="background:rgba(139,108,246,0.1);">
-            <svg class="w-3.5 h-3.5" style="color:#8b6cf6;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-          </div>
-          <h4 class="text-sm font-semibold" style="color:#e8e8f0;">Upgrade</h4>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+
+    <!-- ════════════════ MARQUEE ════════════════ -->
+    <section
+      class="relative py-6 overflow-hidden marquee-section"
+      style="
+        border-top: 1px solid var(--marquee-bdr);
+        border-bottom: 1px solid var(--marquee-bdr);
+        background: var(--marquee-bg);
+      "
+    >
+      <div class="marquee-track flex whitespace-nowrap" style="will-change: transform">
+        <div class="flex items-center gap-4 mx-4">
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(139, 92, 246, 0.06);
+              color: #8b5cf6;
+              border: 1px solid rgba(139, 92, 246, 0.08);
+            "
+            >@leader</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(59, 130, 246, 0.06);
+              color: #3b82f6;
+              border: 1px solid rgba(59, 130, 246, 0.08);
+            "
+            >@frontend-nuxt</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(6, 182, 212, 0.06);
+              color: #06b6d4;
+              border: 1px solid rgba(6, 182, 212, 0.08);
+            "
+            >@frontend-react</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(16, 185, 129, 0.06);
+              color: #10b981;
+              border: 1px solid rgba(16, 185, 129, 0.08);
+            "
+            >@backend</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(55, 118, 171, 0.06);
+              color: #3776ab;
+              border: 1px solid rgba(55, 118, 171, 0.08);
+            "
+            >@python</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(222, 165, 132, 0.06);
+              color: #dea584;
+              border: 1px solid rgba(222, 165, 132, 0.08);
+            "
+            >@rust</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(240, 81, 56, 0.06);
+              color: #f05138;
+              border: 1px solid rgba(240, 81, 56, 0.08);
+            "
+            >@swift</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(34, 197, 94, 0.06);
+              color: #22c55e;
+              border: 1px solid rgba(34, 197, 94, 0.08);
+            "
+            >@android</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(74, 200, 184, 0.06);
+              color: #4ac8b8;
+              border: 1px solid rgba(74, 200, 184, 0.08);
+            "
+            >agentmemory</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(139, 92, 246, 0.06);
+              color: #8b5cf6;
+              border: 1px solid rgba(139, 92, 246, 0.08);
+            "
+            >@leader</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(59, 130, 246, 0.06);
+              color: #3b82f6;
+              border: 1px solid rgba(59, 130, 246, 0.08);
+            "
+            >@frontend-nuxt</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(6, 182, 212, 0.06);
+              color: #06b6d4;
+              border: 1px solid rgba(6, 182, 212, 0.08);
+            "
+            >@frontend-react</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(16, 185, 129, 0.06);
+              color: #10b981;
+              border: 1px solid rgba(16, 185, 129, 0.08);
+            "
+            >@backend</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(55, 118, 171, 0.06);
+              color: #3776ab;
+              border: 1px solid rgba(55, 118, 171, 0.08);
+            "
+            >@python</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(222, 165, 132, 0.06);
+              color: #dea584;
+              border: 1px solid rgba(222, 165, 132, 0.08);
+            "
+            >@rust</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(240, 81, 56, 0.06);
+              color: #f05138;
+              border: 1px solid rgba(240, 81, 56, 0.08);
+            "
+            >@swift</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(34, 197, 94, 0.06);
+              color: #22c55e;
+              border: 1px solid rgba(34, 197, 94, 0.08);
+            "
+            >@android</span
+          >
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
+            style="
+              background: rgba(74, 200, 184, 0.06);
+              color: #4ac8b8;
+              border: 1px solid rgba(74, 200, 184, 0.08);
+            "
+            >agentmemory</span
+          >
         </div>
-        <div class="terminal">
-          <pre class="px-3 py-2 font-mono text-[11px]" style="color:#b0b0c8;"><span style="color:#8b6cf6;">$</span> npx opencode-agent-kit upgrade</pre>
-        </div>
-        <p class="mt-2 text-[11px]" style="color:#6a6a80;">Check and apply the latest version.</p>
       </div>
+    </section>
 
-      <div class="card p-5">
-        <div class="flex items-center gap-2 mb-3">
-          <div class="w-7 h-7 rounded-lg flex items-center justify-center" style="background:rgba(74,200,184,0.1);">
-            <svg class="w-3.5 h-3.5" style="color:#4ac8b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <h4 class="text-sm font-semibold" style="color:#e8e8f0;">Doctor</h4>
-        </div>
-        <div class="terminal">
-          <pre class="px-3 py-2 font-mono text-[11px]" style="color:#b0b0c8;"><span style="color:#4ac8b8;">$</span> npx opencode-agent-kit doctor</pre>
-        </div>
-        <p class="mt-2 text-[11px]" style="color:#6a6a80;">Diagnose setup and fix common issues.</p>
-      </div>
-
-      <div class="card p-5">
-        <div class="flex items-center gap-2 mb-3">
-          <div class="w-7 h-7 rounded-lg flex items-center justify-center" style="background:rgba(224,96,112,0.1);">
-            <svg class="w-3.5 h-3.5" style="color:#e06070;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-          </div>
-          <h4 class="text-sm font-semibold" style="color:#e8e8f0;">Uninstall</h4>
-        </div>
-        <div class="terminal">
-          <pre class="px-3 py-2 font-mono text-[11px]" style="color:#b0b0c8;"><span style="color:#e06070;">$</span> npx opencode-agent-kit uninstall</pre>
-        </div>
-        <p class="mt-2 text-[11px]" style="color:#6a6a80;">Clean removal from your project.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-<!-- ════════════════ MARQUEE ════════════════ -->
-<section class="relative py-6 overflow-hidden" style="border-top:1px solid rgba(255,255,255,0.02); border-bottom:1px solid rgba(255,255,255,0.02); background:rgba(255,255,255,0.005);">
-  <div class="marquee-track flex whitespace-nowrap" style="will-change:transform;">
-    <div class="flex items-center gap-4 mx-4">
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(139,92,246,0.06); color:#8b5cf6; border:1px solid rgba(139,92,246,0.08);">@leader</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(59,130,246,0.06); color:#3b82f6; border:1px solid rgba(59,130,246,0.08);">@frontend-nuxt</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(6,182,212,0.06); color:#06b6d4; border:1px solid rgba(6,182,212,0.08);">@frontend-react</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(16,185,129,0.06); color:#10b981; border:1px solid rgba(16,185,129,0.08);">@backend</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(55,118,171,0.06); color:#3776AB; border:1px solid rgba(55,118,171,0.08);">@python</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(222,165,132,0.06); color:#dea584; border:1px solid rgba(222,165,132,0.08);">@rust</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(240,81,56,0.06); color:#f05138; border:1px solid rgba(240,81,56,0.08);">@swift</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(34,197,94,0.06); color:#22c55e; border:1px solid rgba(34,197,94,0.08);">@android</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(74,200,184,0.06); color:#4ac8b8; border:1px solid rgba(74,200,184,0.08);">agentmemory</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(139,92,246,0.06); color:#8b5cf6; border:1px solid rgba(139,92,246,0.08);">@leader</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(59,130,246,0.06); color:#3b82f6; border:1px solid rgba(59,130,246,0.08);">@frontend-nuxt</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(6,182,212,0.06); color:#06b6d4; border:1px solid rgba(6,182,212,0.08);">@frontend-react</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(16,185,129,0.06); color:#10b981; border:1px solid rgba(16,185,129,0.08);">@backend</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(55,118,171,0.06); color:#3776AB; border:1px solid rgba(55,118,171,0.08);">@python</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(222,165,132,0.06); color:#dea584; border:1px solid rgba(222,165,132,0.08);">@rust</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(240,81,56,0.06); color:#f05138; border:1px solid rgba(240,81,56,0.08);">@swift</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(34,197,94,0.06); color:#22c55e; border:1px solid rgba(34,197,94,0.08);">@android</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono" style="background:rgba(74,200,184,0.06); color:#4ac8b8; border:1px solid rgba(74,200,184,0.08);">agentmemory</span>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════ FOOTER ════════════════ -->
-<footer class="relative py-12">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="grid sm:grid-cols-3 gap-8">
-      <div>
-        <div class="flex items-center gap-2.5 mb-3">
-          <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(212,160,74,0.1);">
-            <span class="text-xs font-bold font-mono" style="color:#d4a04a;">K</span>
+    <!-- ════════════════ FOOTER ════════════════ -->
+    <footer class="relative py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid sm:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center gap-2.5 mb-3">
+              <div
+                class="w-8 h-8 rounded-lg flex items-center justify-center"
+                style="background: rgba(212, 160, 74, 0.1)"
+              >
+                <span class="text-xs font-bold font-mono" style="color: #d4a04a">K</span>
+              </div>
+              <div>
+                <div class="text-sm font-semibold" style="color: var(--text-primary)">
+                  Agent Kit
+                </div>
+                <div class="text-[10px]" style="color: var(--text-muted)">opencode-agent-kit</div>
+              </div>
+            </div>
+            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
+              31 specialized AI agents. 201 skill playbooks. 46 CLI commands. 8 MCP servers.
+              Persistent memory.
+            </p>
           </div>
           <div>
-            <div class="text-sm font-semibold" style="color:#e8e8f0;">Agent Kit</div>
-            <div class="text-[10px]" style="color:#6a6a80;">opencode-agent-kit</div>
+            <div
+              class="text-xs font-semibold uppercase tracking-wider mb-3"
+              style="color: var(--text-muted)"
+            >
+              Quick Links
+            </div>
+            <div class="space-y-1.5 text-xs">
+              <a
+                href="https://github.com/defuj/opencode-agent-kit"
+                target="_blank"
+                style="color: var(--text-secondary); transition: color 0.2s"
+                onmouseover="this.style.color = '#d4a04a'"
+                onmouseout="this.style.color = '#8a8aa0'"
+                class="block"
+                >GitHub Repository</a
+              >
+              <a
+                href="https://github.com/rohitg00/agentmemory"
+                target="_blank"
+                style="color: var(--text-secondary); transition: color 0.2s"
+                onmouseover="this.style.color = '#4ac8b8'"
+                onmouseout="this.style.color = '#8a8aa0'"
+                class="block"
+                >agentmemory</a
+              >
+              <a
+                href="https://opencode.ai"
+                target="_blank"
+                style="color: var(--text-secondary); transition: color 0.2s"
+                onmouseover="this.style.color = '#8b6cf6'"
+                onmouseout="this.style.color = '#8a8aa0'"
+                class="block"
+                >OpenCode</a
+              >
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-xs font-semibold uppercase tracking-wider mb-3"
+              style="color: var(--text-muted)"
+            >
+              Stack Coverage
+            </div>
+            <div class="text-xs leading-relaxed" style="color: var(--text-muted)">
+              Nuxt 4 &middot; Next.js 15 &middot; React 19 &middot; Vue 3 &middot; Node.js &middot;
+              Express 5 &middot; Prisma &middot; Python &middot; Django &middot; FastAPI &middot;
+              Rust &middot; Swift &middot; .NET &middot; Angular &middot; C++ &middot; Laravel
+              &middot; CI3 &middot; Android &middot; Flutter &middot; PostgreSQL &middot; Docker
+              &middot; GitHub Actions
+            </div>
           </div>
         </div>
-        <p class="text-xs leading-relaxed" style="color:#6a6a80;">
-          31 specialized AI agents. 201 skill playbooks. 46 CLI commands. 8 MCP servers. Persistent memory.
-        </p>
-      </div>
-      <div>
-        <div class="text-xs font-semibold uppercase tracking-wider mb-3" style="color:#6a6a80;">Quick Links</div>
-        <div class="space-y-1.5 text-xs">
-          <a href="https://github.com/defuj/opencode-agent-kit" target="_blank" style="color:#8a8aa0; transition:color 0.2s;" onmouseover="this.style.color='#d4a04a'" onmouseout="this.style.color='#8a8aa0'" class="block">GitHub Repository</a>
-          <a href="https://github.com/rohitg00/agentmemory" target="_blank" style="color:#8a8aa0; transition:color 0.2s;" onmouseover="this.style.color='#4ac8b8'" onmouseout="this.style.color='#8a8aa0'" class="block">agentmemory</a>
-          <a href="https://opencode.ai" target="_blank" style="color:#8a8aa0; transition:color 0.2s;" onmouseover="this.style.color='#8b6cf6'" onmouseout="this.style.color='#8a8aa0'" class="block">OpenCode</a>
+        <div
+          class="mt-8 pt-6 text-center text-[10px]"
+          style="border-top: 1px solid var(--footer-divider); color: var(--text-muted)"
+        >
+          <span class="flex items-center justify-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full" style="background: #d4a04a"></span>
+            v1.2.0
+            <span class="w-1.5 h-1.5 rounded-full" style="background: #8b6cf6"></span>
+            MIT License
+            <span class="w-1.5 h-1.5 rounded-full" style="background: #4ac8b8"></span>
+            Built for OpenCode
+          </span>
         </div>
       </div>
-      <div>
-        <div class="text-xs font-semibold uppercase tracking-wider mb-3" style="color:#6a6a80;">Stack Coverage</div>
-        <div class="text-xs leading-relaxed" style="color:#6a6a80;">
-          Nuxt 4 &middot; Next.js 15 &middot; React 19 &middot; Vue 3 &middot; Node.js &middot; Express 5 &middot; Prisma &middot; Python &middot; Django &middot; FastAPI &middot; Rust &middot; Swift &middot; .NET &middot; Angular &middot; C++ &middot; Laravel &middot; CI3 &middot; Android &middot; Flutter &middot; PostgreSQL &middot; Docker &middot; GitHub Actions
-        </div>
-      </div>
-    </div>
-    <div class="mt-8 pt-6 text-center text-[10px]" style="border-top:1px solid rgba(255,255,255,0.03); color:#6a6a80;">
-      <span class="flex items-center justify-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full" style="background:#d4a04a;"></span>
-        v1.2.0
-        <span class="w-1.5 h-1.5 rounded-full" style="background:#8b6cf6;"></span>
-        MIT License
-        <span class="w-1.5 h-1.5 rounded-full" style="background:#4ac8b8;"></span>
-        Built for OpenCode
-      </span>
-    </div>
-  </div>
-</footer>
+    </footer>
 
-<script>
-  // ── Intersection Observer for fade-up ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    <script>
+      // ── Theme Management ──
+      function getPreferredTheme() {
+        const stored = localStorage.getItem('theme');
+        if (stored) return stored;
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
       }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // ── Counter animation ──
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.target);
-        let current = 0;
-        const duration = 1200;
-        const step = Math.ceil(target / (duration / 16));
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) { current = target; clearInterval(timer); }
-          el.textContent = current;
-          el.classList.remove('count-pop');
-          void el.offsetWidth;
-          el.classList.add('count-pop');
-        }, 16);
-        counterObserver.unobserve(el);
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        const sun = document.getElementById('theme-icon-sun');
+        const moon = document.getElementById('theme-icon-moon');
+        if (theme === 'dark') {
+          sun.style.display = '';
+          moon.style.display = 'none';
+        } else {
+          sun.style.display = 'none';
+          moon.style.display = '';
+        }
       }
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
-  // ── Smooth scroll for nav ──
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-</script>
+      function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', next);
+        applyTheme(next);
+      }
 
-</body>
+      // Init theme
+      applyTheme(getPreferredTheme());
+
+      // Theme toggle button
+      document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+
+      // Listen for system preference changes (only when no stored preference)
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+          applyTheme(e.matches ? 'light' : 'dark');
+        }
+      });
+
+      // ── Intersection Observer for fade-up ──
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
+      );
+      document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+      // ── Counter animation ──
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = parseInt(el.dataset.target);
+              let current = 0;
+              const duration = 1200;
+              const step = Math.ceil(target / (duration / 16));
+              const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                el.textContent = current;
+                el.classList.remove('count-pop');
+                void el.offsetWidth;
+                el.classList.add('count-pop');
+              }, 16);
+              counterObserver.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+      document.querySelectorAll('.counter').forEach((el) => counterObserver.observe(el));
+
+      // ── Smooth scroll for nav ──
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    </script>
+  </body>
 </html>
