@@ -6,43 +6,40 @@
     <title>Agent Kit — 31 Specialized AI Agents for OpenCode</title>
     <meta
       name="description"
-      content="A portable multi-stack AI agent system for OpenCode. 31 specialized agents, 201 skill playbooks, 46 CLI commands, 8 MCP servers, and persistent agentmemory."
-    />
+      content="A portable multi-stack AI agent system for OpenCode. 31 specialized agents, 201 skill playbooks, 46 CLI commands, 8 MCP servers, and persistent agentmemory." />
     <meta
       name="keywords"
-      content="opencode-agent-kit, opencode, AI agents, software development, agentmemory, nuxt, react, flutter, android, laravel, devops"
-    />
+      content="opencode-agent-kit, opencode, AI agents, software development, agentmemory, nuxt, react, flutter, android, laravel, devops" />
     <meta name="author" content="defuj" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://github.com/defuj/opencode-agent-kit" />
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0e14'/><text x='16' y='22' text-anchor='middle' fill='%23d4a04a' font-size='16' font-weight='800' font-family='system-ui'>K</text></svg>"
-    />
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0e14'/><text x='16' y='22' text-anchor='middle' fill='%23d4a04a' font-size='16' font-weight='800' font-family='system-ui'>K</text></svg>" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Agent Kit — 31 Specialized AI Agents for OpenCode" />
+    <meta property="og:title"
+      content="Agent Kit — 31 Specialized AI Agents for OpenCode" />
     <meta
       property="og:description"
-      content="31 agents, 201 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team."
-    />
+      content="31 agents, 201 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team." />
     <meta
       property="og:image"
-      content="https://raw.githubusercontent.com/defuj/opencode-agent-kit/main/assets/og-image-2.webp"
-    />
-    <meta property="og:url" content="https://github.com/defuj/opencode-agent-kit" />
+      content="https://raw.githubusercontent.com/defuj/opencode-agent-kit/main/assets/og-image-2.webp" />
+    <meta property="og:url"
+      content="https://github.com/defuj/opencode-agent-kit" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Agent Kit" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Agent Kit — 31 Specialized AI Agents for OpenCode" />
+    <meta name="twitter:title"
+      content="Agent Kit — 31 Specialized AI Agents for OpenCode" />
     <meta
       name="twitter:description"
-      content="31 agents, 201 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team."
-    />
+      content="31 agents, 201 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team." />
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -63,8 +60,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
 
     <style>
       *,
@@ -494,31 +490,28 @@
         background: var(--nav-bg);
         backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--nav-bdr);
-      "
-    >
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      ">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2.5">
           <div
             class="w-8 h-8 rounded-lg flex items-center justify-center"
-            style="background: rgba(212, 160, 74, 0.1)"
-          >
-            <span class="text-xs font-bold font-mono" style="color: #d4a04a">K</span>
+            style="background: rgba(212, 160, 74, 0.1)">
+            <span class="text-xs font-bold font-mono"
+              style="color: #d4a04a">K</span>
           </div>
-          <span class="font-semibold text-sm tracking-tight" style="color: var(--text-primary)"
-            >Agent Kit</span
-          >
+          <span class="font-semibold text-sm tracking-tight"
+            style="color: var(--text-primary)">Agent Kit</span>
         </a>
         <div class="hidden sm:flex items-center gap-6">
-          <a href="#agents" class="nav-link text-xs font-medium uppercase tracking-wider">Agents</a>
-          <a href="#memory" class="nav-link-memory text-xs font-medium uppercase tracking-wider"
-            >Memory</a
-          >
-          <a href="#capabilities" class="nav-link text-xs font-medium uppercase tracking-wider"
-            >Capabilities</a
-          >
-          <a href="#install" class="nav-link text-xs font-medium uppercase tracking-wider"
-            >Install</a
-          >
+          <a href="#agents"
+            class="nav-link text-xs font-medium uppercase tracking-wider">Agents</a>
+          <a href="#memory"
+            class="nav-link-memory text-xs font-medium uppercase tracking-wider">Memory</a>
+          <a href="#capabilities"
+            class="nav-link text-xs font-medium uppercase tracking-wider">Capabilities</a>
+          <a href="#install"
+            class="nav-link text-xs font-medium uppercase tracking-wider">Install</a>
         </div>
         <div class="flex items-center gap-1.5">
           <a
@@ -542,12 +535,10 @@
               this.style.color = getComputedStyle(document.documentElement).getPropertyValue(
                 '--text-secondary',
               );
-            "
-          >
+            ">
             <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
               <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
-              />
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
             </svg>
             <span>GitHub</span>
           </a>
@@ -557,14 +548,12 @@
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              id="theme-icon-sun"
-            >
+              id="theme-icon-sun">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-              />
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
             <svg
               class="w-4 h-4"
@@ -572,14 +561,12 @@
               stroke="currentColor"
               viewBox="0 0 24 24"
               id="theme-icon-moon"
-              style="display: none"
-            >
+              style="display: none">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-              />
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>
           </button>
           <a
@@ -587,27 +574,25 @@
             target="_blank"
             class="sm:hidden p-2 rounded-lg"
             style="color: var(--text-muted)"
-            aria-label="GitHub"
-          >
-            <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+            aria-label="GitHub">
+            <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"
+              width="18" height="18">
               <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
-              />
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
             </svg>
           </a>
           <button
             id="mobile-btn"
             class="sm:hidden p-2 rounded-lg"
             style="color: var(--text-muted)"
-            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+                d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
@@ -616,39 +601,30 @@
         <a
           href="#agents"
           class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--text-secondary)"
-          >Agents</a
-        >
+          style="color: var(--text-secondary)">Agents</a>
         <a
           href="#memory"
           class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--text-secondary)"
-          >Memory</a
-        >
+          style="color: var(--text-secondary)">Memory</a>
         <a
           href="#capabilities"
           class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--text-secondary)"
-          >Capabilities</a
-        >
+          style="color: var(--text-secondary)">Capabilities</a>
         <a
           href="#install"
           class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--text-secondary)"
-          >Install</a
-        >
+          style="color: var(--text-secondary)">Install</a>
         <a
           href="https://github.com/defuj/opencode-agent-kit"
           target="_blank"
           class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--gold)"
-          >GitHub →</a
-        >
+          style="color: var(--gold)">GitHub →</a>
       </div>
     </nav>
 
     <!-- ════════════════ HERO ════════════════ -->
-    <section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
+    <section
+      class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full relative z-10">
         <div class="text-center max-w-4xl mx-auto">
           <!-- Badge -->
@@ -658,16 +634,15 @@
               background: rgba(139, 108, 246, 0.06);
               border: 1px solid rgba(139, 108, 246, 0.1);
               color: #8b6cf6;
-            "
-          >
-            <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background: #8b6cf6"></span>
-            v1.2.0 &mdash; Open Source &mdash; 31 Agents
+            ">
+            <span class="w-1.5 h-1.5 rounded-full pulse-dot"
+              style="background: #8b6cf6"></span>
+            v1.2.1 &mdash; Open Source &mdash; 31 Agents
           </div>
 
           <!-- Headline -->
           <h1
-            class="fade-up text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight"
-          >
+            class="fade-up text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight">
             <span class="gradient-gold">Your AI</span><br />
             <span class="gradient-violet">Development Team</span><br />
             <span style="color: var(--text-primary)">One Command Away</span>
@@ -675,33 +650,32 @@
 
           <p
             class="fade-up fade-up-d1 mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
+            style="color: var(--text-secondary)">
             A portable multi-stack AI agent system for
-            <strong style="color: var(--text-bright)">OpenCode</strong>. 31 specialized agents, 201
+            <strong style="color: var(--text-bright)">OpenCode</strong>. 31
+            specialized agents, 201
             skill playbooks, 46 CLI commands, and
-            <strong style="color: #4ac8b8">persistent cross-session memory</strong>.
+            <strong style="color: #4ac8b8">persistent cross-session
+              memory</strong>.
           </p>
 
           <!-- CTA -->
           <div
-            class="fade-up fade-up-d2 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
+            class="fade-up fade-up-d2 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#install"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
               style="background: #d4a04a; color: #08080c"
               onmouseover="this.style.background = '#e8b85e'"
-              onmouseout="this.style.background = '#d4a04a'"
-            >
+              onmouseout="this.style.background = '#d4a04a'">
               <span class="font-mono text-xs">npx opencode-agent-kit init</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                />
+                  d="M19 9l-7 7-7-7" />
               </svg>
             </a>
             <a
@@ -713,46 +687,42 @@
                 this.style.borderColor = getComputedStyle(
                   document.documentElement,
                 ).getPropertyValue('--border-subtle')
-              "
-            >
+              ">
               Explore the Team
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </a>
           </div>
 
           <!-- Stats -->
           <div
-            class="fade-up fade-up-d3 mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto"
-          >
+            class="fade-up fade-up-d3 mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
             <div class="card p-5 text-center">
-              <div class="text-3xl sm:text-4xl font-black gradient-gold counter" data-target="31">
+              <div class="text-3xl sm:text-4xl font-black gradient-gold counter"
+                data-target="31">
                 0
               </div>
               <div
                 class="text-xs mt-1.5 font-medium uppercase tracking-wider"
-                style="color: var(--text-muted)"
-              >
+                style="color: var(--text-muted)">
                 Specialized Agents
               </div>
             </div>
             <div class="card p-5 text-center">
               <div
                 class="text-3xl sm:text-4xl font-black gradient-violet counter"
-                data-target="201"
-              >
+                data-target="201">
                 0
               </div>
               <div
                 class="text-xs mt-1.5 font-medium uppercase tracking-wider"
-                style="color: var(--text-muted)"
-              >
+                style="color: var(--text-muted)">
                 Skill Playbooks
               </div>
             </div>
@@ -760,14 +730,12 @@
               <div
                 class="text-3xl sm:text-4xl font-black counter"
                 style="color: var(--text-primary)"
-                data-target="46"
-              >
+                data-target="46">
                 0
               </div>
               <div
                 class="text-xs mt-1.5 font-medium uppercase tracking-wider"
-                style="color: var(--text-muted)"
-              >
+                style="color: var(--text-muted)">
                 CLI Commands
               </div>
             </div>
@@ -775,14 +743,12 @@
               <div
                 class="text-3xl sm:text-4xl font-black counter"
                 style="color: #4ac8b8"
-                data-target="53"
-              >
+                data-target="53">
                 0
               </div>
               <div
                 class="text-xs mt-1.5 font-medium uppercase tracking-wider"
-                style="color: var(--text-muted)"
-              >
+                style="color: var(--text-muted)">
                 Memory Tools
               </div>
             </div>
@@ -791,22 +757,25 @@
 
         <!-- Scroll indicator -->
         <div class="fade-up fade-up-d4 mt-16 flex justify-center">
-          <div class="float-slow flex flex-col items-center gap-2" style="color: var(--text-muted)">
-            <span class="text-[10px] font-mono uppercase tracking-widest">Scroll</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="float-slow flex flex-col items-center gap-2"
+            style="color: var(--text-muted)">
+            <span
+              class="text-[10px] font-mono uppercase tracking-widest">Scroll</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
+                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div
+        class="divider"></div></div>
 
     <!-- ════════════════ AGENTS ════════════════ -->
     <section id="agents" class="relative py-20 sm:py-28">
@@ -818,17 +787,16 @@
               background: rgba(212, 160, 74, 0.08);
               color: #d4a04a;
               border: 1px solid rgba(212, 160, 74, 0.1);
-            "
-            >The Team</span
-          >
-          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
+            ">The Team</span>
+          <h2
+            class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
             31 Agents, <span class="gradient-gold">One Mission</span>
           </h2>
           <p
             class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
-            From architecture to deployment. Each agent is a domain specialist. The IT Leader
+            style="color: var(--text-secondary)">
+            From architecture to deployment. Each agent is a domain specialist.
+            The IT Leader
             orchestrates them all.
           </p>
         </div>
@@ -838,8 +806,10 @@
           <!-- Core Frontend & Backend -->
           <div class="fade-up card p-5">
             <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #3b82f6"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+              <span class="w-2 h-2 rounded-full"
+                style="background: #3b82f6"></span>
+              <h3 class="text-sm font-semibold"
+                style="color: var(--text-primary)">
                 Core Frontend &amp; Backend
               </h3>
             </div>
@@ -847,58 +817,57 @@
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6"
-                  >primary</span
-                ><span style="color: var(--text-bright)">IT Leader</span
-                ><span class="font-mono" style="color: var(--text-muted)">@leader</span>
+                  style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6">primary</span><span
+                  style="color: var(--text-bright)">IT Leader</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@leader</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(59, 130, 246, 0.1); color: #3b82f6"
-                  >vue</span
-                ><span style="color: var(--text-bright)">Nuxt Frontend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@frontend-nuxt</span>
+                  style="background: rgba(59, 130, 246, 0.1); color: #3b82f6">vue</span><span
+                  style="color: var(--text-bright)">Nuxt Frontend</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@frontend-nuxt</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(6, 182, 212, 0.1); color: #06b6d4"
-                  >react</span
-                ><span style="color: var(--text-bright)">React Frontend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@frontend-react</span>
+                  style="background: rgba(6, 182, 212, 0.1); color: #06b6d4">react</span><span
+                  style="color: var(--text-bright)">React Frontend</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@frontend-react</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(16, 185, 129, 0.1); color: #10b981"
-                  >node</span
-                ><span style="color: var(--text-bright)">Node Backend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@backend</span>
+                  style="background: rgba(16, 185, 129, 0.1); color: #10b981">node</span><span
+                  style="color: var(--text-bright)">Node Backend</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@backend</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(217, 119, 6, 0.1); color: #d97706"
-                  >laravel</span
-                ><span style="color: var(--text-bright)">Laravel Backend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@laravel</span>
+                  style="background: rgba(217, 119, 6, 0.1); color: #d97706">laravel</span><span
+                  style="color: var(--text-bright)">Laravel Backend</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@laravel</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(132, 204, 22, 0.1); color: #84cc16"
-                  >ci3</span
-                ><span style="color: var(--text-bright)">CodeIgniter 3</span
-                ><span class="font-mono" style="color: var(--text-muted)">@ci3</span>
+                  style="background: rgba(132, 204, 22, 0.1); color: #84cc16">ci3</span><span
+                  style="color: var(--text-bright)">CodeIgniter 3</span><span
+                  class="font-mono" style="color: var(--text-muted)">@ci3</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(55, 118, 171, 0.1); color: #3776ab"
-                  >python</span
-                ><span style="color: var(--text-bright)">Python Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@python</span>
+                  style="background: rgba(55, 118, 171, 0.1); color: #3776ab">python</span><span
+                  style="color: var(--text-bright)">Python Developer</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@python</span>
               </div>
             </div>
           </div>
@@ -906,8 +875,10 @@
           <!-- Mobile & Design -->
           <div class="fade-up fade-up-d1 card p-5">
             <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #22c55e"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+              <span class="w-2 h-2 rounded-full"
+                style="background: #22c55e"></span>
+              <h3 class="text-sm font-semibold"
+                style="color: var(--text-primary)">
                 Mobile &amp; Design
               </h3>
             </div>
@@ -915,50 +886,49 @@
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(34, 197, 94, 0.1); color: #22c55e"
-                  >android</span
-                ><span style="color: var(--text-bright)">Android Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@android</span>
+                  style="background: rgba(34, 197, 94, 0.1); color: #22c55e">android</span><span
+                  style="color: var(--text-bright)">Android
+                  Developer</span><span class="font-mono"
+                  style="color: var(--text-muted)">@android</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(2, 132, 199, 0.1); color: #0284c7"
-                  >flutter</span
-                ><span style="color: var(--text-bright)">Flutter Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@flutter</span>
+                  style="background: rgba(2, 132, 199, 0.1); color: #0284c7">flutter</span><span
+                  style="color: var(--text-bright)">Flutter
+                  Developer</span><span class="font-mono"
+                  style="color: var(--text-muted)">@flutter</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(240, 81, 56, 0.1); color: #f05138"
-                  >swift</span
-                ><span style="color: var(--text-bright)">Swift/iOS Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@swift</span>
+                  style="background: rgba(240, 81, 56, 0.1); color: #f05138">swift</span><span
+                  style="color: var(--text-bright)">Swift/iOS
+                  Developer</span><span class="font-mono"
+                  style="color: var(--text-muted)">@swift</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(245, 158, 11, 0.1); color: #f59e0b"
-                  >design</span
-                ><span style="color: var(--text-bright)">UI/UX Designer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@designer</span>
+                  style="background: rgba(245, 158, 11, 0.1); color: #f59e0b">design</span><span
+                  style="color: var(--text-bright)">UI/UX Designer</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@designer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1"
-                  >devops</span
-                ><span style="color: var(--text-bright)">DevOps Engineer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@devops</span>
+                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1">devops</span><span
+                  style="color: var(--text-bright)">DevOps Engineer</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@devops</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(132, 204, 22, 0.1); color: #84cc16"
-                  >seo</span
-                ><span style="color: var(--text-bright)">SEO Specialist</span
-                ><span class="font-mono" style="color: var(--text-muted)">@seo</span>
+                  style="background: rgba(132, 204, 22, 0.1); color: #84cc16">seo</span><span
+                  style="color: var(--text-bright)">SEO Specialist</span><span
+                  class="font-mono" style="color: var(--text-muted)">@seo</span>
               </div>
             </div>
           </div>
@@ -966,8 +936,10 @@
           <!-- Languages & Systems -->
           <div class="fade-up fade-up-d2 card p-5">
             <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #8b6cf6"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+              <span class="w-2 h-2 rounded-full"
+                style="background: #8b6cf6"></span>
+              <h3 class="text-sm font-semibold"
+                style="color: var(--text-primary)">
                 Languages &amp; Systems
               </h3>
             </div>
@@ -975,54 +947,50 @@
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(55, 118, 171, 0.1); color: #3776ab"
-                  >py</span
-                ><span style="color: var(--text-bright)">Python Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@python-reviewer</span>
+                  style="background: rgba(55, 118, 171, 0.1); color: #3776ab">py</span><span
+                  style="color: var(--text-bright)">Python Reviewer</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@python-reviewer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(222, 165, 132, 0.1); color: #dea584"
-                  >rs</span
-                ><span style="color: var(--text-bright)">Rust Developer + Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)"
-                  >@rust / @rust-reviewer</span
-                >
+                  style="background: rgba(222, 165, 132, 0.1); color: #dea584">rs</span><span
+                  style="color: var(--text-bright)">Rust Developer +
+                  Reviewer</span><span class="font-mono"
+                  style="color: var(--text-muted)">@rust / @rust-reviewer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(0, 89, 156, 0.1); color: #00599c"
-                  >cpp</span
-                ><span style="color: var(--text-bright)">C++ Developer + Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)"
-                  >@cpp / @cpp-reviewer</span
-                >
+                  style="background: rgba(0, 89, 156, 0.1); color: #00599c">cpp</span><span
+                  style="color: var(--text-bright)">C++ Developer +
+                  Reviewer</span><span class="font-mono"
+                  style="color: var(--text-muted)">@cpp / @cpp-reviewer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(81, 43, 212, 0.1); color: #512bd4"
-                  >net</span
-                ><span style="color: var(--text-bright)">C# / .NET Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@dotnet</span>
+                  style="background: rgba(81, 43, 212, 0.1); color: #512bd4">net</span><span
+                  style="color: var(--text-bright)">C# / .NET
+                  Developer</span><span class="font-mono"
+                  style="color: var(--text-muted)">@dotnet</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(221, 0, 49, 0.1); color: #dd0031"
-                  >ng</span
-                ><span style="color: var(--text-bright)">Angular Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@angular</span>
+                  style="background: rgba(221, 0, 49, 0.1); color: #dd0031">ng</span><span
+                  style="color: var(--text-bright)">Angular
+                  Developer</span><span class="font-mono"
+                  style="color: var(--text-muted)">@angular</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(236, 72, 153, 0.1); color: #ec4899"
-                  >agent</span
-                ><span style="color: var(--text-bright)">Agent Engineer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@agent-engineer</span>
+                  style="background: rgba(236, 72, 153, 0.1); color: #ec4899">agent</span><span
+                  style="color: var(--text-bright)">Agent Engineer</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@agent-engineer</span>
               </div>
             </div>
           </div>
@@ -1030,8 +998,10 @@
           <!-- Quality & Reviewers -->
           <div class="fade-up card p-5">
             <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #ef4444"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+              <span class="w-2 h-2 rounded-full"
+                style="background: #ef4444"></span>
+              <h3 class="text-sm font-semibold"
+                style="color: var(--text-primary)">
                 Quality &amp; Reviewers
               </h3>
             </div>
@@ -1039,50 +1009,50 @@
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(239, 68, 68, 0.1); color: #ef4444"
-                  >qa</span
-                ><span style="color: var(--text-bright)">General Code Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@reviewer</span>
+                  style="background: rgba(239, 68, 68, 0.1); color: #ef4444">qa</span><span
+                  style="color: var(--text-bright)">General Code
+                  Reviewer</span><span class="font-mono"
+                  style="color: var(--text-muted)">@reviewer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(237, 139, 0, 0.1); color: #ed8b00"
-                  >java</span
-                ><span style="color: var(--text-bright)">Java Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@java-reviewer</span>
+                  style="background: rgba(237, 139, 0, 0.1); color: #ed8b00">java</span><span
+                  style="color: var(--text-bright)">Java Reviewer</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@java-reviewer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(119, 119, 180, 0.1); color: #777bb4"
-                  >php</span
-                ><span style="color: var(--text-bright)">PHP Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@php-reviewer</span>
+                  style="background: rgba(119, 119, 180, 0.1); color: #777bb4">php</span><span
+                  style="color: var(--text-bright)">PHP Reviewer</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@php-reviewer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(127, 82, 255, 0.1); color: #7f52ff"
-                  >kt</span
-                ><span style="color: var(--text-bright)">Kotlin Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@kotlin-reviewer</span>
+                  style="background: rgba(127, 82, 255, 0.1); color: #7f52ff">kt</span><span
+                  style="color: var(--text-bright)">Kotlin Reviewer</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@kotlin-reviewer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(0, 173, 216, 0.1); color: #00add8"
-                  >go</span
-                ><span style="color: var(--text-bright)">Go Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@go-reviewer</span>
+                  style="background: rgba(0, 173, 216, 0.1); color: #00add8">go</span><span
+                  style="color: var(--text-bright)">Go Reviewer</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@go-reviewer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(234, 179, 8, 0.1); color: #eab308"
-                  >sq</span
-                ><span style="color: var(--text-bright)">SonarQube Quality</span
-                ><span class="font-mono" style="color: var(--text-muted)">@sonarqube</span>
+                  style="background: rgba(234, 179, 8, 0.1); color: #eab308">sq</span><span
+                  style="color: var(--text-bright)">SonarQube
+                  Quality</span><span class="font-mono"
+                  style="color: var(--text-muted)">@sonarqube</span>
               </div>
             </div>
           </div>
@@ -1090,8 +1060,10 @@
           <!-- Database & Infrastructure -->
           <div class="fade-up fade-up-d1 card p-5">
             <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #06b6d4"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+              <span class="w-2 h-2 rounded-full"
+                style="background: #06b6d4"></span>
+              <h3 class="text-sm font-semibold"
+                style="color: var(--text-primary)">
                 Database &amp; Infrastructure
               </h3>
             </div>
@@ -1099,42 +1071,42 @@
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(6, 182, 212, 0.1); color: #06b6d4"
-                  >db</span
-                ><span style="color: var(--text-bright)">Database Specialist</span
-                ><span class="font-mono" style="color: var(--text-muted)">@database</span>
+                  style="background: rgba(6, 182, 212, 0.1); color: #06b6d4">db</span><span
+                  style="color: var(--text-bright)">Database
+                  Specialist</span><span class="font-mono"
+                  style="color: var(--text-muted)">@database</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1"
-                  >infra</span
-                ><span style="color: var(--text-bright)">DevOps / CI/CD</span
-                ><span class="font-mono" style="color: var(--text-muted)">@devops</span>
+                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1">infra</span><span
+                  style="color: var(--text-bright)">DevOps / CI/CD</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@devops</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1"
-                  >docs</span
-                ><span style="color: var(--text-bright)">Docs Lookup</span
-                ><span class="font-mono" style="color: var(--text-muted)">@docs-lookup</span>
+                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1">docs</span><span
+                  style="color: var(--text-bright)">Docs Lookup</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@docs-lookup</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6"
-                  >harness</span
-                ><span style="color: var(--text-bright)">Harness Optimizer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@harness-optimizer</span>
+                  style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6">harness</span><span
+                  style="color: var(--text-bright)">Harness
+                  Optimizer</span><span class="font-mono"
+                  style="color: var(--text-muted)">@harness-optimizer</span>
               </div>
               <div class="flex items-center gap-2 text-xs">
                 <span
                   class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(236, 72, 153, 0.1); color: #ec4899"
-                  >loop</span
-                ><span style="color: var(--text-bright)">Loop Operator</span
-                ><span class="font-mono" style="color: var(--text-muted)">@loop-operator</span>
+                  style="background: rgba(236, 72, 153, 0.1); color: #ec4899">loop</span><span
+                  style="color: var(--text-bright)">Loop Operator</span><span
+                  class="font-mono"
+                  style="color: var(--text-muted)">@loop-operator</span>
               </div>
             </div>
           </div>
@@ -1142,8 +1114,10 @@
           <!-- Agent Dot Grid -->
           <div class="fade-up fade-up-d2 card p-5 lg:col-span-1">
             <div class="flex items-center gap-2 mb-3">
-              <span class="w-2 h-2 rounded-full" style="background: #d4a04a"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+              <span class="w-2 h-2 rounded-full"
+                style="background: #d4a04a"></span>
+              <h3 class="text-sm font-semibold"
+                style="color: var(--text-primary)">
                 All 31 Agents
               </h3>
             </div>
@@ -1151,196 +1125,135 @@
               <span
                 class="agent-dot"
                 style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6"
-                data-tip="IT Leader"
-                >TL</span
-              >
+                data-tip="IT Leader">TL</span>
               <span
                 class="agent-dot"
                 style="background: rgba(59, 130, 246, 0.15); color: #3b82f6"
-                data-tip="Nuxt Frontend"
-                >NU</span
-              >
+                data-tip="Nuxt Frontend">NU</span>
               <span
                 class="agent-dot"
                 style="background: rgba(6, 182, 212, 0.15); color: #06b6d4"
-                data-tip="React Frontend"
-                >RE</span
-              >
+                data-tip="React Frontend">RE</span>
               <span
                 class="agent-dot"
                 style="background: rgba(16, 185, 129, 0.15); color: #10b981"
-                data-tip="Node Backend"
-                >ND</span
-              >
+                data-tip="Node Backend">ND</span>
               <span
                 class="agent-dot"
                 style="background: rgba(217, 119, 6, 0.15); color: #d97706"
-                data-tip="Laravel"
-                >LA</span
-              >
+                data-tip="Laravel">LA</span>
               <span
                 class="agent-dot"
                 style="background: rgba(132, 204, 22, 0.15); color: #84cc16"
-                data-tip="CodeIgniter 3"
-                >CI</span
-              >
+                data-tip="CodeIgniter 3">CI</span>
               <span
                 class="agent-dot"
                 style="background: rgba(55, 118, 171, 0.15); color: #3776ab"
-                data-tip="Python"
-                >PY</span
-              >
+                data-tip="Python">PY</span>
               <span
                 class="agent-dot"
                 style="background: rgba(34, 197, 94, 0.15); color: #22c55e"
-                data-tip="Android"
-                >AN</span
-              >
+                data-tip="Android">AN</span>
               <span
                 class="agent-dot"
                 style="background: rgba(2, 132, 199, 0.15); color: #0284c7"
-                data-tip="Flutter"
-                >FL</span
-              >
+                data-tip="Flutter">FL</span>
               <span
                 class="agent-dot"
                 style="background: rgba(240, 81, 56, 0.15); color: #f05138"
-                data-tip="Swift/iOS"
-                >SW</span
-              >
+                data-tip="Swift/iOS">SW</span>
               <span
                 class="agent-dot"
                 style="background: rgba(245, 158, 11, 0.15); color: #f59e0b"
-                data-tip="UI/UX Designer"
-                >DE</span
-              >
+                data-tip="UI/UX Designer">DE</span>
               <span
                 class="agent-dot"
                 style="background: rgba(99, 102, 241, 0.15); color: #6366f1"
-                data-tip="DevOps"
-                >DV</span
-              >
+                data-tip="DevOps">DV</span>
               <span
                 class="agent-dot"
                 style="background: rgba(132, 204, 22, 0.15); color: #84cc16"
-                data-tip="SEO"
-                >SE</span
-              >
+                data-tip="SEO">SE</span>
               <span
                 class="agent-dot"
                 style="background: rgba(222, 165, 132, 0.15); color: #dea584"
-                data-tip="Rust"
-                >RS</span
-              >
+                data-tip="Rust">RS</span>
               <span
                 class="agent-dot"
                 style="background: rgba(0, 89, 156, 0.15); color: #00599c"
-                data-tip="C++"
-                >CP</span
-              >
+                data-tip="C++">CP</span>
               <span
                 class="agent-dot"
                 style="background: rgba(81, 43, 212, 0.15); color: #512bd4"
-                data-tip=".NET"
-                >DN</span
-              >
+                data-tip=".NET">DN</span>
               <span
                 class="agent-dot"
                 style="background: rgba(221, 0, 49, 0.15); color: #dd0031"
-                data-tip="Angular"
-                >NG</span
-              >
+                data-tip="Angular">NG</span>
               <span
                 class="agent-dot"
                 style="background: rgba(236, 72, 153, 0.15); color: #ec4899"
-                data-tip="Agent Engineer"
-                >AE</span
-              >
+                data-tip="Agent Engineer">AE</span>
               <span
                 class="agent-dot"
                 style="background: rgba(239, 68, 68, 0.15); color: #ef4444"
-                data-tip="Code Reviewer"
-                >RV</span
-              >
+                data-tip="Code Reviewer">RV</span>
               <span
                 class="agent-dot"
                 style="background: rgba(237, 139, 0, 0.15); color: #ed8b00"
-                data-tip="Java Reviewer"
-                >JV</span
-              >
+                data-tip="Java Reviewer">JV</span>
               <span
                 class="agent-dot"
                 style="background: rgba(119, 119, 180, 0.15); color: #777bb4"
-                data-tip="PHP Reviewer"
-                >PH</span
-              >
+                data-tip="PHP Reviewer">PH</span>
               <span
                 class="agent-dot"
                 style="background: rgba(127, 82, 255, 0.15); color: #7f52ff"
-                data-tip="Kotlin Reviewer"
-                >KT</span
-              >
+                data-tip="Kotlin Reviewer">KT</span>
               <span
                 class="agent-dot"
                 style="background: rgba(0, 173, 216, 0.15); color: #00add8"
-                data-tip="Go Reviewer"
-                >GO</span
-              >
+                data-tip="Go Reviewer">GO</span>
               <span
                 class="agent-dot"
                 style="background: rgba(55, 118, 171, 0.15); color: #3776ab"
-                data-tip="Python Reviewer"
-                >PR</span
-              >
+                data-tip="Python Reviewer">PR</span>
               <span
                 class="agent-dot"
                 style="background: rgba(222, 165, 132, 0.15); color: #dea584"
-                data-tip="Rust Reviewer"
-                >RR</span
-              >
+                data-tip="Rust Reviewer">RR</span>
               <span
                 class="agent-dot"
                 style="background: rgba(0, 89, 156, 0.15); color: #00599c"
-                data-tip="C++ Reviewer"
-                >CR</span
-              >
+                data-tip="C++ Reviewer">CR</span>
               <span
                 class="agent-dot"
                 style="background: rgba(6, 182, 214, 0.15); color: #06b6d4"
-                data-tip="Database"
-                >DB</span
-              >
+                data-tip="Database">DB</span>
               <span
                 class="agent-dot"
                 style="background: rgba(234, 179, 8, 0.15); color: #eab308"
-                data-tip="SonarQube"
-                >SQ</span
-              >
+                data-tip="SonarQube">SQ</span>
               <span
                 class="agent-dot"
                 style="background: rgba(99, 102, 241, 0.15); color: #6366f1"
-                data-tip="Docs Lookup"
-                >DL</span
-              >
+                data-tip="Docs Lookup">DL</span>
               <span
                 class="agent-dot"
                 style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6"
-                data-tip="Harness Optimizer"
-                >HO</span
-              >
+                data-tip="Harness Optimizer">HO</span>
               <span
                 class="agent-dot"
                 style="background: rgba(236, 72, 153, 0.15); color: #ec4899"
-                data-tip="Loop Operator"
-                >LO</span
-              >
+                data-tip="Loop Operator">LO</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div
+        class="divider"></div></div>
 
     <!-- ════════════════ AGENTMEMORY ════════════════ -->
     <section id="memory" class="relative py-20 sm:py-28">
@@ -1352,28 +1265,24 @@
               background: rgba(74, 200, 184, 0.08);
               color: #4ac8b8;
               border: 1px solid rgba(74, 200, 184, 0.1);
-            "
-          >
+            ">
             <span
               class="w-1.5 h-1.5 rounded-full pulse-dot"
-              style="background: #4ac8b8; display: inline-block; margin-right: 6px"
-            ></span>
+              style="background: #4ac8b8; display: inline-block; margin-right: 6px"></span>
             agentmemory
           </span>
-          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h2
+            class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
             Agents That <span class="gradient-memory">Remember Everything</span>
           </h2>
           <p
             class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
+            style="color: var(--text-secondary)">
             Powered by
             <a
               href="https://github.com/rohitg00/agentmemory"
               target="_blank"
-              style="color: #4ac8b8; text-decoration: underline; text-underline-offset: 3px"
-              >agentmemory</a
-            >
+              style="color: #4ac8b8; text-decoration: underline; text-underline-offset: 3px">agentmemory</a>
             &mdash; persistent cross-session memory that never forgets.
           </p>
         </div>
@@ -1383,28 +1292,27 @@
           <div class="fade-up memory-grid-item">
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
+              style="background: rgba(74, 200, 184, 0.1)">
               <svg
                 class="w-5 h-5"
                 style="color: #4ac8b8"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                />
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>
             </div>
-            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+            <h4 class="text-sm font-semibold mb-1"
+              style="color: var(--text-primary)">
               53 Memory Tools
             </h4>
             <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              Save, recall, smart search, file history, lessons, patterns &mdash; 53 MCP tools for
+              Save, recall, smart search, file history, lessons, patterns
+              &mdash; 53 MCP tools for
               complete memory control.
             </p>
           </div>
@@ -1412,28 +1320,27 @@
           <div class="fade-up fade-up-d1 memory-grid-item">
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
+              style="background: rgba(74, 200, 184, 0.1)">
               <svg
                 class="w-5 h-5"
                 style="color: #4ac8b8"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+            <h4 class="text-sm font-semibold mb-1"
+              style="color: var(--text-primary)">
               Cross-Session Persistence
             </h4>
             <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              Start a new session tomorrow and your agents remember decisions, insights, and code
+              Start a new session tomorrow and your agents remember decisions,
+              insights, and code
               context from yesterday.
             </p>
           </div>
@@ -1441,28 +1348,27 @@
           <div class="fade-up fade-up-d2 memory-grid-item">
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
+              style="background: rgba(74, 200, 184, 0.1)">
               <svg
                 class="w-5 h-5"
                 style="color: #4ac8b8"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
-            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+            <h4 class="text-sm font-semibold mb-1"
+              style="color: var(--text-primary)">
               Auto-Learning
             </h4>
             <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              22 lifecycle hooks auto-capture sessions, decisions, and lessons. Your agents get
+              22 lifecycle hooks auto-capture sessions, decisions, and lessons.
+              Your agents get
               smarter with every interaction.
             </p>
           </div>
@@ -1470,34 +1376,32 @@
           <div class="fade-up fade-up-d3 memory-grid-item">
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
+              style="background: rgba(74, 200, 184, 0.1)">
               <svg
                 class="w-5 h-5"
                 style="color: #4ac8b8"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                />
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
             </div>
-            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+            <h4 class="text-sm font-semibold mb-1"
+              style="color: var(--text-primary)">
               Real-Time Viewer
             </h4>
             <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              Dashboard at <code style="color: #4ac8b8">localhost:3113</code> shows memory state,
+              Dashboard at <code style="color: #4ac8b8">localhost:3113</code>
+              shows memory state,
               patterns, and consolidated insights in real time.
             </p>
           </div>
@@ -1509,45 +1413,54 @@
             <div class="text-center">
               <div
                 class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3"
-                style="background: rgba(74, 200, 184, 0.1)"
-              >
-                <span class="font-bold font-mono text-sm" style="color: #4ac8b8">1</span>
+                style="background: rgba(74, 200, 184, 0.1)">
+                <span class="font-bold font-mono text-sm"
+                  style="color: #4ac8b8">1</span>
               </div>
-              <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+              <h4 class="text-sm font-semibold mb-1"
+                style="color: var(--text-primary)">
                 Agent Captures
               </h4>
-              <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-                22 lifecycle events are auto-captured — sessions, messages, decisions, errors, tool
+              <p class="text-xs leading-relaxed"
+                style="color: var(--text-muted)">
+                22 lifecycle events are auto-captured — sessions, messages,
+                decisions, errors, tool
                 calls, and file interactions.
               </p>
             </div>
             <div class="text-center">
               <div
                 class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3"
-                style="background: rgba(74, 200, 184, 0.1)"
-              >
-                <span class="font-bold font-mono text-sm" style="color: #4ac8b8">2</span>
+                style="background: rgba(74, 200, 184, 0.1)">
+                <span class="font-bold font-mono text-sm"
+                  style="color: #4ac8b8">2</span>
               </div>
-              <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+              <h4 class="text-sm font-semibold mb-1"
+                style="color: var(--text-primary)">
                 Memory Stored
               </h4>
-              <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-                Insights and patterns are saved to persistent storage with metadata, confidence
+              <p class="text-xs leading-relaxed"
+                style="color: var(--text-muted)">
+                Insights and patterns are saved to persistent storage with
+                metadata, confidence
                 scores, and session context.
               </p>
             </div>
             <div class="text-center">
               <div
                 class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3"
-                style="background: rgba(74, 200, 184, 0.1)"
-              >
-                <span class="font-bold font-mono text-sm" style="color: #4ac8b8">3</span>
+                style="background: rgba(74, 200, 184, 0.1)">
+                <span class="font-bold font-mono text-sm"
+                  style="color: #4ac8b8">3</span>
               </div>
-              <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
+              <h4 class="text-sm font-semibold mb-1"
+                style="color: var(--text-primary)">
                 Smart Recall
               </h4>
-              <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-                Hybrid semantic+keyword search injects relevant past observations into the current
+              <p class="text-xs leading-relaxed"
+                style="color: var(--text-muted)">
+                Hybrid semantic+keyword search injects relevant past
+                observations into the current
                 agent session automatically.
               </p>
             </div>
@@ -1556,7 +1469,8 @@
 
         <!-- Memory Tools Table -->
         <div class="fade-up fade-up-d1 mt-8 card p-6">
-          <h4 class="text-sm font-semibold mb-4" style="color: var(--text-primary)">
+          <h4 class="text-sm font-semibold mb-4"
+            style="color: var(--text-primary)">
             53 MCP Memory Tools at Your Fingertips
           </h4>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
@@ -1566,8 +1480,7 @@
                 background: rgba(74, 200, 184, 0.03);
                 border: 1px solid rgba(74, 200, 184, 0.06);
                 color: var(--text-secondary);
-              "
-            >
+              ">
               memory_save
             </div>
             <div
@@ -1576,8 +1489,7 @@
                 background: rgba(74, 200, 184, 0.03);
                 border: 1px solid rgba(74, 200, 184, 0.06);
                 color: var(--text-secondary);
-              "
-            >
+              ">
               memory_recall
             </div>
             <div
@@ -1586,8 +1498,7 @@
                 background: rgba(74, 200, 184, 0.03);
                 border: 1px solid rgba(74, 200, 184, 0.06);
                 color: var(--text-secondary);
-              "
-            >
+              ">
               memory_smart_search
             </div>
             <div
@@ -1596,8 +1507,7 @@
                 background: rgba(74, 200, 184, 0.03);
                 border: 1px solid rgba(74, 200, 184, 0.06);
                 color: var(--text-secondary);
-              "
-            >
+              ">
               memory_sessions
             </div>
             <div
@@ -1606,8 +1516,7 @@
                 background: rgba(74, 200, 184, 0.03);
                 border: 1px solid rgba(74, 200, 184, 0.06);
                 color: var(--text-secondary);
-              "
-            >
+              ">
               memory_file_history
             </div>
             <div
@@ -1616,8 +1525,7 @@
                 background: rgba(74, 200, 184, 0.03);
                 border: 1px solid rgba(74, 200, 184, 0.06);
                 color: var(--text-secondary);
-              "
-            >
+              ">
               memory_lesson_save
             </div>
             <div
@@ -1626,8 +1534,7 @@
                 background: rgba(74, 200, 184, 0.03);
                 border: 1px solid rgba(74, 200, 184, 0.06);
                 color: var(--text-secondary);
-              "
-            >
+              ">
               memory_lesson_recall
             </div>
             <div
@@ -1636,30 +1543,26 @@
                 background: rgba(74, 200, 184, 0.03);
                 border: 1px solid rgba(74, 200, 184, 0.06);
                 color: var(--text-secondary);
-              "
-            >
+              ">
               memory_patterns
             </div>
           </div>
           <p class="mt-3 text-xs" style="color: var(--text-muted)">
             <span
               class="font-mono text-[10px] px-1.5 py-0.5 rounded"
-              style="background: rgba(74, 200, 184, 0.06); color: #4ac8b8"
-              >/recall</span
-            >
+              style="background: rgba(74, 200, 184, 0.06); color: #4ac8b8">/recall</span>
             Search past observations
             <span
               class="font-mono text-[10px] px-1.5 py-0.5 rounded ml-2"
-              style="background: rgba(74, 200, 184, 0.06); color: #4ac8b8"
-              >/remember</span
-            >
+              style="background: rgba(74, 200, 184, 0.06); color: #4ac8b8">/remember</span>
             Save an insight
           </p>
         </div>
       </div>
     </section>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div
+        class="divider"></div></div>
 
     <!-- ════════════════ CAPABILITIES ════════════════ -->
     <section id="capabilities" class="relative py-20 sm:py-28">
@@ -1671,16 +1574,14 @@
               background: rgba(139, 108, 246, 0.08);
               color: #8b6cf6;
               border: 1px solid rgba(139, 108, 246, 0.1);
-            "
-            >Capabilities</span
-          >
-          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
+            ">Capabilities</span>
+          <h2
+            class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
             Everything Your <span class="gradient-violet">AI Team</span> Needs
           </h2>
           <p
             class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
+            style="color: var(--text-secondary)">
             Pre-configured and ready. Zero setup friction.
           </p>
         </div>
@@ -1690,77 +1591,62 @@
           <div class="fade-up card p-6">
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-              style="background: rgba(212, 160, 74, 0.1)"
-            >
+              style="background: rgba(212, 160, 74, 0.1)">
               <svg
                 class="w-5 h-5"
                 style="color: #d4a04a"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                />
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
               </svg>
             </div>
-            <h3 class="text-base font-semibold mb-2" style="color: var(--text-primary)">
+            <h3 class="text-base font-semibold mb-2"
+              style="color: var(--text-primary)">
               8 MCP Servers
             </h3>
-            <p class="text-xs leading-relaxed mb-4" style="color: var(--text-muted)">
-              Model Context Protocol servers for real-time docs, browser automation, API management,
+            <p class="text-xs leading-relaxed mb-4"
+              style="color: var(--text-muted)">
+              Model Context Protocol servers for real-time docs, browser
+              automation, API management,
               and quality scanning.
             </p>
             <div class="flex flex-wrap gap-1.5">
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(59, 130, 246, 0.1); color: #3b82f6"
-                >Nuxt</span
-              >
+                style="background: rgba(59, 130, 246, 0.1); color: #3b82f6">Nuxt</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(6, 182, 212, 0.1); color: #06b6d4"
-                >Nuxt UI</span
-              >
+                style="background: rgba(6, 182, 212, 0.1); color: #06b6d4">Nuxt
+                UI</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(16, 185, 129, 0.1); color: #10b981"
-                >Playwright</span
-              >
+                style="background: rgba(16, 185, 129, 0.1); color: #10b981">Playwright</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(239, 68, 68, 0.1); color: #ef4444"
-                >Postman</span
-              >
+                style="background: rgba(239, 68, 68, 0.1); color: #ef4444">Postman</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(234, 179, 8, 0.1); color: #eab308"
-                >SonarQube</span
-              >
+                style="background: rgba(234, 179, 8, 0.1); color: #eab308">SonarQube</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(74, 200, 184, 0.1); color: #4ac8b8"
-                >agentmemory</span
-              >
+                style="background: rgba(74, 200, 184, 0.1); color: #4ac8b8">agentmemory</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
                 style="
                   background: color-mix(in srgb, var(--text-muted) 12%, transparent);
                   color: var(--text-muted);
-                "
-                >Figma</span
-              >
+                ">Figma</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
                 style="
                   background: color-mix(in srgb, var(--text-muted) 12%, transparent);
                   color: var(--text-muted);
-                "
-                >Stitch</span
-              >
+                ">Stitch</span>
             </div>
           </div>
 
@@ -1768,28 +1654,28 @@
           <div class="fade-up fade-up-d1 card p-6">
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-              style="background: rgba(139, 108, 246, 0.1)"
-            >
+              style="background: rgba(139, 108, 246, 0.1)">
               <svg
                 class="w-5 h-5"
                 style="color: #8b6cf6"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
-            <h3 class="text-base font-semibold mb-2" style="color: var(--text-primary)">
+            <h3 class="text-base font-semibold mb-2"
+              style="color: var(--text-primary)">
               201 Skill Playbooks
             </h3>
-            <p class="text-xs leading-relaxed mb-4" style="color: var(--text-muted)">
-              Domain-specific expertise for every stack. Pre-loaded or loaded on-demand. Coding
+            <p class="text-xs leading-relaxed mb-4"
+              style="color: var(--text-muted)">
+              Domain-specific expertise for every stack. Pre-loaded or loaded
+              on-demand. Coding
               standards, security, testing, design, and more.
             </p>
             <div class="flex flex-wrap gap-1.5">
@@ -1798,41 +1684,31 @@
                 style="
                   background: color-mix(in srgb, var(--text-muted) 12%, transparent);
                   color: var(--text-secondary);
-                "
-                >coding-standards</span
-              >
+                ">coding-standards</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
                 style="
                   background: color-mix(in srgb, var(--text-muted) 12%, transparent);
                   color: var(--text-secondary);
-                "
-                >security-review</span
-              >
+                ">security-review</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
                 style="
                   background: color-mix(in srgb, var(--text-muted) 12%, transparent);
                   color: var(--text-secondary);
-                "
-                >tdd-workflow</span
-              >
+                ">tdd-workflow</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
                 style="
                   background: color-mix(in srgb, var(--text-muted) 12%, transparent);
                   color: var(--text-secondary);
-                "
-                >impeccable</span
-              >
+                ">impeccable</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
                 style="
                   background: color-mix(in srgb, var(--text-muted) 12%, transparent);
                   color: var(--text-secondary);
-                "
-                >+ 197 more</span
-              >
+                ">+ 197 more</span>
             </div>
           </div>
 
@@ -1840,107 +1716,99 @@
           <div class="fade-up fade-up-d2 card p-6">
             <div
               class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
+              style="background: rgba(74, 200, 184, 0.1)">
               <svg
                 class="w-5 h-5"
                 style="color: #4ac8b8"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </div>
-            <h3 class="text-base font-semibold mb-2" style="color: var(--text-primary)">
+            <h3 class="text-base font-semibold mb-2"
+              style="color: var(--text-primary)">
               46 CLI Commands
             </h3>
-            <p class="text-xs leading-relaxed mb-4" style="color: var(--text-muted)">
-              Slash commands for planning, testing, reviewing, building, deploying, and managing
+            <p class="text-xs leading-relaxed mb-4"
+              style="color: var(--text-muted)">
+              Slash commands for planning, testing, reviewing, building,
+              deploying, and managing
               your agent ecosystem.
             </p>
             <div class="flex flex-wrap gap-1.5">
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(212, 160, 74, 0.1); color: #d4a04a"
-                >/plan</span
-              >
+                style="background: rgba(212, 160, 74, 0.1); color: #d4a04a">/plan</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(212, 160, 74, 0.1); color: #d4a04a"
-                >/tdd</span
-              >
+                style="background: rgba(212, 160, 74, 0.1); color: #d4a04a">/tdd</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(239, 68, 68, 0.1); color: #ef4444"
-                >/code-review</span
-              >
+                style="background: rgba(239, 68, 68, 0.1); color: #ef4444">/code-review</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(139, 108, 246, 0.1); color: #8b6cf6"
-                >/security</span
-              >
+                style="background: rgba(139, 108, 246, 0.1); color: #8b6cf6">/security</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(16, 185, 129, 0.1); color: #10b981"
-                >/e2e</span
-              >
+                style="background: rgba(16, 185, 129, 0.1); color: #10b981">/e2e</span>
               <span
                 class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(74, 200, 184, 0.1); color: #4ac8b8"
-                >/sonarqube-scan</span
-              >
+                style="background: rgba(74, 200, 184, 0.1); color: #4ac8b8">/sonarqube-scan</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div
+        class="divider"></div></div>
 
     <!-- ════════════════ USING AGENT MEMORY ════════════════ -->
     <section class="relative py-16 sm:py-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="fade-up card card-gold p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             <div
               class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
+              style="background: rgba(74, 200, 184, 0.1)">
               <svg
                 class="w-6 h-6"
                 style="color: #4ac8b8"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
+                  d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
             <div class="flex-1">
-              <h3 class="text-base font-semibold mb-1" style="color: var(--text-primary)">
+              <h3 class="text-base font-semibold mb-1"
+                style="color: var(--text-primary)">
                 Memory in Action
               </h3>
-              <p class="text-xs leading-relaxed" style="color: var(--text-secondary)">
+              <p class="text-xs leading-relaxed"
+                style="color: var(--text-secondary)">
                 After
-                <code class="font-mono text-[11px]" style="color: #d4a04a"
-                  >npx opencode-agent-kit init</code
-                >, agentmemory auto-starts with OpenCode. Use
-                <code class="font-mono text-[11px]" style="color: #4ac8b8">/recall</code> to search
+                <code class="font-mono text-[11px]" style="color: #d4a04a">npx
+                  opencode-agent-kit init</code>, agentmemory auto-starts with
+                OpenCode. Use
+                <code class="font-mono text-[11px]"
+                  style="color: #4ac8b8">/recall</code> to search
                 past observations,
-                <code class="font-mono text-[11px]" style="color: #4ac8b8">/remember</code> to save
+                <code class="font-mono text-[11px]"
+                  style="color: #4ac8b8">/remember</code> to save
                 insights. View memory at
-                <code class="font-mono text-[11px]" style="color: #4ac8b8">localhost:3113</code>.
+                <code class="font-mono text-[11px]"
+                  style="color: #4ac8b8">localhost:3113</code>.
               </p>
             </div>
           </div>
@@ -1948,7 +1816,8 @@
       </div>
     </section>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div
+        class="divider"></div></div>
 
     <!-- ════════════════ INSTALL ════════════════ -->
     <section id="install" class="relative py-20 sm:py-28">
@@ -1960,17 +1829,16 @@
               background: rgba(212, 160, 74, 0.08);
               color: #d4a04a;
               border: 1px solid rgba(212, 160, 74, 0.1);
-            "
-            >Install</span
-          >
-          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
+            ">Install</span>
+          <h2
+            class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
             One Command. <span class="gradient-gold">Full Team.</span>
           </h2>
           <p
             class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
-            Run this in your project directory. Works on macOS, Linux, and Windows.
+            style="color: var(--text-secondary)">
+            Run this in your project directory. Works on macOS, Linux, and
+            Windows.
           </p>
         </div>
 
@@ -1984,10 +1852,9 @@
                   background: rgba(212, 160, 74, 0.12);
                   color: #d4a04a;
                   border: 1px solid rgba(212, 160, 74, 0.15);
-                "
-                >quick start</span
-              >
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
+                ">quick start</span>
+              <h3 class="text-sm font-semibold"
+                style="color: var(--text-primary)">
                 Install in any project
               </h3>
             </div>
@@ -1995,19 +1862,16 @@
             <div class="terminal mb-5">
               <div
                 class="flex items-center gap-1.5 px-4 pt-3 pb-2"
-                style="border-bottom: 1px solid var(--border-subtle)"
-              >
+                style="border-bottom: 1px solid var(--border-subtle)">
                 <span class="terminal-dot" style="background: #e06070"></span>
                 <span class="terminal-dot" style="background: #d4a04a"></span>
                 <span class="terminal-dot" style="background: #4ac8b8"></span>
-                <span class="text-[10px] ml-2 font-mono" style="color: var(--text-muted)"
-                  >terminal</span
-                >
+                <span class="text-[10px] ml-2 font-mono"
+                  style="color: var(--text-muted)">terminal</span>
               </div>
               <pre
                 class="px-4 py-3 font-mono text-xs leading-relaxed overflow-x-auto"
-                style="color: var(--text-bright)"
-              ><span style="color:#d4a04a;">$</span> npx opencode-agent-kit init
+                style="color: var(--text-bright)"><span style="color:#d4a04a;">$</span> npx opencode-agent-kit init
 <span style="color:var(--text-muted);"># Run inside your project directory</span>
 <span style="color:var(--text-muted);"># macOS / Linux / Windows (WSL)</span>
 <span style="color:var(--text-secondary);">  ✓ Copying .opencode/ configuration</span>
@@ -2021,71 +1885,67 @@
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-              <div class="flex items-center gap-2" style="color: var(--text-muted)">
+              <div class="flex items-center gap-2"
+                style="color: var(--text-muted)">
                 <svg
                   class="w-3.5 h-3-5 shrink-0"
                   style="color: #4ac8b8"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  />
+                    d="M5 13l4 4L19 7" />
                 </svg>
                 Copies .opencode/
               </div>
-              <div class="flex items-center gap-2" style="color: var(--text-muted)">
+              <div class="flex items-center gap-2"
+                style="color: var(--text-muted)">
                 <svg
                   class="w-3.5 h-3-5 shrink-0"
                   style="color: #4ac8b8"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  />
+                    d="M5 13l4 4L19 7" />
                 </svg>
                 Merges existing config
               </div>
-              <div class="flex items-center gap-2" style="color: var(--text-muted)">
+              <div class="flex items-center gap-2"
+                style="color: var(--text-muted)">
                 <svg
                   class="w-3.5 h-3-5 shrink-0"
                   style="color: #4ac8b8"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  />
+                    d="M5 13l4 4L19 7" />
                 </svg>
                 Installs agentmemory
               </div>
-              <div class="flex items-center gap-2" style="color: var(--text-muted)">
+              <div class="flex items-center gap-2"
+                style="color: var(--text-muted)">
                 <svg
                   class="w-3.5 h-3-5 shrink-0"
                   style="color: #4ac8b8"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  />
+                    d="M5 13l4 4L19 7" />
                 </svg>
                 Auto-start with opencode
               </div>
@@ -2099,30 +1959,27 @@
             <div class="flex items-center gap-2 mb-3">
               <div
                 class="w-7 h-7 rounded-lg flex items-center justify-center"
-                style="background: rgba(139, 108, 246, 0.1)"
-              >
+                style="background: rgba(139, 108, 246, 0.1)">
                 <svg
                   class="w-3.5 h-3.5"
                   style="color: #8b6cf6"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                  />
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
-              <h4 class="text-sm font-semibold" style="color: var(--text-primary)">Upgrade</h4>
+              <h4 class="text-sm font-semibold"
+                style="color: var(--text-primary)">Upgrade</h4>
             </div>
             <div class="terminal">
               <pre
                 class="px-3 py-2 font-mono text-[11px]"
-                style="color: var(--text-bright)"
-              ><span style="color:#8b6cf6;">$</span> npx opencode-agent-kit upgrade</pre>
+                style="color: var(--text-bright)"><span style="color:#8b6cf6;">$</span> npx opencode-agent-kit upgrade</pre>
             </div>
             <p class="mt-2 text-[11px]" style="color: var(--text-muted)">
               Check and apply the latest version.
@@ -2133,30 +1990,27 @@
             <div class="flex items-center gap-2 mb-3">
               <div
                 class="w-7 h-7 rounded-lg flex items-center justify-center"
-                style="background: rgba(74, 200, 184, 0.1)"
-              >
+                style="background: rgba(74, 200, 184, 0.1)">
                 <svg
                   class="w-3.5 h-3.5"
                   style="color: #4ac8b8"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h4 class="text-sm font-semibold" style="color: var(--text-primary)">Doctor</h4>
+              <h4 class="text-sm font-semibold"
+                style="color: var(--text-primary)">Doctor</h4>
             </div>
             <div class="terminal">
               <pre
                 class="px-3 py-2 font-mono text-[11px]"
-                style="color: var(--text-bright)"
-              ><span style="color:#4ac8b8;">$</span> npx opencode-agent-kit doctor</pre>
+                style="color: var(--text-bright)"><span style="color:#4ac8b8;">$</span> npx opencode-agent-kit doctor</pre>
             </div>
             <p class="mt-2 text-[11px]" style="color: var(--text-muted)">
               Diagnose setup and fix common issues.
@@ -2167,30 +2021,27 @@
             <div class="flex items-center gap-2 mb-3">
               <div
                 class="w-7 h-7 rounded-lg flex items-center justify-center"
-                style="background: rgba(224, 96, 112, 0.1)"
-              >
+                style="background: rgba(224, 96, 112, 0.1)">
                 <svg
                   class="w-3.5 h-3.5"
                   style="color: #e06070"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  />
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                 </svg>
               </div>
-              <h4 class="text-sm font-semibold" style="color: var(--text-primary)">Uninstall</h4>
+              <h4 class="text-sm font-semibold"
+                style="color: var(--text-primary)">Uninstall</h4>
             </div>
             <div class="terminal">
               <pre
                 class="px-3 py-2 font-mono text-[11px]"
-                style="color: var(--text-bright)"
-              ><span style="color:#e06070;">$</span> npx opencode-agent-kit uninstall</pre>
+                style="color: var(--text-bright)"><span style="color:#e06070;">$</span> npx opencode-agent-kit uninstall</pre>
             </div>
             <p class="mt-2 text-[11px]" style="color: var(--text-muted)">
               Clean removal from your project.
@@ -2200,7 +2051,8 @@
       </div>
     </section>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div
+        class="divider"></div></div>
 
     <!-- ════════════════ MARQUEE ════════════════ -->
     <section
@@ -2209,9 +2061,9 @@
         border-top: 1px solid var(--marquee-bdr);
         border-bottom: 1px solid var(--marquee-bdr);
         background: var(--marquee-bg);
-      "
-    >
-      <div class="marquee-track flex whitespace-nowrap" style="will-change: transform">
+      ">
+      <div class="marquee-track flex whitespace-nowrap"
+        style="will-change: transform">
         <div class="flex items-center gap-4 mx-4">
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
@@ -2219,162 +2071,126 @@
               background: rgba(139, 92, 246, 0.06);
               color: #8b5cf6;
               border: 1px solid rgba(139, 92, 246, 0.08);
-            "
-            >@leader</span
-          >
+            ">@leader</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(59, 130, 246, 0.06);
               color: #3b82f6;
               border: 1px solid rgba(59, 130, 246, 0.08);
-            "
-            >@frontend-nuxt</span
-          >
+            ">@frontend-nuxt</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(6, 182, 212, 0.06);
               color: #06b6d4;
               border: 1px solid rgba(6, 182, 212, 0.08);
-            "
-            >@frontend-react</span
-          >
+            ">@frontend-react</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(16, 185, 129, 0.06);
               color: #10b981;
               border: 1px solid rgba(16, 185, 129, 0.08);
-            "
-            >@backend</span
-          >
+            ">@backend</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(55, 118, 171, 0.06);
               color: #3776ab;
               border: 1px solid rgba(55, 118, 171, 0.08);
-            "
-            >@python</span
-          >
+            ">@python</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(222, 165, 132, 0.06);
               color: #dea584;
               border: 1px solid rgba(222, 165, 132, 0.08);
-            "
-            >@rust</span
-          >
+            ">@rust</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(240, 81, 56, 0.06);
               color: #f05138;
               border: 1px solid rgba(240, 81, 56, 0.08);
-            "
-            >@swift</span
-          >
+            ">@swift</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(34, 197, 94, 0.06);
               color: #22c55e;
               border: 1px solid rgba(34, 197, 94, 0.08);
-            "
-            >@android</span
-          >
+            ">@android</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(74, 200, 184, 0.06);
               color: #4ac8b8;
               border: 1px solid rgba(74, 200, 184, 0.08);
-            "
-            >agentmemory</span
-          >
+            ">agentmemory</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(139, 92, 246, 0.06);
               color: #8b5cf6;
               border: 1px solid rgba(139, 92, 246, 0.08);
-            "
-            >@leader</span
-          >
+            ">@leader</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(59, 130, 246, 0.06);
               color: #3b82f6;
               border: 1px solid rgba(59, 130, 246, 0.08);
-            "
-            >@frontend-nuxt</span
-          >
+            ">@frontend-nuxt</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(6, 182, 212, 0.06);
               color: #06b6d4;
               border: 1px solid rgba(6, 182, 212, 0.08);
-            "
-            >@frontend-react</span
-          >
+            ">@frontend-react</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(16, 185, 129, 0.06);
               color: #10b981;
               border: 1px solid rgba(16, 185, 129, 0.08);
-            "
-            >@backend</span
-          >
+            ">@backend</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(55, 118, 171, 0.06);
               color: #3776ab;
               border: 1px solid rgba(55, 118, 171, 0.08);
-            "
-            >@python</span
-          >
+            ">@python</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(222, 165, 132, 0.06);
               color: #dea584;
               border: 1px solid rgba(222, 165, 132, 0.08);
-            "
-            >@rust</span
-          >
+            ">@rust</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(240, 81, 56, 0.06);
               color: #f05138;
               border: 1px solid rgba(240, 81, 56, 0.08);
-            "
-            >@swift</span
-          >
+            ">@swift</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(34, 197, 94, 0.06);
               color: #22c55e;
               border: 1px solid rgba(34, 197, 94, 0.08);
-            "
-            >@android</span
-          >
+            ">@android</span>
           <span
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
             style="
               background: rgba(74, 200, 184, 0.06);
               color: #4ac8b8;
               border: 1px solid rgba(74, 200, 184, 0.08);
-            "
-            >agentmemory</span
-          >
+            ">agentmemory</span>
         </div>
       </div>
     </section>
@@ -2387,27 +2203,29 @@
             <div class="flex items-center gap-2.5 mb-3">
               <div
                 class="w-8 h-8 rounded-lg flex items-center justify-center"
-                style="background: rgba(212, 160, 74, 0.1)"
-              >
-                <span class="text-xs font-bold font-mono" style="color: #d4a04a">K</span>
+                style="background: rgba(212, 160, 74, 0.1)">
+                <span class="text-xs font-bold font-mono"
+                  style="color: #d4a04a">K</span>
               </div>
               <div>
-                <div class="text-sm font-semibold" style="color: var(--text-primary)">
+                <div class="text-sm font-semibold"
+                  style="color: var(--text-primary)">
                   Agent Kit
                 </div>
-                <div class="text-[10px]" style="color: var(--text-muted)">opencode-agent-kit</div>
+                <div class="text-[10px]"
+                  style="color: var(--text-muted)">opencode-agent-kit</div>
               </div>
             </div>
             <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              31 specialized AI agents. 201 skill playbooks. 46 CLI commands. 8 MCP servers.
+              31 specialized AI agents. 201 skill playbooks. 46 CLI commands. 8
+              MCP servers.
               Persistent memory.
             </p>
           </div>
           <div>
             <div
               class="text-xs font-semibold uppercase tracking-wider mb-3"
-              style="color: var(--text-muted)"
-            >
+              style="color: var(--text-muted)">
               Quick Links
             </div>
             <div class="space-y-1.5 text-xs">
@@ -2417,55 +2235,55 @@
                 style="color: var(--text-secondary); transition: color 0.2s"
                 onmouseover="this.style.color = '#d4a04a'"
                 onmouseout="this.style.color = '#8a8aa0'"
-                class="block"
-                >GitHub Repository</a
-              >
+                class="block">GitHub Repository</a>
               <a
                 href="https://github.com/rohitg00/agentmemory"
                 target="_blank"
                 style="color: var(--text-secondary); transition: color 0.2s"
                 onmouseover="this.style.color = '#4ac8b8'"
                 onmouseout="this.style.color = '#8a8aa0'"
-                class="block"
-                >agentmemory</a
-              >
+                class="block">agentmemory</a>
               <a
                 href="https://opencode.ai"
                 target="_blank"
                 style="color: var(--text-secondary); transition: color 0.2s"
                 onmouseover="this.style.color = '#8b6cf6'"
                 onmouseout="this.style.color = '#8a8aa0'"
-                class="block"
-                >OpenCode</a
-              >
+                class="block">OpenCode</a>
             </div>
           </div>
           <div>
             <div
               class="text-xs font-semibold uppercase tracking-wider mb-3"
-              style="color: var(--text-muted)"
-            >
+              style="color: var(--text-muted)">
               Stack Coverage
             </div>
-            <div class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              Nuxt 4 &middot; Next.js 15 &middot; React 19 &middot; Vue 3 &middot; Node.js &middot;
-              Express 5 &middot; Prisma &middot; Python &middot; Django &middot; FastAPI &middot;
-              Rust &middot; Swift &middot; .NET &middot; Angular &middot; C++ &middot; Laravel
-              &middot; CI3 &middot; Android &middot; Flutter &middot; PostgreSQL &middot; Docker
+            <div class="text-xs leading-relaxed"
+              style="color: var(--text-muted)">
+              Nuxt 4 &middot; Next.js 15 &middot; React 19 &middot; Vue 3
+              &middot; Node.js &middot;
+              Express 5 &middot; Prisma &middot; Python &middot; Django &middot;
+              FastAPI &middot;
+              Rust &middot; Swift &middot; .NET &middot; Angular &middot; C++
+              &middot; Laravel
+              &middot; CI3 &middot; Android &middot; Flutter &middot; PostgreSQL
+              &middot; Docker
               &middot; GitHub Actions
             </div>
           </div>
         </div>
         <div
           class="mt-8 pt-6 text-center text-[10px]"
-          style="border-top: 1px solid var(--footer-divider); color: var(--text-muted)"
-        >
+          style="border-top: 1px solid var(--footer-divider); color: var(--text-muted)">
           <span class="flex items-center justify-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full" style="background: #d4a04a"></span>
-            v1.2.0
-            <span class="w-1.5 h-1.5 rounded-full" style="background: #8b6cf6"></span>
+            <span class="w-1.5 h-1.5 rounded-full"
+              style="background: #d4a04a"></span>
+            v1.2.1
+            <span class="w-1.5 h-1.5 rounded-full"
+              style="background: #8b6cf6"></span>
             MIT License
-            <span class="w-1.5 h-1.5 rounded-full" style="background: #4ac8b8"></span>
+            <span class="w-1.5 h-1.5 rounded-full"
+              style="background: #4ac8b8"></span>
             Built for OpenCode
           </span>
         </div>
