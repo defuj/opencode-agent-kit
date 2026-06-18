@@ -82,4 +82,8 @@ govulncheck ./...
 ```
 
 ## Skills
-`agent-introspection-debugging`, `ai-regression-testing`, `santa-method`, `cost-aware-llm-pipeline`
+
+- `agent-introspection-debugging`
+- `ai-regression-testing`
+- `santa-method`
+- `cost-aware-llm-pipeline`

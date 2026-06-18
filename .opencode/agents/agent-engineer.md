@@ -86,16 +86,16 @@ Design eval datasets as structured cases with expected tool call sequences and o
 
 ### Required Skills (Auto-load on session start)
 1. **`coding-standards`** — Universal coding standards and best practices
-2. **`agent-patterns`** — Agent architecture patterns, orchestration loops, tool-use design
-3. **`llm-engineering`** — LLM interaction patterns, prompt engineering, function calling
-4. **`python-standards`** — Python typing, Pydantic, async patterns
+2. **`agentic-engineering`** — Agent architecture patterns, orchestration loops, tool-use design
+3. **`prompt-optimizer`** — LLM interaction patterns, prompt engineering, function calling
+4. **`python-patterns`** — Python typing, Pydantic, async patterns
 
 ### Contextual Skills (Load when needed)
-- **`evaluation-frameworks`** — When designing agent evals and benchmarks
-- **`safety-guardrails`** — When implementing safety policies, guardrails, or confinement
-- **`observability-tracing`** — When setting up agent tracing and monitoring
-- **`multi-agent-patterns`** — When designing supervisor/sub-agent architectures
-- **`memory-systems`** — When implementing agent memory (conversation, working, persistent)
+- **`agent-eval`** — When designing agent evals and benchmarks
+- **`safety-guard`** — When implementing safety policies, guardrails, or confinement
+- **`agent-introspection-debugging`** — When setting up agent tracing and monitoring
+- **`team-agent-orchestration`** — When designing supervisor/sub-agent architectures
+- **`agentmemory`** — When implementing agent memory (conversation, working, persistent)
 - **`security-review`** — When reviewing agent tool access and data handling
 - **`tdd-workflow`** — When writing tests or practicing TDD
 - **`deployment-patterns`** — When deploying agent services to production

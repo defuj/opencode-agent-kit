@@ -78,4 +78,6 @@ composer audit
 ```
 
 ## Skills
-`agentmemory`, `coding-standards`
+
+- `agentmemory`
+- `coding-standards`

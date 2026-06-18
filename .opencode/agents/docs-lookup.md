@@ -73,4 +73,5 @@ After 3 total MCP calls, use best available info and clearly state what could no
 Escalate when: library cannot be resolved after 3 attempts, docs behind paywall, question requires private/internal docs, MCP consistently unavailable, or question requires modifying live systems.
 
 ## Skills
-`knowledge-ops`, `agentic-engineering`
+- `knowledge-ops` — Documentation lookup and knowledge management
+- `agentic-engineering` — Agent engineering patterns

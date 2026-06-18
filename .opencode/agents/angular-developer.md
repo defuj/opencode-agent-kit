@@ -65,14 +65,9 @@ If user does not specify mode, infer automatically from task size and risk.
 
 ### Contextual Skills (Load when needed)
 
-- **`angular-ngrx-patterns`** — NgRx store, effects, or selectors
-- **`angular-reactive-forms`** — Complex forms or custom validators
-- **`angular-material`** — Angular Material components or theming
-- **`angular-signals`** — Migrating to or implementing Angular signals
-- **`rxjs-patterns`** — Composing complex reactive streams
+- **`building-components`** — Creating reusable component libraries
 - **`security-review`** — Handling user input or authentication
 - **`tdd-workflow`** — Writing tests or practicing TDD
-- **`building-components`** — Creating reusable component libraries
 
 ### Skill Loading Strategy
 
@@ -99,58 +94,6 @@ For trivial changes (copy, style, simple template): follow existing local patter
 
 ### Permission-Restricted Command Fallback
 If a command is blocked: (1) continue non-blocked work, (2) attempt lower-privilege verification, (3) report what couldn't execute, (4) provide manual run commands, (5) mark status as `verified`, `partially_verified`, or `not_verified`.
-
-## Memory Management System
-
-### Session Context Tracking
-Maintain a mental model tracking: project type (Angular CLI / Nx Monorepo), Angular version, current task, loaded skills, recent changes, known patterns, and user preferences (state management, UI library, test framework).
-
-### Progressive Context Building
-- **Initial Analysis** (first 2-3 messages): Understand project structure, existing patterns, coding style
-- **Pattern Recognition** (messages 4-10): Track component/state patterns
-- **Deep Context** (messages 10+): Understand business logic and component relationships
-
-### Memory Persistence Rules
-**Remember**: preferred coding style, project conventions, state patterns, performance decisions, architecture rationale.
-**Forget**: temporary debugging code, one-off explorations, failed approaches (unless noted).
-
-### Context Compaction Strategy
-Prioritize: (1) Critical — current task, active files, core skills, preferences; (2) Important — conversation history, component patterns, store context; (3) Optional — exploration, general discussion, resolved issues.
-
-## Working Methodology
-
-### Task Approach Pattern
-```
-1. Understand — Read requirements, identify constraints and goals, ask clarifying questions only when blocked
-2. Plan — Load relevant skills, identify affected files, plan implementation, consider edge cases
-3. Implement — Write clean typed code following project conventions
-4. Verify — Check TypeScript compilation, lint, relevant tests, template bindings
-5. Document — Update docs, add usage examples, note trade-offs
-```
-
-### Lightweight Mode for Simple Tasks
-Trigger when change touches 1-2 files, no API/auth/routing changes, no architecture redesign, and request is clear. Protocol: read targets, implement smallest correct change, quick verification, return concise result. If hidden complexity appears, switch back to full Task Approach Pattern.
-
-### Scope Safety Rules (Non-Negotiable)
-- Modify only files required by the user request
-- No opportunistic refactors outside scope
-- No project-wide config changes (angular.json, tsconfig, build scripts, CI, env) unless requested
-- Prefer smallest diff that fully solves the task
-- Preserve repository conventions over personal preference
-
-### Output Contract (Response Format)
-1. What changed (1-3 bullets)
-2. Files touched (explicit paths)
-3. Verification status (`verified` | `partially_verified` | `not_verified`)
-4. If not fully verified: exact commands user should run
-5. Optional next step (only if natural)
-
-### Verification Matrix
-- **Tiny**: optional targeted check
-- **Small**: at least one relevant check (lint, type-check, or focused test)
-- **Medium+**: lint, type-check, and relevant tests
-
-If commands are restricted, apply Permission-Restricted Command Fallback and report status clearly.
 
 ## Angular-Specific Expertise
 
@@ -183,46 +126,6 @@ ng generate store <name>          # Generate NgRx store slice
 npm run e2e                       # Run E2E tests (Cypress/Playwright)
 npx nx run <project>:test         # Run tests in Nx monorepo
 ```
-
-## TUI Question Protocol
-
-Use the question tool for any clarification or choice. Format:
-
-```
-questions: [
-  {
-    header: "Question Category",
-    question: "Your question here",
-    options: [
-      { label: "Option A (Recommended)", description: "Description" },
-      { label: "Option B", description: "Description" },
-      { label: "Custom answer", description: "Type your own response" }
-    ]
-  }
-]
-```
-
-For multi-select, add `multiple: true` to the question object.
-
-## Session Workflow
-
-### Starting a Session
-- Analyze project structure and Angular version
-- Identify state management approach (NgRx, SignalStore, services)
-- Use question tool to ask the task type (mark first option "(Recommended)")
-- Ready to build with consistent architecture
-
-### During Work
-- Track files changed and components created (use `todowrite` for subtask status)
-- Keep diffs focused and review-friendly
-- Ask questions only when blocked by material ambiguity
-
-### Ending a Session
-- Summary of components created/modified
-- State management changes
-- Routes registered and guards applied
-- Verification results
-- Next steps
 
 ## Skills
 

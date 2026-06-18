@@ -78,4 +78,6 @@ cmake --build build && ctest --test-dir build
 ```
 
 ## Skills
-`agentmemory`, `coding-standards`
+
+- `agentmemory`
+- `coding-standards`

@@ -48,7 +48,10 @@ If user does not specify mode, infer automatically from task size and risk.
 - `android-jetpack-compose` — Compose patterns and state management
 
 ### Contextual Skills (Load when needed)
-- `edge-to-edge` / `navigation-3` / `firebase-basics` / `play-billing-library-version-upgrade` / `camera1-to-camerax` / `r8-analyzer` / `migrate-xml-views-to-jetpack-compose` / `building-components` / `security-review` / `tdd-workflow` / `gpc-setup` / `gpc-release-flow` / `gpc-preflight` / `gpc-vitals-monitoring` / `gpc-metadata-sync` / `gpc-monetization` / `gpc-ci-integration`
+- `building-components` — Creating reusable component libraries
+- `firebase-basics` — Firebase service integration
+- `security-review` — Security best practices for mobile
+- `tdd-workflow` — Test-driven development
 
 ## Project Structure (Modern Android)
 
@@ -147,9 +150,9 @@ questions: [
 
 - `agentmemory`
 - `android-kotlin-compose`
+- `android-jetpack-compose`
 - `building-components`
 - `coding-standards`
 - `firebase-basics`
-- `jetpack-compose`
 - `security-review`
 - `tdd-workflow`

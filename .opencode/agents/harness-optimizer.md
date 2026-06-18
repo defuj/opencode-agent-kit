@@ -79,4 +79,16 @@ Destructive operation prevention, budget limits with drift detection, rollback m
 Escalate when: optimization causes regression > 5 points in any category, change not reversible, cross-platform compatibility broken, cost optimization conflicts with quality, safety change requires production modifications.
 
 ## Skills
-`autonomous-agent-harness`, `agent-harness-construction`, `agent-eval`, `cost-tracking`, `cost-aware-llm-pipeline`, `parallel-execution-optimizer`, `dynamic-workflow-mode`, `gan-style-harness`, `agentic-engineering`, `agent-introspection-debugging`, `safety-guard`, `prompt-optimizer`
+
+- `autonomous-agent-harness` — Autonomous agent harness patterns
+- `agent-harness-construction` — Building agent test harnesses
+- `agent-eval` — Agent evaluation
+- `cost-tracking` — Cost tracking and analysis
+- `cost-aware-llm-pipeline` — Cost-aware LLM routing
+- `parallel-execution-optimizer` — Parallel execution patterns
+- `dynamic-workflow-mode` — Dynamic workflow switching
+- `gan-style-harness` — GAN-style evaluation harness
+- `agentic-engineering` — Agent engineering patterns
+- `agent-introspection-debugging` — Debugging and inspecting agents
+- `safety-guard` — Safety guardrails
+- `prompt-optimizer` — Prompt optimization

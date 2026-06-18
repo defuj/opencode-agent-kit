@@ -1,3 +1,8 @@
+---
+name: verification-loop
+description: "Comprehensive verification system for Claude Code sessions: quality gates, pre-PR checks, and post-feature validation."
+---
+
 # Verification Loop Skill
 
 A comprehensive verification system for Claude Code sessions.

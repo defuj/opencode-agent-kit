@@ -86,4 +86,15 @@ Escalate when: no progress 2 checkpoints, 3+ identical failures, cost drift outs
 - **Cost Drift Recovery**: Pause → cheaper model → reduce scope → if still over, ESCALATE.
 
 ## Skills
-`continuous-agent-loop`, `autonomous-loops`, `autonomous-agent-harness`, `agent-introspection-debugging`, `agent-harness-construction`, `enterprise-agent-ops`, `cost-tracking`, `parallel-execution-optimizer`, `safety-guard`, `dynamic-workflow-mode`, `plan-orchestrate`
+
+- `continuous-agent-loop` — Continuous autonomous agent loops
+- `autonomous-loops` — Autonomous loop patterns
+- `autonomous-agent-harness` — Agent harness construction
+- `agent-introspection-debugging` — Debugging and inspecting agents
+- `agent-harness-construction` — Building agent test harnesses
+- `enterprise-agent-ops` — Enterprise agent operations
+- `cost-tracking` — Agent cost tracking and optimization
+- `parallel-execution-optimizer` — Parallel execution patterns
+- `safety-guard` — Safety guardrails
+- `dynamic-workflow-mode` — Dynamic workflow switching
+- `plan-orchestrate` — Planning and orchestration

@@ -76,4 +76,11 @@ Verdict: {APPROVE | BLOCK}
 - Coroutine/Flow patterns verified, clean architecture boundaries enforced
 
 ## Skills
-`kotlin-coroutines-flows`, `kotlin-ktor-patterns`, `kotlin-exposed-patterns`, `compose-multiplatform-patterns`, `agent-introspection-debugging`, `ai-regression-testing`, `santa-method`
+
+- `kotlin-coroutines-flows`
+- `kotlin-ktor-patterns`
+- `kotlin-exposed-patterns`
+- `compose-multiplatform-patterns`
+- `agent-introspection-debugging`
+- `ai-regression-testing`
+- `santa-method`

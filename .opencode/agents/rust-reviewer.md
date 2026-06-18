@@ -79,4 +79,8 @@ cargo miri test && cargo udeps
 ```
 
 ## Skills
-`agentmemory`, `coding-standards`, `rust-patterns`, `rust-testing`
+
+- `agentmemory`
+- `coding-standards`
+- `rust-patterns`
+- `rust-testing`

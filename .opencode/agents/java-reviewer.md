@@ -80,4 +80,6 @@ git diff -- '*.java'
 ```
 
 ## Skills
-`agentmemory`, `coding-standards`
+
+- `agentmemory`
+- `coding-standards`

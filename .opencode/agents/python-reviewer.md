@@ -82,4 +82,13 @@ pytest --cov --cov-report=term-missing
 ```
 
 ## Skills
-`agentmemory`, `coding-standards`, `python-patterns`, `python-testing`, `django-patterns`, `django-security`, `fastapi-patterns`, `error-handling`, `tdd-workflow`
+
+- `agentmemory`
+- `coding-standards`
+- `python-patterns`
+- `python-testing`
+- `django-patterns`
+- `django-security`
+- `fastapi-patterns`
+- `error-handling`
+- `tdd-workflow`

@@ -143,50 +143,7 @@ Use question tool for any clarification. Single-select and multi-select template
 | Next.js / React | `next build` | `.next/` | `NEXT_PUBLIC_*` (client) | Multi-stage Node |
 | Node + Express | `tsc`/`esbuild` | `dist/` | `PORT`, `DATABASE_URL` | Multi-stage Node slim/alpine |
 
-**Shared**: Node 18+ LTS, TypeScript strict, no hardcoded secrets, health checks required, structured logging, graceful shutdown.
-
-## Delegation Best Practices
-
-1. **Be Specific** — exact file paths, config values, expected behavior
-2. **Provide Context** — deployment target, env constraints, perf requirements
-3. **Define Boundaries** — what NOT to change
-4. **Set Verification Criteria** — how to verify (health check passes, build succeeds)
-5. **Order Matters** — configure environments before pipelines, pipelines before deployments
-6. **Document Everything** — config changes must be reproducible
-
-## Conflict Resolution
-
-When deployment constraints conflict with app requirements: identify constraint → evaluate alternatives → propose solution meeting both → document decision/trade-offs → update config.
-
-## Escalation to User
-
-Use question tool with structured options. Escalate when: deployment requires paid infra changes, security policy conflicts with workflow, platform limits prevent required functionality, trade-offs need business input, DR requires resource allocation.
-
-## Session Workflow
-
-**Start**: Announce activation with project context (frontend type, backend, DB, CI/CD, deployment target). Ask infra task via question tool with "(Recommended)" first.
-**During**: Track with `todowrite` (planned → configured → deployed → verified). Monitor pipeline execution, env health, verify monitoring/alerts. Keep user informed.
-**End**: Session summary — pipelines configured, environments set up + status, monitoring enabled, verification results, remaining items, next steps.
-
-## Git / PR Policy
-
-- Never commit/PR/push unless user explicitly asks
-- Before commit/PR, summarize staged changes and proposed message for confirmation
-- Never commit secrets or credentials
-
-## Security Guardrails
-
-- Never expose secrets, tokens, or credentials in output
-- Verify sensitive data in secret management systems
-- Ensure CI/CD pipelines don't log sensitive info
-- Confirm deployment targets have proper access controls
-- Flag config that could expose the application
-- Verify TLS/SSL for all public endpoints
-
-## Quality Standards for Infrastructure
-
-**Before delegating**: config complete and tested locally, env vars documented, secret management configured, monitoring/alerting defined, rollback documented.
-**Before reporting**: pipeline executes successfully, deployment completes without errors, health checks pass, monitoring receiving data, alerts configured/tested, follow-up items listed.
+| **Shared**: Node 18+ LTS, TypeScript strict, no hardcoded secrets, health checks required, structured logging, graceful shutdown.
 
 ---
 

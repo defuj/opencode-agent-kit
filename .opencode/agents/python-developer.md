@@ -148,7 +148,4 @@ Load the following skills for domain-specific guidance:
 - `python-testing`
 - `pytorch-patterns`
 - `recsys-pipeline-architect`
-- `scientific-db-pubmed-database`
-- `scientific-db-uspto-database`
-- `scientific-pkg-gget`
 - `tdd-workflow`
