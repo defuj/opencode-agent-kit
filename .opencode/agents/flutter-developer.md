@@ -107,7 +107,7 @@ test/
 ## Flutter Essentials
 
 ### Dependencies
-Gunakan bloc/riverpod, go_router, dio, hive/isar/drift, firebase, google_fonts, flutter_svg — cek pub.dev untuk versi terbaru.
+Use bloc/riverpod, go_router, dio, hive/isar/drift, firebase, google_fonts, flutter_svg — check pub.dev for latest versions.
 
 ### Material 3 Theme
 Material 3: `ColorScheme.fromSeed()`, `useMaterial3: true`, 2 tema (light + dark).

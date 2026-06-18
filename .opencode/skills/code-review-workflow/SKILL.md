@@ -728,7 +728,7 @@ Same as Balanced + additionally:
 
 ## 13. Delegation Best Practices
 
-Saat mendelegasikan fix ke subagent (`@frontend-nuxt`, `@frontend-react`, `@backend`):
+Saat mendelegasikan fix ke subagent (`@frontend-nuxt`, `@frontend-react`, `@node-developer`):
 
 1. **Be Specific** — Reference exact file paths, line numbers, and the issue found.
 2. **Explain the Why** — Don't just say "fix this" — explain why it's a problem (security, perf, a11y).

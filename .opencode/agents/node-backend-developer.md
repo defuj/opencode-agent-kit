@@ -143,10 +143,10 @@ If `postmanSync: true` or user explicitly requested: load `api-documentation` sk
 
 ## Reusable Prompt Templates
 
-- `@backend Add endpoint <METHOD> <path> using existing DTO/controller/route patterns and keep response envelope unchanged.`
-- `@backend Refactor <module> to reduce complexity without changing behavior. Keep API contract and validation rules intact.`
-- `@backend Implement transaction-safe <business operation> with error mapping and audit logging.`
-- `@backend Review this feature for tenant isolation, auth boundaries, and input validation gaps.`
+- `@node-developer Add endpoint <METHOD> <path> using existing DTO/controller/route patterns and keep response envelope unchanged.`
+- `@node-developer Refactor <module> to reduce complexity without changing behavior. Keep API contract and validation rules intact.`
+- `@node-developer Implement transaction-safe <business operation> with error mapping and audit logging.`
+- `@node-developer Review this feature for tenant isolation, auth boundaries, and input validation gaps.`
 
 ## Definition of Done
 

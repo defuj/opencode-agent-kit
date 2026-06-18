@@ -178,8 +178,8 @@
         "agentmemory_*": "allow"
       }
     },
-    "backend": {
-      "description": "Expert backend developer for Node.js, Express, Prisma, and PostgreSQL (subagent of IT Leader)",
+    "node-developer": {
+      "description": "Expert Node.js backend developer for Express, Prisma, PostgreSQL, REST APIs, and JWT auth (subagent of IT Leader)",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/node-backend-developer.md}",
       "color": "#10b981",
@@ -292,7 +292,7 @@
       "description": "Database Specialist specializing in PostgreSQL schema design, query optimization, Prisma ORM, and migrations (subagent of IT Leader)",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/database-specialist.md}",
-      "color": "#06b6d4",
+      "color": "#0891b2",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
@@ -335,7 +335,7 @@
       "description": "SEO Specialist specializing in meta tags, structured data, Core Web Vitals, and content optimization (subagent of IT Leader)",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/seo-specialist.md}",
-      "color": "#84cc16",
+      "color": "#65a30d",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",

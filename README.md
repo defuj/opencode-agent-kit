@@ -43,7 +43,7 @@ This repository contains a complete OpenCode agent configuration with **Leader �
   - `it-leader.md` — IT Leader & Technical Project Manager (primary)
   - `nuxt-frontend-developer.md` — Frontend Developer (Nuxt/Vue) — `@frontend-nuxt`
   - `react-frontend-developer.md` — Frontend Developer (React/Next.js) — `@frontend-react`
-  - `node-backend-developer.md` — Backend Developer (Node.js) — `@backend`
+  - `node-backend-developer.md` — Node.js Backend Developer — `@node-developer`
   - `laravel-advanced.md` — Backend Developer (Laravel) — `@laravel`
   - `code-igniter-3-fullstack.md` — Fullstack Developer (CodeIgniter 3) — `@ci3`
   - `ui-ux-designer.md` — UI/UX Designer — `@designer`
@@ -314,7 +314,7 @@ For small tasks, mention subagents directly with `@mention`:
 ```text
 @frontend-nuxt Add a UButton "Save" in ProfileHeader.vue.
 @frontend-react Create a server component ProductList with API fetch.
-@backend Add endpoint POST /api/markets with DTO validation.
+@node-developer Add endpoint POST /api/markets with DTO validation.
 @laravel Build a CRUD product page with Blade + Livewire.
 @ci3 Build a REST API for products with JWT auth.
 @designer Review UX flow for checkout page and generate DESIGN.md.
@@ -754,7 +754,7 @@ Use the existing useApi pattern and report verification status.
 ```
 
 ```text
-@backend Add endpoint POST /api/markets with DTO validation.
+@node-developer Add endpoint POST /api/markets with DTO validation.
 ```
 
 ```text

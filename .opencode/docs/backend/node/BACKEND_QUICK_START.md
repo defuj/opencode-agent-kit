@@ -4,30 +4,30 @@ This guide is portable across services that share the same backend stack style.
 
 ## Agent Name
 
-- `backend`
+- `node-developer`
 
 ## Activate the Agent
 
 ```text
-@backend Analyze this backend service and align implementation with existing DTO, route, middleware, and controller patterns.
+@node-developer Analyze this backend service and align implementation with existing DTO, route, middleware, and controller patterns.
 ```
 
 ## High-Value Prompt Templates
 
 ```text
-@backend Add endpoint <METHOD> <path> with request/response DTOs, validation middleware, and standardized error handling.
+@node-developer Add endpoint <METHOD> <path> with request/response DTOs, validation middleware, and standardized error handling.
 ```
 
 ```text
-@backend Implement transaction-safe <business operation> with audit logging and predictable response mapping.
+@node-developer Implement transaction-safe <business operation> with audit logging and predictable response mapping.
 ```
 
 ```text
-@backend Review this module for auth boundary, tenant scoping, validation, and API contract consistency.
+@node-developer Review this module for auth boundary, tenant scoping, validation, and API contract consistency.
 ```
 
 ```text
-@backend Refactor this controller to reduce complexity while preserving behavior and response shape.
+@node-developer Refactor this controller to reduce complexity while preserving behavior and response shape.
 ```
 
 ## What the agent is optimized for

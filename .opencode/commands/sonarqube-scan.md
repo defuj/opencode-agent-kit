@@ -31,13 +31,13 @@ Comprehensive SonarQube quality scan with automated fix delegation:
 6. **Delegate Fixes** (by file type):
    - `*.vue`, Nuxt `*.ts` → `@frontend-nuxt`
    - `*.tsx`, Next.js `*.ts` → `@frontend-react`
-   - Backend `*.ts`, `*.js` → `@backend`
+   - Backend `*.ts`, `*.js` → `@node-developer`
    - `*.php` (CI3) → `@ci3`
    - `*.php` (Laravel) → `@laravel`
    - `*.kt`, `*.xml` (Android) → `@android`
    - `*.dart` (Flutter) → `@flutter`
    - DB queries → `@database`
-   - Dependency vulns → `@devops` or `@backend`
+   - Dependency vulns → `@devops` or `@node-developer`
    - Security hotspots → `@security-reviewer`
 
 7. **Generate Report**:

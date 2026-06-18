@@ -1,13 +1,13 @@
 ---
 name: node-express-prisma
-description: Express 5 route/controller/DTO pattern, Prisma ORM schema & migration workflow, JWT auth middleware, error handling, class-validator DTO, response envelope format, and testing strategy with Vitest/Supertest. Skill untuk agent @backend Node.js Backend Developer.
+description: Express 5 route/controller/DTO pattern, Prisma ORM schema & migration workflow, JWT auth middleware, error handling, class-validator DTO, response envelope format, and testing strategy with Vitest/Supertest. Skill untuk agent @node-developer Node.js Backend Developer.
 version: 1.0.0
 author: opencode-agent-kit
 ---
 
 # Node Express Prisma Skill
 
-Skill khusus untuk agent `@backend` — Node.js Backend Developer. Berisi pattern, kode contoh, dan workflow standar untuk membangun REST API dengan Express 5, Prisma ORM, PostgreSQL, JWT auth, class-validator DTO, response envelope, dan testing Vitest/Supertest.
+Skill khusus untuk agent `@node-developer` — Node.js Backend Developer. Berisi pattern, kode contoh, dan workflow standar untuk membangun REST API dengan Express 5, Prisma ORM, PostgreSQL, JWT auth, class-validator DTO, response envelope, dan testing Vitest/Supertest.
 
 ---
 
@@ -933,9 +933,9 @@ NODE_ENV=development
 
 ---
 
-## Integration dengan Agent @backend
+## Integration dengan Agent @node-developer
 
-Skill ini dipanggil oleh agent `@backend` (Node.js Backend Developer) saat:
+Skill ini dipanggil oleh agent `@node-developer` (Node.js Backend Developer) saat:
 
 - Membangun endpoint REST API baru
 - Melakukan perubahan schema database

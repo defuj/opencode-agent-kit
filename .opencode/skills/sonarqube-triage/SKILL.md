@@ -90,7 +90,7 @@ Info     -> Log and deprioritise unless it compounds with other findings.
 | **Debt (Technical)** | _(derived from measures)_ | Estimated effort to fix all code smells | Aggregated in report |
 | **Duplication** | _(duplications tool)_ | Repeated code blocks across files | Domain subagent by file type |
 | **Low Coverage** | _(coverage tool)_ | Insufficient test coverage | Domain subagent by file type |
-| **Dependency Risk** | _(dependency tool)_ | Outdated/vulnerable packages | `@devops` or `@backend` |
+| **Dependency Risk** | _(dependency tool)_ | Outdated/vulnerable packages | `@devops` or `@node-developer` |
 
 ### Type-to-TODO Tag Mapping
 
@@ -176,21 +176,21 @@ Route each TODO to the correct subagent based on file extension and technology c
 | `*.ts` in `app/` or Nuxt project | Nuxt/TypeScript | `@frontend-nuxt` | Includes composables, middleware, plugins, stores |
 | `*.tsx`, `*.jsx` | React/Next.js | `@frontend-react` | Components, pages, hooks |
 | `*.ts` in Next.js project | Next.js/TypeScript | `@frontend-react` | API routes, utils, config |
-| `*.controller.ts`, `*.route.ts`, `*.middleware.ts`, `*.dto.ts` | Node.js backend | `@backend` | Express/NestJS controller layer |
-| `*.service.ts`, `*.repository.ts` | Node.js backend | `@backend` | Business logic, data access |
+| `*.controller.ts`, `*.route.ts`, `*.middleware.ts`, `*.dto.ts` | Node.js backend | `@node-developer` | Express/NestJS controller layer |
+| `*.service.ts`, `*.repository.ts` | Node.js backend | `@node-developer` | Business logic, data access |
 | `*.php` (CI3 — `application/`, `system/`) | CodeIgniter 3 | `@ci3` | Models, controllers, views, helpers |
 | `*.php` (Laravel — `app/`, `resources/`) | Laravel | `@laravel` | Eloquent models, controllers, jobs |
 | `*.kt` | Android/Kotlin | `@android` | Activities, fragments, ViewModels, Compose |
 | `*.xml` (Android — `res/layout/`, `AndroidManifest.xml`) | Android | `@android` | Layouts, resources, manifest |
 | `*.dart` | Flutter/Dart | `@flutter` | Widgets, models, services, providers |
 | `*.sql`, SQL migration files | Database | `@database` | Queries, migrations, seeders |
-| `*.py` | Python | `@python` or `@backend` | Python/Django/Flask code |
-| `*.java` (Spring Boot) | Spring Boot | `@springboot` | Controllers, services, entities, config |
+| `*.py` | Python | `@python` | Python/Django/Flask code |
+| `*.java` (Spring Boot) | Spring Boot | `@java-reviewer` | Controllers, services, entities, config (note: no dedicated Java dev agent) |
 | `Dockerfile`, `docker-compose.yml` | Docker | `@devops` | Container configuration |
-| `package.json`, `pom.xml`, `build.gradle` | Dependency risks | `@devops` or `@backend` | Outdated/vulnerable packages |
+| `package.json`, `pom.xml`, `build.gradle` | Dependency risks | `@devops` or `@node-developer` | Outdated/vulnerable packages |
 | `*.yml`, `*.yaml` (CI/CD) | CI/CD pipelines | `@devops` | GitHub Actions, GitLab CI, Jenkins |
 | Security hotspots (any file) | Security | `@security-reviewer` | Must always route here |
-| Multiple file types | Cross-cutting | `@it-leader` | Escalate if uncertain |
+| Multiple file types | Cross-cutting | `@leader` | Escalate if uncertain |
 
 ### Delegation Protocol
 

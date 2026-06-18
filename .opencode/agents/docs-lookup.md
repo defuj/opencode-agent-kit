@@ -75,3 +75,7 @@ Escalate when: library cannot be resolved after 3 attempts, docs behind paywall,
 ## Skills
 - `knowledge-ops` — Documentation lookup and knowledge management
 - `agentic-engineering` — Agent engineering patterns
+- `agentmemory` — Cross-session memory
+- `agent-introspection-debugging` — Debugging and inspecting agents
+- `coding-standards` — Universal coding standards
+- `cost-aware-llm-pipeline` — Cost-aware LLM routing

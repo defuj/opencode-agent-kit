@@ -194,4 +194,16 @@ _Agent ini menggabungkan kemampuan engineer setara frontend-developer dengan men
 
 ## Skills
 
-- Load `agentmemory` skill for persistent cross-session memory.
+Load the following skills for domain-specific guidance:
+
+- `agentmemory` — Cross-session memory
+- `coding-standards` — Universal coding standards
+- `frontend-patterns` — Modern Vue/Nuxt patterns
+- `impeccable` — Design intelligence
+- `nuxt-ui` — Nuxt UI components
+- `nuxt4-vue3-patterns` — Nuxt 4 patterns
+- `building-components` — Component libraries
+- `accessibility` — WCAG compliance
+- `security-review` — Security best practices
+- `tdd-workflow` — Test-driven development
+- `web-design-guidelines` — UI/UX compliance

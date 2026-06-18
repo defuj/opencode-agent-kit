@@ -73,7 +73,7 @@ routes/
 └── console.php            # Artisan commands
 ```
 
-## Artisan Command Reference (Ringkasan)
+## Artisan Command Reference
 
 ```bash
 # CRUD scaffolding — model + migration + controller
@@ -123,9 +123,9 @@ php artisan optimize                             # Cache routes, config, views
 
 ## Blade & Frontend
 
-Gunakan Blade components (`<x-*>`) + Tailwind CSS + Vite. Form layouts pakai `@csrf`, `@method`, `old()`, `$errors`. Layout utama: `<x-app-layout>` dengan `@vite(['resources/css/app.css', 'resources/js/app.js'])`.
+Use Blade components (`<x-*>`) + Tailwind CSS + Vite. Form layouts use `@csrf`, `@method`, `old()`, `$errors`. Main layout: `<x-app-layout>` with `@vite(['resources/css/app.css', 'resources/js/app.js'])`.
 
-## Full-Stack Workflow (Ringkasan)
+## Full-Stack Workflow
 
 1. **Scaffold**: `make:model Product -mc` + `make:request StoreProductRequest`
 2. **Logic**: Service class (`app/Services/ProductService.php`), Route di `web.php`/`api.php`, View di `resources/views/products/`

@@ -25,7 +25,7 @@ Break features into atomic tasks. Each task must be completable by ONE subagent.
 ### Task ID Convention
 ```
 FE-001  → @frontend-nuxt or @frontend-react
-BE-001  → @backend
+BE-001  → @node-developer
 CI-001  → @ci3
 LA-001  → @laravel
 DS-001  → @designer
