@@ -268,7 +268,7 @@ To **customize** a built-in agent, create an agent with the **same name** in `.o
 
 ## Available Agents
 
-31 agents (31 registered in config) with **Leader → Subagent** architecture:
+33 agents (33 registered in config) with **Leader → Subagent** architecture:
 
 | Agent                           | File                          | Mode        | Role                                                                 |
 | ------------------------------- | ----------------------------- | ----------- | -------------------------------------------------------------------- |

@@ -27,7 +27,10 @@
     ".opencode/skills/eval-harness/SKILL.md",
     ".opencode/skills/verification-loop/SKILL.md",
     ".opencode/skills/strategic-compact/SKILL.md",
-    ".opencode/skills/api-design/SKILL.md"
+    ".opencode/skills/api-design/SKILL.md",
+    ".opencode/skills/agent-task-workflow/SKILL.md",
+    ".opencode/skills/agent-communication/SKILL.md",
+    ".opencode/skills/agent-session-workflow/SKILL.md"
   ],
   "mcp": {
     "nuxt": {
@@ -49,10 +52,7 @@
     "playwright": {
       "type": "stdio",
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-playwright"
-      ],
+      "args": ["-y", "@modelcontextprotocol/server-playwright"],
       "enabled": true,
       "description": "Browser automation and E2E testing with Playwright"
     },
@@ -84,17 +84,12 @@
     },
     "agentmemory": {
       "type": "local",
-      "command": [
-        "bash",
-        ".opencode/hooks/agentmemory-start.sh"
-      ],
+      "command": ["bash", ".opencode/hooks/agentmemory-start.sh"],
       "enabled": true,
       "description": "Persistent cross-session memory with 53 tools (save, recall, smart search, sessions, file history, lessons)"
     }
   },
-  "plugin": [
-    ".opencode/plugins/agentmemory-capture.ts"
-  ],
+  "plugin": [".opencode/plugins/agentmemory-capture.ts"],
   "agent": {
     "leader": {
       "description": "IT Leader & Technical Project Manager \u2014 analyzes requirements, designs architecture, decomposes tasks, delegates to subagents, and unifies outputs",
@@ -574,7 +569,7 @@
       "description": "Python code review specialist \u2014 reviews Python code for type safety, PEP 8, Django/FastAPI patterns, and security",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/python-reviewer.md}",
-      "color": "#3776AB",
+      "color": "#306998",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
@@ -595,7 +590,7 @@
       "description": "Rust code review specialist \u2014 reviews Rust code for memory safety, ownership, concurrency, and idiomatic patterns",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/rust-reviewer.md}",
-      "color": "#DEA584",
+      "color": "#C67D4B",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
@@ -614,7 +609,7 @@
       "description": "C++ code review specialist \u2014 reviews C++ code for memory safety, RAII, modern C++ patterns, and performance",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/cpp-reviewer.md}",
-      "color": "#00599C",
+      "color": "#004477",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
@@ -634,7 +629,7 @@
       "description": "Java/Spring Boot code review specialist \u2014 reviews Java code for JPA, Spring patterns, concurrency, and security",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/java-reviewer.md}",
-      "color": "#ED8B00",
+      "color": "#CC7700",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
@@ -693,7 +688,7 @@
       "description": "Go code review specialist \u2014 reviews Go code for error handling, concurrency, idiomatic patterns, and security",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/go-reviewer.md}",
-      "color": "#00ADD8",
+      "color": "#0088AA",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
@@ -711,7 +706,7 @@
       "description": "Agent harness optimizer \u2014 analyzes and improves agent configuration for reliability, cost efficiency, and throughput",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/harness-optimizer.md}",
-      "color": "#8B5CF6",
+      "color": "#7C4FE0",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
@@ -745,7 +740,7 @@
       "description": "Documentation lookup specialist \u2014 fetches current library and API documentation via MCP with code examples",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/docs-lookup.md}",
-      "color": "#6366F1",
+      "color": "#4F52B0",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
@@ -762,7 +757,7 @@
       "description": "AI Agent Engineer \u2014 builds agent orchestration systems, evaluation harnesses, autonomous loops, and safety guardrails",
       "mode": "subagent",
       "prompt": "{file:.opencode/agents/agent-engineer.md}",
-      "color": "#8B5CF6",
+      "color": "#6D28D9",
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
