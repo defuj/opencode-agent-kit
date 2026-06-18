@@ -185,7 +185,7 @@ Route each TODO to the correct subagent based on file extension and technology c
 | `*.dart` | Flutter/Dart | `@flutter` | Widgets, models, services, providers |
 | `*.sql`, SQL migration files | Database | `@database` | Queries, migrations, seeders |
 | `*.py` | Python | `@python` | Python/Django/Flask code |
-| `*.java` (Spring Boot) | Spring Boot | `@java-reviewer` | Controllers, services, entities, config (note: no dedicated Java dev agent) |
+| `*.java` (Spring Boot) | Spring Boot | `@java-developer` | Controllers, services, entities, config |
 | `Dockerfile`, `docker-compose.yml` | Docker | `@devops` | Container configuration |
 | `package.json`, `pom.xml`, `build.gradle` | Dependency risks | `@devops` or `@node-developer` | Outdated/vulnerable packages |
 | `*.yml`, `*.yaml` (CI/CD) | CI/CD pipelines | `@devops` | GitHub Actions, GitLab CI, Jenkins |

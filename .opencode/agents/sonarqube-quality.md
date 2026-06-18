@@ -92,6 +92,8 @@ Use `todowrite` with IDs: `SQ-CRIT-001`, `SQ-MAJ-001`, `SQ-MIN-001` — include 
 | `*.php` (CI3 patterns) | `@ci3` |
 | `*.php` (Laravel patterns) | `@laravel` |
 | `*.kt`, `*.xml` (Android) | `@android` |
+| `*.java` (Spring Boot) | `@java-developer` |
+| `*.go` | `@go-developer` |
 | `*.dart` | `@flutter` |
 | `*.py` | `@python` |
 | `*.rs` | `@rust` |

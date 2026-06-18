@@ -34,6 +34,8 @@ Comprehensive SonarQube quality scan with automated fix delegation:
    - Backend `*.ts`, `*.js` → `@node-developer`
    - `*.php` (CI3) → `@ci3`
    - `*.php` (Laravel) → `@laravel`
+   - `*.java` (Spring Boot) → `@java-developer`
+   - `*.go` → `@go-developer`
    - `*.kt`, `*.xml` (Android) → `@android`
    - `*.dart` (Flutter) → `@flutter`
    - DB queries → `@database`

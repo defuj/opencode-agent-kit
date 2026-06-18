@@ -532,6 +532,44 @@
         "agentmemory_*": "allow"
       }
     },
+    "java-developer": {
+      "description": "Java/Spring Boot developer for REST APIs, JPA/Hibernate, microservices, and JVM ecosystem (subagent of IT Leader)",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/agents/java-developer.md}",
+      "color": "#ED8B00",
+      "permission": {
+        "edit": "allow",
+        "webfetch": "allow",
+        "skill": {
+          "*": "allow"
+        },
+        "bash": {
+          "*": "ask",
+          "mvn*": "allow",
+          "gradle*": "allow",
+          "java*": "allow"
+        },
+        "agentmemory_*": "allow"
+      }
+    },
+    "go-developer": {
+      "description": "Go developer for REST APIs, microservices, CLI tools, and concurrent systems (subagent of IT Leader)",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/agents/go-developer.md}",
+      "color": "#00ADD8",
+      "permission": {
+        "edit": "allow",
+        "webfetch": "allow",
+        "skill": {
+          "*": "allow"
+        },
+        "bash": {
+          "*": "ask",
+          "go*": "allow"
+        },
+        "agentmemory_*": "allow"
+      }
+    },
     "python-reviewer": {
       "description": "Python code review specialist \u2014 reviews Python code for type safety, PEP 8, Django/FastAPI patterns, and security",
       "mode": "subagent",

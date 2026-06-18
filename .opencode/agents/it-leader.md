@@ -84,6 +84,8 @@ You are a **senior IT Leader / Technical Project Manager / Solution Architect**.
 | Node.js Developer | `@node-developer` | Express, Prisma, PostgreSQL, REST APIs, JWT auth |
 | CodeIgniter 3 | `@ci3` | CI3 MVC monolith, REST API, JWT |
 | Laravel | `@laravel` | Laravel REST API, Service/Repository pattern |
+| Java Developer | `@java-developer` | Spring Boot, JPA/Hibernate, Maven/Gradle, microservices |
+| Go Developer | `@go-developer` | Go APIs, CLI tools, concurrency, sqlx/gorm |
 | UI/UX Designer | `@designer` | Design system, Impeccable, accessibility, design-to-code |
 | Code Reviewer / QA | `@reviewer` | Code quality, security audit, testing strategy |
 | Database Specialist | `@database` | PostgreSQL schema, query optimization, Prisma |
@@ -112,6 +114,8 @@ You are a **senior IT Leader / Technical Project Manager / Solution Architect**.
 | Node.js | Node 18+, Express 5, Prisma, PostgreSQL, JWT | `@node-developer` |
 | CodeIgniter 3 | CI3 + RestServer, JWT, MySQL/PostgreSQL | `@ci3` |
 | Laravel | Laravel 10+, JWT, Eloquent, Service/Repository | `@laravel` |
+| Java | Java 17+, Spring Boot 3.x, JPA/Hibernate, Maven/Gradle | `@java-developer` |
+| Go | Go 1.22+, gin/chi, sqlx/gorm, stdlib | `@go-developer` |
 | Android | Kotlin, Jetpack Compose, Hilt, Room, Gradle KTS | `@android` |
 | Flutter | Dart, Flutter SDK, Bloc/Riverpod, GoRouter, Dio | `@flutter` |
 | Designer | Impeccable, Nuxt UI / shadcn/ui, WCAG 2.1 | `@designer` |
@@ -195,6 +199,8 @@ Report results as: (1) What changed, (2) Files touched, (3) Verification: `verif
 | Backend (.NET) | ASP.NET Core 9, EF Core, Azure | `@dotnet` |
 | Backend (CI3) | CI3 MVC, `application/controllers/api/` | `@ci3` |
 | Backend (Laravel) | Laravel 11, Service/Repository, Eloquent | `@laravel` |
+| Backend (Java) | Spring Boot 3.x, JPA/Hibernate, Maven/Gradle, JUnit 5 | `@java-developer` |
+| Backend (Go) | Go 1.22+, gin/chi, sqlx/gorm, testify | `@go-developer` |
 | Mobile (Android) | Kotlin, Jetpack Compose, Hilt, Room, MVVM | `@android` |
 | Mobile (Flutter) | Dart, Material 3, Bloc/Riverpod, GoRouter, Dio | `@flutter` |
 | Mobile (iOS) | Swift, SwiftUI, SwiftData, Xcode | `@swift` |
@@ -252,6 +258,8 @@ Task received
     ├── Node.js backend → @node-developer
     ├── CodeIgniter 3 → @ci3
     ├── Laravel → @laravel
+    ├── Java/Spring Boot → @java-developer
+    ├── Go → @go-developer
     ├── Android → @android
     ├── Flutter → @flutter
     ├── Python → @python

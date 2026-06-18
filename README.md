@@ -4,7 +4,7 @@
 
 # Agent Kit — Setup Guide
 
-Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 31 specialized agents, 201 skill playbooks, 46 slash commands, and 8 MCP servers.
+Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 33 specialized agents, 201 skill playbooks, 46 slash commands, and 8 MCP servers.
 
 ```bash
 npx opencode-agent-kit init    # One command. Full team.
@@ -32,7 +32,7 @@ opencode-agent-kit init
 
 ## Overview
 
-Think of Agent Kit as an AI development team you install into any OpenCode project. An **IT Leader** orchestrates 31 specialized agents — each one an expert in their stack. You describe what to build; the team handles the rest.
+Think of Agent Kit as an AI development team you install into any OpenCode project. An **IT Leader** orchestrates 33 specialized agents — each one an expert in their stack. You describe what to build; the team handles the rest.
 
 This repository contains a complete OpenCode agent configuration with **Leader → Subagent** architecture for software development teams.
 
@@ -45,6 +45,8 @@ This repository contains a complete OpenCode agent configuration with **Leader �
   - `react-frontend-developer.md` — Frontend Developer (React/Next.js) — `@frontend-react`
   - `node-backend-developer.md` — Node.js Backend Developer — `@node-developer`
   - `laravel-advanced.md` — Backend Developer (Laravel) — `@laravel`
+  - `java-developer.md` — Java Developer (Spring Boot) — `@java-developer`
+  - `go-developer.md` — Go Developer — `@go-developer`
   - `code-igniter-3-fullstack.md` — Fullstack Developer (CodeIgniter 3) — `@ci3`
   - `ui-ux-designer.md` — UI/UX Designer — `@designer`
   - `code-reviewer.md` — Code Reviewer / QA — `@reviewer`

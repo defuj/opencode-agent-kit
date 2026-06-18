@@ -1,14 +1,14 @@
 # Agent Kit — OpenCode Agent System
 
-This is the Agent Kit: a portable meta-project containing OpenCode agent configurations, skills, rules, and commands for a multi-stack development agent system. It covers Nuxt/Vue frontend, React/Next.js frontend, Node.js backend, Laravel, CodeIgniter 3, mobile (Android + Flutter), and supporting roles (design, review, database, devops, SEO). There is no actual application source code — all content is configuration and documentation for AI agent orchestration.
+This is the Agent Kit: a portable meta-project containing OpenCode agent configurations, skills, rules, and commands for a multi-stack development agent system. It covers Nuxt/Vue frontend, React/Next.js frontend, Node.js backend, Laravel, CodeIgniter 3, Java/Spring Boot, Go, mobile (Android + Flutter), and supporting roles (design, review, database, devops, SEO). There is no actual application source code — all content is configuration and documentation for AI agent orchestration.
 
 ## Project Structure
 
-- `.opencode/config.json` — Main OpenCode configuration with MCP servers and 13 agent definitions
+- `.opencode/config.json` — Main OpenCode configuration with MCP servers and 33 agent definitions
 - `.opencode/agents/` — Custom agent prompts:
   - **Primary**: `it-leader` (orchestrator)
   - **Web Frontend**: `nuxt-frontend-developer`, `react-frontend-developer`
-  - **Backend**: `node-backend-developer`, `code-igniter-3-fullstack`, `laravel-advanced`
+  - **Backend**: `node-backend-developer`, `code-igniter-3-fullstack`, `laravel-advanced`, `java-developer`, `go-developer`
   - **Mobile**: `android-developer`, `flutter-developer`
   - **Support**: `ui-ux-designer`, `code-reviewer`, `database-specialist`, `devops-specialist`, `seo-specialist`
   - **Quality**: `sonarqube-quality`
@@ -21,7 +21,7 @@ This is the Agent Kit: a portable meta-project containing OpenCode agent configu
 ## Key Architecture
 
 - **Primary Agent**: `leader` (IT Leader) orchestrates via Task tool to subagents
-- **Subagents** (13 total): `frontend-nuxt`, `frontend-react`, `backend`, `ci3`, `laravel`, `android`, `flutter`, `designer`, `reviewer`, `database`, `devops`, `seo`, `sonarqube`
+- **Subagents** (33 total): `frontend-nuxt`, `frontend-react`, `node-developer`, `ci3`, `laravel`, `java-developer`, `go-developer`, `python`, `rust`, `swift`, `dotnet`, `angular`, `cpp`, `android`, `flutter`, `designer`, `reviewer`, `database`, `devops`, `seo`, `sonarqube`, `python-reviewer`, `rust-reviewer`, `cpp-reviewer`, `java-reviewer`, `php-reviewer`, `kotlin-reviewer`, `go-reviewer`, `harness-optimizer`, `loop-operator`, `docs-lookup`, `agent-engineer`
 - **MCP Servers**: Nuxt docs, Nuxt UI docs, Playwright, Postman, SonarQube (enabled); Figma, Stitch (disabled)
 - **Built-in Agents Available**: `@planner`, `@explore`, `@scout`, `@general`, `@code-reviewer`, `@security-reviewer`, `@e2e-runner`, `@build-error-resolver`, `@refactor-cleaner`
 
