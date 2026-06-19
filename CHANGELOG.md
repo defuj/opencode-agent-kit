@@ -25,6 +25,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.7] - 2025-06-19
+
+### Fixed
+
+- **CLI path resolution** — `bin/init.mjs` path to package.json fixed for npx execution
+- **npm dist-tag** — published 1.2.7 to npm registry with correct `latest` tag
+
+### Changed
+
+- Version: 1.2.6 → **1.2.7**
+
+---
+
 ## [Unreleased]
 
 ---
