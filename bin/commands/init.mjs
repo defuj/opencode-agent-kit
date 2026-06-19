@@ -49,7 +49,7 @@ function copyRecursive(src, dest) {
   const entries = readdirSync(src, { withFileTypes: true });
   mkdirSync(dest, { recursive: true });
   for (const entry of entries) {
-    if (entry.name === ".DS_Store") continue;
+    if (entry.name === '.DS_Store') continue;
     const srcPath = join(src, entry.name);
     const destPath = join(dest, entry.name);
     if (entry.isDirectory()) {
@@ -61,10 +61,10 @@ function copyRecursive(src, dest) {
 }
 
 function detectPackageManager(cwd) {
-  if (existsSync(join(cwd, "bun.lock"))) return "bun";
-  if (existsSync(join(cwd, "pnpm-lock.yaml"))) return "pnpm";
-  if (existsSync(join(cwd, "yarn.lock"))) return "yarn";
-  return "npm";
+  if (existsSync(join(cwd, 'bun.lock'))) return 'bun';
+  if (existsSync(join(cwd, 'pnpm-lock.yaml'))) return 'pnpm';
+  if (existsSync(join(cwd, 'yarn.lock'))) return 'yarn';
+  return 'npm';
 }
 
 function mergeJson(target, source, strategy = {}) {
@@ -76,19 +76,19 @@ function mergeJson(target, source, strategy = {}) {
       continue;
     }
 
-    const rule = strategy[key] || "default";
+    const rule = strategy[key] || 'default';
 
-    if (rule === "keep-target") {
+    if (rule === 'keep-target') {
       // Keep user's existing value
       continue;
     }
 
-    if (rule === "source-wins") {
+    if (rule === 'source-wins') {
       merged[key] = JSON.parse(JSON.stringify(value));
       continue;
     }
 
-    if (rule === "merge-agents") {
+    if (rule === 'merge-agents') {
       merged[key] = merged[key] || {};
       for (const [agentKey, agentVal] of Object.entries(value)) {
         if (!(agentKey in merged[key])) {
@@ -99,7 +99,7 @@ function mergeJson(target, source, strategy = {}) {
       continue;
     }
 
-    if (rule === "merge-mcp") {
+    if (rule === 'merge-mcp') {
       merged[key] = merged[key] || {};
       for (const [mcpKey, mcpVal] of Object.entries(value)) {
         if (!(mcpKey in merged[key])) {
@@ -109,7 +109,7 @@ function mergeJson(target, source, strategy = {}) {
       continue;
     }
 
-    if (rule === "merge-instructions") {
+    if (rule === 'merge-instructions') {
       const existing = merged[key] || [];
       const srcArr = Array.isArray(value) ? value : [value];
       for (const item of srcArr) {
@@ -121,7 +121,7 @@ function mergeJson(target, source, strategy = {}) {
       continue;
     }
 
-    if (rule === "merge-permissions") {
+    if (rule === 'merge-permissions') {
       merged[key] = merged[key] || {};
       for (const [permKey, permVal] of Object.entries(value)) {
         if (!(permKey in merged[key])) {
@@ -133,10 +133,10 @@ function mergeJson(target, source, strategy = {}) {
 
     // default: source wins for top-level, but merge nested objects
     if (
-      typeof value === "object" &&
+      typeof value === 'object' &&
       value !== null &&
       !Array.isArray(value) &&
-      typeof merged[key] === "object" &&
+      typeof merged[key] === 'object' &&
       merged[key] !== null &&
       !Array.isArray(merged[key])
     ) {
@@ -150,19 +150,19 @@ function mergeJson(target, source, strategy = {}) {
 }
 
 function mergeOencodeConfig(templateConfigPath, userConfigPath, force) {
-  const templateConfig = JSON.parse(readFileSync(templateConfigPath, "utf-8"));
+  const templateConfig = JSON.parse(readFileSync(templateConfigPath, 'utf-8'));
   const userConfig = existsSync(userConfigPath)
-    ? JSON.parse(readFileSync(userConfigPath, "utf-8"))
+    ? JSON.parse(readFileSync(userConfigPath, 'utf-8'))
     : {};
 
   const strategy = {
-    $schema: "source-wins",
-    formatter: "keep-target",
-    permission: "keep-target",
-    instructions: "merge-instructions",
-    mcp: "merge-mcp",
-    agent: force ? "source-wins" : "merge-agents",
-    plugin: "merge-instructions",
+    $schema: 'source-wins',
+    formatter: 'keep-target',
+    permission: 'keep-target',
+    instructions: 'merge-instructions',
+    mcp: 'merge-mcp',
+    agent: force ? 'source-wins' : 'merge-agents',
+    plugin: 'merge-instructions',
   };
 
   const merged = mergeJson(userConfig, templateConfig, strategy);
@@ -287,17 +287,21 @@ export async function init(options) {
   writeFileSync(versionFile, pkgJson.version + '\n', 'utf-8');
 
   // 11. Done — summary
-  console.log(`\n  ${C.bold}${C.green}✅ opencode-agent-kit v${pkgJson.version} installed!${C.reset}\n`);
+  console.log(
+    `\n  ${C.bold}${C.green}✅ opencode-agent-kit v${pkgJson.version} installed!${C.reset}\n`,
+  );
   console.log(`  ${C.dim}Location:${C.reset} ${targetDir}`);
   console.log(`  ${C.dim}${'─'.repeat(30)}${C.reset}`);
   console.log(`  ${C.bold}What you got:${C.reset}`);
-  console.log(`    • ${C.cyan}opencode.json${C.reset}          — 13 agents + MCP servers`);
-  console.log(`    • ${C.cyan}.opencode/agents/${C.reset}      — 14 agent prompt files`);
-  console.log(`    • ${C.cyan}.opencode/skills/${C.reset}      — 60+ skill playbooks`);
-  console.log(`    • ${C.cyan}.opencode/commands/${C.reset}    — 35+ slash commands`);
+  console.log(`    • ${C.cyan}opencode.json${C.reset}          — 31 agents + 8 MCP servers`);
+  console.log(`    • ${C.cyan}.opencode/agents/${C.reset}      — 34 agent prompt files`);
+  console.log(`    • ${C.cyan}.opencode/skills/${C.reset}      — 200+ skill playbooks`);
+  console.log(`    • ${C.cyan}.opencode/commands/${C.reset}    — 46 slash commands`);
   console.log(`    • ${C.cyan}.opencode/rules/${C.reset}       — Scoped coding rules`);
   console.log(`    • ${C.cyan}.opencode/hooks/${C.reset}       — Automation hooks`);
   console.log(`    • ${C.cyan}.opencode/docs/${C.reset}        — Agent documentation`);
   console.log(`    • ${C.cyan}agentmemory${C.reset} (global)  — Persistent memory`);
-  console.log(`\n  ${C.bold}${C.green}→${C.reset} Next step: run ${C.cyan}opencode${C.reset} to start\n`);
+  console.log(
+    `\n  ${C.bold}${C.green}→${C.reset} Next step: run ${C.cyan}opencode${C.reset} to start\n`,
+  );
 }

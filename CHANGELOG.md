@@ -7,6 +7,93 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.6] - 2025-06-19
+
+### Added
+
+- **3 new shared skills** — `agent-task-workflow`, `agent-communication`, `agent-session-workflow` loaded globally via opencode.json
+- **Content restoration in it-leader.md** — Subagent Capabilities Reference, Delegation Examples, expanded Parallel Delegation (contract checklist, Postman Sync, sequential vs parallel), TUI Question Templates (single/multi-select), Session Workflow (version check, TODO protocol, start/end templates), Quality Standards
+- **Dynamic version in CLI** — `bin/init.mjs` now reads version from `package.json` instead of hardcoded `"1.0.0"`
+
+### Changed
+
+- `it-leader.md`: 324 → **810 lines** (+486 lines restored from main branch)
+- `opencode.json` instructions: 9 → **12** (3 new shared skills)
+- `package.json` description: updated agent/skills/commands counts
+- `bin/commands/doctor.mjs`: expected agent count 14 → **34**
+- `bin/commands/init.mjs` summary: all counts updated (13→31 agents, 14→34 files, 60+→200+ skills, 35+→46 commands)
+
+---
+
+## [Unreleased]
+
+---
+
+## [1.2.5] - 2025-06-18
+
+### Added
+
+- **Subagent capability references** — detailed stack, capabilities, and output format for all 20+ subagents in IT Leader
+- **Agent doc reorganization** — consistent structure across all agent prompts with skill-based content extraction
+
+### Changed
+
+- Agent prompts condensed: shared procedural content extracted to dedicated skill files
+- Content moved: Memory Management, Working Methodology, Communication Style, Session Workflow extracted from individual prompts to shared skills
+
+---
+
+## [1.2.4] - 2025-06-18
+
+### Added
+
+- **Go Developer agent** (`@go-developer`) — Go APIs, CLI tools, concurrency patterns, sqlx/gorm
+- **Java Developer agent** (`@java-developer`) — Spring Boot, JPA/Hibernate, Maven/Gradle, microservices
+- **Cross-references** — Go and Java added to IT Leader's subagent table, task decision tree, project conventions, and verification policy
+
+### Changed
+
+- Agent count: 31 → **33** registered in opencode.json
+
+---
+
+## [1.2.3] - 2025-06-18
+
+### Changed
+
+- **Agent configs streamlined** — redundant content removed from agent prompts
+- **Delegation mappings updated** — agent identifiers and routing paths aligned for consistency across node-backend-developer, nuxt-frontend-developer, and react-frontend-developer
+- **Permission-restricted command fallback** — consolidated fallback protocol across all agents
+
+---
+
+## [1.2.2] - 2025-06-18
+
+### Added
+
+- **UI/UX Designer agent reformatted** — refined design review/audit workflow, Google Stitch MCP integration
+- **Landing page redesign** — refreshed branding with agentmemory focus, responsive GitHub link
+
+### Changed
+
+- Landing page: CSS variables for light/dark theme, modern design with updated stats
+
+---
+
+## [1.2.1] - 2025-06-09
+
+### Added
+
+- **Design review delegation rule** — IT Leader now delegates all design/UI analysis to `@designer` immediately
+- **Landing page** — light/dark theme support with CSS variables and theme toggle
+- **agentmemory documentation** — comprehensive README section for persistent cross-session memory
+
+### Changed
+
+- Landing page: redesigned with refreshed branding and agentmemory focus
+
+---
+
 ## [1.2.0] - 2025-06-09
 
 ### Added

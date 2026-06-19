@@ -38,11 +38,7 @@ export async function doctor(options) {
 
   // 2. Check package.json exists
   const pkgPath = join(targetDir, 'package.json');
-  allGood &= check(
-    existsSync(pkgPath),
-    'package.json found',
-    'package.json not found',
-  );
+  allGood &= check(existsSync(pkgPath), 'package.json found', 'package.json not found');
 
   // 3. Check opencode.json
   const configPath = join(targetDir, 'opencode.json');
@@ -67,35 +63,23 @@ export async function doctor(options) {
   if (hasOpencode) {
     // 4a. Check agents
     const agentsDir = join(opencodeDir, 'agents');
-    check(
-      existsSync(agentsDir),
-      '.opencode/agents/ found',
-      '.opencode/agents/ missing',
-    );
+    check(existsSync(agentsDir), '.opencode/agents/ found', '.opencode/agents/ missing');
 
     // 4b. Check instructions
     const instrDir = join(opencodeDir, 'instructions');
-    check(
-      existsSync(instrDir),
-      '.opencode/instructions/ found',
-      '.opencode/instructions/ missing',
-    );
+    check(existsSync(instrDir), '.opencode/instructions/ found', '.opencode/instructions/ missing');
 
     // 4c. Check skills
     const skillsDir = join(opencodeDir, 'skills');
-    check(
-      existsSync(skillsDir),
-      '.opencode/skills/ found',
-      '.opencode/skills/ missing',
-    );
+    check(existsSync(skillsDir), '.opencode/skills/ found', '.opencode/skills/ missing');
 
     // 4d. Count agents
     if (existsSync(agentsDir)) {
-      const agents = readdirSync(agentsDir).filter(f => f.endsWith('.md'));
+      const agents = readdirSync(agentsDir).filter((f) => f.endsWith('.md'));
       check(
         agents.length >= 10,
-        `${agents.length} agent prompts found (expected 14)`,
-        `Only ${agents.length} agent prompts found (expected 14)`,
+        `${agents.length} agent prompts found (expected 34)`,
+        `Only ${agents.length} agent prompts found (expected 34)`,
       );
     }
 
