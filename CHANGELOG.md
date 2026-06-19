@@ -38,6 +38,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.9] - 2025-06-20
+
+### Added
+
+- **IT Leader: Request Classification & Adaptive Response** — 6 request types (Discussion/Info/Small Fix/Simple Feature/Complex Feature/Full App) with automated scope detection
+- **IT Leader: Domain Task Rule** — immediate delegation to domain subagent without analysis (extends design rule pattern to all subagents)
+- **IT Leader: Discussion Protocol** — domain-specific questions delegate as consultation to subagents
+- **New skill: `leadership-workflow`** — 10 leadership components (requirement discovery, estimasi, sprint planning, risk management, client reporting, QA/UAT, retrospective, task tracking, team health, post-delivery)
+- **Conditional skill loading** — `leadership-workflow` auto-loaded for Complex Feature / Full App scopes
+
+### Changed
+
+- `it-leader.md`: 842 → **914 lines** (+72 lines)
+- `it-leader.md`: Task Decision Tree merged into Classification Flow (single entry point)
+- `it-leader.md`: Operating Modes mapped to classification (not independent)
+- `it-leader.md`: Task Decomposition Framework scoped to Complex/Full App only
+- `leadership-workflow/SKILL.md`: Tool call formats fixed (`todowrite`, `memory_*` → correct parameter syntax)
+- `leadership-workflow/SKILL.md`: Bottleneck Rules → dependency-aware queue (replaces capacity-based)
+- `leadership-workflow/SKILL.md`: Workload Tracking → Dependency Tracking (subagents are parallel-capable)
+- Version: 1.2.8 → **1.2.9**
+
+---
+
 ## [1.2.8] - 2025-06-19
 
 ### Added

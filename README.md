@@ -4,7 +4,7 @@
 
 # Agent Kit — Setup Guide
 
-Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 33 specialized agents, 201 skill playbooks, 46 slash commands, and 8 MCP servers.
+Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 33 specialized agents, 202 skill playbooks, 46 slash commands, and 8 MCP servers.
 
 ```bash
 npx opencode-agent-kit init    # One command. Full team.
@@ -78,7 +78,7 @@ This repository contains a complete OpenCode agent configuration with **Leader �
   - Frontend Nuxt: `.opencode/docs/frontend/nuxt/`
   - Frontend React: `.opencode/docs/frontend/react/`
   - Backend Node: `.opencode/docs/backend/node/`
-- Local skills: `.opencode/skills/` (201 skill playbooks)
+- Local skills: `.opencode/skills/` (202 skill playbooks)
 - Contexts: `.opencode/contexts/` (dev, research, review)
 
 Designed for:
@@ -285,23 +285,24 @@ To **customize** a built-in agent, create an agent with the **same name** in `.o
 | SEO Specialist                  | `seo-specialist.md`           | subagent    | Meta tags, structured data, Core Web Vitals, content optimization    |
 | Android Developer               | `android-developer.md`        | subagent    | Kotlin, Jetpack Compose, Material 3, Gradle, Play Store              |
 | Flutter Developer               | `flutter-developer.md`        | subagent    | Dart, Flutter SDK, Material 3, Firebase, cross-platform              |
-| Python Developer               | `python-developer.md`        | subagent    | Python/Django/FastAPI implementation, data science, scripting        |
-| Rust Developer                 | `rust-developer.md`          | subagent    | Rust systems programming, CLI tools, WebAssembly, performance        |
-| Swift Developer                | `swift-developer.md`         | subagent    | Swift/iOS app development, SwiftUI, UIKit, Xcode                     |
-| .NET Developer                 | `dotnet-developer.md`        | subagent    | C#/.NET backend services, ASP.NET Core, Entity Framework             |
-| Angular Frontend Developer     | `angular-developer.md`       | subagent    | Angular/TypeScript implementation, RxJS, NgRx, Material Design      |
-| C++ Developer                  | `cpp-developer.md`           | subagent    | C++ systems programming, STL, CMake, performance optimization        |
-| Agent Engineer                 | `agent-engineer.md`          | subagent    | Agent harness configuration, hooks, evals, routing, cost controls   |
-| Python Reviewer                | `python-reviewer.md`         | subagent    | Python code review, security audit, best practices                   |
-| Rust Reviewer                  | `rust-reviewer.md`           | subagent    | Rust code review, memory safety, concurrency audit                   |
-| C++ Reviewer                   | `cpp-reviewer.md`            | subagent    | C++ code review, memory management, performance audit                |
-| Go Reviewer                    | `go-reviewer.md`             | subagent    | Go code review, concurrency, security, idiomatic Go                  |
-| Java Reviewer                  | `java-reviewer.md`           | subagent    | Java code review, Spring/Spring Boot, enterprise patterns            |
-| Kotlin Reviewer                | `kotlin-reviewer.md`         | subagent    | Kotlin/Android code review, coroutines, Compose best practices       |
-| PHP Reviewer                   | `php-reviewer.md`            | subagent    | PHP code review, Laravel/Symfony, security, legacy patterns          |
-| Docs Lookup                    | `docs-lookup.md`             | subagent    | Documentation lookup & synthesis via MCP tools                       |
-| Harness Optimizer              | `harness-optimizer.md`       | subagent    | Agent harness optimization, cost analysis, quality improvement       |
-| Loop Operator                  | `loop-operator.md`           | subagent    | Autonomous agent loop operation, monitoring, safe recovery           |
+| Python Developer                | `python-developer.md`         | subagent    | Python/Django/FastAPI implementation, data science, scripting        |
+| Rust Developer                  | `rust-developer.md`           | subagent    | Rust systems programming, CLI tools, WebAssembly, performance        |
+| Swift Developer                 | `swift-developer.md`          | subagent    | Swift/iOS app development, SwiftUI, UIKit, Xcode                     |
+| .NET Developer                  | `dotnet-developer.md`         | subagent    | C#/.NET backend services, ASP.NET Core, Entity Framework             |
+| Angular Frontend Developer      | `angular-developer.md`        | subagent    | Angular/TypeScript implementation, RxJS, NgRx, Material Design       |
+| C++ Developer                   | `cpp-developer.md`            | subagent    | C++ systems programming, STL, CMake, performance optimization        |
+| Agent Engineer                  | `agent-engineer.md`           | subagent    | Agent harness configuration, hooks, evals, routing, cost controls    |
+| Python Reviewer                 | `python-reviewer.md`          | subagent    | Python code review, security audit, best practices                   |
+| Rust Reviewer                   | `rust-reviewer.md`            | subagent    | Rust code review, memory safety, concurrency audit                   |
+| C++ Reviewer                    | `cpp-reviewer.md`             | subagent    | C++ code review, memory management, performance audit                |
+| Go Reviewer                     | `go-reviewer.md`              | subagent    | Go code review, concurrency, security, idiomatic Go                  |
+| Java Reviewer                   | `java-reviewer.md`            | subagent    | Java code review, Spring/Spring Boot, enterprise patterns            |
+| Kotlin Reviewer                 | `kotlin-reviewer.md`          | subagent    | Kotlin/Android code review, coroutines, Compose best practices       |
+| PHP Reviewer                    | `php-reviewer.md`             | subagent    | PHP code review, Laravel/Symfony, security, legacy patterns          |
+| Docs Lookup                     | `docs-lookup.md`              | subagent    | Documentation lookup & synthesis via MCP tools                       |
+| Harness Optimizer               | `harness-optimizer.md`        | subagent    | Agent harness optimization, cost analysis, quality improvement       |
+| Loop Operator                   | `loop-operator.md`            | subagent    | Autonomous agent loop operation, monitoring, safe recovery           |
+
 |
 
 ### How It Works
@@ -425,7 +426,7 @@ Skills are stored in `.opencode/skills/` (local in the repo) — no need to sear
 | **Docs Lookup**            | iterative-retrieval, continuous-learning                                                                                                                                                                                                       |
 | **Harness Optimizer**      | eval-harness, verification-loop, continuous-learning, strategic-compact                                                                                                                                                                        |
 | **Loop Operator**          | verification-loop, continuous-learning-v2, strategic-compact                                                                                                                                                                                   |
-| **All Agents**             | agentmemory (persistent cross-session memory, 53 MCP tools)                                                                                                                                                                                   |
+| **All Agents**             | agentmemory (persistent cross-session memory, 53 MCP tools)                                                                                                                                                                                    |
 
 ### Skills Not Required for Core Stack
 
@@ -512,15 +513,15 @@ cp -R ./.opencode/skills/firebase-basics ~/.opencode/skills/
 
 From `.opencode/config.json`, agents use the following MCP servers:
 
-| MCP          | Type   | Status   | Description                                          |
-| ------------ | ------ | -------- | ---------------------------------------------------- |
-| `nuxt`       | remote | enabled  | Nuxt documentation, blog, deployment guide           |
-| `nuxt-ui`    | remote | enabled  | Nuxt UI component docs & examples                    |
-| `playwright` | stdio  | enabled  | Browser automation & E2E testing                     |
-| `postman`    | remote | enabled  | Postman API management (collections, requests, docs) |
-| `figma`      | remote | disabled | Figma design file access (optional)                  |
-| `stitch`     | remote | disabled | Google Stitch AI design generation (optional)        |
-| `agentmemory`| local  | enabled  | Persistent cross-session memory (53 memory tools)    |
+| MCP           | Type   | Status   | Description                                          |
+| ------------- | ------ | -------- | ---------------------------------------------------- |
+| `nuxt`        | remote | enabled  | Nuxt documentation, blog, deployment guide           |
+| `nuxt-ui`     | remote | enabled  | Nuxt UI component docs & examples                    |
+| `playwright`  | stdio  | enabled  | Browser automation & E2E testing                     |
+| `postman`     | remote | enabled  | Postman API management (collections, requests, docs) |
+| `figma`       | remote | disabled | Figma design file access (optional)                  |
+| `stitch`      | remote | disabled | Google Stitch AI design generation (optional)        |
+| `agentmemory` | local  | enabled  | Persistent cross-session memory (53 memory tools)    |
 
 To enable Figma MCP:
 
@@ -546,6 +547,7 @@ Open `http://localhost:3113` for the real-time memory viewer.
 ### Why It Matters
 
 Without memory, every session starts from zero. With agentmemory:
+
 - **53 MCP tools** — `memory_save`, `memory_recall`, `memory_smart_search`, `memory_sessions`, `memory_file_history`, `memory_lesson_save`, `memory_patterns`, and more
 - **Cross-session persistence** — Start a new session tomorrow; agents recall yesterday's context, decisions, and code insights
 - **Auto-learning** — 22 lifecycle hooks auto-capture sessions, messages, decisions, errors, tool calls, and file changes
@@ -563,22 +565,24 @@ Without memory, every session starts from zero. With agentmemory:
 
 ### Commands
 
-| Command | Description |
-|---------|-------------|
-| `/recall [query]` | Search past observations and lessons by keyword or semantic context |
-| `/remember [text]` | Save an insight or decision to persistent memory |
-| `localhost:3113` | Real-time memory viewer dashboard |
+| Command            | Description                                                         |
+| ------------------ | ------------------------------------------------------------------- |
+| `/recall [query]`  | Search past observations and lessons by keyword or semantic context |
+| `/remember [text]` | Save an insight or decision to persistent memory                    |
+| `localhost:3113`   | Real-time memory viewer dashboard                                   |
 
 ### Quick Start
 
 agentmemory is automatically enabled after `npx opencode-agent-kit init`. The memory server starts alongside OpenCode. No manual configuration needed.
 
 To verify it's running:
+
 ```bash
 open http://localhost:3113    # memory dashboard
 ```
 
 Or to start manually:
+
 ```bash
 npm install -g @agentmemory/agentmemory
 agentmemory
@@ -586,16 +590,16 @@ agentmemory
 
 ### Memory Tools Reference
 
-| Tool | Description |
-|------|-------------|
-| `memory_save` | Save a memory with metadata |
-| `memory_recall` | Retrieve memories by query |
-| `memory_smart_search` | Semantic + keyword hybrid search |
-| `memory_sessions` | Track session history |
-| `memory_file_history` | Track file change history |
-| `memory_lesson_save` | Save a learned lesson |
-| `memory_lesson_recall` | Retrieve past lessons |
-| `memory_patterns` | Detect and store recurring patterns |
+| Tool                   | Description                         |
+| ---------------------- | ----------------------------------- |
+| `memory_save`          | Save a memory with metadata         |
+| `memory_recall`        | Retrieve memories by query          |
+| `memory_smart_search`  | Semantic + keyword hybrid search    |
+| `memory_sessions`      | Track session history               |
+| `memory_file_history`  | Track file change history           |
+| `memory_lesson_save`   | Save a learned lesson               |
+| `memory_lesson_recall` | Retrieve past lessons               |
+| `memory_patterns`      | Detect and store recurring patterns |
 
 All 53 tools are available as MCP endpoints. Use `/recall` and `/remember` for quick access.
 
