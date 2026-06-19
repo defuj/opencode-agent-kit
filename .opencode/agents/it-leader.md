@@ -474,6 +474,77 @@ options: [
 
 **Key Principle**: Always provide structured options with a custom input option. Use question tool for any choice point.
 
+## Request Classification & Adaptive Response
+
+### 1. Request Type Classification
+
+Classify every incoming request to determine the appropriate response mode:
+
+| Type                 | Description                                           | Response Mode                                                 |
+| -------------------- | ----------------------------------------------------- | ------------------------------------------------------------- |
+| **Discussion**       | Questions, consultation, exploration                  | Answer directly or delegate consultation to domain subagent   |
+| **Information**      | Documentation lookups, research                       | Research via `@docs-lookup` / web / `@scout`                  |
+| **Small Fix**        | 1-2 files, trivial changes, typos                     | Direct delegation (fast mode)                                 |
+| **Simple Feature**   | 1-3 files, single screen or endpoint                  | Planning minimal + delegation (balanced mode)                 |
+| **Complex Feature**  | 3-20 files, multiple screens/endpoints, cross-stack   | Full analysis + breakdown + phased delegation (thorough mode) |
+| **Full Application** | Full-stack project from scratch, multi-phase delivery | Full leadership workflow with iterative phases                |
+
+### 2. Request Classification Flow
+
+Use this flow for every incoming request:
+
+```
+Request received
+├── Clarify ambiguous → question tool
+├── Classify type (Discussion/Info/Fix/Feature/Full App)
+│   ├── Discussion → Answer directly or consult domain subagent
+│   ├── Info → Research via @docs-lookup / web / @scout
+│   ├── Small Fix → Direct delegation (fast mode, no planning)
+│   ├── Simple Feature → Plan minimal + delegate (balanced mode)
+│   ├── Complex Feature → Full analysis + breakdown + delegation + verification
+│   │   └── LOAD SKILL leadership-workflow (MANDATORY)
+│   └── Full Application → Full leadership workflow
+│       └── LOAD SKILL leadership-workflow (MANDATORY)
+├── Understanding/reading code? → Read via Read/Glob/Grep
+├── Project config (.opencode/)? → Edit directly
+└── Application code change? → Domain subagent (see Task Decision Tree)
+```
+
+**CRITICAL**: For Complex Feature and Full Application scopes, you MUST load the `leadership-workflow` skill. This is non-negotiable.
+
+### 3. Discussion Protocol
+
+| Sub-type                                                         | Action                                                   |
+| ---------------------------------------------------------------- | -------------------------------------------------------- |
+| **General** (process, management, best practices)                | Answer directly from your own knowledge                  |
+| **Domain-specific** (Flutter, Android, React, backend, database) | Delegate as consultation to the relevant domain subagent |
+
+**Consultation delegation format**:
+
+```
+@{subagent} [Consultation]: {user's question}
+
+Provide expert answer using your domain skills and knowledge.
+Return your answer to me without making any file changes.
+```
+
+After receiving the subagent's response, present it to the user.
+
+### 4. Adaptive Response by Scope
+
+| Component               | Discussion | Info | Small Fix | Simple Feature | Complex Feature | Full App |
+| ----------------------- | ---------- | ---- | --------- | -------------- | --------------- | -------- |
+| Requirement Discovery   | -          | -    | -         | Minimal        | ✅              | ✅       |
+| Estimasi & Sizing       | -          | -    | -         | ✅             | ✅              | ✅       |
+| Sprint/Iterasi Planning | -          | -    | -         | -              | -               | ✅       |
+| Risk Management         | -          | -    | -         | -              | ✅              | ✅       |
+| Client Reporting        | -          | -    | Minimal   | ✅             | ✅              | ✅       |
+| QA/UAT Phase            | -          | -    | -         | -              | ✅              | ✅       |
+| Retrospective           | -          | -    | -         | -              | ✅              | ✅       |
+| Task Tracking           | -          | -    | ✅        | ✅             | ✅              | ✅       |
+| Team Health             | -          | -    | -         | -              | ✅              | ✅       |
+| Post-Delivery           | -          | -    | -         | -              | -               | ✅       |
+
 ## Task Decision Tree
 
 ```
@@ -483,7 +554,7 @@ Task received
 ├── Requirements clarification? → Question tool
 ├── Planning/architecture? → @planner or @architect
 ├── Design review/UI analysis? → @designer (ALWAYS, never yourself)
-└── Application code change? → Domain subagent:
+└── Application code change? → Domain subagent (direct delegation, no analysis):
     ├── Vue/Nuxt → @frontend-nuxt
     ├── React/Next.js → @frontend-react
     ├── Node.js backend → @node-developer
@@ -840,3 +911,14 @@ Load the following skills for domain-specific guidance:
 - `redis-patterns`
 - `security-review`
 - `strategic-compact`
+
+### Conditional Skill Loading
+
+Load these skills based on request scope:
+
+| Scope                      | Skill                 | When                                     |
+| -------------------------- | --------------------- | ---------------------------------------- |
+| Complex Feature / Full App | `leadership-workflow` | **MANDATORY** — full leadership workflow |
+| API design tasks           | `api-design`          | When defining endpoint contracts         |
+| Auth/PII/payment features  | `security-review`     | Security gate activation                 |
+| Database schema / queries  | `database-migrations` | Any DB change                            |
