@@ -50,14 +50,10 @@ for (let i = 1; i < versions.length; i++) {
   const bNum = b[0] * 10000 + b[1] * 100 + b[2];
 
   if (aNum >= bNum) {
-    console.error(
-      `✗ Migration version order error: ${versions[i - 1]} >= ${versions[i]}`
-    );
+    console.error(`✗ Migration version order error: ${versions[i - 1]} >= ${versions[i]}`);
     ok = false;
   } else {
-    console.log(
-      `✓ Version order OK: ${versions[i - 1]} → ${versions[i]}`
-    );
+    console.log(`✓ Version order OK: ${versions[i - 1]} → ${versions[i]}`);
   }
 }
 

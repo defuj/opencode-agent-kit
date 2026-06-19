@@ -21,7 +21,8 @@
  */
 export default {
   version: '1.2.11',
-  description: 'Initialize migration system — establish .kit-version tracking and validate config structure',
+  description:
+    'Initialize migration system — establish .kit-version tracking and validate config structure',
 
   async up(opts) {
     const { config, fs, targetDir, path } = opts;
@@ -51,7 +52,10 @@ export default {
     if (fs.existsSync(gitignorePath)) {
       const content = fs.readFileSync(gitignorePath, 'utf-8');
       if (!content.includes('.kit-version')) {
-        fs.appendFileSync(gitignorePath, '\n# opencode-agent-kit migration tracking\n.opencode/.kit-version\n');
+        fs.appendFileSync(
+          gitignorePath,
+          '\n# opencode-agent-kit migration tracking\n.opencode/.kit-version\n',
+        );
       }
     }
 
@@ -65,5 +69,5 @@ export default {
       fs.unlinkSync(versionFile);
     }
     return { success: true };
-  }
+  },
 };

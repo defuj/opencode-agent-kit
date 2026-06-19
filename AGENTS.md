@@ -28,12 +28,14 @@ This is the Agent Kit: a portable meta-project containing OpenCode agent configu
 ## Mobile Development
 
 ### Android (`@android`)
+
 - Stack: Kotlin, Jetpack Compose, Material Design 3, Gradle KTS, Hilt, Room, MVVM/Clean Architecture
 - Skills: android-jetpack-compose, edge-to-edge, navigation-3, firebase-basics, play-billing, camera1-to-camerax, r8-analyzer, migrate-xml-views-to-jetpack-compose
 - GPC (Google Play Console) integration: gpc-setup, gpc-release-flow, gpc-preflight, gpc-vitals-monitoring, gpc-metadata-sync, gpc-monetization, gpc-ci-integration
 - Commands: `/android-build`, `/android-test`, `/gpc-release`
 
 ### Flutter (`@flutter`)
+
 - Stack: Dart, Flutter SDK, Material Design 3, Cupertino, Bloc/Riverpod, GoRouter, Dio, Clean Architecture
 - Skills: flutter (patterns), 10 Flutter task skills, 9 Dart task skills, firebase-basics
 - Commands: `/flutter-build`, `/flutter-test`

@@ -13,6 +13,7 @@ This project follows a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, 
 Open a [GitHub Issue](https://github.com/defuj/opencode-agent-kit/issues/new?template=bug_report.md).
 
 Include:
+
 - A clear, descriptive title
 - Steps to reproduce
 - Expected vs actual behavior
@@ -24,6 +25,7 @@ Include:
 Open a [Feature Request](https://github.com/defuj/opencode-agent-kit/issues/new?template=feature_request.md).
 
 Include:
+
 - A clear, descriptive title
 - The problem you're trying to solve
 - Your proposed solution
@@ -47,6 +49,7 @@ npm install
 #### Development Workflow
 
 1. **Create a branch** from `main` with a descriptive name:
+
    ```bash
    git checkout -b feat/add-something
    git checkout -b fix/something-broken
@@ -60,6 +63,7 @@ npm install
    - Format with Prettier: `npx prettier --write .`
 
 3. **Commit** with a descriptive message:
+
    ```bash
    git commit -m "feat: add XYZ feature"
    git commit -m "fix: resolve ABC issue"
@@ -101,6 +105,7 @@ To add a new agent to the kit:
 Skills go in `.opencode/skills/<skill-name>/SKILL.md` (or `template/.opencode/skills/` for shipped skills).
 
 Each skill should have:
+
 - YAML frontmatter (name, description, version, author)
 - Clear trigger conditions
 - Step-by-step instructions

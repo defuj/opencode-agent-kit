@@ -87,8 +87,7 @@ function getCurrentVersion() {
 function getPendingMigrations(manifest, installedVersion, currentVersion) {
   if (!installedVersion) {
     // No version file — run all migrations
-    return Object.entries(manifest)
-      .sort(([, a], [, b]) => compareVersions(a.version, b.version));
+    return Object.entries(manifest).sort(([, a], [, b]) => compareVersions(a.version, b.version));
   }
 
   if (compareVersions(installedVersion, currentVersion) >= 0) {
@@ -97,8 +96,10 @@ function getPendingMigrations(manifest, installedVersion, currentVersion) {
 
   return Object.entries(manifest)
     .filter(([, meta]) => {
-      return compareVersions(meta.version, installedVersion) > 0 &&
-             compareVersions(meta.version, currentVersion) <= 0;
+      return (
+        compareVersions(meta.version, installedVersion) > 0 &&
+        compareVersions(meta.version, currentVersion) <= 0
+      );
     })
     .sort(([, a], [, b]) => compareVersions(a.version, b.version));
 }
@@ -128,7 +129,9 @@ export async function runMigrations(targetDir, config, options = {}) {
   }
 
   console.log(`  ${C.dim}${'─'.repeat(50)}${C.reset}`);
-  info(`Found ${pending.length} pending migration(s) — v${installedVersion || '0.0.0'} → v${currentVersion}`);
+  info(
+    `Found ${pending.length} pending migration(s) — v${installedVersion || '0.0.0'} → v${currentVersion}`,
+  );
   console.log();
 
   let ran = 0;

@@ -86,10 +86,7 @@
     "playwright": {
       "type": "stdio",
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-playwright"
-      ],
+      "args": ["-y", "@modelcontextprotocol/server-playwright"],
       "enabled": true,
       "description": "Browser automation and E2E testing with Playwright"
     },
@@ -121,17 +118,12 @@
     },
     "agentmemory": {
       "type": "local",
-      "command": [
-        "bash",
-        ".opencode/hooks/agentmemory-start.sh"
-      ],
+      "command": ["bash", ".opencode/hooks/agentmemory-start.sh"],
       "enabled": true,
       "description": "Persistent cross-session memory with 53 tools (save, recall, smart search, sessions, file history, lessons)"
     }
   },
-  "plugin": [
-    ".opencode/plugins/agentmemory-capture.ts"
-  ],
+  "plugin": [".opencode/plugins/agentmemory-capture.ts"],
   "agent": {
     "leader": {
       "description": "IT Leader & Technical Project Manager — analyzes requirements, designs architecture, decomposes tasks, delegates to subagents, and unifies outputs",

@@ -57,8 +57,8 @@ export async function uninstall(options) {
   if (existsSync(gitignorePath)) {
     const entriesToRemove = ['.opencode/', 'opencode.json', 'opencode.example.json'];
     const content = readFileSync(gitignorePath, 'utf-8');
-    const lines = content.split('\n').filter(line => {
-      return !entriesToRemove.some(e => line.trim().startsWith(e));
+    const lines = content.split('\n').filter((line) => {
+      return !entriesToRemove.some((e) => line.trim().startsWith(e));
     });
     const newContent = lines.join('\n');
     if (newContent !== content) {

@@ -115,7 +115,9 @@ export async function doctor(options) {
           warn(`Kit v${installedVersion} installed, v${latest} available`);
           if (fix) {
             console.log('     → Run `npx opencode-agent-kit upgrade` to update');
-            console.log('     → Then run `npx opencode-agent-kit migrate` to apply config migrations');
+            console.log(
+              '     → Then run `npx opencode-agent-kit migrate` to apply config migrations',
+            );
           }
         } else {
           check(true, `Kit version v${installedVersion} (up to date)`, '');
@@ -137,14 +139,17 @@ export async function doctor(options) {
         const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
         const currentVersion = pkg.version;
 
-        const pending = Object.entries(manifest)
-          .filter(([, meta]) => {
-            return compareVersions(meta.version, installedVersion) > 0 &&
-                   compareVersions(meta.version, currentVersion) <= 0;
-          });
+        const pending = Object.entries(manifest).filter(([, meta]) => {
+          return (
+            compareVersions(meta.version, installedVersion) > 0 &&
+            compareVersions(meta.version, currentVersion) <= 0
+          );
+        });
 
         if (pending.length > 0) {
-          warn(`${pending.length} pending migration(s) (v${installedVersion} → v${currentVersion})`);
+          warn(
+            `${pending.length} pending migration(s) (v${installedVersion} → v${currentVersion})`,
+          );
           if (fix) {
             console.log('     → Run `npx opencode-agent-kit migrate` to apply');
           }

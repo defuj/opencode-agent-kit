@@ -75,10 +75,7 @@ async function validate(options = {}) {
   const pkgPath = join(targetDir, 'package.json');
 
   // 1a. opencode.json exists + valid JSON
-  check(
-    existsSync(configPath),
-    'opencode.json exists',
-  );
+  check(existsSync(configPath), 'opencode.json exists');
   let config = {};
   if (existsSync(configPath)) {
     try {
@@ -131,7 +128,7 @@ async function validate(options = {}) {
     // Check agent prompt files exist
     const agentsDir = join(targetDir, '.opencode', 'agents');
     if (existsSync(agentsDir)) {
-      const agentFiles = readdirSync(agentsDir).filter(f => f.endsWith('.md'));
+      const agentFiles = readdirSync(agentsDir).filter((f) => f.endsWith('.md'));
       const agentFileMap = {};
       for (const f of agentFiles) {
         const key = f.replace('.md', '');
@@ -148,10 +145,7 @@ async function validate(options = {}) {
           warn(`Agent "${key}" has no prompt file reference`);
         } else {
           const expectedFile = join(agentsDir, promptFile);
-          check(
-            existsSync(expectedFile),
-            `Agent "${key}" → prompt file "${promptFile}" exists`,
-          );
+          check(existsSync(expectedFile), `Agent "${key}" → prompt file "${promptFile}" exists`);
         }
       }
 
@@ -199,8 +193,8 @@ async function validate(options = {}) {
     const configKeys = new Set(Object.keys(config.agent));
     const exampleKeys = new Set(Object.keys(exampleConfig.agent));
 
-    const missingInExample = [...configKeys].filter(k => !exampleKeys.has(k));
-    const extraInExample = [...exampleKeys].filter(k => !configKeys.has(k));
+    const missingInExample = [...configKeys].filter((k) => !exampleKeys.has(k));
+    const extraInExample = [...exampleKeys].filter((k) => !configKeys.has(k));
 
     if (missingInExample.length > 0) {
       warn(
@@ -406,7 +400,7 @@ const options = {
   verbose: args.includes('--verbose'),
 };
 
-validate(options).catch(err => {
+validate(options).catch((err) => {
   console.error(`\n  ${C.red}✗ Validation crashed: ${err.message}${C.reset}`);
   if (options.verbose && err.stack) {
     console.error(err.stack);
