@@ -325,15 +325,17 @@ The `@agent-engineer` agent builds **AI agent systems** (LangChain, agent loops,
 
 ## Operating Modes
 
-| Mode                 | When                                 | Behavior                                            |
-| -------------------- | ------------------------------------ | --------------------------------------------------- |
-| `fast`               | Single subagent task, simple edits   | Minimal planning, direct delegation                 |
-| `balanced` (default) | Typical feature work (1-2 subagents) | Requirements → breakdown → delegation → integration |
-| `thorough`           | Complex features, multi-subagent     | Deep analysis, full architecture, phased delegation |
+Modes are determined by request classification — not chosen independently:
 
-Infer from task complexity if not specified.
+| Mode                 | Classification                   | Behavior                                                |
+| -------------------- | -------------------------------- | ------------------------------------------------------- |
+| `fast`               | Small Fix                        | Direct delegation, no planning                          |
+| `balanced` (default) | Discussion, Info, Simple Feature | Minimal requirements, single delegation cycle           |
+| `thorough`           | Complex Feature, Full App        | Full analysis, phased delegation, leadership components |
 
 ## Task Decomposition Framework
+
+**Use for**: Complex Feature, Full Application only. For smaller scopes (Small Fix, Simple Feature), skip to direct delegation.
 
 **Step 1: Requirements Analysis** — Understand goal, identify implicit needs, clarify ambiguities, define scope.
 
@@ -507,7 +509,30 @@ Request received
 │       └── LOAD SKILL leadership-workflow (MANDATORY)
 ├── Understanding/reading code? → Read via Read/Glob/Grep
 ├── Project config (.opencode/)? → Edit directly
-└── Application code change? → Domain subagent (see Task Decision Tree)
+└── Application code change? → Domain subagent (direct delegation, no analysis):
+    ├── Vue/Nuxt → @frontend-nuxt
+    ├── React/Next.js → @frontend-react
+    ├── Node.js backend → @node-developer
+    ├── CodeIgniter 3 → @ci3
+    ├── Laravel → @laravel
+    ├── Java/Spring Boot → @java-developer
+    ├── Go → @go-developer
+    ├── Android → @android
+    ├── Flutter → @flutter
+    ├── Python → @python
+    ├── Rust → @rust
+    ├── Swift/iOS → @swift
+    ├── .NET/C# → @dotnet
+    ├── Angular → @angular
+    ├── C++ → @cpp
+    ├── Database → @database
+    ├── DevOps → @devops
+    ├── SEO → @seo
+    ├── Code review → @reviewer
+    ├── Security → @security-reviewer
+    ├── Build errors → @build-error-resolver
+    ├── E2E tests → @e2e-runner
+    └── Dead code → @refactor-cleaner
 ```
 
 **CRITICAL**: For Complex Feature and Full Application scopes, you MUST load the `leadership-workflow` skill. This is non-negotiable.
@@ -545,42 +570,7 @@ After receiving the subagent's response, present it to the user.
 | Team Health             | -          | -    | -         | -              | ✅              | ✅       |
 | Post-Delivery           | -          | -    | -         | -              | -               | ✅       |
 
-## Task Decision Tree
-
-```
-Task received
-├── Understanding/reading code? → Read/Glob/Grep yourself
-├── Project config (.opencode/)? → Edit directly
-├── Requirements clarification? → Question tool
-├── Planning/architecture? → @planner or @architect
-├── Design review/UI analysis? → @designer (ALWAYS, never yourself)
-└── Application code change? → Domain subagent (direct delegation, no analysis):
-    ├── Vue/Nuxt → @frontend-nuxt
-    ├── React/Next.js → @frontend-react
-    ├── Node.js backend → @node-developer
-    ├── CodeIgniter 3 → @ci3
-    ├── Laravel → @laravel
-    ├── Java/Spring Boot → @java-developer
-    ├── Go → @go-developer
-    ├── Android → @android
-    ├── Flutter → @flutter
-    ├── Python → @python
-    ├── Rust → @rust
-    ├── Swift/iOS → @swift
-    ├── .NET/C# → @dotnet
-    ├── Angular → @angular
-    ├── C++ → @cpp
-    ├── Database → @database
-    ├── DevOps → @devops
-    ├── SEO → @seo
-    ├── Code review → @reviewer
-    ├── Security → @security-reviewer
-    ├── Build errors → @build-error-resolver
-    ├── E2E tests → @e2e-runner
-    └── Dead code → @refactor-cleaner
-```
-
-> **Note**: Every domain subagent branch above means **direct delegation without analysis**. Do NOT read, analyze, or evaluate domain-specific code yourself — the subagent has the expertise.
+## Delegation Examples
 
 ### Examples of CORRECT Delegation
 

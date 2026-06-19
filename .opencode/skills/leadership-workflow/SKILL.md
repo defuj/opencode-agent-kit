@@ -182,14 +182,6 @@ Use for: Simple Feature (minimal), Complex Feature (full), Full App (full)
 
 ### Report Templates
 
-**Simple Feature / Fix (1 line)**:
-
-```
-Done: {what changed}
-Files: {paths}
-Status: {subagent} verified
-```
-
 **Complex Feature (table)**:
 
 ```markdown
@@ -268,7 +260,7 @@ Bug received
 
 ## 7. Retrospective
 
-Use for: Complex Feature, Full App
+Use for: Complex Feature, Full App only
 
 ### Session Retro
 
@@ -293,11 +285,7 @@ Action Items:
 ### Save Lessons to agentmemory
 
 ```
-memory_lesson_save with:
-- content: "{lesson learned}"
-- context: "{project / feature context}"
-- confidence: 0.7
-- tags: "retrospective, {domain}"
+memory_lesson_save content="{lesson learned}" context="{project / feature context}" confidence=0.7 tags="retrospective,{domain}"
 ```
 
 ### Cross-Session Learning
@@ -305,30 +293,31 @@ memory_lesson_save with:
 At the start of a new session for the same project, recall past lessons:
 
 ```
-memory_recall query: "{project name} lessons"
+memory_recall query="{project name} lessons"
 ```
 
 ---
 
 ## 8. Task Tracking
 
-Use for: Small Fix, Simple Feature, Complex Feature, Full App
+Use for: Complex Feature, Full App only
 
 ### In-Session Tracking
 
 Use `todowrite` throughout the session:
 
 ```
-todowrite with:
-- Task {ID}: {description} → pending
-- Task {ID}: {description} → pending
+todowrite todos: [
+  { content: "Task {ID}: {description}", status: "pending", priority: "medium" },
+  { content: "Task {ID}: {description}", status: "pending", priority: "medium" }
+]
 ```
 
 Update status as work progresses:
 
 ```
-todowrite: Task {ID} → in_progress
-todowrite: Task {ID} → completed
+todowrite todos: [{ content: "Task {ID}: {description}", status: "in_progress", priority: "medium" }]
+todowrite todos: [{ content: "Task {ID}: {description}", status: "completed", priority: "medium" }]
 ```
 
 ### Cross-Session Persistence
@@ -336,17 +325,13 @@ todowrite: Task {ID} → completed
 Save project state to agentmemory at session end:
 
 ```
-memory_save with:
-- content: "Project {name} — Phase {N} complete.
-  Remaining: {task list}. Next step: {plan}."
-- type: "workflow"
-- project: "{project-slug}"
+memory_save content="Project {name} — Phase {N} complete. Remaining: {task list}. Next step: {plan}." type="workflow" project="{project-slug}"
 ```
 
 At the next session start, recall project state:
 
 ```
-memory_smart_search query: "{project-slug} project status"
+memory_smart_search query="{project-slug} project status"
 ```
 
 ---
@@ -355,17 +340,19 @@ memory_smart_search query: "{project-slug} project status"
 
 Use for: Complex Feature, Full App
 
-### Workload Tracking
+### Dependency Tracking
 
-Before each delegation round, check current load:
+Before each delegation round, check dependencies:
 
 ```
-Current delegation load:
-├── @{subagent}: {N} tasks → {busy / available / idle}
-├── @{subagent}: {N} tasks → {busy / available / idle}
+Current delegation queue:
+├── @{subagent}: {task IDs}
+│   └── dependencies: {none / waits for: ...}
+├── @{subagent}: {task IDs}
+│   └── dependencies: {none / waits for: ...}
 └── ...
 
-Decision: {parallel / sequential / wait}
+Decision: {parallel (no deps) / sequential (has deps)}
 ```
 
 ### Bottleneck Rules
