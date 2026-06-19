@@ -1,8 +1,27 @@
 import { existsSync, readFileSync, readdirSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const PKG_NAME = 'opencode-agent-kit';
+
+// Migration manifest path
+const MIGRATIONS_DIR = join(__dirname, '..', '..', 'bin', 'migrations');
+
+/**
+ * Compare two semver strings
+ */
+function compareVersions(a, b) {
+  const va = a.replace(/^v/, '').split('.').map(Number);
+  const vb = b.replace(/^v/, '').split('.').map(Number);
+  for (let i = 0; i < 3; i++) {
+    const diff = (va[i] || 0) - (vb[i] || 0);
+    if (diff !== 0) return diff;
+  }
+  return 0;
+}
 
 function check(condition, passMsg, failMsg) {
   if (condition) {
@@ -96,6 +115,7 @@ export async function doctor(options) {
           warn(`Kit v${installedVersion} installed, v${latest} available`);
           if (fix) {
             console.log('     → Run `npx opencode-agent-kit upgrade` to update');
+            console.log('     → Then run `npx opencode-agent-kit migrate` to apply config migrations');
           }
         } else {
           check(true, `Kit version v${installedVersion} (up to date)`, '');
@@ -105,6 +125,35 @@ export async function doctor(options) {
       }
     } else {
       warn('.kit-version not found');
+    }
+
+    // 4f. Check pending migrations
+    const manifestPath = join(MIGRATIONS_DIR, 'manifest.json');
+    if (existsSync(manifestPath) && existsSync(versionFile)) {
+      try {
+        const manifest = JSON.parse(readFileSync(manifestPath, 'utf-8'));
+        const installedVersion = readFileSync(versionFile, 'utf-8').trim();
+        const pkgPath = join(__dirname, '..', '..', 'package.json');
+        const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
+        const currentVersion = pkg.version;
+
+        const pending = Object.entries(manifest)
+          .filter(([, meta]) => {
+            return compareVersions(meta.version, installedVersion) > 0 &&
+                   compareVersions(meta.version, currentVersion) <= 0;
+          });
+
+        if (pending.length > 0) {
+          warn(`${pending.length} pending migration(s) (v${installedVersion} → v${currentVersion})`);
+          if (fix) {
+            console.log('     → Run `npx opencode-agent-kit migrate` to apply');
+          }
+        } else {
+          check(true, 'No pending migrations', '');
+        }
+      } catch {
+        // Silently skip if migration check fails
+      }
     }
   }
 

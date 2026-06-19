@@ -7,6 +7,7 @@ import { Command } from 'commander';
 import { init } from './commands/init.mjs';
 import { upgrade } from './commands/upgrade.mjs';
 import { doctor } from './commands/doctor.mjs';
+import { migrate } from './commands/migrate.mjs';
 import { uninstall } from './commands/uninstall.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -43,6 +44,15 @@ program
   .option('-d, --dir <path>', 'Target project directory', process.cwd())
   .option('--fix', 'Show actionable fix suggestions')
   .action(doctor);
+
+program
+  .command('migrate')
+  .description('Check and apply versioned migrations to keep config up to date')
+  .option('-d, --dir <path>', 'Target project directory', process.cwd())
+  .option('-v, --verbose', 'Show detailed migration output')
+  .option('--dry-run', 'Show pending migrations without applying them')
+  .option('--rollback', 'Rollback the last applied migration')
+  .action(migrate);
 
 program
   .command('uninstall')

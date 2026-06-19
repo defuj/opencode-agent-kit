@@ -281,12 +281,24 @@ export async function init(options) {
     if (appended) success('Updated .gitignore');
   }
 
-  // 10. Write .kit-version for agent update checking
+  // 10. Write .kit-version for migration tracking
   const pkgJson = JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf-8'));
   const versionFile = join(opencodeDir, '.kit-version');
   writeFileSync(versionFile, pkgJson.version + '\n', 'utf-8');
 
-  // 11. Done — summary
+  // 11. Run pending migrations (for upgrades over existing installs)
+  if (existsSync(opencodeDir) && existsSync(join(opencodeDir, '.kit-version'))) {
+    const { runMigrations } = await import('./migrate.mjs');
+    const existingConfig = existsSync(userConfigPath)
+      ? JSON.parse(readFileSync(userConfigPath, 'utf-8'))
+      : {};
+    const result = await runMigrations(targetDir, existingConfig, { verbose: false });
+    if (result.ran > 0) {
+      info(`Applied ${result.ran} migration(s).`);
+    }
+  }
+
+  // 12. Done — summary
   console.log(
     `\n  ${C.bold}${C.green}✅ opencode-agent-kit v${pkgJson.version} installed!${C.reset}\n`,
   );

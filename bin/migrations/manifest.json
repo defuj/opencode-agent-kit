@@ -1,0 +1,6 @@
+{
+  "001_initial_setup.mjs": {
+    "version": "1.2.11",
+    "description": "Initialize migration system — establish .kit-version tracking and validate config structure"
+  }
+}

@@ -2,12 +2,73 @@ name: CI/CD
 
 on:
   push:
+    branches: [main]
     tags: ["v*"]
+  pull_request:
+    branches: [main]
 
 jobs:
+  validate:
+    name: Validate Configuration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Validate opencode.json + agents + skills
+        run: node bin/commands/validate.mjs --verbose
+      - name: Check migration system integrity
+        run: node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const manifest = JSON.parse(fs.readFileSync('bin/migrations/manifest.json', 'utf-8'));
+          const entries = Object.entries(manifest);
+          let ok = true;
+          for (const [file, meta] of entries) {
+            if (!fs.existsSync(path.join('bin/migrations', file))) {
+              console.error('Missing migration file:', file);
+              ok = false;
+            }
+          }
+          // Check versions are sequential
+          const versions = entries.map(([,m]) => m.version);
+          for (let i = 1; i < versions.length; i++) {
+            const a = versions[i-1].split('.').map(Number);
+            const b = versions[i].split('.').map(Number);
+            if (a[0] > b[0] || (a[0] === b[0] && a[1] > b[1]) || (a[0] === b[0] && a[1] === b[1] && a[2] >= b[2])) {
+              console.error('Migration version order error:', versions[i-1], '>=', versions[i]);
+              ok = false;
+            }
+          }
+          if (ok) {
+            console.log('✓ Migration system integrity check passed (' + entries.length + ' migrations)');
+          } else {
+            process.exit(1);
+          }
+        "
+
+  lint:
+    name: Lint & Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Check formatting
+        run: npx prettier --check 'bin/**/*.mjs' '*.md' '*.json'
+      - name: ESLint
+        run: npx eslint bin/ --ext .mjs,.js
+
   publish:
     name: Publish to npm
     if: startsWith(github.ref, 'refs/tags/v')
+    needs: [validate, lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,8 +76,35 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
       - name: Generate template/ for publish
         run: bash scripts/generate-template.sh
+      - name: Pre-publish validation
+        run: node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const templateDir = 'template';
+          const checks = [
+            'template/.opencode/agents',
+            'template/.opencode/skills',
+            'template/.opencode/commands',
+            'template/opencode.json',
+          ];
+          let ok = true;
+          for (const c of checks) {
+            if (!fs.existsSync(c)) {
+              console.error('Missing in template:', c);
+              ok = false;
+            }
+          }
+          if (ok) console.log('✓ Pre-publish template validation passed');
+          else process.exit(1);
+        "
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Post-publish version check
+        run: |
+          PUBLISHED=$(npm view opencode-agent-kit version)
+          echo "Published: v$PUBLISHED"

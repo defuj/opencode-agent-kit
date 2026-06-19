@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.11] - 2026-06-20
+
+### Added
+
+- **Versioned Migration System** — `.opencode/migrations/` with sequential migration scripts (v1.0.0 → ongoing), auto-detection on version upgrade, `opencode-agent-kit migrate` CLI command with `--dry-run` and `--rollback` support, snapshot backup before each migration, and auto-migration check integrated into `init` and `doctor` commands
+- **CI/CD Validation Pipeline** — GitHub Actions workflow (`validation.yml`) running on every PR and push to main that validates `opencode.json` schema integrity, ensures all agent keys map to existing prompt files, checks YAML frontmatter in all `SKILL.md` files, verifies MCP configuration consistency, detects orphan agent files, and more
+- **Validation Script** — `.opencode/scripts/validate.mjs` standalone validator runnable locally or in CI with color-coded output
+
+### Fixed
+
+- **MCP Configuration** — Figma and Stitch MCP servers now have explicit `"enabled": false` to match their disabled status
+- **Skill Validation** — frontmatter checks scoped to `SKILL.md` files only, avoiding false positives from non-skill markdown files
+
 ## [1.2.10] - 2026-06-20
 
 ### Changed

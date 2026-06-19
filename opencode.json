@@ -79,7 +79,8 @@
     },
     "figma": {
       "type": "remote",
-      "url": "https://mcp.figma.com/mcp"
+      "url": "https://mcp.figma.com/mcp",
+      "enabled": false
     },
     "playwright": {
       "type": "stdio",
