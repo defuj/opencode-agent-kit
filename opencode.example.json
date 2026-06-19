@@ -10,20 +10,57 @@
       "*.env.*": "deny",
       "*.env.example": "allow"
     },
+    "edit": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
     "webfetch": "allow",
-    "skill": {
-      "*": "allow"
-    },
+    "skill": "allow",
     "todowrite": "allow",
     "question": "allow",
     "doom_loop": "ask",
-    "external_directory": "ask"
+    "external_directory": {
+      "*": "allow",
+      "~/.ssh/**": "deny",
+      "~/.aws/**": "deny",
+      "~/.config/**": "deny",
+      "~/secrets/**": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "ls *": "allow",
+      "pwd": "allow",
+      "which *": "allow",
+      "type *": "allow",
+      "mkdir *": "allow",
+      "cp *": "allow",
+      "mv *": "allow",
+      "echo *": "allow",
+      "printf *": "allow",
+      "date": "allow",
+      "uname *": "allow",
+      "whoami": "allow",
+      "file *": "allow",
+      "wc *": "allow",
+      "du *": "allow",
+      "df *": "allow"
+    },
+    "agentmemory_*": "allow",
+    "figma_*": "allow"
   },
   "instructions": [
     ".opencode/instructions/INSTRUCTIONS.md",
     ".opencode/skills/coding-standards/SKILL.md",
     ".opencode/skills/security-review/SKILL.md",
-    ".opencode/skills/impeccable/SKILL.md"
+    ".opencode/skills/impeccable/SKILL.md",
+    ".opencode/skills/it-leader-orchestration/SKILL.md",
+    ".opencode/skills/eval-harness/SKILL.md",
+    ".opencode/skills/verification-loop/SKILL.md",
+    ".opencode/skills/strategic-compact/SKILL.md",
+    ".opencode/skills/api-design/SKILL.md",
+    ".opencode/skills/agent-task-workflow/SKILL.md",
+    ".opencode/skills/agent-communication/SKILL.md",
+    ".opencode/skills/agent-session-workflow/SKILL.md"
   ],
   "mcp": {
     "nuxt": {
@@ -93,9 +130,25 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
@@ -104,10 +157,8 @@
         },
         "nuxt_*": "allow",
         "nuxt-ui_*": "allow",
-        "figma_*": "ask",
         "playwright_*": "allow",
         "postman_*": "allow",
-        "agentmemory_*": "allow",
         "task": { "*": "allow" }
       }
     },
@@ -121,9 +172,25 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
@@ -132,9 +199,7 @@
         },
         "nuxt_*": "allow",
         "nuxt-ui_*": "allow",
-        "figma_*": "ask",
-        "playwright_*": "allow",
-        "agentmemory_*": "allow"
+        "playwright_*": "allow"
       }
     },
     "frontend-react": {
@@ -147,18 +212,32 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow",
           "npx playwright*": "allow"
         },
-        "figma_*": "ask",
-        "playwright_*": "allow",
-        "agentmemory_*": "allow"
+        "playwright_*": "allow"
       }
     },
     "backend": {
@@ -171,16 +250,31 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow"
         },
-        "postman_*": "allow",
-        "agentmemory_*": "allow"
+        "postman_*": "allow"
       }
     },
     "ci3": {
@@ -193,9 +287,25 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "git status": "allow",
           "git diff": "allow",
           "git log*": "allow"
@@ -213,15 +323,30 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "git status": "allow",
           "git diff": "allow",
           "git log*": "allow"
         },
-        "postman_*": "allow",
-        "agentmemory_*": "allow"
+        "postman_*": "allow"
       }
     },
     "designer": {
@@ -234,17 +359,31 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "git status": "allow",
           "git diff": "allow",
           "git log*": "allow"
         },
         "stitch_*": "allow",
-        "figma_*": "ask",
-        "nuxt-ui_*": "allow",
-        "agentmemory_*": "allow"
+        "nuxt-ui_*": "allow"
       }
     },
     "reviewer": {
@@ -257,17 +396,32 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow",
           "npx playwright*": "allow"
         },
-        "playwright_*": "allow",
-        "agentmemory_*": "allow"
+        "playwright_*": "allow"
       }
     },
     "database": {
@@ -280,15 +434,30 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "npm *": "allow",
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow"
-        },
-        "agentmemory_*": "allow"
+        }
       }
     },
     "seo": {
@@ -301,15 +470,30 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "git status": "allow",
           "git diff": "allow",
           "git log*": "allow"
         },
-        "nuxt_*": "allow",
-        "agentmemory_*": "allow"
+        "nuxt_*": "allow"
       }
     },
     "android": {
@@ -322,15 +506,29 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "./gradlew *": "allow",
           "gradle *": "allow"
         },
-        "figma_*": "ask",
-        "playwright_*": "allow",
-        "agentmemory_*": "allow"
+        "playwright_*": "allow"
       }
     },
     "flutter": {
@@ -343,15 +541,29 @@
       "permission": {
         "edit": "allow",
         "webfetch": "allow",
-        "skill": { "*": "allow" },
+        "skill": "allow",
         "bash": {
           "*": "ask",
+          "ls *": "allow",
+          "pwd": "allow",
+          "which *": "allow",
+          "type *": "allow",
+          "mkdir *": "allow",
+          "cp *": "allow",
+          "mv *": "allow",
+          "echo *": "allow",
+          "printf *": "allow",
+          "date": "allow",
+          "uname *": "allow",
+          "whoami": "allow",
+          "file *": "allow",
+          "wc *": "allow",
+          "du *": "allow",
+          "df *": "allow",
           "flutter *": "allow",
           "dart *": "allow"
         },
-        "figma_*": "ask",
-        "playwright_*": "allow",
-        "agentmemory_*": "allow"
+        "playwright_*": "allow"
       }
     }
   }

@@ -38,7 +38,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [1.2.8] - 2025-06-19
+
+### Added
+
+- **Safe bash command permissions** — 17 non-aggressive bash patterns (`ls`, `pwd`, `which`, `mkdir`, `cp`, `echo`, etc.) auto-allowed at both top-level and per-agent level, reducing permission prompts by ~90%
+- **Read-only tool permissions** — `glob`, `grep`, `list` set to `"allow"` at top-level (no more prompts for file search)
+- **`agentmemory_*` centralized** — moved from per-agent duplication (33 agents × 1 line) to top-level permission
+- **`figma_*` centralized** — set to `"deny"` at top-level (Figma MCP disabled, no Figma clutter in unrelated agents)
+
+### Changed
+
+- **`external_directory`** — relaxed from `"ask"` to `"allow"` with deny rules for sensitive dirs (`~/.ssh`, `~/.aws`, `~/.config`, `~/secrets`)
+- **`skill` permission** — per-agent `{"*": "allow"}` → shorthand `"allow"` (cleaner config)
+- **`opencode.example.json`** — same permission improvements applied to the example config
 
 ---
 
