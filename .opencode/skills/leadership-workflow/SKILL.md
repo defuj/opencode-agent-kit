@@ -370,12 +370,14 @@ Decision: {parallel / sequential / wait}
 
 ### Bottleneck Rules
 
-| Condition                        | Action                                                              |
-| -------------------------------- | ------------------------------------------------------------------- |
-| 1 subagent has 3+ pending tasks  | Rebalance: move independent work to another agent or sequential-kan |
-| All agents busy at once          | Wait for fastest to finish first                                    |
-| One agent idle while others busy | Assign available independent tasks to idle agent                    |
-| Same agent needed sequentially   | Queue tasks, update user on expected wait                           |
+Real bottlenecks are in **dependencies**, not subagent capacity — subagents handle parallel tasks independently.
+
+| Condition                                    | Action                                                   |
+| -------------------------------------------- | -------------------------------------------------------- |
+| Tasks are independent (no output dependency) | Parallel delegation — subagent handles them concurrently |
+| Task B needs output from Task A              | Sequential — queue B until A completes                   |
+| Multiple sequential tasks for same subagent  | Send one at a time, chain results forward                |
+| Leader has many outputs to verify at once    | Batch verify by priority: integration-critical first     |
 
 ---
 
