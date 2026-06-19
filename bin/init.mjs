@@ -11,7 +11,7 @@ import { uninstall } from './commands/uninstall.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const PKG_ROOT = join(__dirname, '..', '..');
+const PKG_ROOT = join(__dirname, '..');
 const PKG_VERSION = JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf-8')).version;
 
 const program = new Command();
