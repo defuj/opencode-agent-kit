@@ -22,7 +22,11 @@
       "~/.ssh/**": "deny",
       "~/.aws/**": "deny",
       "~/.config/**": "deny",
-      "~/secrets/**": "deny"
+      "~/secrets/**": "deny",
+      "~/.gnupg/**": "deny",
+      "~/.kube/**": "deny",
+      "~/.docker/**": "deny",
+      "/etc/**": "deny"
     },
     "bash": {
       "*": "ask",

@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.10] - 2026-06-20
+
+### Changed
+
+- **Version**: 1.2.9 → **1.2.10**
+- **`opencode.example.json`**: Synced with all 33 agents (was missing python, rust, swift, dotnet, angular, cpp, sonarqube, go-developer, and all reviewer/harness agents) — now mirrors `opencode.json` exactly
+- **`AGENTS.md`**: Updated skill count 61 → **205** (was outdated)
+- **`README.md`**: Updated skill count 202 → **205**
+- **`package.json`**: Updated skill count in description
+- **`opencode.example.json` permissions**: Deny list expanded with `~/.kube`, `docker-config`, `gcloud`, `azure`, `npmrc`, `netrc`, `gnupg`, `helm`, `terraform.d`, `vault`
+
+---
+
 ## [1.2.6] - 2025-06-19
 
 ### Added

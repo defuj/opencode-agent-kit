@@ -4,7 +4,7 @@
 
 # Agent Kit — Setup Guide
 
-Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 33 specialized agents, 202 skill playbooks, 46 slash commands, and 8 MCP servers.
+Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 33 specialized agents, 205 skill playbooks, 46 slash commands, and 8 MCP servers.
 
 ```bash
 npx opencode-agent-kit init    # One command. Full team.
@@ -78,7 +78,7 @@ This repository contains a complete OpenCode agent configuration with **Leader �
   - Frontend Nuxt: `.opencode/docs/frontend/nuxt/`
   - Frontend React: `.opencode/docs/frontend/react/`
   - Backend Node: `.opencode/docs/backend/node/`
-- Local skills: `.opencode/skills/` (202 skill playbooks)
+- Local skills: `.opencode/skills/` (205 skill playbooks)
 - Contexts: `.opencode/contexts/` (dev, research, review)
 
 Designed for:
