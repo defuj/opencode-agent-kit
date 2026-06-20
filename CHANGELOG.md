@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.0] - 2026-06-20
+
+### Added
+
+- **Ponytail Integration** — integrated [Ponytail](https://github.com/DietrichGebert/ponytail) (41.8k stars), the lazy senior dev skill for AI agents, as first-party plugin
+- **Ponytail Commands** — 6 new slash commands (`/ponytail`, `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`, `/ponytail-gain`, `/ponytail-help`)
+- **Ponytail Plugin** — `.opencode/plugins/ponytail.mjs` auto-injects ponytail ruleset with mode switching (lite/full/ultra/off)
+- **Ponytail Hooks** — 5 lifecycle hooks (instructions, config, activate, mode-tracker, runtime) for dynamic ponytail behavior
+- **Ponytail Skills** — 6 skill playbooks (ponytail, review, audit, debt, gain, help) with 6-rung reasoning ladder
+
+### Changed
+
+- `opencode.json`: plugin entry `[agentmemory-capture, ponytail]`
+- `opencode.example.json`: plugin entry `[agentmemory-capture, ponytail]`
+- Version: 1.2.11 → **1.3.0** (minor version bump for new feature integration)
+
+---
+
 ## [1.2.11] - 2026-06-20
 
 ### Added

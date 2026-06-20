@@ -122,7 +122,7 @@
       "description": "Persistent cross-session memory with 53 tools (save, recall, smart search, sessions, file history, lessons)"
     }
   },
-  "plugin": [".opencode/plugins/agentmemory-capture.ts"],
+  "plugin": [".opencode/plugins/agentmemory-capture.ts", ".opencode/plugins/ponytail.mjs"],
   "agent": {
     "leader": {
       "description": "IT Leader & Technical Project Manager \u2014 analyzes requirements, designs architecture, decomposes tasks, delegates to subagents, and unifies outputs",
