@@ -1,31 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agent Kit — 33 Specialized AI Agents for OpenCode</title>
+    <title>Agent Kit — Your AI Development Team</title>
     <meta
       name="description"
-      content="A portable multi-stack AI agent system for OpenCode. 33 specialized agents, 204 skill playbooks, 46 CLI commands, 8 MCP servers, and persistent agentmemory."
-    />
-    <meta
-      name="keywords"
-      content="opencode-agent-kit, opencode, AI agents, software development, agentmemory, nuxt, react, flutter, android, laravel, java, spring-boot, go, golang, devops"
+      content="33 AI agents, 207 skills, 46 commands, 8 MCP servers, persistent memory."
     />
     <meta name="author" content="defuj" />
-    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://github.com/defuj/opencode-agent-kit" />
     <link
       rel="icon"
       type="image/svg+xml"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0e14'/><text x='16' y='22' text-anchor='middle' fill='%23d4a04a' font-size='16' font-weight='800' font-family='system-ui'>K</text></svg>"
     />
-
-    <!-- Open Graph -->
     <meta property="og:title" content="Agent Kit — 33 Specialized AI Agents for OpenCode" />
     <meta
       property="og:description"
-      content="33 agents, 207 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team."
+      content="33 agents, 207 skills, 46 commands, 8 MCP servers, persistent memory."
     />
     <meta
       property="og:image"
@@ -33,39 +26,13 @@
     />
     <meta property="og:url" content="https://github.com/defuj/opencode-agent-kit" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Agent Kit" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Agent Kit — 33 Specialized AI Agents for OpenCode" />
-    <meta
-      name="twitter:description"
-      content="33 agents, 204 skills, 46 commands, 8 MCP servers, and persistent memory. One command installs a full AI development team."
-    />
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Agent Kit — opencode-agent-kit",
-        "description": "A portable multi-stack AI agent system for OpenCode with 33 specialized agents, 204 skill playbooks, 46 CLI commands, and persistent cross-session memory.",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "macOS, Linux, Windows",
-        "author": { "@type": "Person", "name": "defuj" },
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-      }
-    </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200..900&family=JetBrains+Mono:wght@400..700&display=swap"
       rel="stylesheet"
     />
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       *,
       *::before,
@@ -77,316 +44,1247 @@
       html {
         scroll-behavior: smooth;
       }
-
-      /* ── Theme Variables ── */
-      :root {
-        --bg-primary: #06060a;
-        --bg-secondary: #0e0e16;
-        --bg-tertiary: rgba(14, 14, 22, 0.6);
-        --text-primary: #e8e8f0;
-        --text-secondary: #8a8aa0;
-        --text-muted: #6a6a80;
-        --text-bright: #b0b0c8;
-        --text-white: #f0f0f8;
-        --border-subtle: rgba(255, 255, 255, 0.04);
-        --border-hover: rgba(255, 255, 255, 0.08);
-        --nav-bg: rgba(6, 6, 10, 0.85);
-        --nav-bdr: rgba(255, 255, 255, 0.03);
-        --terminal-bg: #06060a;
-        --marquee-bg: rgba(255, 255, 255, 0.005);
-        --marquee-bdr: rgba(255, 255, 255, 0.02);
-        --card-gold-from: rgba(212, 160, 74, 0.04);
-        --card-gold-bdr: rgba(212, 160, 74, 0.15);
-        --card-hover-bdr: rgba(212, 160, 74, 0.25);
-        --footer-divider: rgba(255, 255, 255, 0.03);
-        --selection-bg: rgba(212, 160, 74, 0.25);
-        --gold: #d4a04a;
-        --gold-light: #e8b85e;
-        --violet: #8b6cf6;
-        --violet-light: #a78bfa;
-        --memory: #4ac8b8;
-        --memory-light: #6ee7b7;
-      }
-      [data-theme='light'] {
-        --bg-primary: #f6f5f0;
-        --bg-secondary: #ffffff;
-        --bg-tertiary: rgba(255, 255, 255, 0.85);
-        --text-primary: #1a1a2e;
-        --text-secondary: #5a5a72;
-        --text-muted: #7a7a92;
-        --text-bright: #3a3a52;
-        --text-white: #1a1a2e;
-        --border-subtle: rgba(0, 0, 0, 0.08);
-        --border-hover: rgba(0, 0, 0, 0.14);
-        --nav-bg: rgba(255, 255, 255, 0.85);
-        --nav-bdr: rgba(0, 0, 0, 0.04);
-        --terminal-bg: #f0efe8;
-        --marquee-bg: rgba(0, 0, 0, 0.015);
-        --marquee-bdr: rgba(0, 0, 0, 0.03);
-        --card-gold-from: rgba(212, 160, 74, 0.08);
-        --card-gold-bdr: rgba(212, 160, 74, 0.2);
-        --card-hover-bdr: rgba(212, 160, 74, 0.35);
-        --footer-divider: rgba(0, 0, 0, 0.05);
-        --selection-bg: rgba(212, 160, 74, 0.2);
-      }
-
       body {
         font-family: 'Inter', system-ui, sans-serif;
-        background: var(--bg-primary);
-        color: var(--text-secondary);
+        background: var(--bg);
+        color: var(--txt2);
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
+        line-height: 1.6;
       }
       ::selection {
-        background: var(--selection-bg);
-        color: var(--text-primary);
+        background: rgba(212, 160, 74, 0.3);
+        color: #e8e8f0;
+      }
+      [data-theme='light'] ::selection {
+        color: #1a1a2e;
       }
       h1,
       h2,
       h3,
-      h4 {
-        font-family: 'Inter', system-ui, sans-serif;
-        color: var(--text-primary);
+      h4,
+      h5,
+      h6 {
+        color: var(--txt);
+        font-family: 'Inter', sans-serif;
+        line-height: 1.15;
       }
-
-      /* ── Ambient Glows ── */
-      .ambient {
-        position: fixed;
-        pointer-events: none;
-        border-radius: 50%;
-        z-index: 0;
+      code,
+      pre {
+        font-family: 'JetBrains Mono', monospace;
       }
-      .ambient-gold {
-        width: 600px;
-        height: 600px;
-        top: -200px;
-        right: -100px;
-        background: radial-gradient(circle, rgba(212, 160, 74, 0.04), transparent 70%);
+      :root {
+        --gold: #d4a04a;
+        --gold-l: #e8b85e;
+        --gold-d: #b8893a;
+        --violet: #6d28d9;
+        --violet-l: #8b6cf6;
+        --teal: #2dd4bf;
+        --teal-l: #5eead4;
+        --bg: #06060a;
+        --bg2: #0a0a14;
+        --bg3: #0e0e1a;
+        --card: #12121e;
+        --card-hover: #1a1a2e;
+        --txt: #e8e8f0;
+        --txt2: #8a8aa0;
+        --txt3: #5a5a72;
+        --bdr: rgba(255, 255, 255, 0.05);
+        --bdr-h: rgba(255, 255, 255, 0.1);
+        --bdr-gold: rgba(212, 160, 74, 0.2);
+        --orb-1: rgba(212, 160, 74, 0.3);
+        --orb-2: rgba(109, 40, 217, 0.2);
+        --orb-3: rgba(45, 212, 191, 0.12);
+        --radius: 20px;
+        --radius-sm: 12px;
+        --radius-xs: 8px;
+        --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
       }
-      .ambient-violet {
-        width: 500px;
-        height: 500px;
-        bottom: 10%;
-        left: -150px;
-        background: radial-gradient(circle, rgba(139, 108, 246, 0.03), transparent 70%);
+      [data-theme='light'] {
+        --bg: #f3f2ed;
+        --bg2: #faf9f5;
+        --bg3: #fff;
+        --card: #fff;
+        --card-hover: #f0efe8;
+        --txt: #1a1a2e;
+        --txt2: #5a5a72;
+        --txt3: #6b6b85;
+        --gold: #9a7028;
+        --bdr: rgba(0, 0, 0, 0.08);
+        --bdr-h: rgba(0, 0, 0, 0.14);
+        --bdr-gold: rgba(154, 112, 40, 0.3);
+        --orb-1: rgba(154, 112, 40, 0.1);
+        --orb-2: rgba(109, 40, 217, 0.06);
+        --orb-3: rgba(45, 212, 191, 0.06);
       }
-      .ambient-rose {
-        width: 400px;
-        height: 400px;
-        top: 50%;
-        right: 5%;
-        background: radial-gradient(circle, rgba(224, 96, 112, 0.015), transparent 70%);
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
       }
-
-      /* ── Animations ── */
-      .fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition:
-          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      .section {
+        padding: 100px 0;
+        position: relative;
       }
-      .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
       }
-      .fade-up-d1 {
-        transition-delay: 0.1s;
+      .section-label::before {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 1px;
       }
-      .fade-up-d2 {
-        transition-delay: 0.2s;
+      .grad-text {
+        background: linear-gradient(135deg, #d4a04a, #e8b85e, #d4a04a);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: shift 8s ease infinite;
       }
-      .fade-up-d3 {
-        transition-delay: 0.3s;
-      }
-      .fade-up-d4 {
-        transition-delay: 0.4s;
-      }
-
-      @keyframes float {
+      @keyframes shift {
         0%,
         100% {
-          transform: translateY(0);
+          background-position: 0% 50%;
         }
         50% {
-          transform: translateY(-16px);
+          background-position: 100% 50%;
         }
       }
-      .float-slow {
-        animation: float 7s ease-in-out infinite;
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
       }
-      .float-med {
-        animation: float 5s ease-in-out infinite 1s;
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
-
+      @keyframes scale-in {
+        from {
+          opacity: 0;
+          transform: scale(0.92);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
       @keyframes pulse-dot {
         0%,
         100% {
-          opacity: 0.4;
-          transform: scale(1);
-        }
-        50% {
           opacity: 1;
-          transform: scale(1.3);
-        }
-      }
-      .pulse-dot {
-        animation: pulse-dot 2.5s ease-in-out infinite;
-      }
-
-      @keyframes countPop {
-        0% {
           transform: scale(1);
         }
         50% {
-          transform: scale(1.08);
-        }
-        100% {
-          transform: scale(1);
+          opacity: 0.4;
+          transform: scale(0.8);
         }
       }
-      .count-pop {
-        animation: countPop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 18px 0;
+        transition: all 0.4s var(--ease-out);
       }
-
-      /* ── Card ── */
-      .card {
-        background: var(--bg-tertiary);
-        border: 1px solid var(--border-subtle);
-        border-radius: 16px;
-        backdrop-filter: blur(8px);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
-        transition:
-          border-color 0.3s,
-          transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      .navbar.scrolled {
+        background: rgba(6, 6, 10, 0.8);
+        backdrop-filter: blur(24px) saturate(1.4);
+        border-bottom: 1px solid var(--bdr);
+        padding: 12px 0;
       }
-      .card:hover {
-        border-color: var(--border-hover);
-        transform: translateY(-2px);
+      [data-theme='light'] .navbar.scrolled {
+        background: rgba(243, 242, 237, 0.85);
       }
-      .card-gold {
-        border-color: var(--card-gold-bdr);
-        background: linear-gradient(135deg, var(--card-gold-from), var(--bg-tertiary));
+      .navbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
       }
-      .card-gold:hover {
-        border-color: var(--card-hover-bdr);
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--txt);
+        text-decoration: none;
+        flex-shrink: 1;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
-
-      /* ── Gradient Text ── */
-      .gradient-gold {
-        background: linear-gradient(135deg, #d4a04a, #e8b85e, #d4a04a);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      .gradient-violet {
-        background: linear-gradient(135deg, #8b6cf6, #a78bfa);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      .gradient-memory {
-        background: linear-gradient(135deg, #4ac8b8, #6ee7b7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      /* ── Section Divider ── */
-      .divider {
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent 0%,
-          color-mix(in srgb, var(--text-muted) 20%, transparent) 50%,
-          transparent 100%
-        );
-      }
-
-      /* ── Theme-aware tag chips ── */
-      .tag-chip {
-        background: color-mix(in srgb, var(--text-muted) 12%, transparent);
-        color: var(--text-secondary);
-      }
-
-      /* ── Agent Dot Grid ── */
-      .agent-dot {
-        width: 36px;
-        height: 36px;
+      .nav-logo-icon {
+        width: 32px;
+        height: 32px;
         border-radius: 8px;
-        display: inline-flex;
+        background: linear-gradient(135deg, #d4a04a, #b8893a);
+        display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 9px;
-        font-weight: 700;
-        font-family: 'JetBrains Mono', monospace;
-        transition:
-          transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-          box-shadow 0.25s;
-        cursor: default;
-        position: relative;
+        font-weight: 800;
+        font-size: 14px;
+        color: #06060a;
       }
-      .agent-dot:hover {
-        transform: scale(1.35);
-        z-index: 10;
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
       }
-      .agent-dot[data-tip]:hover::after {
-        content: attr(data-tip);
-        position: absolute;
-        bottom: calc(100% + 6px);
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--bg-secondary);
-        color: var(--text-bright);
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-size: 10px;
+      .nav-links a {
+        font-size: 14px;
         font-weight: 500;
-        white-space: nowrap;
-        border: 1px solid var(--border-subtle);
-        z-index: 20;
+        color: var(--txt2);
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s;
+        cursor: pointer;
       }
-
-      /* ── Timeline ── */
-      .timeline-line {
+      .nav-links a::after {
+        content: '';
         position: absolute;
-        left: 19px;
-        top: 40px;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(180deg, rgba(212, 160, 74, 0.3), rgba(212, 160, 74, 0.05));
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 1px;
+        transition: width 0.4s var(--ease-out);
       }
-
-      /* ── Terminal ── */
-      .terminal {
-        background: var(--terminal-bg);
-        border: 1px solid var(--border-subtle);
+      .nav-links a:hover {
+        color: var(--txt);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .theme-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        border: 1px solid var(--bdr);
+        background: var(--bg2);
+        color: var(--txt3);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        font-size: 16px;
+      }
+      .theme-btn:hover {
+        border-color: var(--bdr-gold);
+        color: var(--gold);
+        background: var(--card-hover);
+        transform: rotate(15deg);
+      }
+      .btn-primary,
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 24px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s var(--ease-out);
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #d4a04a, #b8893a);
+        color: #06060a;
+        border: none;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(212, 160, 74, 0.3);
+      }
+      .btn-secondary {
+        border: 1px solid var(--bdr);
+        background: transparent;
+        color: var(--txt2);
+        font-weight: 500;
+      }
+      .btn-secondary:hover {
+        border-color: var(--bdr-h);
+        color: var(--txt);
+        background: var(--card);
+      }
+      .mobile-btn {
+        display: none;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        border: 1px solid var(--bdr);
+        background: var(--bg2);
+        color: var(--txt3);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 16px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .nav-actions .btn-primary {
+          display: none;
+        }
+        .mobile-btn {
+          display: flex;
+        }
+        .navbar {
+          padding: 14px 0;
+        }
+        .navbar.scrolled {
+          padding: 10px 0;
+        }
+        .nav-logo {
+          gap: 8px;
+          font-size: 15px;
+          min-width: 0;
+          overflow: hidden;
+        }
+        .nav-logo-icon {
+          width: 28px;
+          height: 28px;
+          font-size: 12px;
+          flex-shrink: 0;
+        }
+        .nav-logo span:last-child {
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .nav-right {
+          gap: 4px;
+        }
+        .mobile-btn,
+        .theme-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 15px;
+        }
+        .section {
+          padding: 60px 0;
+        }
+        .marquee-track {
+          gap: 24px;
+        }
+      }
+      .mobile-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 99;
+        background: rgba(6, 6, 10, 0.97);
+        backdrop-filter: blur(30px);
+        padding: 100px 24px 40px;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .mobile-overlay.open {
+        display: flex;
+      }
+      .mobile-overlay a {
+        padding: 14px 20px;
         border-radius: 12px;
+        background: var(--card);
+        color: var(--txt);
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        transition: all 0.3s;
+        text-decoration: none;
+        border: 1px solid var(--bdr);
+      }
+      .mobile-overlay a:hover {
+        background: var(--card-hover);
+        border-color: var(--bdr-h);
+      }
+      [data-theme='light'] .mobile-overlay {
+        background: rgba(250, 249, 245, 0.96);
+      }
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
         overflow: hidden;
+        padding-top: 80px;
+        background: var(--bg);
+      }
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(var(--bdr) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: radial-gradient(ellipse at 50% 45%, black 35%, transparent 72%);
+      }
+      .hero-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(120px);
+        pointer-events: none;
+        will-change: transform;
+      }
+      .orb-1 {
+        width: 600px;
+        height: 600px;
+        top: -20%;
+        left: -5%;
+        background: radial-gradient(circle, var(--orb-1), transparent 70%);
+        animation: float-1 25s ease-in-out infinite;
+      }
+      .orb-2 {
+        width: 500px;
+        height: 500px;
+        top: 10%;
+        right: -8%;
+        background: radial-gradient(circle, var(--orb-2), transparent 70%);
+        animation: float-2 30s ease-in-out infinite;
+      }
+      .orb-3 {
+        width: 400px;
+        height: 400px;
+        bottom: 5%;
+        left: 40%;
+        background: radial-gradient(circle, var(--orb-3), transparent 70%);
+        animation: float-3 22s ease-in-out infinite;
+      }
+      @keyframes float-1 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(80px, -60px) scale(1.12);
+        }
+        66% {
+          transform: translate(-40px, 50px) scale(0.95);
+        }
+      }
+      @keyframes float-2 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(-60px, -80px) scale(1.08);
+        }
+        66% {
+          transform: translate(40px, 40px) scale(0.92);
+        }
+      }
+      @keyframes float-3 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(40px, -50px) scale(1.1);
+        }
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 820px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 16px;
+        border-radius: 100px;
+        border: 1px solid var(--bdr-gold);
+        background: rgba(212, 160, 74, 0.06);
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--gold);
+        margin-bottom: 28px;
+        animation: fade-in 1s 0.2s both;
+      }
+      .hero-badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        animation: pulse-dot 2s ease-in-out infinite;
+      }
+      .hero h1 {
+        font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin-bottom: 20px;
+      }
+      .hero h1 .gold {
+        background: linear-gradient(135deg, #d4a04a, #f0c060, #d4a04a);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: shift 6s ease infinite;
+      }
+      .hero p {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        color: var(--txt2);
+        max-width: 600px;
+        margin: 0 auto 36px;
+        line-height: 1.8;
+      }
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 60px;
+      }
+      .hero-stat {
+        text-align: center;
+      }
+      .hero-stat-num {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--txt);
+        letter-spacing: -0.02em;
+      }
+      .hero-stat-label {
+        font-size: 12px;
+        color: var(--txt3);
+        margin-top: 2px;
+      }
+      .hero-stat .gold {
+        color: var(--gold);
+      }
+      .terminal-preview {
+        position: relative;
+        z-index: 2;
+        max-width: 660px;
+        margin: 48px auto 0;
+        border-radius: 14px;
+        background: var(--card);
+        border: 1px solid var(--bdr);
+        overflow: hidden;
+        transition: all 0.4s;
+      }
+      .terminal-preview:hover {
+        border-color: var(--bdr-gold);
+        box-shadow: 0 0 40px rgba(212, 160, 74, 0.06);
+      }
+      .terminal-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        background: var(--bg3);
+        border-bottom: 1px solid var(--bdr);
       }
       .terminal-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .terminal-dot:nth-child(1) {
+        background: #ff5f56;
+      }
+      .terminal-dot:nth-child(2) {
+        background: #ffbd2e;
+      }
+      .terminal-dot:nth-child(3) {
+        background: #27c93f;
+      }
+      .terminal-title {
+        margin-left: auto;
+        font-size: 11px;
+        color: var(--txt3);
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .terminal-body {
+        padding: 20px 24px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        line-height: 2;
+        color: var(--txt2);
+        min-height: 180px;
+      }
+      .terminal-body .c {
+        color: var(--gold);
+      }
+      .terminal-body .o {
+        color: var(--teal);
+      }
+      .terminal-body .m {
+        color: var(--txt3);
+      }
+      .blink-c {
+        display: inline-block;
+        width: 8px;
+        height: 16px;
+        background: var(--gold);
+        animation: blink 1s step-end infinite;
+        vertical-align: text-bottom;
+        margin-left: 2px;
+      }
+      .hero-scroll {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        color: var(--txt3);
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      .hero-scroll-arrow {
+        width: 20px;
+        height: 20px;
+        border-right: 2px solid var(--txt3);
+        border-bottom: 2px solid var(--txt3);
+        transform: rotate(45deg);
+        animation: scroll-b 2s ease-in-out infinite;
+      }
+      @keyframes scroll-b {
+        0%,
+        100% {
+          transform: rotate(45deg) translate(0, 0);
+          opacity: 1;
+        }
+        50% {
+          transform: rotate(45deg) translate(4px, 4px);
+          opacity: 0.3;
+        }
+      }
+      /* PROBLEM */
+      .problem-sxn {
+        background: var(--bg);
+        position: relative;
+      }
+      .problem-sxn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--bdr-gold), transparent);
+      }
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      @media (max-width: 768px) {
+        .problem-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+      .problem-visual {
+        position: relative;
+        padding: 40px 32px;
+        background: var(--bg2);
+        border-radius: var(--radius);
+        border: 1px solid var(--bdr);
+        overflow: hidden;
+        min-height: 320px;
+      }
+      .problem-visual::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 30% 50%, rgba(224, 96, 112, 0.04), transparent 70%);
+      }
+      .problem-node {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 18px;
+        background: var(--bg3);
+        border-radius: 10px;
+        border: 1px solid var(--bdr);
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 2;
+        transition: all 0.3s;
+        opacity: 0.7;
+      }
+      .problem-node.active {
+        opacity: 1;
+        border-color: var(--bdr-gold);
+        background: var(--card);
+      }
+      .problem-node-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        flex-shrink: 0;
+      }
+      .problem-node .iq {
+        background: rgba(224, 96, 112, 0.15);
+        color: #e06070;
+      }
+      .problem-node .ich {
+        background: rgba(45, 212, 191, 0.15);
+        color: var(--teal);
+      }
+      .problem-node .idb {
+        background: rgba(109, 40, 217, 0.15);
+        color: var(--violet-l);
+      }
+      .problem-node-text {
+        flex: 1;
+        font-size: 13px;
+        color: var(--txt2);
+        line-height: 1.4;
+      }
+      .problem-node-text strong {
+        color: var(--txt);
+        font-weight: 600;
+      }
+      .problem-node .st-p {
+        background: rgba(224, 96, 112, 0.12);
+        color: #e06070;
+        font-size: 10px;
+        padding: 2px 10px;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+      .problem-node .st-d {
+        background: rgba(45, 212, 191, 0.12);
+        color: var(--teal);
+        font-size: 10px;
+        padding: 2px 10px;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+      .solution-badge {
+        display: inline-block;
+        padding: 4px 14px;
+        border-radius: 20px;
+        border: 1px solid var(--bdr-gold);
+        background: rgba(212, 160, 74, 0.06);
+        font-size: 11px;
+        color: var(--gold);
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+      /* MEMORY */
+      .memory-sxn {
+        background: var(--bg2);
+        position: relative;
+      }
+      .memory-sxn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.2), transparent);
+      }
+      .memory-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      @media (max-width: 768px) {
+        .memory-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+      .memory-card {
+        background: var(--bg);
+        border-radius: var(--radius);
+        border: 1px solid var(--bdr);
+        overflow: hidden;
+        position: relative;
+      }
+      .memory-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--teal), transparent);
+        opacity: 0.3;
+      }
+      .memory-card-head {
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid var(--bdr);
+        background: var(--bg3);
+      }
+      .memory-card-dot {
         width: 8px;
         height: 8px;
         border-radius: 50%;
+        background: var(--teal);
+        animation: pulse-dot 2s ease-in-out infinite;
       }
-
-      /* ── Memory Feature ── */
-      .memory-grid-item {
-        background: color-mix(in srgb, var(--memory) 6%, var(--bg-primary));
-        border: 1px solid color-mix(in srgb, var(--memory) 15%, var(--border-subtle));
+      .memory-card-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--txt);
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .memory-card-url {
+        font-size: 11px;
+        color: var(--txt3);
+        margin-left: auto;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .memory-card-body {
+        padding: 20px;
+      }
+      .memory-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--bdr);
+        animation: fade-in 0.5s both;
+      }
+      .memory-row:last-child {
+        border-bottom: none;
+      }
+      .memory-row-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        flex-shrink: 0;
+      }
+      .memory-row .mr1 {
+        background: rgba(212, 160, 74, 0.12);
+        color: var(--gold);
+      }
+      .memory-row .mr2 {
+        background: rgba(109, 40, 217, 0.12);
+        color: var(--violet-l);
+      }
+      .memory-row .mr3 {
+        background: rgba(45, 212, 191, 0.12);
+        color: var(--teal);
+      }
+      .memory-row-text {
+        flex: 1;
+      }
+      .memory-row-text .rt {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--txt);
+      }
+      .memory-row-text .rd {
+        font-size: 11px;
+        color: var(--txt3);
+        margin-top: 2px;
+      }
+      .memory-row-time {
+        font-size: 10px;
+        color: var(--txt3);
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .memory-value-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 32px;
+      }
+      .memory-value-item {
+        padding: 20px;
+        background: var(--card);
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--bdr);
+        transition: all 0.3s;
+      }
+      .memory-value-item:hover {
+        border-color: var(--bdr-gold);
+        transform: translateY(-2px);
+      }
+      .memory-value-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      .memory-value-icon.mg {
+        background: rgba(212, 160, 74, 0.1);
+        color: var(--gold);
+      }
+      .memory-value-icon.mv {
+        background: rgba(109, 40, 217, 0.1);
+        color: var(--violet-l);
+      }
+      .memory-value-icon.mt {
+        background: rgba(45, 212, 191, 0.1);
+        color: var(--teal);
+      }
+      .memory-value-icon.mr {
+        background: rgba(224, 96, 112, 0.1);
+        color: #e06070;
+      }
+      .memory-value-item h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: var(--txt);
+      }
+      .memory-value-item p {
+        font-size: 13px;
+        color: var(--txt3);
+        line-height: 1.5;
+      }
+      /* AGENTS */
+      .agents-sxn {
+        background: var(--bg);
+        position: relative;
+      }
+      .agents-sxn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(109, 40, 217, 0.2), transparent);
+      }
+      .agent-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+      .agent-tab {
+        padding: 8px 18px;
+        border-radius: 8px;
+        border: 1px solid var(--bdr);
+        background: var(--bg2);
+        color: var(--txt3);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .agent-tab:hover {
+        border-color: var(--bdr-gold);
+        color: var(--txt);
+      }
+      .agent-tab.active {
+        background: rgba(212, 160, 74, 0.1);
+        border-color: var(--bdr-gold);
+        color: var(--gold);
+      }
+      .agent-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+      }
+      .agent-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        background: var(--card);
         border-radius: 12px;
+        border: 1px solid var(--bdr);
+        transition: all 0.3s;
+        cursor: default;
+      }
+      .agent-card:hover {
+        border-color: var(--bdr-gold);
+        background: var(--card-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(212, 160, 74, 0.04);
+      }
+      .agent-card-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .agent-card-icon.afe {
+        background: rgba(45, 212, 191, 0.12);
+        color: var(--teal);
+      }
+      .agent-card-icon.abe {
+        background: rgba(109, 40, 217, 0.12);
+        color: var(--violet-l);
+      }
+      .agent-card-icon.amo {
+        background: rgba(212, 160, 74, 0.12);
+        color: var(--gold);
+      }
+      .agent-card-icon.adevops {
+        background: rgba(224, 96, 112, 0.12);
+        color: #e06070;
+      }
+      .agent-card-icon.arev {
+        background: rgba(45, 212, 191, 0.1);
+        color: var(--teal-l);
+      }
+      .agent-card-icon.adata {
+        background: rgba(59, 130, 246, 0.12);
+        color: #60a5fa;
+      }
+      .agent-card-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .agent-card-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--txt);
+      }
+      .agent-card-stack {
+        font-size: 11px;
+        color: var(--txt3);
+        margin-top: 2px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .agent-dots {
+        display: flex;
+        gap: 3px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .agent-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+      .agent-dot.dg {
+        background: var(--gold);
+      }
+      .agent-dot.dv {
+        background: var(--violet-l);
+      }
+      .agent-dot.dt {
+        background: var(--teal);
+      }
+      .agent-dot.dr {
+        background: #e06070;
+      }
+      .agent-dot.db {
+        background: #60a5fa;
+      }
+      /* INSTALL */
+      .install-sxn {
+        background: var(--bg2);
+        position: relative;
+      }
+      .install-sxn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--bdr-gold), transparent);
+      }
+      .install-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+      }
+      @media (max-width: 768px) {
+        .install-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+      .os-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .os-tab {
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: 1px solid var(--bdr);
+        background: var(--bg3);
+        color: var(--txt3);
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .os-tab:hover {
+        border-color: var(--bdr-h);
+        color: var(--txt);
+      }
+      .os-tab.active {
+        background: rgba(212, 160, 74, 0.1);
+        border-color: var(--bdr-gold);
+        color: var(--gold);
+      }
+      .install-terminal {
+        border-radius: 14px;
+        background: var(--bg);
+        border: 1px solid var(--bdr);
+        overflow: hidden;
+        position: relative;
+      }
+      .install-terminal .terminal-body {
+        padding: 16px 20px;
+        font-size: 13px;
+        line-height: 2;
+        min-height: 80px;
+      }
+      .copy-btn {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        padding: 5px 12px;
+        border-radius: 6px;
+        background: var(--bg3);
+        border: 1px solid var(--bdr);
+        color: var(--txt3);
+        font-size: 11px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .copy-btn:hover {
+        background: var(--card-hover);
+        color: var(--gold);
+        border-color: var(--bdr-gold);
+      }
+      .copy-btn.copied {
+        background: rgba(45, 212, 191, 0.12);
+        color: var(--teal);
+        border-color: rgba(45, 212, 191, 0.2);
+      }
+      .install-cards {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+      }
+      @media (max-width: 768px) {
+        .install-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+      .install-card {
         padding: 16px;
-        transition:
-          border-color 0.3s,
-          background 0.3s;
+        background: var(--card);
+        border-radius: 12px;
+        border: 1px solid var(--bdr);
+        transition: all 0.3s;
+        text-align: center;
       }
-      .memory-grid-item:hover {
-        border-color: color-mix(in srgb, var(--memory) 25%, var(--border-hover));
-        background: color-mix(in srgb, var(--memory) 10%, var(--bg-primary));
+      .install-card:hover {
+        border-color: var(--bdr-gold);
+        transform: translateY(-2px);
       }
-
-      /* ── Marquee ── */
-      @keyframes marquee {
+      .install-card-icon {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .install-card h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--txt);
+        margin-bottom: 4px;
+      }
+      .install-card p {
+        font-size: 12px;
+        color: var(--txt3);
+      }
+      /* MARQUEE */
+      .marquee-sxn {
+        padding: 60px 0;
+        overflow: hidden;
+        background: var(--bg3);
+        border-top: 1px solid var(--bdr);
+        border-bottom: 1px solid var(--bdr);
+      }
+      .marquee-track {
+        display: flex;
+        gap: 48px;
+        animation: marq 40s linear infinite;
+        width: max-content;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marq {
         0% {
           transform: translateX(0);
         }
@@ -394,2422 +1292,1090 @@
           transform: translateX(-50%);
         }
       }
-      .marquee-track {
-        animation: marquee 40s linear infinite;
+      .marquee-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        white-space: nowrap;
       }
-      .marquee-track:hover {
-        animation-play-state: paused;
-      }
-
-      /* ── Scrollbar ── */
-      ::-webkit-scrollbar {
-        width: 5px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: color-mix(in srgb, var(--text-muted) 30%, transparent);
-        border-radius: 3px;
-      }
-
-      /* ── Theme Toggle ── */
-      .theme-btn {
-        width: 34px;
-        height: 34px;
-        border-radius: 10px;
+      .marquee-item-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--card);
+        border: 1px solid var(--bdr);
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid var(--border-subtle);
-        background: var(--bg-secondary);
-        color: var(--text-muted);
-        cursor: pointer;
-        transition: all 0.25s;
+        font-size: 12px;
+        color: var(--txt3);
       }
-      .theme-btn:hover {
-        border-color: var(--gold);
+      .marquee-item span {
+        font-size: 13px;
+        color: var(--txt2);
+        font-weight: 500;
+      }
+      /* FOOTER */
+      .footer {
+        background: var(--bg);
+        padding: 60px 0 40px;
+        border-top: 1px solid var(--bdr);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+      }
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+      .footer-brand p {
+        font-size: 13px;
+        color: var(--txt3);
+        line-height: 1.6;
+        max-width: 320px;
+      }
+      .footer h5 {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--txt3);
+        margin-bottom: 16px;
+      }
+      .footer a {
+        display: block;
+        font-size: 13px;
+        color: var(--txt2);
+        padding: 4px 0;
+        transition: color 0.3s;
+      }
+      .footer a:hover {
         color: var(--gold);
-        background: color-mix(in srgb, var(--gold) 8%, var(--bg-secondary));
       }
-
-      /* ── Light mode ambient adjustments ── */
-      [data-theme='light'] .ambient-gold {
-        background: radial-gradient(circle, rgba(212, 160, 74, 0.06), transparent 70%);
+      .footer-bottom {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--bdr);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        color: var(--txt3);
       }
-      [data-theme='light'] .ambient-violet {
-        background: radial-gradient(circle, rgba(139, 108, 246, 0.04), transparent 70%);
-      }
-      [data-theme='light'] .ambient-rose {
-        background: radial-gradient(circle, rgba(224, 96, 112, 0.025), transparent 70%);
-      }
-
-      /* ── Nav link theme-aware hover ── */
-      .nav-link {
-        color: var(--text-muted) !important;
-        transition: color 0.2s;
-      }
-      .nav-link:hover {
-        color: var(--gold) !important;
-      }
-      .nav-link-memory:hover {
-        color: var(--memory) !important;
-      }
-      .nav-link-memory {
-        color: var(--text-muted) !important;
-        transition: color 0.2s;
-      }
-
-      /* ── Button / Hover Utility Classes ── */
-      .btn-ghost {
-        border: 1px solid var(--border-subtle);
-        color: var(--text-bright);
-        transition: all 0.25s;
-      }
-      .btn-ghost:hover {
-        border-color: rgba(212, 160, 74, 0.3);
-      }
-      .btn-gold {
-        background: #d4a04a;
-        color: #08080c;
-        transition: all 0.25s;
-      }
-      .btn-gold:hover {
-        background: #e8b85e;
-      }
-      .github-btn {
-        background: color-mix(in srgb, var(--text-muted) 8%, transparent);
-        color: var(--text-secondary);
-        border: 1px solid var(--border-subtle);
-        transition: all 0.2s;
-      }
-      .github-btn:hover {
-        border-color: rgba(212, 160, 74, 0.2);
-        color: #d4a04a;
-      }
-      .footer-link {
-        color: var(--text-secondary);
-        transition: color 0.2s;
-      }
-      .footer-link:hover {
-        color: #d4a04a;
-      }
-      .footer-link-memory:hover {
-        color: #4ac8b8;
-      }
-      .footer-link-violet:hover {
-        color: #8b6cf6;
-      }
-
-      /* ── Focus visible ── */
-      :focus-visible {
-        outline: 2px solid var(--gold);
-        outline-offset: 2px;
-        border-radius: 4px;
-      }
-      a:focus-visible,
-      button:focus-visible {
-        outline: 2px solid var(--gold);
-        outline-offset: 2px;
-      }
-
-      /* ── Marquee edge fade ── */
-      .marquee-section {
-        mask-image: linear-gradient(
-          to right,
-          transparent 0%,
-          black 5%,
-          black 95%,
-          transparent 100%
-        );
-        -webkit-mask-image: linear-gradient(
-          to right,
-          transparent 0%,
-          black 5%,
-          black 95%,
-          transparent 100%
-        );
-      }
-
-      /* ── Card hover glow ── */
-      .card {
-        transition:
-          border-color 0.3s,
-          transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-          box-shadow 0.3s;
-      }
-      .card:hover {
-        box-shadow: 0 0 30px rgba(212, 160, 74, 0.03);
-      }
-      .card-gold:hover {
-        box-shadow: 0 0 40px rgba(212, 160, 74, 0.06);
-      }
-
-      /* ── Terminal scan-line overlay ── */
-      .terminal::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 2px,
-          rgba(255, 255, 255, 0.015) 2px,
-          rgba(255, 255, 255, 0.015) 4px
-        );
-        border-radius: 12px;
-        z-index: 1;
-      }
-      .terminal {
-        position: relative;
-      }
-      .terminal pre {
-        position: relative;
-        z-index: 2;
-      }
-
-      /* ── Agent dot tooltip transition ── */
-      .agent-dot[data-tip]::after {
-        opacity: 0;
-        transition: opacity 0.2s;
-      }
-      .agent-dot[data-tip]:hover::after {
-        opacity: 1;
-      }
-
-      /* ── Gradient text @supports fallback ── */
-      @supports not (background-clip: text) {
-        .gradient-gold {
-          color: #d4a04a;
-          background: none;
-          -webkit-text-fill-color: unset;
-        }
-        .gradient-violet {
-          color: #8b6cf6;
-          background: none;
-          -webkit-text-fill-color: unset;
-        }
-        .gradient-memory {
-          color: #4ac8b8;
-          background: none;
-          -webkit-text-fill-color: unset;
+      @media (max-width: 768px) {
+        .footer-bottom {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
         }
       }
-
-      /* ── Memory tools grid item hover ── */
-      .memory-grid-item {
-        border-left: 3px solid color-mix(in srgb, var(--memory) 15%, var(--border-subtle));
-        transition:
-          border-color 0.3s,
-          background 0.3s,
-          border-left-color 0.3s;
+      .footer-stacks {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
       }
-      .memory-grid-item:hover {
-        border-left-color: var(--memory);
+      .footer-stack {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 3px 10px;
+        border-radius: 6px;
+        background: var(--bg3);
+        border: 1px solid var(--bdr);
+        font-size: 10px;
+        color: var(--txt3);
+        font-family: 'JetBrains Mono', monospace;
       }
-
-      /* ── Agent dot background pulse row ── */
-      .agent-dot-row {
-        transition: background 0.3s;
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .hero-stats {
+          gap: 24px;
+        }
+        .hero-stat-num {
+          font-size: 1.6rem;
+        }
+        .memory-value-grid {
+          grid-template-columns: 1fr;
+        }
+        .agent-grid {
+          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        }
       }
-
-      /* ── Stats counter + suffix ── */
-      .counter-suffix {
-        font-size: 0.5em;
-        vertical-align: super;
-        opacity: 0.7;
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero-actions {
+          flex-direction: column;
+        }
+        .agent-grid {
+          grid-template-columns: 1fr;
+        }
       }
-
-      /* ── Responsive ── */
-      @media (max-width: 639px) {
-        .agent-dot {
-          width: 28px;
-          height: 28px;
-          font-size: 8px;
-          border-radius: 6px;
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
         }
       }
     </style>
-
-    <!-- Theme script (blocking, prevents FOUC) -->
-    <script>
-      !(function () {
-        var e = localStorage.getItem('theme');
-        if (!e) {
-          e = window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark';
-        }
-        document.documentElement.setAttribute('data-theme', e);
-      })();
-    </script>
   </head>
   <body>
-    <div class="ambient ambient-gold"></div>
-    <div class="ambient ambient-violet"></div>
-    <div class="ambient ambient-rose"></div>
-
-    <!-- ════════════════ NAV ════════════════ -->
-    <nav
-      class="fixed top-0 left-0 right-0 z-50"
-      style="
-        background: var(--nav-bg);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--nav-bdr);
-      "
-    >
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-        <a href="#" class="flex items-center gap-2.5">
-          <div
-            class="w-8 h-8 rounded-lg flex items-center justify-center"
-            style="background: rgba(212, 160, 74, 0.1)"
-          >
-            <span class="text-xs font-bold font-mono" style="color: #d4a04a">K</span>
-          </div>
-          <span class="font-semibold text-sm tracking-tight" style="color: var(--text-primary)"
-            >Agent Kit</span
-          >
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+      <div class="container navbar-inner">
+        <a href="#" class="nav-logo">
+          <span class="nav-logo-icon">K</span>
+          <span>Agent Kit</span>
         </a>
-        <div class="hidden sm:flex items-center gap-6">
-          <a href="#agents" class="nav-link text-xs font-medium uppercase tracking-wider">Agents</a>
-          <a href="#memory" class="nav-link-memory text-xs font-medium uppercase tracking-wider"
-            >Memory</a
-          >
-          <a href="#capabilities" class="nav-link text-xs font-medium uppercase tracking-wider"
-            >Capabilities</a
-          >
-          <a href="#install" class="nav-link text-xs font-medium uppercase tracking-wider"
-            >Install</a
-          >
+        <div class="nav-links">
+          <a href="#problem">Why</a>
+          <a href="#memory">Memory</a>
+          <a href="#agents">Agents</a>
+          <a href="#install">Install</a>
         </div>
-        <div class="flex items-center gap-1.5">
-          <a
-            href="https://github.com/defuj/opencode-agent-kit"
-            target="_blank"
-            class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium github-btn"
-          >
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
-              />
-            </svg>
-            <span>GitHub</span>
-          </a>
-          <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              id="theme-icon-sun"
-              aria-hidden="true"
+        <div class="nav-right">
+          <div class="nav-actions">
+            <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
+            <a
+              href="https://github.com/defuj/opencode-agent-kit"
+              class="btn-primary"
+              target="_blank"
+              >GitHub &rarr;</a
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-              />
-            </svg>
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              id="theme-icon-moon"
-              style="display: none"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-              />
-            </svg>
-          </button>
-          <a
-            href="https://github.com/defuj/opencode-agent-kit"
-            target="_blank"
-            class="sm:hidden p-2 rounded-lg"
-            style="color: var(--text-muted)"
-            aria-label="GitHub"
-          >
-            <svg
-              class="w-4.5 h-4.5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
-              />
-            </svg>
-          </a>
-          <button
-            id="mobile-btn"
-            class="sm:hidden p-2 rounded-lg"
-            style="color: var(--text-muted)"
-            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-          >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+          </div>
+          <button class="mobile-btn" id="mobileBtn" aria-label="Menu">&#9776;</button>
         </div>
-      </div>
-      <div id="mobile-menu" class="hidden sm:hidden px-4 pb-4 space-y-2">
-        <a
-          href="#agents"
-          class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--text-secondary)"
-          >Agents</a
-        >
-        <a
-          href="#memory"
-          class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--text-secondary)"
-          >Memory</a
-        >
-        <a
-          href="#capabilities"
-          class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--text-secondary)"
-          >Capabilities</a
-        >
-        <a
-          href="#install"
-          class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--text-secondary)"
-          >Install</a
-        >
-        <a
-          href="https://github.com/defuj/opencode-agent-kit"
-          target="_blank"
-          class="block px-3 py-2 rounded-lg text-xs"
-          style="color: var(--gold)"
-          >GitHub →</a
-        >
       </div>
     </nav>
+    <div class="mobile-overlay" id="mobileOverlay">
+      <a href="#problem">Why Agent Kit?</a>
+      <a href="#memory">Memory</a>
+      <a href="#agents">Agents</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/defuj/opencode-agent-kit" target="_blank">GitHub</a>
+      <button
+        class="theme-btn"
+        id="mobileThemeToggle"
+        aria-label="Toggle theme"
+        style="
+          width: 100%;
+          padding: 14px 20px;
+          border-radius: 12px;
+          font-size: 16px;
+          font-weight: 500;
+          margin-top: 8px;
+          justify-content: center;
+        "
+      >
+        &#9790;
+      </button>
+    </div>
 
-    <!-- ════════════════ HERO ════════════════ -->
-    <section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full relative z-10">
-        <div class="text-center max-w-4xl mx-auto">
-          <!-- Badge -->
-          <div
-            class="fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-8"
-            style="
-              background: rgba(139, 108, 246, 0.06);
-              border: 1px solid rgba(139, 108, 246, 0.1);
-              color: #8b6cf6;
-            "
-          >
-            <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background: #8b6cf6"></span>
-            v1.2.11 &mdash; Open Source &mdash; 33 Agents
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          v1.2.11 &mdash; 33 specialized agents
+        </div>
+        <h1>Your AI Development Team,<br /><span class="gold">One Command Away</span></h1>
+        <p>
+          A portable multi-stack AI agent system with persistent memory, 207 skill playbooks, and 46
+          CLI commands &mdash; all installed in seconds.
+        </p>
+        <div class="hero-actions">
+          <a href="#install" class="btn-primary">Get Started &darr;</a>
+          <a href="#memory" class="btn-secondary">See How It Works</a>
+        </div>
+        <div class="terminal-preview" id="termPreview">
+          <div class="terminal-head">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">bash &mdash; install</span>
           </div>
-
-          <!-- Headline -->
-          <div class="fade-up relative inline-block">
-            <div
-              class="absolute -inset-8 pointer-events-none opacity-30"
-              style="
-                background: radial-gradient(
-                  ellipse at center,
-                  rgba(212, 160, 74, 0.15),
-                  transparent 70%
-                );
-                filter: blur(40px);
-              "
-            ></div>
-            <h1
-              class="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight"
-            >
-              <span class="gradient-gold">Your AI</span><br />
-              <span class="gradient-violet">Development Team</span><br />
-              <span style="color: var(--text-primary)">One Command Away</span>
-            </h1>
-          </div>
-
-          <p
-            class="fade-up fade-up-d1 mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
-            A portable multi-stack AI agent system for
-            <strong style="color: var(--text-bright)">OpenCode</strong>. 33 specialized agents, 204
-            skill playbooks, 46 CLI commands, and
-            <strong style="color: #4ac8b8">persistent cross-session memory</strong>.
-          </p>
-
-          <!-- CTA -->
-          <div
-            class="fade-up fade-up-d2 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <a
-              href="#install"
-              class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold btn-gold"
-            >
-              <span class="font-mono text-xs">npx opencode-agent-kit init</span>
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </a>
-            <a
-              href="#agents"
-              class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-medium btn-ghost"
-            >
-              Explore the Team
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </a>
-          </div>
-
-          <!-- Stats -->
-          <div
-            class="fade-up fade-up-d3 mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto"
-          >
-            <div class="card p-5 text-center">
-              <div class="text-3xl sm:text-4xl font-black gradient-gold counter" data-target="33">
-                0
-              </div>
-              <div
-                class="text-xs mt-1.5 font-medium uppercase tracking-wider"
-                style="color: var(--text-muted)"
-              >
-                Specialized Agents
-              </div>
-            </div>
-            <div class="card p-5 text-center">
-              <div
-                class="text-3xl sm:text-4xl font-black gradient-violet counter"
-                data-target="204"
-                data-suffix="+"
-              >
-                0
-              </div>
-              <div
-                class="text-xs mt-1.5 font-medium uppercase tracking-wider"
-                style="color: var(--text-muted)"
-              >
-                Skill Playbooks
-              </div>
-            </div>
-            <div class="card p-5 text-center">
-              <div
-                class="text-3xl sm:text-4xl font-black counter"
-                style="color: var(--text-primary)"
-                data-target="46"
-              >
-                0
-              </div>
-              <div
-                class="text-xs mt-1.5 font-medium uppercase tracking-wider"
-                style="color: var(--text-muted)"
-              >
-                CLI Commands
-              </div>
-            </div>
-            <div class="card p-5 text-center">
-              <div
-                class="text-3xl sm:text-4xl font-black counter"
-                style="color: #4ac8b8"
-                data-target="53"
-              >
-                0
-              </div>
-              <div
-                class="text-xs mt-1.5 font-medium uppercase tracking-wider"
-                style="color: var(--text-muted)"
-              >
-                Memory Tools
-              </div>
-            </div>
+          <div class="terminal-body">
+            <span class="c">$</span> npx opencode-agent-kit init<span class="blink-c"></span>
           </div>
         </div>
-
-        <!-- Scroll indicator -->
-        <div class="fade-up fade-up-d4 mt-16 flex justify-center">
-          <div class="float-slow flex flex-col items-center gap-2" style="color: var(--text-muted)">
-            <span class="text-[10px] font-mono uppercase tracking-widest">Scroll</span>
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num gold">33</div>
+            <div class="hero-stat-label">AI Agents</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">207</div>
+            <div class="hero-stat-label">Skill Playbooks</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">46</div>
+            <div class="hero-stat-label">CLI Commands</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num gold">8</div>
+            <div class="hero-stat-label">MCP Servers</div>
           </div>
         </div>
       </div>
+      <div
+        class="hero-scroll"
+        onclick="document.getElementById('problem').scrollIntoView({ behavior: 'smooth' })"
+      >
+        <span>Scroll</span>
+        <div class="hero-scroll-arrow"></div>
+      </div>
     </section>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-    <!-- ════════════════ AGENTS ════════════════ -->
-    <section id="agents" class="relative py-20 sm:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <span
-            class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
+    <!-- PROBLEM SECTION -->
+    <section class="section problem-sxn" id="problem">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px">
+          <div class="section-label">The Problem</div>
+          <h2
             style="
-              background: rgba(212, 160, 74, 0.08);
-              color: #d4a04a;
-              border: 1px solid rgba(212, 160, 74, 0.1);
+              font-size: clamp(1.8rem, 4vw, 3rem);
+              font-weight: 800;
+              letter-spacing: -0.02em;
+              margin-bottom: 16px;
             "
-            >The Team</span
           >
-          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
-            33 Agents, <span class="gradient-gold">One Mission</span>
+            Context Windows Are Not Enough
           </h2>
           <p
-            class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
-            style="color: var(--text-secondary)"
+            style="
+              font-size: 1.05rem;
+              color: var(--txt2);
+              max-width: 560px;
+              margin: 0 auto;
+              line-height: 1.8;
+            "
           >
-            From architecture to deployment. Each agent is a domain specialist. The IT Leader
-            orchestrates them all.
+            Every new session starts from zero. Context is lost. Your AI forgets everything between
+            conversations.
           </p>
         </div>
-
-        <!-- Agent Groups -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- Core Frontend & Backend -->
-          <div class="fade-up card p-5">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #3b82f6"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
-                Core Frontend &amp; Backend
-              </h3>
+        <div class="problem-grid">
+          <div class="problem-visual">
+            <div class="problem-node active">
+              <span class="problem-node-icon iq">?</span>
+              <div class="problem-node-text">
+                <strong>Session 1:</strong> Setup project structure, install deps, configure routing
+              </div>
+              <span class="st-p">Lost</span>
             </div>
-            <div class="space-y-1.5">
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6"
-                  >primary</span
-                ><span style="color: var(--text-bright)">IT Leader</span
-                ><span class="font-mono" style="color: var(--text-muted)">@leader</span>
+            <div class="problem-node active">
+              <span class="problem-node-icon iq">?</span>
+              <div class="problem-node-text">
+                <strong>Session 2:</strong> Build auth flow, connect database, write middleware
               </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(59, 130, 246, 0.1); color: #3b82f6"
-                  >vue</span
-                ><span style="color: var(--text-bright)">Nuxt Frontend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@frontend-nuxt</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(6, 182, 212, 0.1); color: #06b6d4"
-                  >react</span
-                ><span style="color: var(--text-bright)">React Frontend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@frontend-react</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(16, 185, 129, 0.1); color: #10b981"
-                  >node</span
-                ><span style="color: var(--text-bright)">Node.js Backend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@node-developer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(237, 139, 0, 0.1); color: #ed8b00"
-                  >java</span
-                ><span style="color: var(--text-bright)">Java Backend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@java-developer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(0, 173, 216, 0.1); color: #00add8"
-                  >go</span
-                ><span style="color: var(--text-bright)">Go Backend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@go-developer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(217, 119, 6, 0.1); color: #d97706"
-                  >laravel</span
-                ><span style="color: var(--text-bright)">Laravel Backend</span
-                ><span class="font-mono" style="color: var(--text-muted)">@laravel</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(132, 204, 22, 0.1); color: #84cc16"
-                  >ci3</span
-                ><span style="color: var(--text-bright)">CodeIgniter 3</span
-                ><span class="font-mono" style="color: var(--text-muted)">@ci3</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(55, 118, 171, 0.1); color: #3776ab"
-                  >python</span
-                ><span style="color: var(--text-bright)">Python Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@python</span>
-              </div>
+              <span class="st-p">Forgotten</span>
             </div>
-          </div>
-
-          <!-- Mobile & Design -->
-          <div class="fade-up fade-up-d1 card p-5">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #22c55e"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
-                Mobile &amp; Design
-              </h3>
+            <div class="problem-node active">
+              <span class="problem-node-icon iq">?</span>
+              <div class="problem-node-text">
+                <strong>Session 3:</strong> Refactor components, optimize queries, add tests
+              </div>
+              <span class="st-p">Reset</span>
             </div>
-            <div class="space-y-1.5">
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(34, 197, 94, 0.1); color: #22c55e"
-                  >android</span
-                ><span style="color: var(--text-bright)">Android Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@android</span>
+            <div class="problem-node" style="opacity: 0.4">
+              <span class="problem-node-icon iq">?</span>
+              <div class="problem-node-text">
+                <strong>Session 4:</strong> Start from scratch again...
               </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(2, 132, 199, 0.1); color: #0284c7"
-                  >flutter</span
-                ><span style="color: var(--text-bright)">Flutter Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@flutter</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(240, 81, 56, 0.1); color: #f05138"
-                  >swift</span
-                ><span style="color: var(--text-bright)">Swift/iOS Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@swift</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(245, 158, 11, 0.1); color: #f59e0b"
-                  >design</span
-                ><span style="color: var(--text-bright)">UI/UX Designer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@designer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1"
-                  >devops</span
-                ><span style="color: var(--text-bright)">DevOps Engineer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@devops</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(132, 204, 22, 0.1); color: #84cc16"
-                  >seo</span
-                ><span style="color: var(--text-bright)">SEO Specialist</span
-                ><span class="font-mono" style="color: var(--text-muted)">@seo</span>
-              </div>
+              <span class="st-p">Again</span>
             </div>
-          </div>
-
-          <!-- Languages & Systems -->
-          <div class="fade-up fade-up-d2 card p-5">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #8b6cf6"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
-                Languages &amp; Systems
-              </h3>
-            </div>
-            <div class="space-y-1.5">
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(55, 118, 171, 0.1); color: #3776ab"
-                  >py</span
-                ><span style="color: var(--text-bright)">Python Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@python-reviewer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(222, 165, 132, 0.1); color: #dea584"
-                  >rs</span
-                ><span style="color: var(--text-bright)">Rust Developer + Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)"
-                  >@rust / @rust-reviewer</span
-                >
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(0, 89, 156, 0.1); color: #00599c"
-                  >cpp</span
-                ><span style="color: var(--text-bright)">C++ Developer + Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)"
-                  >@cpp / @cpp-reviewer</span
-                >
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(81, 43, 212, 0.1); color: #512bd4"
-                  >net</span
-                ><span style="color: var(--text-bright)">C# / .NET Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@dotnet</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(221, 0, 49, 0.1); color: #dd0031"
-                  >ng</span
-                ><span style="color: var(--text-bright)">Angular Developer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@angular</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(236, 72, 153, 0.1); color: #ec4899"
-                  >agent</span
-                ><span style="color: var(--text-bright)">Agent Engineer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@agent-engineer</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Quality & Reviewers -->
-          <div class="fade-up card p-5">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #ef4444"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
-                Quality &amp; Reviewers
-              </h3>
-            </div>
-            <div class="space-y-1.5">
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(239, 68, 68, 0.1); color: #ef4444"
-                  >qa</span
-                ><span style="color: var(--text-bright)">General Code Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@reviewer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(237, 139, 0, 0.1); color: #ed8b00"
-                  >java</span
-                ><span style="color: var(--text-bright)">Java Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@java-reviewer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(119, 119, 180, 0.1); color: #777bb4"
-                  >php</span
-                ><span style="color: var(--text-bright)">PHP Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@php-reviewer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(127, 82, 255, 0.1); color: #7f52ff"
-                  >kt</span
-                ><span style="color: var(--text-bright)">Kotlin Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@kotlin-reviewer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(0, 173, 216, 0.1); color: #00add8"
-                  >go</span
-                ><span style="color: var(--text-bright)">Go Reviewer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@go-reviewer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(234, 179, 8, 0.1); color: #eab308"
-                  >sq</span
-                ><span style="color: var(--text-bright)">SonarQube Quality</span
-                ><span class="font-mono" style="color: var(--text-muted)">@sonarqube</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Database & Infrastructure -->
-          <div class="fade-up fade-up-d1 card p-5">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-2 h-2 rounded-full" style="background: #06b6d4"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
-                Database &amp; Infrastructure
-              </h3>
-            </div>
-            <div class="space-y-1.5">
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(6, 182, 212, 0.1); color: #06b6d4"
-                  >db</span
-                ><span style="color: var(--text-bright)">Database Specialist</span
-                ><span class="font-mono" style="color: var(--text-muted)">@database</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1"
-                  >infra</span
-                ><span style="color: var(--text-bright)">DevOps / CI/CD</span
-                ><span class="font-mono" style="color: var(--text-muted)">@devops</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(99, 102, 241, 0.1); color: #6366f1"
-                  >docs</span
-                ><span style="color: var(--text-bright)">Docs Lookup</span
-                ><span class="font-mono" style="color: var(--text-muted)">@docs-lookup</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6"
-                  >harness</span
-                ><span style="color: var(--text-bright)">Harness Optimizer</span
-                ><span class="font-mono" style="color: var(--text-muted)">@harness-optimizer</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <span
-                  class="px-1.5 py-0.5 rounded text-[10px] font-mono"
-                  style="background: rgba(236, 72, 153, 0.1); color: #ec4899"
-                  >loop</span
-                ><span style="color: var(--text-bright)">Loop Operator</span
-                ><span class="font-mono" style="color: var(--text-muted)">@loop-operator</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Agent Dot Grid -->
-          <div class="fade-up fade-up-d2 card p-5 lg:col-span-1">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="w-2 h-2 rounded-full" style="background: #d4a04a"></span>
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
-                All 33 Agents
-              </h3>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span
-                class="agent-dot"
-                style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6"
-                data-tip="IT Leader"
-                >TL</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(59, 130, 246, 0.15); color: #3b82f6"
-                data-tip="Nuxt Frontend"
-                >NU</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(6, 182, 212, 0.15); color: #06b6d4"
-                data-tip="React Frontend"
-                >RE</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(16, 185, 129, 0.15); color: #10b981"
-                data-tip="Node Backend"
-                >ND</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(217, 119, 6, 0.15); color: #d97706"
-                data-tip="Laravel"
-                >LA</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(132, 204, 22, 0.15); color: #84cc16"
-                data-tip="CodeIgniter 3"
-                >CI</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(55, 118, 171, 0.15); color: #3776ab"
-                data-tip="Python"
-                >PY</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(34, 197, 94, 0.15); color: #22c55e"
-                data-tip="Android"
-                >AN</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(2, 132, 199, 0.15); color: #0284c7"
-                data-tip="Flutter"
-                >FL</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(240, 81, 56, 0.15); color: #f05138"
-                data-tip="Swift/iOS"
-                >SW</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(245, 158, 11, 0.15); color: #f59e0b"
-                data-tip="UI/UX Designer"
-                >DE</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(99, 102, 241, 0.15); color: #6366f1"
-                data-tip="DevOps"
-                >DV</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(132, 204, 22, 0.15); color: #84cc16"
-                data-tip="SEO"
-                >SE</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(222, 165, 132, 0.15); color: #dea584"
-                data-tip="Rust"
-                >RS</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(0, 89, 156, 0.15); color: #00599c"
-                data-tip="C++"
-                >CP</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(81, 43, 212, 0.15); color: #512bd4"
-                data-tip=".NET"
-                >DN</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(221, 0, 49, 0.15); color: #dd0031"
-                data-tip="Angular"
-                >NG</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(236, 72, 153, 0.15); color: #ec4899"
-                data-tip="Agent Engineer"
-                >AE</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(239, 68, 68, 0.15); color: #ef4444"
-                data-tip="Code Reviewer"
-                >RV</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(237, 139, 0, 0.15); color: #ed8b00"
-                data-tip="Java Reviewer"
-                >JV</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(119, 119, 180, 0.15); color: #777bb4"
-                data-tip="PHP Reviewer"
-                >PH</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(127, 82, 255, 0.15); color: #7f52ff"
-                data-tip="Kotlin Reviewer"
-                >KT</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(0, 173, 216, 0.15); color: #00add8"
-                data-tip="Go Reviewer"
-                >GO</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(55, 118, 171, 0.15); color: #3776ab"
-                data-tip="Python Reviewer"
-                >PR</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(222, 165, 132, 0.15); color: #dea584"
-                data-tip="Rust Reviewer"
-                >RR</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(0, 89, 156, 0.15); color: #00599c"
-                data-tip="C++ Reviewer"
-                >CR</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(6, 182, 214, 0.15); color: #06b6d4"
-                data-tip="Database"
-                >DB</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(234, 179, 8, 0.15); color: #eab308"
-                data-tip="SonarQube"
-                >SQ</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(99, 102, 241, 0.15); color: #6366f1"
-                data-tip="Docs Lookup"
-                >DL</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6"
-                data-tip="Harness Optimizer"
-                >HO</span
-              >
-              <span
-                class="agent-dot"
-                style="background: rgba(236, 72, 153, 0.15); color: #ec4899"
-                data-tip="Loop Operator"
-                >LO</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-    <!-- ════════════════ AGENTMEMORY ════════════════ -->
-    <section id="memory" class="relative py-20 sm:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <span
-            class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
-            style="
-              background: rgba(74, 200, 184, 0.08);
-              color: #4ac8b8;
-              border: 1px solid rgba(74, 200, 184, 0.1);
-            "
-          >
-            <span
-              class="w-1.5 h-1.5 rounded-full pulse-dot"
-              style="background: #4ac8b8; display: inline-block; margin-right: 6px"
-            ></span>
-            agentmemory
-          </span>
-          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Agents That <span class="gradient-memory">Remember Everything</span>
-          </h2>
-          <p
-            class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
-            Powered by
-            <a
-              href="https://github.com/rohitg00/agentmemory"
-              target="_blank"
-              style="color: #4ac8b8; text-decoration: underline; text-underline-offset: 3px"
-              >agentmemory</a
-            >
-            &mdash; persistent cross-session memory that never forgets.
-          </p>
-        </div>
-
-        <!-- Memory value props -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          <div class="fade-up memory-grid-item">
+            <div class="problem-divider"></div>
             <div
-              class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-              style="background: rgba(74, 200, 184, 0.1)"
+              class="problem-node"
+              style="border-color: rgba(224, 96, 112, 0.15); background: rgba(224, 96, 112, 0.03)"
             >
-              <svg
-                class="w-5 h-5"
-                style="color: #4ac8b8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                />
-              </svg>
-            </div>
-            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
-              53 Memory Tools
-            </h4>
-            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              Save, recall, smart search, file history, lessons, patterns &mdash; 53 MCP tools for
-              complete memory control.
-            </p>
-          </div>
-
-          <div class="fade-up fade-up-d1 memory-grid-item">
-            <div
-              class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
-              <svg
-                class="w-5 h-5"
-                style="color: #4ac8b8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
-              Cross-Session Persistence
-            </h4>
-            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              Start a new session tomorrow and your agents remember decisions, insights, and code
-              context from yesterday.
-            </p>
-          </div>
-
-          <div class="fade-up fade-up-d2 memory-grid-item">
-            <div
-              class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
-              <svg
-                class="w-5 h-5"
-                style="color: #4ac8b8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
-              </svg>
-            </div>
-            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
-              Auto-Learning
-            </h4>
-            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              22 lifecycle hooks auto-capture sessions, decisions, and lessons. Your agents get
-              smarter with every interaction.
-            </p>
-          </div>
-
-          <div class="fade-up fade-up-d3 memory-grid-item">
-            <div
-              class="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
-              <svg
-                class="w-5 h-5"
-                style="color: #4ac8b8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                />
-              </svg>
-            </div>
-            <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
-              Real-Time Viewer
-            </h4>
-            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              Dashboard at <code style="color: #4ac8b8">localhost:3113</code>
-              shows memory state, patterns, and consolidated insights in real time.
-            </p>
-          </div>
-        </div>
-
-        <!-- How it works timeline -->
-        <div class="fade-up card card-gold p-6 sm:p-8">
-          <div class="grid sm:grid-cols-3 gap-6">
-            <div class="text-center">
-              <div
-                class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3"
-                style="background: rgba(74, 200, 184, 0.1)"
-              >
-                <span class="font-bold font-mono text-sm" style="color: #4ac8b8">1</span>
-              </div>
-              <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
-                Agent Captures
-              </h4>
-              <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-                22 lifecycle events are auto-captured — sessions, messages, decisions, errors, tool
-                calls, and file interactions.
-              </p>
-            </div>
-            <div class="text-center">
-              <div
-                class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3"
-                style="background: rgba(74, 200, 184, 0.1)"
-              >
-                <span class="font-bold font-mono text-sm" style="color: #4ac8b8">2</span>
-              </div>
-              <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
-                Memory Stored
-              </h4>
-              <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-                Insights and patterns are saved to persistent storage with metadata, confidence
-                scores, and session context.
-              </p>
-            </div>
-            <div class="text-center">
-              <div
-                class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3"
-                style="background: rgba(74, 200, 184, 0.1)"
-              >
-                <span class="font-bold font-mono text-sm" style="color: #4ac8b8">3</span>
-              </div>
-              <h4 class="text-sm font-semibold mb-1" style="color: var(--text-primary)">
-                Smart Recall
-              </h4>
-              <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-                Hybrid semantic+keyword search injects relevant past observations into the current
-                agent session automatically.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Memory Tools Table -->
-        <div class="fade-up fade-up-d1 mt-8 card p-6">
-          <h4 class="text-sm font-semibold mb-4" style="color: var(--text-primary)">
-            53 MCP Memory Tools at Your Fingertips
-          </h4>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-            <div
-              class="px-3 py-2 rounded-lg text-xs font-mono"
-              style="
-                background: rgba(74, 200, 184, 0.03);
-                border: 1px solid rgba(74, 200, 184, 0.06);
-                color: var(--text-secondary);
-              "
-            >
-              memory_save
-            </div>
-            <div
-              class="px-3 py-2 rounded-lg text-xs font-mono"
-              style="
-                background: rgba(74, 200, 184, 0.03);
-                border: 1px solid rgba(74, 200, 184, 0.06);
-                color: var(--text-secondary);
-              "
-            >
-              memory_recall
-            </div>
-            <div
-              class="px-3 py-2 rounded-lg text-xs font-mono"
-              style="
-                background: rgba(74, 200, 184, 0.03);
-                border: 1px solid rgba(74, 200, 184, 0.06);
-                color: var(--text-secondary);
-              "
-            >
-              memory_smart_search
-            </div>
-            <div
-              class="px-3 py-2 rounded-lg text-xs font-mono"
-              style="
-                background: rgba(74, 200, 184, 0.03);
-                border: 1px solid rgba(74, 200, 184, 0.06);
-                color: var(--text-secondary);
-              "
-            >
-              memory_sessions
-            </div>
-            <div
-              class="px-3 py-2 rounded-lg text-xs font-mono"
-              style="
-                background: rgba(74, 200, 184, 0.03);
-                border: 1px solid rgba(74, 200, 184, 0.06);
-                color: var(--text-secondary);
-              "
-            >
-              memory_file_history
-            </div>
-            <div
-              class="px-3 py-2 rounded-lg text-xs font-mono"
-              style="
-                background: rgba(74, 200, 184, 0.03);
-                border: 1px solid rgba(74, 200, 184, 0.06);
-                color: var(--text-secondary);
-              "
-            >
-              memory_lesson_save
-            </div>
-            <div
-              class="px-3 py-2 rounded-lg text-xs font-mono"
-              style="
-                background: rgba(74, 200, 184, 0.03);
-                border: 1px solid rgba(74, 200, 184, 0.06);
-                color: var(--text-secondary);
-              "
-            >
-              memory_lesson_recall
-            </div>
-            <div
-              class="px-3 py-2 rounded-lg text-xs font-mono"
-              style="
-                background: rgba(74, 200, 184, 0.03);
-                border: 1px solid rgba(74, 200, 184, 0.06);
-                color: var(--text-secondary);
-              "
-            >
-              memory_patterns
-            </div>
-          </div>
-          <p class="mt-3 text-xs" style="color: var(--text-muted)">
-            <span
-              class="font-mono text-[10px] px-1.5 py-0.5 rounded"
-              style="background: rgba(74, 200, 184, 0.06); color: #4ac8b8"
-              >/recall</span
-            >
-            Search past observations
-            <span
-              class="font-mono text-[10px] px-1.5 py-0.5 rounded ml-2"
-              style="background: rgba(74, 200, 184, 0.06); color: #4ac8b8"
-              >/remember</span
-            >
-            Save an insight
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-    <!-- ════════════════ CAPABILITIES ════════════════ -->
-    <section id="capabilities" class="relative py-20 sm:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <span
-            class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
-            style="
-              background: rgba(139, 108, 246, 0.08);
-              color: #8b6cf6;
-              border: 1px solid rgba(139, 108, 246, 0.1);
-            "
-            >Capabilities</span
-          >
-          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Everything Your <span class="gradient-violet">AI Team</span> Needs
-          </h2>
-          <p
-            class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
-            Pre-configured and ready. Zero setup friction.
-          </p>
-        </div>
-
-        <div class="grid sm:grid-cols-3 gap-4">
-          <!-- MCP Servers -->
-          <div class="fade-up card p-6">
-            <div
-              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-              style="background: rgba(212, 160, 74, 0.1)"
-            >
-              <svg
-                class="w-5 h-5"
-                style="color: #d4a04a"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                />
-              </svg>
-            </div>
-            <h3 class="text-base font-semibold mb-2" style="color: var(--text-primary)">
-              8 MCP Servers
-            </h3>
-            <p class="text-xs leading-relaxed mb-4" style="color: var(--text-muted)">
-              Model Context Protocol servers for real-time docs, browser automation, API management,
-              and quality scanning.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
               <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(59, 130, 246, 0.1); color: #3b82f6"
-                >Nuxt</span
+                class="problem-node-icon iq"
+                style="background: rgba(224, 96, 112, 0.2); color: #e06070"
+                >&#9888;</span
               >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(6, 182, 212, 0.1); color: #06b6d4"
-                >Nuxt UI</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(16, 185, 129, 0.1); color: #10b981"
-                >Playwright</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(239, 68, 68, 0.1); color: #ef4444"
-                >Postman</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(234, 179, 8, 0.1); color: #eab308"
-                >SonarQube</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(74, 200, 184, 0.1); color: #4ac8b8"
-                >agentmemory</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="
-                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
-                  color: var(--text-muted);
-                "
-                >Figma</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="
-                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
-                  color: var(--text-muted);
-                "
-                >Stitch</span
-              >
-            </div>
-          </div>
-
-          <!-- Skills -->
-          <div class="fade-up fade-up-d1 card p-6">
-            <div
-              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-              style="background: rgba(139, 108, 246, 0.1)"
-            >
-              <svg
-                class="w-5 h-5"
-                style="color: #8b6cf6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-base font-semibold mb-2" style="color: var(--text-primary)">
-              207 Skill Playbooks
-            </h3>
-            <p class="text-xs leading-relaxed mb-4" style="color: var(--text-muted)">
-              Domain-specific expertise for every stack. Pre-loaded or loaded on-demand. Coding
-              standards, security, testing, design, and more.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="
-                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
-                  color: var(--text-secondary);
-                "
-                >coding-standards</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="
-                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
-                  color: var(--text-secondary);
-                "
-                >security-review</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="
-                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
-                  color: var(--text-secondary);
-                "
-                >tdd-workflow</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="
-                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
-                  color: var(--text-secondary);
-                "
-                >impeccable</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="
-                  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
-                  color: var(--text-secondary);
-                "
-                >+ 203 more</span
-              >
-            </div>
-          </div>
-
-          <!-- Commands -->
-          <div class="fade-up fade-up-d2 card p-6">
-            <div
-              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
-              <svg
-                class="w-5 h-5"
-                style="color: #4ac8b8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-base font-semibold mb-2" style="color: var(--text-primary)">
-              46 CLI Commands
-            </h3>
-            <p class="text-xs leading-relaxed mb-4" style="color: var(--text-muted)">
-              Slash commands for planning, testing, reviewing, building, deploying, and managing
-              your agent ecosystem.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(212, 160, 74, 0.1); color: #d4a04a"
-                >/plan</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(212, 160, 74, 0.1); color: #d4a04a"
-                >/tdd</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(239, 68, 68, 0.1); color: #ef4444"
-                >/code-review</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(139, 108, 246, 0.1); color: #8b6cf6"
-                >/security</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(16, 185, 129, 0.1); color: #10b981"
-                >/e2e</span
-              >
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="background: rgba(74, 200, 184, 0.1); color: #4ac8b8"
-                >/sonarqube-scan</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-    <!-- ════════════════ USING AGENT MEMORY ════════════════ -->
-    <section class="relative py-16 sm:py-20">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="fade-up card card-gold p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-            <div
-              class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-              style="background: rgba(74, 200, 184, 0.1)"
-            >
-              <svg
-                class="w-6 h-6"
-                style="color: #4ac8b8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </div>
-            <div class="flex-1">
-              <h3 class="text-base font-semibold mb-1" style="color: var(--text-primary)">
-                Memory in Action
-              </h3>
-              <p class="text-xs leading-relaxed" style="color: var(--text-secondary)">
-                After
-                <code class="font-mono text-[11px]" style="color: #d4a04a"
-                  >npx opencode-agent-kit init</code
-                >, agentmemory auto-starts with OpenCode. Use
-                <code class="font-mono text-[11px]" style="color: #4ac8b8">/recall</code> to search
-                past observations,
-                <code class="font-mono text-[11px]" style="color: #4ac8b8">/remember</code> to save
-                insights. View memory at
-                <code class="font-mono text-[11px]" style="color: #4ac8b8">localhost:3113</code>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-    <!-- ════════════════ INSTALL ════════════════ -->
-    <section id="install" class="relative py-20 sm:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <span
-            class="fade-up inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
-            style="
-              background: rgba(212, 160, 74, 0.08);
-              color: #d4a04a;
-              border: 1px solid rgba(212, 160, 74, 0.1);
-            "
-            >Install</span
-          >
-          <h2 class="fade-up text-3xl sm:text-4xl font-extrabold tracking-tight">
-            One Command. <span class="gradient-gold">Full Team.</span>
-          </h2>
-          <p
-            class="fade-up fade-up-d1 mt-4 text-sm sm:text-base leading-relaxed"
-            style="color: var(--text-secondary)"
-          >
-            Run this in your project directory. Works on macOS, Linux, and Windows.
-          </p>
-        </div>
-
-        <!-- Quick install -->
-        <div class="fade-up max-w-2xl mx-auto">
-          <div class="card card-gold p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-5">
-              <span
-                class="px-2 py-0.5 rounded text-[10px] font-mono"
-                style="
-                  background: rgba(212, 160, 74, 0.12);
-                  color: #d4a04a;
-                  border: 1px solid rgba(212, 160, 74, 0.15);
-                "
-                >quick start</span
-              >
-              <h3 class="text-sm font-semibold" style="color: var(--text-primary)">
-                Install in any project
-              </h3>
-            </div>
-
-            <div class="terminal mb-5">
-              <div
-                class="flex items-center gap-1.5 px-4 pt-3 pb-2"
-                style="border-bottom: 1px solid var(--border-subtle)"
-              >
-                <span class="terminal-dot" style="background: #e06070"></span>
-                <span class="terminal-dot" style="background: #d4a04a"></span>
-                <span class="terminal-dot" style="background: #4ac8b8"></span>
-                <span
-                  class="w-1.5 h-1.5 rounded-full ml-1.5 pulse-dot"
-                  style="background: #4ac8b8"
-                ></span>
-                <span class="text-[10px] ml-1.5 font-mono" style="color: var(--text-muted)"
-                  >active</span
-                >
-                <span class="text-[10px] ml-auto font-mono" style="color: var(--text-muted)"
-                  >zsh</span
-                >
-              </div>
-              <pre
-                class="px-4 py-3 font-mono text-xs leading-relaxed overflow-x-auto"
-                style="color: var(--text-bright)"
-              ><span style="color:#d4a04a;">$</span> npx opencode-agent-kit init
-<span style="color:var(--text-muted);"># Run inside your project directory</span>
-<span style="color:var(--text-muted);"># macOS / Linux / Windows (WSL)</span>
-<span style="color:var(--text-secondary);">  ✓ Copying .opencode/ configuration</span>
-<span style="color:var(--text-secondary);">  ✓ Merging opencode.json</span>
-<span style="color:var(--text-secondary);">  ✓ Installing dependencies</span>
-<span style="color:var(--text-secondary);">  ✓ Setting up agentmemory (53 tools)</span>
-<span style="color:#4ac8b8;">  ✦ 33 agents ready. Run opencode to start.</span>
-
-<span style="color:var(--text-muted);"># Windows (PowerShell)</span>
-<span style="color:#d4a04a;">PS&gt;</span> <span style="color:var(--text-bright);">npx opencode-agent-kit init</span></pre>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-              <div class="flex items-center gap-2" style="color: var(--text-muted)">
-                <svg
-                  class="w-3.5 h-3-5 shrink-0"
-                  style="color: #4ac8b8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                Copies .opencode/
-              </div>
-              <div class="flex items-center gap-2" style="color: var(--text-muted)">
-                <svg
-                  class="w-3.5 h-3-5 shrink-0"
-                  style="color: #4ac8b8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                Merges existing config
-              </div>
-              <div class="flex items-center gap-2" style="color: var(--text-muted)">
-                <svg
-                  class="w-3.5 h-3-5 shrink-0"
-                  style="color: #4ac8b8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                Installs agentmemory
-              </div>
-              <div class="flex items-center gap-2" style="color: var(--text-muted)">
-                <svg
-                  class="w-3.5 h-3-5 shrink-0"
-                  style="color: #4ac8b8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                Auto-start with opencode
+              <div class="problem-node-text" style="color: var(--txt3)">
+                30% of dev time spent re-explaining context
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Other commands -->
-        <div class="fade-up fade-up-d1 mt-6 grid sm:grid-cols-3 gap-4">
-          <div class="card p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="w-7 h-7 rounded-lg flex items-center justify-center"
-                style="background: rgba(139, 108, 246, 0.1)"
-              >
-                <svg
-                  class="w-3.5 h-3.5"
-                  style="color: #8b6cf6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                  />
-                </svg>
-              </div>
-              <h4 class="text-sm font-semibold" style="color: var(--text-primary)">Upgrade</h4>
-            </div>
-            <div class="terminal">
-              <pre
-                class="px-3 py-2 font-mono text-[11px]"
-                style="color: var(--text-bright)"
-              ><span style="color:#8b6cf6;">$</span> npx opencode-agent-kit upgrade</pre>
-            </div>
-            <p class="mt-2 text-[11px]" style="color: var(--text-muted)">
-              Check and apply the latest version.
-            </p>
-          </div>
-
-          <div class="card p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="w-7 h-7 rounded-lg flex items-center justify-center"
-                style="background: rgba(74, 200, 184, 0.1)"
-              >
-                <svg
-                  class="w-3.5 h-3.5"
-                  style="color: #4ac8b8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
-              </div>
-              <h4 class="text-sm font-semibold" style="color: var(--text-primary)">Doctor</h4>
-            </div>
-            <div class="terminal">
-              <pre
-                class="px-3 py-2 font-mono text-[11px]"
-                style="color: var(--text-bright)"
-              ><span style="color:#4ac8b8;">$</span> npx opencode-agent-kit doctor</pre>
-            </div>
-            <p class="mt-2 text-[11px]" style="color: var(--text-muted)">
-              Diagnose setup and fix common issues.
-            </p>
-          </div>
-
-          <div class="card p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="w-7 h-7 rounded-lg flex items-center justify-center"
-                style="background: rgba(224, 96, 112, 0.1)"
-              >
-                <svg
-                  class="w-3.5 h-3.5"
-                  style="color: #e06070"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  />
-                </svg>
-              </div>
-              <h4 class="text-sm font-semibold" style="color: var(--text-primary)">Uninstall</h4>
-            </div>
-            <div class="terminal">
-              <pre
-                class="px-3 py-2 font-mono text-[11px]"
-                style="color: var(--text-bright)"
-              ><span style="color:#e06070;">$</span> npx opencode-agent-kit uninstall</pre>
-            </div>
-            <p class="mt-2 text-[11px]" style="color: var(--text-muted)">
-              Clean removal from your project.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="divider"></div></div>
-
-    <!-- ════════════════ MARQUEE ════════════════ -->
-    <section
-      class="relative py-6 overflow-hidden marquee-section"
-      style="
-        border-top: 1px solid var(--marquee-bdr);
-        border-bottom: 1px solid var(--marquee-bdr);
-        background: var(--marquee-bg);
-      "
-    >
-      <div class="marquee-track flex whitespace-nowrap" style="will-change: transform">
-        <div class="flex items-center gap-4 mx-4">
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(139, 92, 246, 0.06);
-              color: #8b5cf6;
-              border: 1px solid rgba(139, 92, 246, 0.08);
-            "
-            >@leader</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(59, 130, 246, 0.06);
-              color: #3b82f6;
-              border: 1px solid rgba(59, 130, 246, 0.08);
-            "
-            >@frontend-nuxt</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(6, 182, 212, 0.06);
-              color: #06b6d4;
-              border: 1px solid rgba(6, 182, 212, 0.08);
-            "
-            >@frontend-react</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(16, 185, 129, 0.06);
-              color: #10b981;
-              border: 1px solid rgba(16, 185, 129, 0.08);
-            "
-            >@node-developer</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(237, 139, 0, 0.06);
-              color: #ed8b00;
-              border: 1px solid rgba(237, 139, 0, 0.08);
-            "
-            >@java-developer</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(0, 173, 216, 0.06);
-              color: #00add8;
-              border: 1px solid rgba(0, 173, 216, 0.08);
-            "
-            >@go-developer</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(55, 118, 171, 0.06);
-              color: #3776ab;
-              border: 1px solid rgba(55, 118, 171, 0.08);
-            "
-            >@python</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(222, 165, 132, 0.06);
-              color: #dea584;
-              border: 1px solid rgba(222, 165, 132, 0.08);
-            "
-            >@rust</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(240, 81, 56, 0.06);
-              color: #f05138;
-              border: 1px solid rgba(240, 81, 56, 0.08);
-            "
-            >@swift</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(34, 197, 94, 0.06);
-              color: #22c55e;
-              border: 1px solid rgba(34, 197, 94, 0.08);
-            "
-            >@android</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(74, 200, 184, 0.06);
-              color: #4ac8b8;
-              border: 1px solid rgba(74, 200, 184, 0.08);
-            "
-            >agentmemory</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(139, 92, 246, 0.06);
-              color: #8b5cf6;
-              border: 1px solid rgba(139, 92, 246, 0.08);
-            "
-            >@leader</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(59, 130, 246, 0.06);
-              color: #3b82f6;
-              border: 1px solid rgba(59, 130, 246, 0.08);
-            "
-            >@frontend-nuxt</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(6, 182, 212, 0.06);
-              color: #06b6d4;
-              border: 1px solid rgba(6, 182, 212, 0.08);
-            "
-            >@frontend-react</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(16, 185, 129, 0.06);
-              color: #10b981;
-              border: 1px solid rgba(16, 185, 129, 0.08);
-            "
-            >@node-developer</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(237, 139, 0, 0.06);
-              color: #ed8b00;
-              border: 1px solid rgba(237, 139, 0, 0.08);
-            "
-            >@java-developer</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(0, 173, 216, 0.06);
-              color: #00add8;
-              border: 1px solid rgba(0, 173, 216, 0.08);
-            "
-            >@go-developer</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(55, 118, 171, 0.06);
-              color: #3776ab;
-              border: 1px solid rgba(55, 118, 171, 0.08);
-            "
-            >@python</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(222, 165, 132, 0.06);
-              color: #dea584;
-              border: 1px solid rgba(222, 165, 132, 0.08);
-            "
-            >@rust</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(240, 81, 56, 0.06);
-              color: #f05138;
-              border: 1px solid rgba(240, 81, 56, 0.08);
-            "
-            >@swift</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(34, 197, 94, 0.06);
-              color: #22c55e;
-              border: 1px solid rgba(34, 197, 94, 0.08);
-            "
-            >@android</span
-          >
-          <span
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
-            style="
-              background: rgba(74, 200, 184, 0.06);
-              color: #4ac8b8;
-              border: 1px solid rgba(74, 200, 184, 0.08);
-            "
-            >agentmemory</span
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════════════ FOOTER ════════════════ -->
-    <footer class="relative py-12">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="grid sm:grid-cols-3 gap-8">
           <div>
-            <div class="flex items-center gap-2.5 mb-3">
+            <div class="solution-badge">The Solution</div>
+            <h3
+              style="
+                font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                margin-bottom: 16px;
+                color: var(--txt);
+              "
+            >
+              Agents <span class="grad-text">That Remember</span>
+            </h3>
+            <p style="color: var(--txt2); line-height: 1.8; margin-bottom: 24px">
+              Agent Kit introduces
+              <strong style="color: var(--txt)">persistent cross-session memory</strong>. Every
+              fact, preference, decision, and past conversation is stored and recalled automatically
+              &mdash; across sessions, across projects.
+            </p>
+            <div style="display: grid; gap: 12px">
               <div
-                class="w-8 h-8 rounded-lg flex items-center justify-center"
-                style="background: rgba(212, 160, 74, 0.1)"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 12px 16px;
+                  background: var(--card);
+                  border-radius: 10px;
+                  border: 1px solid var(--bdr);
+                "
               >
-                <span class="text-xs font-bold font-mono" style="color: #d4a04a">K</span>
+                <span
+                  style="
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 6px;
+                    background: rgba(45, 212, 191, 0.12);
+                    color: var(--teal);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 11px;
+                    flex-shrink: 0;
+                  "
+                  >&#10003;</span
+                >
+                <span style="font-size: 13px; color: var(--txt2)"
+                  >No more repeating yourself between sessions</span
+                >
               </div>
-              <div>
-                <div class="text-sm font-semibold" style="color: var(--text-primary)">
-                  Agent Kit
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 12px 16px;
+                  background: var(--card);
+                  border-radius: 10px;
+                  border: 1px solid var(--bdr);
+                "
+              >
+                <span
+                  style="
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 6px;
+                    background: rgba(45, 212, 191, 0.12);
+                    color: var(--teal);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 11px;
+                    flex-shrink: 0;
+                  "
+                  >&#10003;</span
+                >
+                <span style="font-size: 13px; color: var(--txt2)"
+                  >Automatic extraction of patterns and preferences</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 12px 16px;
+                  background: var(--card);
+                  border-radius: 10px;
+                  border: 1px solid var(--bdr);
+                "
+              >
+                <span
+                  style="
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 6px;
+                    background: rgba(45, 212, 191, 0.12);
+                    color: var(--teal);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 11px;
+                    flex-shrink: 0;
+                  "
+                  >&#10003;</span
+                >
+                <span style="font-size: 13px; color: var(--txt2)"
+                  >SQLite-backed Second Brain &mdash; searchable, persistent</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- MEMORY SECTION -->
+    <section class="section memory-sxn" id="memory">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px">
+          <div class="section-label">Persistent Memory</div>
+          <h2
+            style="
+              font-size: clamp(1.8rem, 4vw, 3rem);
+              font-weight: 800;
+              letter-spacing: -0.02em;
+              margin-bottom: 16px;
+            "
+          >
+            The
+            <span
+              class="grad-text"
+              style="
+                background: linear-gradient(135deg, #2dd4bf, #5eead4, #2dd4bf);
+                background-size: 300% 300%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: shift 8s ease infinite;
+              "
+              >Second Brain</span
+            >
+          </h2>
+          <p
+            style="
+              font-size: 1.05rem;
+              color: var(--txt2);
+              max-width: 560px;
+              margin: 0 auto;
+              line-height: 1.8;
+            "
+          >
+            Your agents never forget. Every conversation, every decision, every preference &mdash;
+            stored and recalled automatically.
+          </p>
+        </div>
+        <div class="memory-grid">
+          <div>
+            <div class="memory-card">
+              <div class="memory-card-head">
+                <span class="memory-card-dot"></span>
+                <span class="memory-card-title">agentmemory</span>
+                <span class="memory-card-url">localhost:3113</span>
+              </div>
+              <div class="memory-card-body">
+                <div class="memory-row" style="animation-delay: 0s">
+                  <span class="memory-row-icon mr1">&#9733;</span>
+                  <div class="memory-row-text">
+                    <div class="rt">Project: sadigit_pos_mobile</div>
+                    <div class="rd">Flutter POS system with BLoC, SQLite</div>
+                  </div>
+                  <span class="memory-row-time">2h ago</span>
                 </div>
-                <div class="text-[10px]" style="color: var(--text-muted)">opencode-agent-kit</div>
+                <div class="memory-row" style="animation-delay: 0.1s">
+                  <span class="memory-row-icon mr2">&#9881;</span>
+                  <div class="memory-row-text">
+                    <div class="rt">Preference: TypeScript + React</div>
+                    <div class="rd">Primary frontend stack preference</div>
+                  </div>
+                  <span class="memory-row-time">1d ago</span>
+                </div>
+                <div class="memory-row" style="animation-delay: 0.2s">
+                  <span class="memory-row-icon mr3">&#128200;</span>
+                  <div class="memory-row-text">
+                    <div class="rt">Pattern: Component-first architecture</div>
+                    <div class="rd">Detected in last 3 sessions</div>
+                  </div>
+                  <span class="memory-row-time">3d ago</span>
+                </div>
+                <div class="memory-row" style="animation-delay: 0.3s">
+                  <span class="memory-row-icon mr1">&#128218;</span>
+                  <div class="memory-row-text">
+                    <div class="rt">Decision: Use SQLite for persistence</div>
+                    <div class="rd">Approved in architecture review</div>
+                  </div>
+                  <span class="memory-row-time">1w ago</span>
+                </div>
               </div>
             </div>
-            <p class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              33 specialized AI agents. 207 skill playbooks. 46 CLI commands. 8 MCP servers.
-              Persistent memory.
-            </p>
           </div>
           <div>
-            <div
-              class="text-xs font-semibold uppercase tracking-wider mb-3"
-              style="color: var(--text-muted)"
-            >
-              Quick Links
-            </div>
-            <div class="space-y-1.5 text-xs">
-              <a
-                href="https://github.com/defuj/opencode-agent-kit"
-                target="_blank"
-                class="block footer-link"
-                >GitHub Repository</a
-              >
-              <a
-                href="https://github.com/rohitg00/agentmemory"
-                target="_blank"
-                class="block footer-link footer-link-memory"
-                >agentmemory</a
-              >
-              <a
-                href="https://opencode.ai"
-                target="_blank"
-                class="block footer-link footer-link-violet"
-                >OpenCode</a
-              >
-            </div>
-          </div>
-          <div>
-            <div
-              class="text-xs font-semibold uppercase tracking-wider mb-3"
-              style="color: var(--text-muted)"
-            >
-              Stack Coverage
-            </div>
-            <div class="text-xs leading-relaxed" style="color: var(--text-muted)">
-              Nuxt 4 &middot; Next.js 15 &middot; React 19 &middot; Vue 3 &middot; Node.js &middot;
-              Express 5 &middot; Prisma &middot; Python &middot; Django &middot; FastAPI &middot;
-              Rust &middot; Swift &middot; .NET &middot; Angular &middot; C++ &middot; Laravel
-              &middot; CI3 &middot; Android &middot; Flutter &middot; PostgreSQL &middot; Docker
-              &middot; GitHub Actions
+            <div class="memory-value-grid">
+              <div class="memory-value-item">
+                <div class="memory-value-icon mt">&#9699;</div>
+                <h4>Auto-Extraction</h4>
+                <p>
+                  Facts are extracted automatically after each session &mdash; no manual saving
+                  required.
+                </p>
+              </div>
+              <div class="memory-value-item">
+                <div class="memory-value-icon mv">&#128269;</div>
+                <h4>Smart Recall</h4>
+                <p>Relevant memories are auto-injected into context before every response.</p>
+              </div>
+              <div class="memory-value-item">
+                <div class="memory-value-icon mg">&#128214;</div>
+                <h4>8 Memory Types</h4>
+                <p>Identity, preference, goal, project, habit, decision, constraint, and more.</p>
+              </div>
+              <div class="memory-value-item">
+                <div class="memory-value-icon mr">&#128274;</div>
+                <h4>User Controlled</h4>
+                <p>Manage with /memory commands &mdash; search, pause, clear, or review.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="mt-8 pt-6 text-center text-[10px]"
-          style="border-top: 1px solid var(--footer-divider); color: var(--text-muted)"
-        >
-          <span class="flex items-center justify-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full" style="background: #d4a04a"></span>
-            v1.2.11
-            <span class="w-1.5 h-1.5 rounded-full" style="background: #8b6cf6"></span>
-            MIT License
-            <span class="w-1.5 h-1.5 rounded-full" style="background: #4ac8b8"></span>
-            Built for OpenCode
-          </span>
+      </div>
+    </section>
+    <!-- AGENTS SECTION -->
+    <section class="section agents-sxn" id="agents">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px">
+          <div class="section-label">Your Team</div>
+          <h2
+            style="
+              font-size: clamp(1.8rem, 4vw, 3rem);
+              font-weight: 800;
+              letter-spacing: -0.02em;
+              margin-bottom: 16px;
+            "
+          >
+            <span class="grad-text">33 Specialized</span> Agents
+          </h2>
+          <p
+            style="
+              font-size: 1.05rem;
+              color: var(--txt2);
+              max-width: 560px;
+              margin: 0 auto;
+              line-height: 1.8;
+            "
+          >
+            From frontend to DevOps, every agent has a specific role, stack, and skill set.
+          </p>
+        </div>
+        <div class="agent-tabs" id="agentTabs">
+          <span class="agent-tab active" data-filter="all">All</span>
+          <span class="agent-tab" data-filter="fe">Frontend</span>
+          <span class="agent-tab" data-filter="be">Backend</span>
+          <span class="agent-tab" data-filter="mobile">Mobile</span>
+          <span class="agent-tab" data-filter="devops">DevOps</span>
+          <span class="agent-tab" data-filter="review">Reviewers</span>
+        </div>
+        <div class="agent-grid" id="agentGrid">
+          <div class="agent-card" data-cat="fe">
+            <span class="agent-card-icon afe">N</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@frontend-nuxt</div>
+              <div class="agent-card-stack">Nuxt, Vue, Pinia, Tailwind</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="fe">
+            <span class="agent-card-icon afe">R</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@frontend-react</div>
+              <div class="agent-card-stack">React, Next, TypeScript, Tailwind</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="be">
+            <span class="agent-card-icon abe">L</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@backend-laravel</div>
+              <div class="agent-card-stack">Laravel, PHP, MySQL, Redis</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="be">
+            <span class="agent-card-icon abe">E</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@backend-express</div>
+              <div class="agent-card-stack">Express, Node, MongoDB, JWT</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="mobile">
+            <span class="agent-card-icon amo">F</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@mobile-flutter</div>
+              <div class="agent-card-stack">Flutter, Dart, BLoC, SQLite</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="mobile">
+            <span class="agent-card-icon amo">K</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@mobile-kotlin</div>
+              <div class="agent-card-stack">Kotlin, Jetpack, Compose, MVVM</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="devops">
+            <span class="agent-card-icon adevops">D</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@devops-docker</div>
+              <div class="agent-card-stack">Docker, Compose, K8s, CI/CD</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="devops">
+            <span class="agent-card-icon adevops">G</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@devops-github</div>
+              <div class="agent-card-stack">GitHub Actions, API, PR review</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="review">
+            <span class="agent-card-icon arev">C</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@reviewer-code</div>
+              <div class="agent-card-stack">Code Review, Best Practices, Lint</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="review">
+            <span class="agent-card-icon arev">S</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@reviewer-security</div>
+              <div class="agent-card-stack">Security Audit, OWASP, CVE</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="fe">
+            <span class="agent-card-icon afe">S</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@frontend-svelte</div>
+              <div class="agent-card-stack">Svelte, SvelteKit, TS</div>
+            </div>
+          </div>
+          <div class="agent-card" data-cat="be">
+            <span class="agent-card-icon abe">G</span>
+            <div class="agent-card-info">
+              <div class="agent-card-name">@backend-go</div>
+              <div class="agent-card-stack">Go, Gin, PostgreSQL, gRPC</div>
+            </div>
+          </div>
+        </div>
+        <div class="agent-dots" style="justify-content: center">
+          <span class="agent-dot dg" title="Gold - Frontend"></span>
+          <span class="agent-dot dv" title="Violet - Backend"></span>
+          <span class="agent-dot dt" title="Teal - Mobile"></span>
+          <span class="agent-dot dr" title="Rose - DevOps"></span>
+          <span class="agent-dot db" title="Blue - Reviewers"></span>
+          <span style="font-size: 11px; color: var(--txt3); margin-left: 8px">+21 more agents</span>
+        </div>
+      </div>
+    </section>
+    <!-- INSTALL SECTION -->
+    <section class="section install-sxn" id="install">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px">
+          <div class="section-label">Get Started</div>
+          <h2
+            style="
+              font-size: clamp(1.8rem, 4vw, 3rem);
+              font-weight: 800;
+              letter-spacing: -0.02em;
+              margin-bottom: 16px;
+            "
+          >
+            Install in <span class="grad-text">One Command</span>
+          </h2>
+          <p
+            style="
+              font-size: 1.05rem;
+              color: var(--txt2);
+              max-width: 560px;
+              margin: 0 auto;
+              line-height: 1.8;
+            "
+          >
+            Works with any OpenCode project. No complex setup, no config file required.
+          </p>
+        </div>
+        <div class="install-grid">
+          <div>
+            <div class="os-tabs" id="osTabs">
+              <span class="os-tab active" data-os="unix">macOS/Linux</span>
+              <span class="os-tab" data-os="win">Windows</span>
+            </div>
+            <div class="install-terminal" id="installTerm">
+              <div class="terminal-head">
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-title">terminal</span>
+              </div>
+              <div class="terminal-body">
+                <span class="c">$</span> <span id="installCmd">npx opencode-agent-kit init</span
+                ><span class="blink-c"></span>
+              </div>
+              <button class="copy-btn" id="copyBtn" onclick="copyCmd()">Copy</button>
+            </div>
+            <div class="install-cards">
+              <div class="install-card">
+                <div class="install-card-icon">&#128258;</div>
+                <h4>Upgrade</h4>
+                <p>npx opencode-agent-kit upgrade</p>
+              </div>
+              <div class="install-card">
+                <div class="install-card-icon">&#128300;</div>
+                <h4>Doctor</h4>
+                <p>npx opencode-agent-kit doctor</p>
+              </div>
+              <div class="install-card">
+                <div class="install-card-icon">&#128465;</div>
+                <h4>Uninstall</h4>
+                <p>npx opencode-agent-kit uninstall</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: var(--txt)">
+              What You Get
+            </h3>
+            <div style="display: grid; gap: 10px">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 12px 16px;
+                  background: var(--card);
+                  border-radius: 10px;
+                  border: 1px solid var(--bdr);
+                  transition: all 0.3s;
+                "
+              >
+                <span style="font-size: 18px; width: 32px; text-align: center">&#128196;</span>
+                <div>
+                  <div style="font-size: 13px; font-weight: 600; color: var(--txt)">
+                    opencode.json
+                  </div>
+                  <div style="font-size: 11px; color: var(--txt3)">31 agents + 8 MCP servers</div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 12px 16px;
+                  background: var(--card);
+                  border-radius: 10px;
+                  border: 1px solid var(--bdr);
+                  transition: all 0.3s;
+                "
+              >
+                <span style="font-size: 18px; width: 32px; text-align: center">&#128193;</span>
+                <div>
+                  <div style="font-size: 13px; font-weight: 600; color: var(--txt)">
+                    .opencode/agents/
+                  </div>
+                  <div style="font-size: 11px; color: var(--txt3)">34 agent prompt files</div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 12px 16px;
+                  background: var(--card);
+                  border-radius: 10px;
+                  border: 1px solid var(--bdr);
+                  transition: all 0.3s;
+                "
+              >
+                <span style="font-size: 18px; width: 32px; text-align: center">&#128736;</span>
+                <div>
+                  <div style="font-size: 13px; font-weight: 600; color: var(--txt)">
+                    .opencode/skills/
+                  </div>
+                  <div style="font-size: 11px; color: var(--txt3)">200+ skill playbooks</div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 12px 16px;
+                  background: var(--card);
+                  border-radius: 10px;
+                  border: 1px solid var(--bdr);
+                  transition: all 0.3s;
+                "
+              >
+                <span style="font-size: 18px; width: 32px; text-align: center">&#128187;</span>
+                <div>
+                  <div style="font-size: 13px; font-weight: 600; color: var(--txt)">
+                    .opencode/commands/
+                  </div>
+                  <div style="font-size: 11px; color: var(--txt3)">46 slash commands</div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 12px 16px;
+                  background: var(--card);
+                  border-radius: 10px;
+                  border: 1px solid var(--bdr);
+                  transition: all 0.3s;
+                "
+              >
+                <span style="font-size: 18px; width: 32px; text-align: center">&#129302;</span>
+                <div>
+                  <div style="font-size: 13px; font-weight: 600; color: var(--txt)">
+                    agentmemory (global)
+                  </div>
+                  <div style="font-size: 11px; color: var(--txt3)">
+                    Persistent memory across sessions
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- MARQUEE -->
+    <section class="marquee-sxn">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="marquee-item-icon">N</span><span>Nuxt</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">R</span><span>React</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">F</span><span>Flutter</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">L</span><span>Laravel</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">G</span><span>Go</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">K</span><span>Kotlin</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">S</span><span>Svelte</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">D</span><span>Docker</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">V</span><span>Vue</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">P</span><span>Python</span></div>
+        <div class="marquee-item">
+          <span class="marquee-item-icon">T</span><span>TypeScript</span>
+        </div>
+        <div class="marquee-item"><span class="marquee-item-icon">E</span><span>Express</span></div>
+        <!-- DUPLICATE FOR INFINITE SCROLL -->
+        <div class="marquee-item"><span class="marquee-item-icon">N</span><span>Nuxt</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">R</span><span>React</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">F</span><span>Flutter</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">L</span><span>Laravel</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">G</span><span>Go</span></div>
+        <div class="marquee-item"><span class="marquee-item-icon">K</span><span>Kotlin</span></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="nav-logo"
+              ><span class="nav-logo-icon">K</span> <span>Agent Kit</span></a
+            >
+            <p>
+              A portable multi-stack AI agent system for OpenCode. Built with passion by
+              <a href="https://github.com/defuj" style="color: var(--gold); display: inline"
+                >defuj</a
+              >.
+            </p>
+          </div>
+          <div>
+            <h5>Product</h5>
+            <a href="#agents">Agents</a>
+            <a href="#memory">Memory</a>
+            <a href="#install">Install</a>
+          </div>
+          <div>
+            <h5>Resources</h5>
+            <a href="https://github.com/defuj/opencode-agent-kit" target="_blank">GitHub</a>
+            <a href="https://github.com/defuj/opencode-agent-kit/issues" target="_blank">Issues</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 Agent Kit &mdash; Open source (MIT)</span>
+          <div class="footer-stacks">
+            <span class="footer-stack">JS/TS</span>
+            <span class="footer-stack">Python</span>
+            <span class="footer-stack">SQLite</span>
+            <span class="footer-stack">Node</span>
+          </div>
         </div>
       </div>
     </footer>
-
     <script>
-      // ── Theme Management ──
-      function getPreferredTheme() {
-        const stored = localStorage.getItem('theme');
-        if (stored) return stored;
-        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      // ── THEME TOGGLE ──
+      const themeToggle = document.getElementById('themeToggle');
+      const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+      const html = document.documentElement;
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light') {
+        html.setAttribute('data-theme', 'light');
+        if (mobileThemeToggle) mobileThemeToggle.innerHTML = '&#9790; Light Mode';
+      } else {
+        if (mobileThemeToggle) mobileThemeToggle.innerHTML = '&#9789; Dark Mode';
       }
-
-      function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        const sun = document.getElementById('theme-icon-sun');
-        const moon = document.getElementById('theme-icon-moon');
-        if (theme === 'dark') {
-          sun.style.display = '';
-          moon.style.display = 'none';
-        } else {
-          sun.style.display = 'none';
-          moon.style.display = '';
-        }
-      }
-
-      function toggleTheme() {
-        const current = document.documentElement.getAttribute('data-theme') || 'dark';
-        const next = current === 'dark' ? 'light' : 'dark';
+      themeToggle.addEventListener('click', () => {
+        const cur = html.getAttribute('data-theme');
+        const next = cur === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
-        applyTheme(next);
-      }
-
-      // Init theme
-      applyTheme(getPreferredTheme());
-
-      // Theme toggle button
-      document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
-
-      // Listen for system preference changes (only when no stored preference)
-      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-          applyTheme(e.matches ? 'light' : 'dark');
-        }
+        themeToggle.innerHTML = next === 'light' ? '&#9790;' : '&#9789;';
+        if (mobileThemeToggle)
+          mobileThemeToggle.innerHTML =
+            next === 'light' ? '&#9790; Light Mode' : '&#9789; Dark Mode';
       });
 
-      // ── Intersection Observer for fade-up ──
+      // ── NAVBAR SCROLL ──
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+      });
+
+      // ── MOBILE MENU ──
+      const mobileBtn = document.getElementById('mobileBtn');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      mobileBtn.addEventListener('click', () => {
+        mobileOverlay.classList.toggle('open');
+        document.body.style.overflow = mobileOverlay.classList.contains('open') ? 'hidden' : '';
+      });
+      mobileOverlay.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => {
+          mobileOverlay.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // ── MOBILE THEME TOGGLE ──
+      if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', () => {
+          const cur = html.getAttribute('data-theme');
+          const next = cur === 'light' ? 'dark' : 'light';
+          html.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          themeToggle.innerHTML = next === 'light' ? '&#9790;' : '&#9789;';
+          mobileThemeToggle.innerHTML =
+            next === 'light' ? '&#9790; Light Mode' : '&#9789; Dark Mode';
+        });
+      }
+
+      // ── AGENT TABS ──
+      const tabs = document.querySelectorAll('.agent-tab');
+      const cards = document.querySelectorAll('.agent-card');
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+          const filter = tab.dataset.filter;
+          cards.forEach((card) => {
+            if (filter === 'all' || card.dataset.cat === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // ── OS TABS ──
+      const osTabs = document.querySelectorAll('.os-tab');
+      const installCmd = document.getElementById('installCmd');
+      const cmds = {
+        unix: 'npx opencode-agent-kit init',
+        win: 'npx opencode-agent-kit init',
+      };
+      osTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          osTabs.forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+          const os = tab.dataset.os;
+          installCmd.textContent = cmds[os];
+        });
+      });
+
+      // ── COPY BUTTON ──
+      function copyCmd() {
+        const text = installCmd.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          const btn = document.getElementById('copyBtn');
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      }
+
+      // ── INTERSECTION OBSERVER (reveal animations) ──
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
             }
           });
         },
-        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
+        { threshold: 0.1 },
       );
-      document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
-
-      // ── Counter animation ──
-      const counterObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const el = entry.target;
-              const target = parseInt(el.dataset.target);
-              let current = 0;
-              const duration = 1200;
-              const step = Math.ceil(target / (duration / 16));
-              const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                  current = target;
-                  clearInterval(timer);
-                }
-                const suffix = el.dataset.suffix || '';
-                el.textContent = current + suffix;
-                el.classList.remove('count-pop');
-                void el.offsetWidth;
-                el.classList.add('count-pop');
-              }, 16);
-              counterObserver.unobserve(el);
-            }
-          });
-        },
-        { threshold: 0.5 },
-      );
-      document.querySelectorAll('.counter').forEach((el) => counterObserver.observe(el));
-
-      // ── Smooth scroll for nav ──
-      document.querySelectorAll('a[href^="#"]').forEach((link) => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const target = document.querySelector(link.getAttribute('href'));
-          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document
+        .querySelectorAll('.memory-row, .memory-value-item, .install-card, .problem-node')
+        .forEach((el) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+          el.style.transition = 'all 0.6s cubic-bezier(0.22,1,0.36,1)';
+          observer.observe(el);
         });
-      });
+
+      // ── HERO TERMINAL TYPEWRITER ──
+      const termBody = document.querySelector('.terminal-preview .terminal-body');
+      const lines = [
+        { text: '<span class="c">$</span> npx opencode-agent-kit init', delay: 500 },
+        { text: '<span class="o">  &#8594;</span> Copying configuration...', delay: 1200 },
+        { text: '<span class="o">  &#8594;</span> Installing dependencies...', delay: 2200 },
+        { text: '<span class="o">  &#8594;</span> Setting up agentmemory...', delay: 3200 },
+        {
+          text: '<span class="o">  &#10003;</span> <span class="m">Agent Kit v1.2.11 installed!</span>',
+          delay: 4200,
+        },
+      ];
+      let lineIdx = 0;
+      function typeNext() {
+        if (lineIdx >= lines.length) {
+          setTimeout(() => {
+            lineIdx = 0;
+            termBody.innerHTML = '';
+            setTimeout(typeNext, 1000);
+          }, 3000);
+          return;
+        }
+        const line = lines[lineIdx];
+        setTimeout(
+          () => {
+            if (lineIdx === 0) {
+              termBody.innerHTML = line.text + '<span class="blink-c"></span>';
+            } else {
+              termBody.innerHTML =
+                termBody.innerHTML.replace('<span class="blink-c"></span>', '') +
+                '<br>' +
+                line.text;
+            }
+            lineIdx++;
+            typeNext();
+          },
+          lineIdx === 0 ? 0 : line.delay - (lines[lineIdx - 1]?.delay || 0),
+        );
+      }
+      setTimeout(typeNext, 1500);
     </script>
   </body>
 </html>
