@@ -407,38 +407,240 @@
           gap: 24px;
         }
       }
-      .mobile-overlay {
-        display: none;
+      /* ═══════════════════════════════════════════
+         MOBILE MENU — Slide-in Panel
+         ═══════════════════════════════════════════ */
+      .mobile-menu {
         position: fixed;
         inset: 0;
-        z-index: 99;
-        background: rgba(6, 6, 10, 0.97);
-        backdrop-filter: blur(30px);
-        padding: 100px 24px 40px;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .mobile-overlay.open {
+        z-index: 200;
         display: flex;
+        justify-content: flex-end;
+        visibility: hidden;
+        pointer-events: none;
       }
-      .mobile-overlay a {
-        padding: 14px 20px;
+      .mobile-menu.open {
+        visibility: visible;
+        pointer-events: all;
+      }
+      /* Scrim */
+      .mobile-menu-scrim {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        opacity: 0;
+        transition: opacity 0.4s var(--ease-out);
+      }
+      .mobile-menu.open .mobile-menu-scrim {
+        opacity: 1;
+      }
+      [data-theme='light'] .mobile-menu-scrim {
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+      /* Panel */
+      .mobile-menu-panel {
+        position: relative;
+        width: 80%;
+        max-width: 380px;
+        height: 100%;
+        background: var(--bg2);
+        border-left: 1px solid var(--bdr);
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.45s var(--ease-out);
+        box-shadow: -12px 0 48px rgba(0, 0, 0, 0.35);
+      }
+      .mobile-menu.open .mobile-menu-panel {
+        transform: translateX(0);
+      }
+      [data-theme='light'] .mobile-menu-panel {
+        box-shadow: -12px 0 48px rgba(0, 0, 0, 0.08);
+      }
+      /* Header */
+      .mobile-menu-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--bdr);
+        flex-shrink: 0;
+      }
+      .mobile-menu-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--txt);
+        text-decoration: none;
+      }
+      /* Close button */
+      .mobile-menu-close {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        border: 1px solid var(--bdr);
+        background: var(--bg3);
+        color: var(--txt3);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s var(--ease-out);
+      }
+      .mobile-menu-close:hover {
+        border-color: var(--bdr-h);
+        color: var(--txt);
+        background: var(--card-hover);
+        transform: rotate(90deg);
+      }
+      /* Nav list */
+      .mobile-menu-nav {
+        flex: 1;
+        padding: 16px 16px 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        overflow-y: auto;
+      }
+      /* Nav link item */
+      .mobile-menu-link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 16px;
         border-radius: 12px;
-        background: var(--card);
+        background: transparent;
         color: var(--txt);
         font-size: 16px;
         font-weight: 500;
-        text-align: center;
-        transition: all 0.3s;
         text-decoration: none;
+        transition:
+          background 0.25s,
+          border-color 0.25s;
+        will-change: transform, opacity;
+      }
+      .mobile-menu-link:hover {
+        background: var(--card);
+      }
+      .mobile-menu-link-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        background: var(--bg3);
+        border: 1px solid var(--bdr);
+        flex-shrink: 0;
+        color: var(--gold);
+        transition: all 0.25s;
+      }
+      .mobile-menu-link:hover .mobile-menu-link-icon {
+        border-color: var(--bdr-gold);
+        background: rgba(212, 160, 74, 0.08);
+      }
+      .mobile-menu-link-label {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--txt);
+      }
+      /* Staggered entrance animation */
+      .mobile-menu-link {
+        opacity: 0;
+        transform: translateX(24px);
+        transition:
+          opacity 0.4s var(--ease-out),
+          transform 0.4s var(--ease-out);
+      }
+      .mobile-menu.open .mobile-menu-link {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .mobile-menu.open .mobile-menu-link:nth-child(1) {
+        transition-delay: 0.05s;
+      }
+      .mobile-menu.open .mobile-menu-link:nth-child(2) {
+        transition-delay: 0.11s;
+      }
+      .mobile-menu.open .mobile-menu-link:nth-child(3) {
+        transition-delay: 0.17s;
+      }
+      .mobile-menu.open .mobile-menu-link:nth-child(4) {
+        transition-delay: 0.23s;
+      }
+      .mobile-menu.open .mobile-menu-link:nth-child(5) {
+        transition-delay: 0.29s;
+      }
+      /* Exit stagger: reverse order, faster */
+      .mobile-menu:not(.open) .mobile-menu-link {
+        transition:
+          opacity 0.2s var(--ease-out),
+          transform 0.2s var(--ease-out);
+      }
+      .mobile-menu:not(.open) .mobile-menu-link:nth-child(1) {
+        transition-delay: 0.12s;
+      }
+      .mobile-menu:not(.open) .mobile-menu-link:nth-child(2) {
+        transition-delay: 0.09s;
+      }
+      .mobile-menu:not(.open) .mobile-menu-link:nth-child(3) {
+        transition-delay: 0.06s;
+      }
+      .mobile-menu:not(.open) .mobile-menu-link:nth-child(4) {
+        transition-delay: 0.03s;
+      }
+      .mobile-menu:not(.open) .mobile-menu-link:nth-child(5) {
+        transition-delay: 0s;
+      }
+      /* Footer */
+      .mobile-menu-footer {
+        padding: 16px 16px 32px;
+        flex-shrink: 0;
+      }
+      .mobile-menu-divider {
+        height: 1px;
+        background: var(--bdr);
+        margin-bottom: 16px;
+      }
+      /* Theme toggle inside panel */
+      .mobile-menu-theme {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: var(--bg3);
         border: 1px solid var(--bdr);
       }
-      .mobile-overlay a:hover {
-        background: var(--card-hover);
-        border-color: var(--bdr-h);
+      .mobile-menu-theme-text {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--txt2);
       }
-      [data-theme='light'] .mobile-overlay {
-        background: rgba(250, 249, 245, 0.96);
+      .mobile-menu-theme-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 8px;
+        border: 1px solid var(--bdr);
+        background: var(--card);
+        color: var(--txt2);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .mobile-menu-theme-btn:hover {
+        border-color: var(--bdr-gold);
+        color: var(--gold);
       }
       .hero {
         position: relative;
@@ -1455,28 +1657,67 @@
         </div>
       </div>
     </nav>
-    <div class="mobile-overlay" id="mobileOverlay">
-      <a href="#problem">Why Agent Kit?</a>
-      <a href="#memory">Memory</a>
-      <a href="#agents">Agents</a>
-      <a href="#install">Install</a>
-      <a href="https://github.com/defuj/opencode-agent-kit" target="_blank">GitHub</a>
-      <button
-        class="theme-btn"
-        id="mobileThemeToggle"
-        aria-label="Toggle theme"
-        style="
-          width: 100%;
-          padding: 14px 20px;
-          border-radius: 12px;
-          font-size: 16px;
-          font-weight: 500;
-          margin-top: 8px;
-          justify-content: center;
-        "
-      >
-        &#9790;
-      </button>
+    <!-- MOBILE MENU - Slide-in Panel -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-scrim" id="mobileMenuScrim"></div>
+      <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <div class="mobile-menu-header">
+          <a href="#" class="mobile-menu-logo">
+            <span class="nav-logo-icon">K</span>
+            <span>Agent Kit</span>
+          </a>
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="#problem" class="mobile-menu-link">
+            <span class="mobile-menu-link-icon">&#9889;</span>
+            <span class="mobile-menu-link-label">Why</span>
+          </a>
+          <a href="#memory" class="mobile-menu-link">
+            <span class="mobile-menu-link-icon">&#128200;</span>
+            <span class="mobile-menu-link-label">Memory</span>
+          </a>
+          <a href="#agents" class="mobile-menu-link">
+            <span class="mobile-menu-link-icon">&#9733;</span>
+            <span class="mobile-menu-link-label">Agents</span>
+          </a>
+          <a href="#install" class="mobile-menu-link">
+            <span class="mobile-menu-link-icon">&#128193;</span>
+            <span class="mobile-menu-link-label">Install</span>
+          </a>
+          <a
+            href="https://github.com/defuj/opencode-agent-kit"
+            target="_blank"
+            class="mobile-menu-link"
+          >
+            <span class="mobile-menu-link-icon">&#128279;</span>
+            <span class="mobile-menu-link-label">GitHub</span>
+          </a>
+        </nav>
+        <div class="mobile-menu-footer">
+          <div class="mobile-menu-divider"></div>
+          <div class="mobile-menu-theme">
+            <span class="mobile-menu-theme-text">Appearance</span>
+            <button class="mobile-menu-theme-btn" id="mobileThemeToggle" aria-label="Toggle theme">
+              <span class="mobile-menu-theme-icon">&#9790;</span>
+              <span class="mobile-menu-theme-label">Light Mode</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- HERO -->
@@ -2219,9 +2460,19 @@
       const stored = localStorage.getItem('theme');
       if (stored === 'light') {
         html.setAttribute('data-theme', 'light');
-        if (mobileThemeToggle) mobileThemeToggle.innerHTML = '&#9790; Light Mode';
+        if (mobileThemeToggle) {
+          const icon = mobileThemeToggle.querySelector('.mobile-menu-theme-icon');
+          const label = mobileThemeToggle.querySelector('.mobile-menu-theme-label');
+          if (icon) icon.innerHTML = '&#9790;';
+          if (label) label.textContent = 'Light Mode';
+        }
       } else {
-        if (mobileThemeToggle) mobileThemeToggle.innerHTML = '&#9789; Dark Mode';
+        if (mobileThemeToggle) {
+          const icon = mobileThemeToggle.querySelector('.mobile-menu-theme-icon');
+          const label = mobileThemeToggle.querySelector('.mobile-menu-theme-label');
+          if (icon) icon.innerHTML = '&#9789;';
+          if (label) label.textContent = 'Dark Mode';
+        }
       }
       themeToggle.addEventListener('click', () => {
         const cur = html.getAttribute('data-theme');
@@ -2229,9 +2480,12 @@
         html.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
         themeToggle.innerHTML = next === 'light' ? '&#9790;' : '&#9789;';
-        if (mobileThemeToggle)
-          mobileThemeToggle.innerHTML =
-            next === 'light' ? '&#9790; Light Mode' : '&#9789; Dark Mode';
+        if (mobileThemeToggle) {
+          const icon = mobileThemeToggle.querySelector('.mobile-menu-theme-icon');
+          const label = mobileThemeToggle.querySelector('.mobile-menu-theme-label');
+          if (icon) icon.innerHTML = next === 'light' ? '&#9790;' : '&#9789;';
+          if (label) label.textContent = next === 'light' ? 'Light Mode' : 'Dark Mode';
+        }
       });
 
       // ── NAVBAR SCROLL ──
@@ -2240,30 +2494,58 @@
         navbar.classList.toggle('scrolled', window.scrollY > 60);
       });
 
-      // ── MOBILE MENU ──
+      // ── MOBILE MENU (Slide-in Panel) ──
       const mobileBtn = document.getElementById('mobileBtn');
-      const mobileOverlay = document.getElementById('mobileOverlay');
-      mobileBtn.addEventListener('click', () => {
-        mobileOverlay.classList.toggle('open');
-        document.body.style.overflow = mobileOverlay.classList.contains('open') ? 'hidden' : '';
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuScrim = document.getElementById('mobileMenuScrim');
+      const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+      function openMobileMenu() {
+        mobileMenu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      mobileBtn.addEventListener('click', openMobileMenu);
+      if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+      if (mobileMenuScrim) mobileMenuScrim.addEventListener('click', closeMobileMenu);
+
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMobileMenu);
       });
-      mobileOverlay.querySelectorAll('a').forEach((a) => {
-        a.addEventListener('click', () => {
-          mobileOverlay.classList.remove('open');
-          document.body.style.overflow = '';
-        });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+          closeMobileMenu();
+        }
       });
 
       // ── MOBILE THEME TOGGLE ──
       if (mobileThemeToggle) {
-        mobileThemeToggle.addEventListener('click', () => {
+        const mobileThemeIcon = mobileThemeToggle.querySelector('.mobile-menu-theme-icon');
+        const mobileThemeLabel = mobileThemeToggle.querySelector('.mobile-menu-theme-label');
+
+        if (html.getAttribute('data-theme') === 'light') {
+          if (mobileThemeIcon) mobileThemeIcon.innerHTML = '&#9790;';
+          if (mobileThemeLabel) mobileThemeLabel.textContent = 'Light Mode';
+        } else {
+          if (mobileThemeIcon) mobileThemeIcon.innerHTML = '&#9789;';
+          if (mobileThemeLabel) mobileThemeLabel.textContent = 'Dark Mode';
+        }
+
+        mobileThemeToggle.addEventListener('click', function () {
           const cur = html.getAttribute('data-theme');
           const next = cur === 'light' ? 'dark' : 'light';
           html.setAttribute('data-theme', next);
           localStorage.setItem('theme', next);
           themeToggle.innerHTML = next === 'light' ? '&#9790;' : '&#9789;';
-          mobileThemeToggle.innerHTML =
-            next === 'light' ? '&#9790; Light Mode' : '&#9789; Dark Mode';
+          if (mobileThemeIcon) mobileThemeIcon.innerHTML = next === 'light' ? '&#9790;' : '&#9789;';
+          if (mobileThemeLabel)
+            mobileThemeLabel.textContent = next === 'light' ? 'Light Mode' : 'Dark Mode';
         });
       }
 
