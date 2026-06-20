@@ -16,59 +16,53 @@
     />
     <style>
       /* ============================================================
-         1. DESIGN TOKENS — HYBRID (Amber + Gold, Dual Accent)
+         1. DESIGN TOKENS — SIGNAL (Warm Dark, Purposeful Motion)
          ============================================================ */
       :root {
-        /* === Backgrounds (warm charcoal, true amber hue) === */
-        --bg: oklch(0.035 0.008 40);
-        --bg-surface: oklch(0.06 0.007 40);
-        --bg-raised: oklch(0.085 0.01 40);
-        --bg-inset: oklch(0.05 0.006 40);
-        --bg-hover: oklch(0.12 0.015 40);
-        --bg-nav: oklch(0.035 0.008 40 / 0.92);
+        /* === Backgrounds (warm charcoal, tinted toward amber) === */
+        --bg: oklch(0.035 0.006 50);
+        --bg-surface: oklch(0.06 0.005 50);
+        --bg-raised: oklch(0.085 0.007 50);
+        --bg-inset: oklch(0.05 0.005 50);
+        --bg-hover: oklch(0.12 0.01 50);
+        --bg-nav: oklch(0.035 0.006 50 / 0.92);
         --bg-overlay: oklch(0 0 0 / 0.6);
 
         /* === Text (warm-tinted neutrals) === */
-        --text-primary: oklch(0.9 0.012 40);
-        --text-secondary: oklch(0.6 0.01 40);
-        --text-muted: oklch(0.45 0.008 40);
-        --text-inverse: oklch(0.035 0.008 40);
+        --text-primary: oklch(0.88 0.015 50);
+        --text-secondary: oklch(0.58 0.012 50);
+        --text-muted: oklch(0.42 0.01 50);
+        --text-inverse: oklch(0.035 0.006 50);
 
-        /* === PRIMARY: True Amber === */
-        --primary: oklch(0.62 0.16 40);
-        --primary-hover: oklch(0.66 0.17 40);
-        --primary-active: oklch(0.58 0.15 40);
-        --primary-dim: oklch(0.62 0.16 40 / 0.18);
-        --primary-dim-2: oklch(0.62 0.16 40 / 0.08);
-        --primary-glow: oklch(0.62 0.16 40 / 0.15);
+        /* === Primary: Amber-Honey === */
+        --primary: oklch(0.62 0.1 65);
+        --primary-hover: oklch(0.66 0.105 65);
+        --primary-active: oklch(0.58 0.095 65);
+        --primary-dim: oklch(0.62 0.1 65 / 0.15);
+        --primary-dim-2: oklch(0.62 0.1 65 / 0.06);
+        --primary-glow: oklch(0.62 0.1 65 / 0.08);
 
-        /* === ACCENT: Warm Gold === */
-        --gold: oklch(0.65 0.14 70);
-        --gold-dim: oklch(0.65 0.14 70 / 0.18);
-        --gold-text: oklch(0.65 0.14 70);
-        --gold-glow: oklch(0.65 0.14 70 / 0.15);
-
-        /* === Secondary: Cool steel === */
-        --secondary: oklch(0.5 0.04 240);
-        --secondary-dim: oklch(0.5 0.04 240 / 0.15);
-        --secondary-text: oklch(0.55 0.05 240);
+        /* === Secondary: Slate (cool counterpoint) === */
+        --secondary: oklch(0.5 0.02 250);
+        --secondary-dim: oklch(0.5 0.02 250 / 0.12);
+        --secondary-text: oklch(0.55 0.025 250);
 
         /* === Success: Mint === */
         --success: oklch(0.65 0.08 160);
         --success-dim: oklch(0.65 0.08 160 / 0.12);
         --success-text: oklch(0.62 0.08 160);
 
-        /* === Borders (lebih solid) === */
-        --border-subtle: oklch(1 0 0 / 0.08);
-        --border-hover: oklch(1 0 0 / 0.15);
-        --border-active: oklch(1 0 0 / 0.25);
-        --border-primary: oklch(0.62 0.16 40 / 0.25);
+        /* === Borders === */
+        --border-subtle: oklch(1 0 0 / 0.06);
+        --border-hover: oklch(1 0 0 / 0.12);
+        --border-active: oklch(1 0 0 / 0.2);
+        --border-primary: var(--primary-dim);
 
-        /* === Shadows (lebih dalam) === */
-        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
-        --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
-        --shadow-lg: 0 8px 35px rgba(0, 0, 0, 0.55);
-        --shadow-primary: 0 0 30px oklch(0.62 0.16 40 / 0.2);
+        /* === Shadows === */
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+        --shadow-primary: 0 0 24px var(--primary-glow);
 
         /* === Typography === */
         --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
@@ -139,50 +133,44 @@
         --section-padding-mobile: 80px;
       }
 
-      /* Light Theme — Warm cream, amber + gold accents */
+      /* Light Theme — Warm cream, not cold white */
       [data-theme='light'] {
-        --bg: oklch(0.93 0.01 40);
-        --bg-surface: oklch(0.965 0.008 40);
-        --bg-raised: oklch(0.985 0.005 40);
-        --bg-inset: oklch(0.91 0.012 40);
-        --bg-hover: oklch(0.88 0.015 40);
-        --bg-nav: oklch(0.93 0.01 40 / 0.92);
+        --bg: oklch(0.94 0.008 55);
+        --bg-surface: oklch(0.97 0.005 55);
+        --bg-raised: oklch(0.99 0.003 55);
+        --bg-inset: oklch(0.91 0.01 55);
+        --bg-hover: oklch(0.88 0.012 55);
+        --bg-nav: oklch(0.94 0.008 55 / 0.92);
         --bg-overlay: oklch(0 0 0 / 0.3);
 
-        --text-primary: oklch(0.14 0.015 40);
-        --text-secondary: oklch(0.36 0.012 40);
-        --text-muted: oklch(0.5 0.01 40);
-        --text-inverse: oklch(0.98 0.005 40);
+        --text-primary: oklch(0.15 0.012 50);
+        --text-secondary: oklch(0.38 0.01 50);
+        --text-muted: oklch(0.52 0.008 50);
+        --text-inverse: oklch(0.98 0.003 55);
 
-        --primary: oklch(0.52 0.16 40);
-        --primary-hover: oklch(0.56 0.17 40);
-        --primary-active: oklch(0.48 0.15 40);
-        --primary-dim: oklch(0.52 0.16 40 / 0.18);
-        --primary-dim-2: oklch(0.52 0.16 40 / 0.08);
-        --primary-glow: oklch(0.52 0.16 40 / 0.12);
+        --primary: oklch(0.55 0.1 65);
+        --primary-hover: oklch(0.59 0.105 65);
+        --primary-active: oklch(0.51 0.095 65);
+        --primary-dim: oklch(0.55 0.1 65 / 0.15);
+        --primary-dim-2: oklch(0.55 0.1 65 / 0.06);
+        --primary-glow: oklch(0.55 0.1 65 / 0.1);
 
-        --gold: oklch(0.55 0.14 70);
-        --gold-dim: oklch(0.55 0.14 70 / 0.15);
-        --gold-text: oklch(0.55 0.14 70);
-        --gold-glow: oklch(0.55 0.14 70 / 0.12);
-
-        --secondary: oklch(0.42 0.045 240);
-        --secondary-dim: oklch(0.42 0.045 240 / 0.12);
-        --secondary-text: oklch(0.38 0.05 240);
+        --secondary: oklch(0.45 0.025 250);
+        --secondary-dim: oklch(0.45 0.025 250 / 0.1);
+        --secondary-text: oklch(0.4 0.025 250);
 
         --success: oklch(0.5 0.08 160);
         --success-dim: oklch(0.5 0.08 160 / 0.12);
         --success-text: oklch(0.45 0.08 160);
 
-        --border-subtle: oklch(0 0 0 / 0.1);
-        --border-hover: oklch(0 0 0 / 0.2);
-        --border-active: oklch(0 0 0 / 0.3);
-        --border-primary: oklch(0.52 0.16 40 / 0.25);
+        --border-subtle: oklch(0 0 0 / 0.08);
+        --border-hover: oklch(0 0 0 / 0.18);
+        --border-active: oklch(0 0 0 / 0.28);
 
-        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-        --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.1);
-        --shadow-lg: 0 8px 35px rgba(0, 0, 0, 0.15);
-        --shadow-primary: 0 0 25px oklch(0.52 0.16 40 / 0.15);
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+        --shadow-primary: 0 0 20px var(--primary-glow);
       }
 
       /* ============================================================
@@ -302,28 +290,16 @@
         background: linear-gradient(
           90deg,
           transparent 0%,
-          var(--border-primary) 20%,
-          var(--primary) 50%,
-          var(--border-primary) 80%,
+          var(--primary-dim-2) 20%,
+          var(--primary-dim) 50%,
+          var(--primary-dim-2) 80%,
           transparent 100%
         );
-        opacity: 0.35;
+        opacity: 0.5;
         pointer-events: none;
       }
       .section-alt {
         background: var(--bg-surface);
-      }
-
-      /* Section gradient variants */
-      .section-glow-amber {
-        background: radial-gradient(
-          ellipse 70% 50% at 50% 0%,
-          var(--primary-dim-2) 0%,
-          var(--bg-surface) 60%
-        );
-      }
-      .section-glow-gold {
-        background: radial-gradient(ellipse 60% 45% at 50% 0%, var(--gold-dim) 0%, var(--bg) 60%);
       }
       .section-header {
         text-align: center;
@@ -412,11 +388,11 @@
       }
       .btn-primary:hover {
         background: var(--primary-hover);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-primary), var(--shadow-lg);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-primary), var(--shadow-md);
       }
       .btn-primary:active {
-        transform: translateY(0) scale(0.97);
+        transform: translateY(0) scale(0.98);
         box-shadow: none;
       }
       .btn-secondary {
@@ -761,30 +737,14 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-      }
-      .hero-ambient::before {
-        content: '';
-        position: absolute;
-        inset: 0;
         background: radial-gradient(
-          ellipse 70% 50% at 50% 15%,
-          var(--primary-dim) 0%,
-          transparent 65%
+          ellipse 80% 60% at 50% 20%,
+          var(--primary-dim-2) 0%,
+          transparent 70%
         );
       }
-      .hero-ambient::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          ellipse 35% 25% at 80% 20%,
-          var(--gold-dim) 0%,
-          transparent 55%
-        );
-      }
-      [data-theme='light'] .hero-ambient::before,
-      [data-theme='light'] .hero-ambient::after {
-        opacity: 0.45;
+      [data-theme='light'] .hero-ambient {
+        opacity: 0.5;
       }
 
       .hero-content {
@@ -832,11 +792,10 @@
         width: 60px;
         height: 3px;
         border: none;
-        background: var(--gold);
-        opacity: 0.4;
+        background: var(--primary);
+        opacity: 0.3;
         border-radius: 2px;
         margin: 0 auto var(--space-8);
-        box-shadow: 0 0 8px var(--gold-glow);
       }
       .hero-stats {
         display: flex;
@@ -851,10 +810,9 @@
       .hero-stat-number {
         font-size: var(--text-stat);
         font-weight: var(--weight-bold);
-        color: var(--gold);
+        color: var(--primary);
         line-height: 1;
         letter-spacing: -0.02em;
-        text-shadow: 0 0 20px var(--gold-glow);
       }
       .hero-stat-label {
         font-size: var(--text-sm);
@@ -1133,7 +1091,6 @@
         gap: 16px;
       }
       .agent-card {
-        position: relative;
         background: var(--bg);
         border: var(--border-default);
         border-top: 2px solid var(--card-accent, var(--primary));
@@ -1141,31 +1098,11 @@
         padding: 20px;
         transition: all var(--duration-fast) var(--ease-out);
         cursor: default;
-        overflow: hidden;
-      }
-      .agent-card::before {
-        content: '';
-        position: absolute;
-        inset: -1px;
-        border-radius: inherit;
-        padding: 1px;
-        background: linear-gradient(135deg, var(--card-accent, var(--primary)), transparent 60%);
-        -webkit-mask:
-          linear-gradient(#fff 0 0) content-box,
-          linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        opacity: 0;
-        transition: opacity var(--duration-normal) var(--ease-out);
-        pointer-events: none;
       }
       .agent-card:hover {
         transform: translateY(-4px);
         box-shadow: var(--shadow-md);
         border-color: var(--border-hover);
-      }
-      .agent-card:hover::before {
-        opacity: 0.5;
       }
       .agent-card-header {
         display: flex;
@@ -1296,28 +1233,11 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-      }
-      .cta-ambient::before {
-        content: '';
-        position: absolute;
-        inset: 0;
         background: radial-gradient(
           ellipse 60% 50% at 50% 50%,
-          var(--primary-dim),
-          transparent 65%
+          var(--primary-dim-2),
+          transparent 70%
         );
-      }
-      .cta-ambient::after {
-        content: '';
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: radial-gradient(circle, var(--gold-glow) 0%, transparent 60%);
-        pointer-events: none;
       }
       .cta-content {
         max-width: 680px;
@@ -1748,7 +1668,7 @@ C3: HERO — Typographic Headline + Stat Counters
     <!-- ============================================================
 C4: PROBLEM — Progress Bar Metaphor
 ============================================================ -->
-    <section id="problem" class="section section-glow-amber">
+    <section id="problem" class="section section-alt section-glow-neutral">
       <div class="container">
         <div class="problem-layout">
           <div class="problem-text reveal">
