@@ -1111,7 +1111,7 @@
       }
 
       /* ============================================================
-         11. C6 — AGENTS (Visual Cards Grid)
+         11. C6 — AGENTS (Team Roster Cards)
          ============================================================ */
       .agents-grid {
         max-width: 1100px;
@@ -1120,91 +1120,284 @@
       .agent-category {
         margin-bottom: 48px;
       }
-      .agent-category-title {
-        font-size: var(--text-h3);
-        font-weight: var(--weight-semibold);
-        color: var(--cat-color, var(--primary));
+
+      /* ─── Category Flag ─── */
+      .category-flag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 14px 5px 10px;
         margin-bottom: 20px;
+        border: 1px solid var(--flag-color, var(--primary));
+        border-radius: var(--radius-full);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-semibold);
+        color: var(--flag-color, var(--primary));
         letter-spacing: -0.01em;
+        background: color-mix(in oklch, var(--flag-color, var(--primary)) 8%, transparent);
       }
+      .category-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--dot-color, var(--primary));
+        flex-shrink: 0;
+      }
+      .category-count {
+        margin-left: 2px;
+        padding: 0 7px;
+        font-size: var(--text-xs);
+        font-weight: var(--weight-medium);
+        opacity: 0.6;
+      }
+
+      /* ─── Card Grid Variants ─── */
       .agent-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 16px;
       }
+      .agent-cards--editorial {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+      .agent-cards--technical {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      }
+      .agent-cards--product {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+      .agent-cards--utility {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+
+      /* ─── Base Card ─── */
       .agent-card {
         position: relative;
         background: var(--bg);
         border: var(--border-default);
-        border-top: 2px solid var(--card-accent, var(--primary));
         border-radius: var(--radius-lg);
         padding: 20px;
-        transition: all var(--duration-fast) var(--ease-out);
         cursor: default;
         overflow: hidden;
-      }
-      .agent-card::before {
-        content: '';
-        position: absolute;
-        inset: -1px;
-        border-radius: inherit;
-        padding: 1px;
-        background: linear-gradient(135deg, var(--card-accent, var(--primary)), transparent 60%);
-        -webkit-mask:
-          linear-gradient(#fff 0 0) content-box,
-          linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        opacity: 0;
-        transition: opacity var(--duration-normal) var(--ease-out);
-        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition:
+          border-color 0.3s var(--ease-out),
+          transform 0.3s var(--ease-out);
       }
       .agent-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-md);
         border-color: var(--border-hover);
+        transform: scale(1.01);
       }
-      .agent-card:hover::before {
-        opacity: 0.5;
+
+      /* Spotlight glow overlay on hover */
+      .agent-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(
+          ellipse 80% 60% at 50% 50%,
+          var(--card-glow, var(--primary-dim)) 0%,
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.4s var(--ease-out);
+        pointer-events: none;
       }
-      .agent-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 8px;
+      .agent-card:hover::after {
+        opacity: 1;
       }
-      .agent-card-name {
+
+      /* ─── Monogram Avatar ─── */
+      .agent-mono {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
         font-family: var(--font-mono);
         font-size: var(--text-sm);
-        color: var(--card-accent, var(--primary));
+        font-weight: var(--weight-bold);
+        color: var(--mono-color, var(--text-primary));
+        background: var(--mono-bg, var(--bg-raised));
+        border: 1px solid var(--border-subtle);
+        flex-shrink: 0;
+        line-height: 1;
+      }
+
+      /* ─── Agent Name ─── */
+      .agent-card-name {
+        font-family: var(--font-mono);
+        font-size: var(--text-h3);
         font-weight: var(--weight-semibold);
+        color: var(--text-primary);
+        letter-spacing: -0.02em;
+        line-height: 1.2;
       }
-      .agent-card-stack {
-        font-size: var(--text-xs);
-        color: var(--text-muted);
+
+      /* ─── Role / Stack ─── */
+      .agent-card-role {
+        font-size: var(--text-sm);
+        color: var(--text-secondary);
+        line-height: 1.4;
       }
+
+      /* ─── Description ─── */
       .agent-card-desc {
         font-size: var(--text-sm);
         color: var(--text-secondary);
-        line-height: 1.5;
+        line-height: 1.55;
+        max-width: 45ch;
       }
-      .agent-card-tags {
+
+      /* ─── Tool List ─── */
+      .agent-card-tools {
         display: flex;
-        gap: 6px;
         flex-wrap: wrap;
-        margin-top: 12px;
+        gap: 4px 16px;
+        margin-top: auto;
+        padding-top: 10px;
+        border-top: 1px solid var(--border-subtle);
       }
-      .agent-tag {
-        padding: 2px 10px;
-        background: var(--bg-surface);
-        border: var(--border-default);
-        border-radius: var(--radius-sm);
+      .agent-tool {
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        position: relative;
+        padding-left: 10px;
+      }
+      .agent-tool::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--text-muted);
+        opacity: 0.5;
+      }
+
+      /* ─── Per-Category Accents ─── */
+
+      /* Frontend (editorial) */
+      .card-fe {
+        --card-glow: var(--primary-dim);
+        --mono-color: var(--primary);
+        --mono-bg: var(--primary-dim-2);
+      }
+      .card-fe .agent-card-name {
+        color: var(--primary);
+        font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+      }
+      .card-fe .agent-mono {
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-lg);
+        border-radius: 12px;
+      }
+      .card-fe .agent-card-desc {
+        max-width: 48ch;
+      }
+
+      /* Backend (technical) */
+      .card-be {
+        --card-glow: var(--secondary-dim);
+        --mono-color: var(--secondary-text);
+        --mono-bg: var(--secondary-dim);
+      }
+      .card-be .agent-card-name {
+        font-size: clamp(0.95rem, 2vw, 1.15rem);
+        color: var(--secondary-text);
+      }
+      .card-be .card-be-body {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .card-be .agent-card-role {
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+      }
+      .card-be .agent-card-desc {
+        max-width: 42ch;
+        font-size: 0.8125rem;
+      }
+
+      /* Mobile (product) */
+      .card-mobile {
+        --card-glow: var(--success-dim);
+        --mono-color: var(--success-text);
+        --mono-bg: var(--success-dim);
+      }
+      .card-mobile .agent-card-name {
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
+        color: var(--success-text);
+      }
+      .card-mobile .agent-card-role {
         font-size: var(--text-xs);
         color: var(--text-muted);
       }
+      .card-mobile .agent-card-desc {
+        max-width: 46ch;
+      }
+
+      /* DevOps & Quality (utility) */
+      .card-devops {
+        --card-glow: color-mix(in oklch, var(--primary-dim) 40%, var(--secondary-dim) 40%);
+        --mono-color: var(--text-secondary);
+        --mono-bg: var(--bg-surface);
+      }
+      .card-devops .agent-card-name {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+      }
+      .card-devops .agent-card-role {
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+      }
+      .card-devops .agent-card-desc {
+        max-width: 40ch;
+        font-size: 0.8125rem;
+      }
+
+      /* ─── Staggered reveal ─── */
+      .agent-card[data-stagger] {
+        transition:
+          opacity 0.5s var(--ease-out),
+          transform 0.5s var(--ease-out),
+          border-color 0.3s var(--ease-out);
+      }
+      .agent-card[data-stagger='1'] {
+        transition-delay: 0s;
+      }
+      .agent-card[data-stagger='2'] {
+        transition-delay: 0.08s;
+      }
+      .agent-card[data-stagger='3'] {
+        transition-delay: 0.16s;
+      }
+      .agent-card[data-stagger='4'] {
+        transition-delay: 0.24s;
+      }
+
+      /* ─── Responsive ─── */
       @media (max-width: 640px) {
-        .agent-cards {
+        .agent-cards--editorial,
+        .agent-cards--technical,
+        .agent-cards--product,
+        .agent-cards--utility {
           grid-template-columns: 1fr;
+        }
+        .agent-card-name {
+          font-size: var(--text-h3) !important;
+        }
+        .category-flag {
+          font-size: var(--text-xs);
         }
       }
 
@@ -1538,20 +1731,6 @@
         transform: translateY(0) !important;
       }
 
-      /* Staggered card reveal */
-      .agent-card:nth-child(1) {
-        transition-delay: 0s;
-      }
-      .agent-card:nth-child(2) {
-        transition-delay: 0.1s;
-      }
-      .agent-card:nth-child(3) {
-        transition-delay: 0.2s;
-      }
-      .agent-card:nth-child(4) {
-        transition-delay: 0.3s;
-      }
-
       /* Memory row stagger */
       .memory-row:nth-child(1) {
         transition-delay: 0s;
@@ -1883,7 +2062,7 @@ C5: MEMORY — Comparison Panels + Table
     </section>
 
     <!-- ============================================================
-C6: AGENTS — Visual Cards Grid
+C6: AGENTS — Team Roster Cards
 ============================================================ -->
     <section id="agents" class="section section-alt">
       <div class="container">
@@ -1896,34 +2075,35 @@ C6: AGENTS — Visual Cards Grid
         <div class="agents-grid">
           <!-- Frontend -->
           <div class="agent-category reveal">
-            <h3 class="agent-category-title" style="--cat-color: var(--primary)">Frontend</h3>
-            <div class="agent-cards">
-              <article class="agent-card" style="--card-accent: var(--primary)">
-                <header class="agent-card-header">
-                  <span class="agent-card-name">@frontend-nuxt</span>
-                  <span class="agent-card-stack">Nuxt, Vue, Pinia</span>
-                </header>
+            <div class="category-flag" style="--flag-color: var(--primary)">
+              <span class="category-dot" style="--dot-color: var(--primary)"></span>
+              Frontend <span class="category-count">2</span>
+            </div>
+            <div class="agent-cards agent-cards--editorial">
+              <article class="agent-card card-fe" data-stagger="1">
+                <span class="agent-mono" aria-hidden="true">N</span>
+                <span class="agent-card-name">@frontend-nuxt</span>
+                <span class="agent-card-role">Nuxt, Vue, Pinia · Nuxt UI</span>
                 <p class="agent-card-desc">
                   Builds production Nuxt 4 apps with composables, layouts, and full SSR.
                 </p>
-                <div class="agent-card-tags">
-                  <span class="agent-tag">Vue 3</span>
-                  <span class="agent-tag">Tailwind</span>
-                  <span class="agent-tag">Nuxt UI</span>
+                <div class="agent-card-tools">
+                  <span class="agent-tool">Vue 3</span>
+                  <span class="agent-tool">Tailwind</span>
+                  <span class="agent-tool">Nuxt UI</span>
                 </div>
               </article>
-              <article class="agent-card" style="--card-accent: var(--primary)">
-                <header class="agent-card-header">
-                  <span class="agent-card-name">@frontend-react</span>
-                  <span class="agent-card-stack">React, Next.js</span>
-                </header>
+              <article class="agent-card card-fe" data-stagger="2">
+                <span class="agent-mono" aria-hidden="true">R</span>
+                <span class="agent-card-name">@frontend-react</span>
+                <span class="agent-card-role">React, Next.js · shadcn/ui</span>
                 <p class="agent-card-desc">
                   Builds production React 19 apps with Server Components and shadcn/ui.
                 </p>
-                <div class="agent-card-tags">
-                  <span class="agent-tag">React 19</span>
-                  <span class="agent-tag">Next.js</span>
-                  <span class="agent-tag">shadcn</span>
+                <div class="agent-card-tools">
+                  <span class="agent-tool">React 19</span>
+                  <span class="agent-tool">Next.js</span>
+                  <span class="agent-tool">shadcn</span>
                 </div>
               </article>
             </div>
@@ -1931,48 +2111,51 @@ C6: AGENTS — Visual Cards Grid
 
           <!-- Backend -->
           <div class="agent-category reveal">
-            <h3 class="agent-category-title" style="--cat-color: var(--secondary-text)">Backend</h3>
-            <div class="agent-cards">
-              <article class="agent-card" style="--card-accent: var(--secondary-text)">
-                <header class="agent-card-header">
+            <div class="category-flag" style="--flag-color: var(--secondary-text)">
+              <span class="category-dot" style="--dot-color: var(--secondary-text)"></span>
+              Backend <span class="category-count">3</span>
+            </div>
+            <div class="agent-cards agent-cards--technical">
+              <article class="agent-card card-be" data-stagger="1">
+                <span class="agent-mono" aria-hidden="true">N</span>
+                <div class="card-be-body">
                   <span class="agent-card-name">@node-developer</span>
-                  <span class="agent-card-stack">Node, Express</span>
-                </header>
-                <p class="agent-card-desc">
-                  Builds REST APIs with Express, Prisma, and JWT authentication.
-                </p>
-                <div class="agent-card-tags">
-                  <span class="agent-tag">Express</span>
-                  <span class="agent-tag">Prisma</span>
-                  <span class="agent-tag">JWT</span>
+                  <span class="agent-card-role">Node, Express · REST APIs</span>
+                  <p class="agent-card-desc">
+                    Builds REST APIs with Express, Prisma, and JWT authentication.
+                  </p>
+                </div>
+                <div class="agent-card-tools">
+                  <span class="agent-tool">Express</span><span class="agent-tool">Prisma</span
+                  ><span class="agent-tool">JWT</span>
                 </div>
               </article>
-              <article class="agent-card" style="--card-accent: var(--secondary-text)">
-                <header class="agent-card-header">
+              <article class="agent-card card-be" data-stagger="2">
+                <span class="agent-mono" aria-hidden="true">L</span>
+                <div class="card-be-body">
                   <span class="agent-card-name">@laravel</span>
-                  <span class="agent-card-stack">Laravel, PHP</span>
-                </header>
-                <p class="agent-card-desc">
-                  Builds Laravel apps with Eloquent, Service Layers, and REST APIs.
-                </p>
-                <div class="agent-card-tags">
-                  <span class="agent-tag">PHP</span>
-                  <span class="agent-tag">Eloquent</span>
-                  <span class="agent-tag">REST</span>
+                  <span class="agent-card-role">Laravel, PHP · Eloquent</span>
+                  <p class="agent-card-desc">
+                    Builds Laravel apps with Eloquent, Service Layers, and REST APIs.
+                  </p>
+                </div>
+                <div class="agent-card-tools">
+                  <span class="agent-tool">PHP</span><span class="agent-tool">Eloquent</span
+                  ><span class="agent-tool">REST</span>
                 </div>
               </article>
-              <article class="agent-card" style="--card-accent: var(--secondary-text)">
-                <header class="agent-card-header">
+              <article class="agent-card card-be" data-stagger="3">
+                <span class="agent-mono" aria-hidden="true">G</span>
+                <div class="card-be-body">
                   <span class="agent-card-name">@go-developer</span>
-                  <span class="agent-card-stack">Go, Gin</span>
-                </header>
-                <p class="agent-card-desc">
-                  Builds performant Go microservices with Gin and PostgreSQL.
-                </p>
-                <div class="agent-card-tags">
-                  <span class="agent-tag">Go</span>
-                  <span class="agent-tag">Gin</span>
-                  <span class="agent-tag">gRPC</span>
+                  <span class="agent-card-role">Go, Gin · Microservices</span>
+                  <p class="agent-card-desc">
+                    Builds performant Go microservices with Gin and PostgreSQL.
+                  </p>
+                </div>
+                <div class="agent-card-tools">
+                  <span class="agent-tool">Go</span><span class="agent-tool">Gin</span
+                  ><span class="agent-tool">gRPC</span>
                 </div>
               </article>
             </div>
@@ -1980,34 +2163,33 @@ C6: AGENTS — Visual Cards Grid
 
           <!-- Mobile -->
           <div class="agent-category reveal">
-            <h3 class="agent-category-title" style="--cat-color: var(--success-text)">Mobile</h3>
-            <div class="agent-cards">
-              <article class="agent-card" style="--card-accent: var(--success)">
-                <header class="agent-card-header">
-                  <span class="agent-card-name">@flutter</span>
-                  <span class="agent-card-stack">Flutter, Dart</span>
-                </header>
+            <div class="category-flag" style="--flag-color: var(--success-text)">
+              <span class="category-dot" style="--dot-color: var(--success-text)"></span>
+              Mobile <span class="category-count">2</span>
+            </div>
+            <div class="agent-cards agent-cards--product">
+              <article class="agent-card card-mobile" data-stagger="1">
+                <span class="agent-mono" aria-hidden="true">F</span>
+                <span class="agent-card-name">@flutter</span>
+                <span class="agent-card-role">Flutter, Dart · Cross-platform</span>
                 <p class="agent-card-desc">
                   Builds cross-platform Flutter apps with BLoC and clean architecture.
                 </p>
-                <div class="agent-card-tags">
-                  <span class="agent-tag">Dart</span>
-                  <span class="agent-tag">BLoC</span>
-                  <span class="agent-tag">Material 3</span>
+                <div class="agent-card-tools">
+                  <span class="agent-tool">Dart</span><span class="agent-tool">BLoC</span
+                  ><span class="agent-tool">Material 3</span>
                 </div>
               </article>
-              <article class="agent-card" style="--card-accent: var(--success)">
-                <header class="agent-card-header">
-                  <span class="agent-card-name">@android</span>
-                  <span class="agent-card-stack">Kotlin, Jetpack</span>
-                </header>
+              <article class="agent-card card-mobile" data-stagger="2">
+                <span class="agent-mono" aria-hidden="true">K</span>
+                <span class="agent-card-name">@android</span>
+                <span class="agent-card-role">Kotlin, Jetpack · Native</span>
                 <p class="agent-card-desc">
                   Builds native Android apps with Jetpack Compose and Material 3.
                 </p>
-                <div class="agent-card-tags">
-                  <span class="agent-tag">Kotlin</span>
-                  <span class="agent-tag">Compose</span>
-                  <span class="agent-tag">Hilt</span>
+                <div class="agent-card-tools">
+                  <span class="agent-tool">Kotlin</span><span class="agent-tool">Compose</span
+                  ><span class="agent-tool">Hilt</span>
                 </div>
               </article>
             </div>
@@ -2015,36 +2197,33 @@ C6: AGENTS — Visual Cards Grid
 
           <!-- DevOps & Quality -->
           <div class="agent-category reveal">
-            <h3 class="agent-category-title" style="--cat-color: var(--text-muted)">
-              DevOps &amp; Quality
-            </h3>
-            <div class="agent-cards">
-              <article class="agent-card" style="--card-accent: var(--secondary-text)">
-                <header class="agent-card-header">
-                  <span class="agent-card-name">@devops</span>
-                  <span class="agent-card-stack">Docker, K8s, CI/CD</span>
-                </header>
+            <div class="category-flag" style="--flag-color: var(--text-muted)">
+              <span class="category-dot" style="--dot-color: var(--text-muted)"></span>
+              DevOps &amp; Quality <span class="category-count">2</span>
+            </div>
+            <div class="agent-cards agent-cards--utility">
+              <article class="agent-card card-devops" data-stagger="1">
+                <span class="agent-mono" aria-hidden="true">D</span>
+                <span class="agent-card-name">@devops</span>
+                <span class="agent-card-role">Docker, K8s, CI/CD</span>
                 <p class="agent-card-desc">
                   Configures Docker, Cloudflare, Vercel, and GitHub Actions pipelines.
                 </p>
-                <div class="agent-card-tags">
-                  <span class="agent-tag">Docker</span>
-                  <span class="agent-tag">CI/CD</span>
-                  <span class="agent-tag">K8s</span>
+                <div class="agent-card-tools">
+                  <span class="agent-tool">Docker</span><span class="agent-tool">CI/CD</span
+                  ><span class="agent-tool">K8s</span>
                 </div>
               </article>
-              <article class="agent-card" style="--card-accent: var(--primary-dim)">
-                <header class="agent-card-header">
-                  <span class="agent-card-name">@reviewer</span>
-                  <span class="agent-card-stack">Code Review, QA</span>
-                </header>
+              <article class="agent-card card-devops" data-stagger="2">
+                <span class="agent-mono" aria-hidden="true">R</span>
+                <span class="agent-card-name">@reviewer</span>
+                <span class="agent-card-role">Code Review, QA · Security</span>
                 <p class="agent-card-desc">
                   Reviews code for quality, security, and performance before merging.
                 </p>
-                <div class="agent-card-tags">
-                  <span class="agent-tag">ESLint</span>
-                  <span class="agent-tag">SonarQube</span>
-                  <span class="agent-tag">OWASP</span>
+                <div class="agent-card-tools">
+                  <span class="agent-tool">ESLint</span><span class="agent-tool">SonarQube</span
+                  ><span class="agent-tool">OWASP</span>
                 </div>
               </article>
             </div>
