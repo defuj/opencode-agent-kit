@@ -1,6 +1,6 @@
 import type { Plugin } from "@opencode-ai/plugin";
 
-const API = process.env.AGENTMEMORY_URL || "http://localhost:3111";
+const API = process.env.AGENTMEMORY_URL || "http://localhost:3113";
 const FILE_TOOLS = new Set(["Read", "Write", "Edit", "Glob", "Grep"]);
 const FILE_KEYS = ["filePath", "file_path", "path", "file", "pattern"];
 const MAX_STASHED_FILES = 20;
