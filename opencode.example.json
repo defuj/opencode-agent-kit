@@ -118,7 +118,7 @@
     },
     "agentmemory": {
       "type": "local",
-      "command": ["bash", ".opencode/hooks/agentmemory-start.sh"],
+      "command": ["node", ".opencode/hooks/agentmemory-start.mjs"],
       "enabled": true,
       "description": "Persistent cross-session memory with 53 tools (save, recall, smart search, sessions, file history, lessons)"
     }

@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.2] - 2026-06-23
+
+### Added
+
+- `.opencode/hooks/agentmemory-start.mjs`: new Node.js startup script for agentmemory MCP server, replacing the deprecated Bash script
+
+### Changed
+
+- `opencode.example.json`: updated agentmemory command to use Node.js script instead of Bash
+- `opencode.json`: updated agentmemory command to use Node.js script instead of Bash
+- `.opencode/hooks/agentmemory-start.sh`: deprecated Bash script removed from the project
+
+---
+
 ## [1.3.1] - 2026-06-21
 
 ### Changed

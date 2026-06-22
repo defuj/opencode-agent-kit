@@ -7,31 +7,28 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0e14'/><text x='16' y='22' text-anchor='middle' fill='%23d49a3a' font-size='16' font-weight='800' font-family='system-ui'>K</text></svg>"
-    />
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0e14'/><text x='16' y='22' text-anchor='middle' fill='%23d49a3a' font-size='16' font-weight='800' font-family='system-ui'>K</text></svg>" />
     <meta
       name="description"
-      content="A portable multi-stack AI agent system with persistent memory, 207 skill playbooks, and 46 CLI commands."
-    />
+      content="A portable multi-stack AI agent system with persistent memory, 207 skill playbooks, and 46 CLI commands." />
     <meta name="author" content="defuj" />
     <link rel="canonical" href="https://github.com/defuj/opencode-agent-kit" />
-    <meta property="og:title" content="OpenCode Agent Kit — 33 Specialized AI Agents" />
+    <meta property="og:title"
+      content="OpenCode Agent Kit — 33 Specialized AI Agents" />
     <meta
       property="og:description"
-      content="33 agents, 207 skills, 46 commands, persistent memory — install in one command."
-    />
+      content="33 agents, 207 skills, 46 commands, persistent memory — install in one command." />
     <meta
       property="og:image"
-      content="https://raw.githubusercontent.com/defuj/opencode-agent-kit/main/assets/opencode-agent-kit.webp"
-    />
-    <meta property="og:url" content="https://github.com/defuj/opencode-agent-kit" />
+      content="https://raw.githubusercontent.com/defuj/opencode-agent-kit/main/assets/opencode-agent-kit.webp" />
+    <meta property="og:url"
+      content="https://github.com/defuj/opencode-agent-kit" />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <style>
       /* ============================================================
          1. DESIGN TOKENS — HYBRID (Amber + Gold, Dual Accent)
@@ -1884,7 +1881,8 @@ C1: GLOBAL SHELL
     <!-- ============================================================
 C2: NAVBAR
 ============================================================ -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <nav class="navbar" id="navbar" role="navigation"
+      aria-label="Main navigation">
       <div class="navbar-inner">
         <a href="#" class="nav-logo" aria-label="Agent Kit home">
           <span class="nav-logo-icon" aria-hidden="true">K</span>
@@ -1902,27 +1900,23 @@ C2: NAVBAR
             id="themeToggle"
             class="theme-btn"
             aria-label="Switch to light mode"
-            title="Toggle theme"
-          >
+            title="Toggle theme">
             <span class="theme-icon" aria-hidden="true">&#x263E;</span>
           </button>
           <a
             href="https://github.com/defuj/opencode-agent-kit"
             class="btn btn-primary btn-sm"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             <svg
               width="16"
               height="16"
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
-              style="flex-shrink: 0"
-            >
+              style="flex-shrink: 0">
               <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
-              />
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
             </svg>
             GitHub
           </a>
@@ -1930,8 +1924,7 @@ C2: NAVBAR
             id="mobileBtn"
             class="mobile-btn"
             aria-label="Open navigation menu"
-            aria-expanded="false"
-          >
+            aria-expanded="false">
             <svg
               width="18"
               height="18"
@@ -1939,8 +1932,7 @@ C2: NAVBAR
               fill="none"
               stroke="currentColor"
               stroke-width="2"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               <line x1="3" y1="6" x2="21" y2="6" />
               <line x1="3" y1="12" x2="21" y2="12" />
               <line x1="3" y1="18" x2="21" y2="18" />
@@ -1950,7 +1942,8 @@ C2: NAVBAR
       </div>
     </nav>
 
-    <div id="mobilePanel" class="mobile-panel" role="dialog" aria-label="Navigation menu" hidden>
+    <div id="mobilePanel" class="mobile-panel" role="dialog"
+      aria-label="Navigation menu" hidden>
       <button class="mobile-close-btn" aria-label="Close navigation menu">
         <svg
           width="20"
@@ -1959,8 +1952,7 @@ C2: NAVBAR
           fill="none"
           stroke="currentColor"
           stroke-width="2"
-          stroke-linecap="round"
-        >
+          stroke-linecap="round">
           <line x1="18" y1="6" x2="6" y2="18" />
           <line x1="6" y1="6" x2="18" y2="18" />
         </svg>
@@ -1989,26 +1981,30 @@ C3: HERO — Typographic Headline + Stat Counters
             for every stack
           </h1>
           <p class="hero-subtitle">
-            33 specialized agents. 207 skill playbooks. Persistent cross-session memory. One command
+            33 specialized agents. 207 skill playbooks. Persistent cross-session
+            memory. One command
             to install.
           </p>
           <div class="hero-actions">
             <a href="#install" class="btn btn-primary btn-lg">Install Now</a>
-            <a href="https://github.com/defuj/opencode-agent-kit" class="btn btn-secondary btn-lg"
-              >View on GitHub</a
-            >
+            <a href="https://github.com/defuj/opencode-agent-kit"
+              class="btn btn-secondary btn-lg">View on GitHub</a>
           </div>
           <div class="terminal-preview reveal">
             <div class="terminal-preview-header">
               <div class="terminal-preview-dots" aria-hidden="true">
-                <span class="terminal-preview-dot terminal-preview-dot-red"></span>
-                <span class="terminal-preview-dot terminal-preview-dot-yellow"></span>
-                <span class="terminal-preview-dot terminal-preview-dot-green"></span>
+                <span
+                  class="terminal-preview-dot terminal-preview-dot-red"></span>
+                <span
+                  class="terminal-preview-dot terminal-preview-dot-yellow"></span>
+                <span
+                  class="terminal-preview-dot terminal-preview-dot-green"></span>
               </div>
               <span class="terminal-preview-title">bash — install</span>
             </div>
             <div class="terminal-preview-body">
-              <span class="terminal-preview-prompt">$</span> npx opencode-agent-kit init
+              <span class="terminal-preview-prompt">$</span> npx
+              opencode-agent-kit init
               <span class="terminal-preview-cursor"></span>
             </div>
           </div>
@@ -2041,11 +2037,13 @@ C4: PROBLEM — Progress Bar Metaphor
             <div class="section-tag">The Problem</div>
             <h2>Every session starts<br />from zero</h2>
             <p>
-              AI agents don't remember what you discussed last week. Architecture decisions, API
+              AI agents don't remember what you discussed last week.
+              Architecture decisions, API
               contracts, code conventions — all vanish between sessions.
             </p>
             <p>
-              Developers spend <strong class="text-primary">30% of their time</strong> re-explaining
+              Developers spend <strong class="text-primary">30% of their
+                time</strong> re-explaining
               context. Agentmemory fixes that.
             </p>
           </div>
@@ -2057,8 +2055,7 @@ C4: PROBLEM — Progress Bar Metaphor
               </div>
               <div
                 class="problem-bar problem-bar-before"
-                aria-label="Context retained without agentmemory: ~20%"
-              >
+                aria-label="Context retained without agentmemory: ~20%">
                 <div class="problem-bar-fill problem-bar-fill-broken"></div>
               </div>
             </div>
@@ -2069,12 +2066,13 @@ C4: PROBLEM — Progress Bar Metaphor
               </div>
               <div
                 class="problem-bar problem-bar-after"
-                aria-label="Context retained with agentmemory: ~95%"
-              >
-                <div class="problem-bar-fill problem-bar-fill-solid" style="width: 0%"></div>
+                aria-label="Context retained with agentmemory: ~95%">
+                <div class="problem-bar-fill problem-bar-fill-solid"
+                  style="width: 0%"></div>
               </div>
             </div>
-            <p class="problem-note">Cross-session memory, restored automatically</p>
+            <p class="problem-note">Cross-session memory, restored
+              automatically</p>
           </div>
         </div>
       </div>
@@ -2087,9 +2085,11 @@ C5: MEMORY — Comparison Panels + Table
       <div class="container">
         <div class="section-header reveal">
           <div class="section-tag">agentmemory</div>
-          <h2>Memory that persists<br />across <span class="text-primary">every session</span></h2>
+          <h2>Memory that persists<br />across <span class="text-primary">every
+              session</span></h2>
           <p class="section-sub">
-            No more repeating yourself. Agent Kit remembers who you are, what you built, and how you
+            No more repeating yourself. Agent Kit remembers who you are, what
+            you built, and how you
             build it.
           </p>
         </div>
@@ -2101,7 +2101,8 @@ C5: MEMORY — Comparison Panels + Table
               <div class="memory-panel-head">Without agentmemory</div>
               <div class="memory-panel-body">
                 <div class="memory-empty-icon" aria-hidden="true">&#x2205;</div>
-                <p class="memory-empty-text">No prior context found.<br />Starting from zero.</p>
+                <p class="memory-empty-text">No prior context
+                  found.<br />Starting from zero.</p>
               </div>
             </div>
 
@@ -2110,7 +2111,8 @@ C5: MEMORY — Comparison Panels + Table
             <!-- After: populated state -->
             <div class="memory-panel memory-panel-filled">
               <div class="memory-panel-head">
-                After <code class="text-primary">npx opencode-agent-kit init</code>
+                After <code class="text-primary">npx opencode-agent-kit
+                  init</code>
               </div>
               <div class="memory-panel-body">
                 <table class="memory-table">
@@ -2123,32 +2125,39 @@ C5: MEMORY — Comparison Panels + Table
                   </thead>
                   <tbody>
                     <tr class="memory-row">
-                      <td><span class="memory-badge memory-badge-pattern">pattern</span></td>
-                      <td class="memory-content">Component-first architecture</td>
+                      <td><span
+                          class="memory-badge memory-badge-pattern">pattern</span></td>
+                      <td class="memory-content">Component-first
+                        architecture</td>
                       <td><span class="memory-confidence">0.82</span></td>
                     </tr>
                     <tr class="memory-row">
-                      <td><span class="memory-badge memory-badge-preference">preference</span></td>
+                      <td><span
+                          class="memory-badge memory-badge-preference">preference</span></td>
                       <td class="memory-content">TypeScript + Nuxt stack</td>
                       <td><span class="memory-confidence">0.88</span></td>
                     </tr>
                     <tr class="memory-row">
-                      <td><span class="memory-badge memory-badge-decision">decision</span></td>
+                      <td><span
+                          class="memory-badge memory-badge-decision">decision</span></td>
                       <td class="memory-content">Use SQLite for persistence</td>
                       <td><span class="memory-confidence">0.91</span></td>
                     </tr>
                     <tr class="memory-row">
-                      <td><span class="memory-badge memory-badge-goal">goal</span></td>
+                      <td><span
+                          class="memory-badge memory-badge-goal">goal</span></td>
                       <td class="memory-content">Ship v2.0 by Q2</td>
                       <td><span class="memory-confidence">0.76</span></td>
                     </tr>
                     <tr class="memory-row">
-                      <td><span class="memory-badge memory-badge-pattern">pattern</span></td>
+                      <td><span
+                          class="memory-badge memory-badge-pattern">pattern</span></td>
                       <td class="memory-content">Tailwind + dark mode</td>
                       <td><span class="memory-confidence">0.85</span></td>
                     </tr>
                     <tr class="memory-row">
-                      <td><span class="memory-badge memory-badge-preference">preference</span></td>
+                      <td><span
+                          class="memory-badge memory-badge-preference">preference</span></td>
                       <td class="memory-content">Server-first rendering</td>
                       <td><span class="memory-confidence">0.79</span></td>
                     </tr>
@@ -2176,14 +2185,16 @@ C6: AGENTS — Team Roster Cards
         <div class="section-header reveal">
           <div class="section-tag">Team</div>
           <h2>33 agents, <span class="text-primary">ready to deploy</span></h2>
-          <p class="section-sub">Specialized subagents for every layer of your stack.</p>
+          <p class="section-sub">Specialized subagents for every layer of your
+            stack.</p>
         </div>
 
         <div class="agents-grid">
           <!-- Frontend -->
           <div class="agent-category reveal">
             <div class="category-flag" style="--flag-color: var(--primary)">
-              <span class="category-dot" style="--dot-color: var(--primary)"></span>
+              <span class="category-dot"
+                style="--dot-color: var(--primary)"></span>
               Frontend <span class="category-count">2</span>
             </div>
             <div class="agent-cards agent-cards--editorial">
@@ -2192,7 +2203,8 @@ C6: AGENTS — Team Roster Cards
                 <span class="agent-card-name">@frontend-nuxt</span>
                 <span class="agent-card-role">Nuxt, Vue, Pinia · Nuxt UI</span>
                 <p class="agent-card-desc">
-                  Builds production Nuxt 4 apps with composables, layouts, and full SSR.
+                  Builds production Nuxt 4 apps with composables, layouts, and
+                  full SSR.
                 </p>
                 <div class="agent-card-tools">
                   <span class="agent-tool">Vue 3</span>
@@ -2205,7 +2217,8 @@ C6: AGENTS — Team Roster Cards
                 <span class="agent-card-name">@frontend-react</span>
                 <span class="agent-card-role">React, Next.js · shadcn/ui</span>
                 <p class="agent-card-desc">
-                  Builds production React 19 apps with Server Components and shadcn/ui.
+                  Builds production React 19 apps with Server Components and
+                  shadcn/ui.
                 </p>
                 <div class="agent-card-tools">
                   <span class="agent-tool">React 19</span>
@@ -2218,8 +2231,10 @@ C6: AGENTS — Team Roster Cards
 
           <!-- Backend -->
           <div class="agent-category reveal">
-            <div class="category-flag" style="--flag-color: var(--secondary-text)">
-              <span class="category-dot" style="--dot-color: var(--secondary-text)"></span>
+            <div class="category-flag"
+              style="--flag-color: var(--secondary-text)">
+              <span class="category-dot"
+                style="--dot-color: var(--secondary-text)"></span>
               Backend <span class="category-count">3</span>
             </div>
             <div class="agent-cards agent-cards--technical">
@@ -2229,12 +2244,14 @@ C6: AGENTS — Team Roster Cards
                   <span class="agent-card-name">@node-developer</span>
                   <span class="agent-card-role">Node, Express · REST APIs</span>
                   <p class="agent-card-desc">
-                    Builds REST APIs with Express, Prisma, and JWT authentication.
+                    Builds REST APIs with Express, Prisma, and JWT
+                    authentication.
                   </p>
                 </div>
                 <div class="agent-card-tools">
-                  <span class="agent-tool">Express</span><span class="agent-tool">Prisma</span
-                  ><span class="agent-tool">JWT</span>
+                  <span class="agent-tool">Express</span><span
+                    class="agent-tool">Prisma</span><span
+                    class="agent-tool">JWT</span>
                 </div>
               </article>
               <article class="agent-card card-be" data-stagger="2">
@@ -2243,12 +2260,14 @@ C6: AGENTS — Team Roster Cards
                   <span class="agent-card-name">@laravel</span>
                   <span class="agent-card-role">Laravel, PHP · Eloquent</span>
                   <p class="agent-card-desc">
-                    Builds Laravel apps with Eloquent, Service Layers, and REST APIs.
+                    Builds Laravel apps with Eloquent, Service Layers, and REST
+                    APIs.
                   </p>
                 </div>
                 <div class="agent-card-tools">
-                  <span class="agent-tool">PHP</span><span class="agent-tool">Eloquent</span
-                  ><span class="agent-tool">REST</span>
+                  <span class="agent-tool">PHP</span><span
+                    class="agent-tool">Eloquent</span><span
+                    class="agent-tool">REST</span>
                 </div>
               </article>
               <article class="agent-card card-be" data-stagger="3">
@@ -2261,8 +2280,9 @@ C6: AGENTS — Team Roster Cards
                   </p>
                 </div>
                 <div class="agent-card-tools">
-                  <span class="agent-tool">Go</span><span class="agent-tool">Gin</span
-                  ><span class="agent-tool">gRPC</span>
+                  <span class="agent-tool">Go</span><span
+                    class="agent-tool">Gin</span><span
+                    class="agent-tool">gRPC</span>
                 </div>
               </article>
             </div>
@@ -2270,21 +2290,26 @@ C6: AGENTS — Team Roster Cards
 
           <!-- Mobile -->
           <div class="agent-category reveal">
-            <div class="category-flag" style="--flag-color: var(--success-text)">
-              <span class="category-dot" style="--dot-color: var(--success-text)"></span>
+            <div class="category-flag"
+              style="--flag-color: var(--success-text)">
+              <span class="category-dot"
+                style="--dot-color: var(--success-text)"></span>
               Mobile <span class="category-count">2</span>
             </div>
             <div class="agent-cards agent-cards--product">
               <article class="agent-card card-mobile" data-stagger="1">
                 <span class="agent-mono" aria-hidden="true">F</span>
                 <span class="agent-card-name">@flutter</span>
-                <span class="agent-card-role">Flutter, Dart · Cross-platform</span>
+                <span class="agent-card-role">Flutter, Dart ·
+                  Cross-platform</span>
                 <p class="agent-card-desc">
-                  Builds cross-platform Flutter apps with BLoC and clean architecture.
+                  Builds cross-platform Flutter apps with BLoC and clean
+                  architecture.
                 </p>
                 <div class="agent-card-tools">
-                  <span class="agent-tool">Dart</span><span class="agent-tool">BLoC</span
-                  ><span class="agent-tool">Material 3</span>
+                  <span class="agent-tool">Dart</span><span
+                    class="agent-tool">BLoC</span><span
+                    class="agent-tool">Material 3</span>
                 </div>
               </article>
               <article class="agent-card card-mobile" data-stagger="2">
@@ -2292,11 +2317,13 @@ C6: AGENTS — Team Roster Cards
                 <span class="agent-card-name">@android</span>
                 <span class="agent-card-role">Kotlin, Jetpack · Native</span>
                 <p class="agent-card-desc">
-                  Builds native Android apps with Jetpack Compose and Material 3.
+                  Builds native Android apps with Jetpack Compose and Material
+                  3.
                 </p>
                 <div class="agent-card-tools">
-                  <span class="agent-tool">Kotlin</span><span class="agent-tool">Compose</span
-                  ><span class="agent-tool">Hilt</span>
+                  <span class="agent-tool">Kotlin</span><span
+                    class="agent-tool">Compose</span><span
+                    class="agent-tool">Hilt</span>
                 </div>
               </article>
             </div>
@@ -2305,7 +2332,8 @@ C6: AGENTS — Team Roster Cards
           <!-- DevOps & Quality -->
           <div class="agent-category reveal">
             <div class="category-flag" style="--flag-color: var(--text-muted)">
-              <span class="category-dot" style="--dot-color: var(--text-muted)"></span>
+              <span class="category-dot"
+                style="--dot-color: var(--text-muted)"></span>
               DevOps &amp; Quality <span class="category-count">2</span>
             </div>
             <div class="agent-cards agent-cards--utility">
@@ -2314,11 +2342,13 @@ C6: AGENTS — Team Roster Cards
                 <span class="agent-card-name">@devops</span>
                 <span class="agent-card-role">Docker, K8s, CI/CD</span>
                 <p class="agent-card-desc">
-                  Configures Docker, Cloudflare, Vercel, and GitHub Actions pipelines.
+                  Configures Docker, Cloudflare, Vercel, and GitHub Actions
+                  pipelines.
                 </p>
                 <div class="agent-card-tools">
-                  <span class="agent-tool">Docker</span><span class="agent-tool">CI/CD</span
-                  ><span class="agent-tool">K8s</span>
+                  <span class="agent-tool">Docker</span><span
+                    class="agent-tool">CI/CD</span><span
+                    class="agent-tool">K8s</span>
                 </div>
               </article>
               <article class="agent-card card-devops" data-stagger="2">
@@ -2326,11 +2356,13 @@ C6: AGENTS — Team Roster Cards
                 <span class="agent-card-name">@reviewer</span>
                 <span class="agent-card-role">Code Review, QA · Security</span>
                 <p class="agent-card-desc">
-                  Reviews code for quality, security, and performance before merging.
+                  Reviews code for quality, security, and performance before
+                  merging.
                 </p>
                 <div class="agent-card-tools">
-                  <span class="agent-tool">ESLint</span><span class="agent-tool">SonarQube</span
-                  ><span class="agent-tool">OWASP</span>
+                  <span class="agent-tool">ESLint</span><span
+                    class="agent-tool">SonarQube</span><span
+                    class="agent-tool">OWASP</span>
                 </div>
               </article>
             </div>
@@ -2366,15 +2398,14 @@ C7: INSTALL — Minimal Code Block
             </div>
           </div>
           <p class="install-footnote">
-            73 files created &middot; 33 agents online &middot; 207 skills loaded
+            73 files created &middot; 33 agents online &middot; 207 skills
+            loaded
           </p>
           <div class="install-actions">
-            <a href="https://github.com/defuj/opencode-agent-kit" class="btn btn-primary btn-lg"
-              >Install Now</a
-            >
-            <a href="https://npmjs.com/package/opencode-agent-kit" class="btn btn-secondary btn-lg"
-              >npm</a
-            >
+            <a href="https://github.com/defuj/opencode-agent-kit"
+              class="btn btn-primary btn-lg">Install Now</a>
+            <a href="https://npmjs.com/package/opencode-agent-kit"
+              class="btn btn-secondary btn-lg">npm</a>
           </div>
         </div>
       </div>
@@ -2392,17 +2423,17 @@ C8: CTA SECTION
             <span class="text-primary">One command away.</span>
           </h2>
           <p class="cta-sub">
-            No monthly fees. No cloud dependency. Just a portable agent system<br
-              class="hide-mobile"
-            />
+            No monthly fees. No cloud dependency. Just a portable agent
+            system<br
+              class="hide-mobile" />
             that works the way you do.
           </p>
           <div class="cta-actions">
-            <a href="https://github.com/defuj/opencode-agent-kit" class="btn btn-primary btn-lg"
-              >Get Started</a
-            >
+            <a href="https://github.com/defuj/opencode-agent-kit"
+              class="btn btn-primary btn-lg">Get Started</a>
           </div>
-          <p class="cta-alt">Already installed? Run <code>npx opencode-agent-kit upgrade</code></p>
+          <p class="cta-alt">Already installed? Run <code>npx opencode-agent-kit
+              upgrade</code></p>
         </div>
       </div>
     </section>
@@ -2410,80 +2441,105 @@ C8: CTA SECTION
     <!-- ============================================================
 C9: TECH MARQUEE
 ============================================================ -->
-    <section class="marquee-section section-alt" aria-label="Supported technologies">
+    <section class="marquee-section section-alt"
+      aria-label="Supported technologies">
       <div class="marquee-track">
         <div class="marquee-item">
-          <span class="marquee-item-icon">N</span><span class="marquee-item-name">Nuxt</span>
+          <span class="marquee-item-icon">N</span><span
+            class="marquee-item-name">Nuxt</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">R</span><span class="marquee-item-name">React</span>
+          <span class="marquee-item-icon">R</span><span
+            class="marquee-item-name">React</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">F</span><span class="marquee-item-name">Flutter</span>
+          <span class="marquee-item-icon">F</span><span
+            class="marquee-item-name">Flutter</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">L</span><span class="marquee-item-name">Laravel</span>
+          <span class="marquee-item-icon">L</span><span
+            class="marquee-item-name">Laravel</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">G</span><span class="marquee-item-name">Go</span>
+          <span class="marquee-item-icon">G</span><span
+            class="marquee-item-name">Go</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">K</span><span class="marquee-item-name">Kotlin</span>
+          <span class="marquee-item-icon">K</span><span
+            class="marquee-item-name">Kotlin</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">S</span><span class="marquee-item-name">Svelte</span>
+          <span class="marquee-item-icon">S</span><span
+            class="marquee-item-name">Svelte</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">D</span><span class="marquee-item-name">Docker</span>
+          <span class="marquee-item-icon">D</span><span
+            class="marquee-item-name">Docker</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">V</span><span class="marquee-item-name">Vue</span>
+          <span class="marquee-item-icon">V</span><span
+            class="marquee-item-name">Vue</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">P</span><span class="marquee-item-name">Python</span>
+          <span class="marquee-item-icon">P</span><span
+            class="marquee-item-name">Python</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">T</span><span class="marquee-item-name">TypeScript</span>
+          <span class="marquee-item-icon">T</span><span
+            class="marquee-item-name">TypeScript</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">E</span><span class="marquee-item-name">Express</span>
+          <span class="marquee-item-icon">E</span><span
+            class="marquee-item-name">Express</span>
         </div>
         <!-- Duplicate for seamless loop -->
         <div class="marquee-item">
-          <span class="marquee-item-icon">N</span><span class="marquee-item-name">Nuxt</span>
+          <span class="marquee-item-icon">N</span><span
+            class="marquee-item-name">Nuxt</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">R</span><span class="marquee-item-name">React</span>
+          <span class="marquee-item-icon">R</span><span
+            class="marquee-item-name">React</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">F</span><span class="marquee-item-name">Flutter</span>
+          <span class="marquee-item-icon">F</span><span
+            class="marquee-item-name">Flutter</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">L</span><span class="marquee-item-name">Laravel</span>
+          <span class="marquee-item-icon">L</span><span
+            class="marquee-item-name">Laravel</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">G</span><span class="marquee-item-name">Go</span>
+          <span class="marquee-item-icon">G</span><span
+            class="marquee-item-name">Go</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">K</span><span class="marquee-item-name">Kotlin</span>
+          <span class="marquee-item-icon">K</span><span
+            class="marquee-item-name">Kotlin</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">S</span><span class="marquee-item-name">Svelte</span>
+          <span class="marquee-item-icon">S</span><span
+            class="marquee-item-name">Svelte</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">D</span><span class="marquee-item-name">Docker</span>
+          <span class="marquee-item-icon">D</span><span
+            class="marquee-item-name">Docker</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">V</span><span class="marquee-item-name">Vue</span>
+          <span class="marquee-item-icon">V</span><span
+            class="marquee-item-name">Vue</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">P</span><span class="marquee-item-name">Python</span>
+          <span class="marquee-item-icon">P</span><span
+            class="marquee-item-name">Python</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">T</span><span class="marquee-item-name">TypeScript</span>
+          <span class="marquee-item-icon">T</span><span
+            class="marquee-item-name">TypeScript</span>
         </div>
         <div class="marquee-item">
-          <span class="marquee-item-icon">E</span><span class="marquee-item-name">Express</span>
+          <span class="marquee-item-icon">E</span><span
+            class="marquee-item-name">Express</span>
         </div>
       </div>
     </section>
@@ -2500,10 +2556,10 @@ C10: FOOTER
               <span>Agent Kit</span>
             </a>
             <p class="footer-desc">
-              A portable multi-stack AI agent system for OpenCode. Built with passion by
-              <a href="https://github.com/defuj" class="footer-link" target="_blank" rel="noopener"
-                >defuj</a
-              >.
+              A portable multi-stack AI agent system for OpenCode. Built with
+              passion by
+              <a href="https://github.com/defuj" class="footer-link"
+                target="_blank" rel="noopener">defuj</a>.
             </p>
           </div>
           <div class="footer-col">
@@ -2519,16 +2575,12 @@ C10: FOOTER
               href="https://github.com/defuj/opencode-agent-kit"
               target="_blank"
               rel="noopener"
-              class="footer-col-link"
-              >GitHub</a
-            >
+              class="footer-col-link">GitHub</a>
             <a
               href="https://github.com/defuj/opencode-agent-kit/issues"
               target="_blank"
               rel="noopener"
-              class="footer-col-link"
-              >Issues</a
-            >
+              class="footer-col-link">Issues</a>
           </div>
         </div>
         <div class="footer-bottom">
@@ -2714,7 +2766,7 @@ JAVASCRIPT
               delay: 3200,
             },
             {
-              text: '<span style="color: var(--success)">  \u2713</span> <span style="color: var(--text-muted)">Agent Kit v1.3.1 installed!</span>',
+              text: '<span style="color: var(--success)">  \u2713</span> <span style="color: var(--text-muted)">Agent Kit v1.3.2 installed!</span>',
               delay: 4200,
             },
           ];
@@ -2755,7 +2807,7 @@ JAVASCRIPT
           } else {
             // Show final state for reduced motion
             termBody.innerHTML =
-              '<span class="terminal-preview-prompt">$</span> npx opencode-agent-kit init<br><span style="color: var(--success)">  \u2713</span> <span style="color: var(--text-muted)">Agent Kit v1.3.1 installed!</span>';
+              '<span class="terminal-preview-prompt">$</span> npx opencode-agent-kit init<br><span style="color: var(--success)">  \u2713</span> <span style="color: var(--text-muted)">Agent Kit v1.3.2 installed!</span>';
           }
         }
 
