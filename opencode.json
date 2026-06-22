@@ -48,7 +48,9 @@
       "df *": "allow"
     },
     "agentmemory_*": "allow",
-    "figma_*": "allow"
+    "figma_*": "allow",
+    "chrome-devtools_*": "allow",
+    "agent-browser_*": "allow"
   },
   "instructions": [
     ".opencode/instructions/INSTRUCTIONS.md",
@@ -62,7 +64,8 @@
     ".opencode/skills/api-design/SKILL.md",
     ".opencode/skills/agent-task-workflow/SKILL.md",
     ".opencode/skills/agent-communication/SKILL.md",
-    ".opencode/skills/agent-session-workflow/SKILL.md"
+    ".opencode/skills/agent-session-workflow/SKILL.md",
+    ".opencode/skills/visual-dev-loop/SKILL.md"
   ],
   "mcp": {
     "nuxt": {
@@ -120,6 +123,35 @@
       "command": ["node", ".opencode/hooks/agentmemory-start.mjs"],
       "enabled": true,
       "description": "Persistent cross-session memory with 53 tools (save, recall, smart search, sessions, file history, lessons)"
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--screenshot-format",
+        "jpeg",
+        "--screenshot-quality",
+        "80",
+        "--screenshot-max-width",
+        "1200"
+      ],
+      "enabled": true,
+      "description": "Chrome DevTools browser control: navigate, screenshot, inspect console/network/performance"
+    },
+    "agent-browser": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "agent-browser@latest",
+        "mcp",
+        "--tools",
+        "core,network,react,tabs,debug"
+      ],
+      "enabled": true,
+      "description": "Fast Rust-based browser automation: annotated screenshots, visual diff, React introspection"
     }
   },
   "plugin": [".opencode/plugins/agentmemory-capture.ts", ".opencode/plugins/ponytail.mjs"],
@@ -156,11 +188,14 @@
           "pnpm *": "allow",
           "bun *": "allow",
           "yarn *": "allow",
-          "npx playwright*": "allow"
+          "npx playwright*": "allow",
+          "portless *": "allow",
+          "npx agent-browser*": "allow"
         },
         "nuxt_*": "allow",
         "nuxt-ui_*": "allow",
         "playwright_*": "allow",
+        "chrome-devtools_*": "allow",
         "postman_*": "allow",
         "sonarqube_*": "allow",
         "task": {
@@ -201,7 +236,8 @@
           "yarn *": "allow",
           "npx playwright*": "allow"
         },
-        "playwright_*": "allow"
+        "playwright_*": "allow",
+        "chrome-devtools_*": "allow"
       }
     },
     "frontend-react": {
@@ -237,7 +273,8 @@
           "yarn *": "allow",
           "npx playwright*": "allow"
         },
-        "playwright_*": "allow"
+        "playwright_*": "allow",
+        "chrome-devtools_*": "allow"
       }
     },
     "node-developer": {
@@ -375,7 +412,8 @@
           "git log*": "allow"
         },
         "stitch_*": "allow",
-        "nuxt-ui_*": "allow"
+        "nuxt-ui_*": "allow",
+        "chrome-devtools_*": "allow"
       }
     },
     "reviewer": {
@@ -411,7 +449,8 @@
           "yarn *": "allow",
           "npx playwright*": "allow"
         },
-        "playwright_*": "allow"
+        "playwright_*": "allow",
+        "chrome-devtools_*": "allow"
       }
     },
     "database": {

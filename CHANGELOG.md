@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.3] - 2026-06-23
+
+### Added
+
+- **Visual Dev Loop** — automated build → preview → screenshot → fix → repeat cycle
+- **Chrome DevTools MCP** — enabled with screenshot optimizations (jpeg, quality 80, max 1200px)
+- **agent-browser MCP** — Rust-based browser automation with annotated screenshots, visual diff, React introspection
+- **portless auto-install** — installed globally on `npx opencode-agent-kit init` for stable `.localhost` dev URLs
+- `.opencode/skills/visual-dev-loop/SKILL.md` — dual-browser strategy skill teachng the full dev loop protocol
+- `.opencode/commands/dev-loop.md` — `/dev-loop` command for automated visual iteration
+
+### Changed
+
+- `opencode.json`: enabled chrome-devtools MCP + added agent-browser MCP + permissions for both
+- `opencode.example.json`: mirrored MCP and permission changes
+- `bin/commands/init.mjs`: auto-installs portless on init; summary updated for 10 MCP servers, 47 commands
+
+---
+
 ## [1.3.2] - 2026-06-23
 
 ### Added

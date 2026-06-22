@@ -263,7 +263,27 @@ export async function init(options) {
     }
   }
 
-  // 9. Update .gitignore
+  // 9. Install portless globally (named .localhost URLs for dev servers)
+  if (!skipInstall) {
+    info('Setting up portless (dev server URLs)...');
+    try {
+      execSync('portless --version', { stdio: 'pipe' });
+      success('portless already installed');
+    } catch {
+      try {
+        execSync('npm install -g portless', {
+          stdio: 'pipe',
+          timeout: 60000,
+        });
+        success('portless installed globally');
+      } catch (err) {
+        warn(`portless global install failed: ${err.message}`);
+        warn('Run "npm install -g portless" manually');
+      }
+    }
+  }
+
+  // 11. Update .gitignore
   const gitignorePath = join(targetDir, '.gitignore');
   const gitignoreEntries = ['.opencode/*', 'opencode.json', 'opencode.example.json', 'data/'];
   if (!existsSync(gitignorePath)) {
@@ -281,12 +301,12 @@ export async function init(options) {
     if (appended) success('Updated .gitignore');
   }
 
-  // 10. Write .kit-version for migration tracking
+  // 12. Write .kit-version for migration tracking
   const pkgJson = JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf-8'));
   const versionFile = join(opencodeDir, '.kit-version');
   writeFileSync(versionFile, pkgJson.version + '\n', 'utf-8');
 
-  // 11. Run pending migrations (for upgrades over existing installs)
+  // 13. Run pending migrations (for upgrades over existing installs)
   if (existsSync(opencodeDir) && existsSync(join(opencodeDir, '.kit-version'))) {
     const { runMigrations } = await import('./migrate.mjs');
     const existingConfig = existsSync(userConfigPath)
@@ -298,21 +318,24 @@ export async function init(options) {
     }
   }
 
-  // 12. Done — summary
+  // 14. Done — summary
   console.log(
     `\n  ${C.bold}${C.green}✅ opencode-agent-kit v${pkgJson.version} installed!${C.reset}\n`,
   );
   console.log(`  ${C.dim}Location:${C.reset} ${targetDir}`);
   console.log(`  ${C.dim}${'─'.repeat(30)}${C.reset}`);
   console.log(`  ${C.bold}What you got:${C.reset}`);
-  console.log(`    • ${C.cyan}opencode.json${C.reset}          — 31 agents + 8 MCP servers`);
+  console.log(`    • ${C.cyan}opencode.json${C.reset}          — 33 agents + 10 MCP servers`);
   console.log(`    • ${C.cyan}.opencode/agents/${C.reset}      — 34 agent prompt files`);
   console.log(`    • ${C.cyan}.opencode/skills/${C.reset}      — 200+ skill playbooks`);
-  console.log(`    • ${C.cyan}.opencode/commands/${C.reset}    — 46 slash commands`);
+  console.log(`    • ${C.cyan}.opencode/commands/${C.reset}    — 47 slash commands`);
   console.log(`    • ${C.cyan}.opencode/rules/${C.reset}       — Scoped coding rules`);
   console.log(`    • ${C.cyan}.opencode/hooks/${C.reset}       — Automation hooks`);
   console.log(`    • ${C.cyan}.opencode/docs/${C.reset}        — Agent documentation`);
   console.log(`    • ${C.cyan}agentmemory${C.reset} (global)  — Persistent memory`);
+  console.log(
+    `    • ${C.cyan}portless${C.reset} (global)    — Named .localhost URLs for dev servers`,
+  );
   console.log(
     `\n  ${C.bold}${C.green}→${C.reset} Next step: run ${C.cyan}opencode${C.reset} to start\n`,
   );
