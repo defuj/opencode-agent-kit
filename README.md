@@ -4,7 +4,7 @@
 
 # Agent Kit — Setup Guide
 
-Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 33 specialized agents, 205 skill playbooks, 46 slash commands, and 8 MCP servers.
+Complete setup guide for the **Agent Kit** — a portable multi-stack AI agent system for OpenCode. Includes 33 specialized agents, 207 skill playbooks, 47 slash commands, 10 MCP servers, and an **automatic visual dev loop** for iterative UI development.
 
 ```bash
 npx opencode-agent-kit init    # One command. Full team.
@@ -191,6 +191,9 @@ After installing `.opencode/`, the following slash commands are available:
 /e2e [user flow]                     # Generate & run E2E tests
 /test-coverage [scope]               # Analyze coverage
 
+# Dev Loop
+/dev-loop [task description]         # Automated visual development loop
+
 # Build & Errors
 /build-fix [error message]           # Fix TypeScript/build errors
 
@@ -268,7 +271,7 @@ To **customize** a built-in agent, create an agent with the **same name** in `.o
 
 ## Available Agents
 
-33 agents (33 registered in config) with **Leader → Subagent** architecture:
+33 agents (33 registered in config) with **Leader → Subagent** architecture. Plus a **Visual Dev Loop** system for autonomous build-preview-fix cycles.
 
 | Agent                           | File                          | Mode        | Role                                                                 |
 | ------------------------------- | ----------------------------- | ----------- | -------------------------------------------------------------------- |
@@ -513,15 +516,17 @@ cp -R ./.opencode/skills/firebase-basics ~/.opencode/skills/
 
 From `.opencode/config.json`, agents use the following MCP servers:
 
-| MCP           | Type   | Status   | Description                                          |
-| ------------- | ------ | -------- | ---------------------------------------------------- |
-| `nuxt`        | remote | enabled  | Nuxt documentation, blog, deployment guide           |
-| `nuxt-ui`     | remote | enabled  | Nuxt UI component docs & examples                    |
-| `playwright`  | stdio  | enabled  | Browser automation & E2E testing                     |
-| `postman`     | remote | enabled  | Postman API management (collections, requests, docs) |
-| `figma`       | remote | disabled | Figma design file access (optional)                  |
-| `stitch`      | remote | disabled | Google Stitch AI design generation (optional)        |
-| `agentmemory` | local  | enabled  | Persistent cross-session memory (53 memory tools)    |
+| MCP               | Type   | Status   | Description                                                    |
+| ----------------- | ------ | -------- | -------------------------------------------------------------- |
+| `nuxt`            | remote | enabled  | Nuxt documentation, blog, deployment guide                     |
+| `nuxt-ui`         | remote | enabled  | Nuxt UI component docs & examples                              |
+| `playwright`      | stdio  | enabled  | Browser automation & E2E testing                               |
+| `postman`         | remote | enabled  | Postman API management (collections, requests, docs)           |
+| `figma`           | remote | disabled | Figma design file access (optional)                            |
+| `stitch`          | remote | disabled | Google Stitch AI design generation (optional)                  |
+| `agentmemory`     | local  | enabled  | Persistent cross-session memory (53 memory tools)              |
+| `chrome-devtools` | local  | enabled  | Full Chrome DevTools: navigation, screenshots, console/network |
+| `agent-browser`   | local  | enabled  | Rust browser automation: annotated screenshots, visual diff    |
 
 To enable Figma MCP:
 
@@ -539,6 +544,44 @@ agentmemory                    # Start the memory server on :3111
 Open `http://localhost:3113` for the real-time memory viewer.
 
 ---
+
+## Visual Dev Loop — Autonomous Build → Preview → Fix → Repeat
+
+Agent Kit includes an **automatic visual development loop** that lets the agent iterate on UI until it's perfect. No manual screenshot requests or "what does it look like?" conversations.
+
+### How It Works
+
+```
+START → portless (dev server) → chrome-devtools (browser) → screenshot + console check
+    ↓
+ANALYZE issues → FIX code → RELOAD browser → RE-INSPECT
+    ↓
+REPEAT until all issues are resolved (max 10 iterations)
+```
+
+### Tools
+
+| Tool                                                                         | Role                                                                                 |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [portless](https://portless.sh)                                              | Runs dev server at `https://<app>.localhost` — stable, named URLs                    |
+| [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Browser control: navigate, screenshot, snapshot, inspect console/network/performance |
+| [agent-browser](https://github.com/vercel-labs/agent-browser)                | Annotated screenshots, visual diff regression, React component tree, Web Vitals      |
+
+### Command
+
+```
+/dev-loop <task description>
+```
+
+The agent automatically:
+
+1. Starts the dev server via portless
+2. Opens Chrome and navigates to the app
+3. Takes screenshots and inspects console/network
+4. Analyzes issues against the task requirements
+5. Fixes the code
+6. Reloads and re-inspects
+7. Loops until done or 10 iterations reached
 
 ## Agent Memory — Persistent Cross-Session Intelligence
 

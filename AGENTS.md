@@ -2,6 +2,8 @@
 
 This is the Agent Kit: a portable meta-project containing OpenCode agent configurations, skills, rules, and commands for a multi-stack development agent system. It covers Nuxt/Vue frontend, React/Next.js frontend, Node.js backend, Laravel, CodeIgniter 3, Java/Spring Boot, Go, mobile (Android + Flutter), and supporting roles (design, review, database, devops, SEO). There is no actual application source code — all content is configuration and documentation for AI agent orchestration.
 
+**New in v1.3.3:** Automatic **Visual Dev Loop** — agents can now run your app, preview in the browser, take screenshots, inspect console/network, fix issues, and repeat until done. Uses Chrome DevTools MCP + agent-browser + portless.
+
 ## Project Structure
 
 - `.opencode/config.json` — Main OpenCode configuration with MCP servers and 33 agent definitions
@@ -13,16 +15,17 @@ This is the Agent Kit: a portable meta-project containing OpenCode agent configu
   - **Support**: `ui-ux-designer`, `code-reviewer`, `database-specialist`, `devops-specialist`, `seo-specialist`
   - **Quality**: `sonarqube-quality`
 - `.opencode/instructions/INSTRUCTIONS.md` — Core instructions loaded into all agents
-- `.opencode/skills/` — 205 skill playbooks (coding-standards, flutter, android-jetpack-compose, 10 flutter skills, 9 dart skills, firebase-basics, nuxt-ui, impeccable (design), security-review, rust-patterns, golang-patterns, python-patterns, cpp-patterns, kotlin-patterns, swift-patterns, dotnet-patterns, angular-developer, and many more)
+- `.opencode/skills/` — 205+ skill playbooks (coding-standards, flutter, android-jetpack-compose, 10 flutter skills, 9 dart skills, firebase-basics, nuxt-ui, impeccable (design), security-review, visual-dev-loop, rust-patterns, golang-patterns, python-patterns, cpp-patterns, kotlin-patterns, swift-patterns, dotnet-patterns, angular-developer, and many more)
 - `.opencode/rules/` — Scoped rules (common/, typescript/, python/, android/, flutter/, mobile/)
-- `.opencode/commands/` — Custom slash commands (plan, tdd, code-review, security, sonarqube-scan, android-build, flutter-build, flutter-test, gpc-release, etc.)
+- `.opencode/commands/` — Custom slash commands (plan, tdd, code-review, security, dev-loop, sonarqube-scan, android-build, flutter-build, flutter-test, gpc-release, etc.)
 - `.opencode/contexts/` — Context files (dev, review, research modes)
 
 ## Key Architecture
 
 - **Primary Agent**: `leader` (IT Leader) orchestrates via Task tool to subagents
 - **Subagents** (33 total): `frontend-nuxt`, `frontend-react`, `node-developer`, `ci3`, `laravel`, `java-developer`, `go-developer`, `python`, `rust`, `swift`, `dotnet`, `angular`, `cpp`, `android`, `flutter`, `designer`, `reviewer`, `database`, `devops`, `seo`, `sonarqube`, `python-reviewer`, `rust-reviewer`, `cpp-reviewer`, `java-reviewer`, `php-reviewer`, `kotlin-reviewer`, `go-reviewer`, `harness-optimizer`, `loop-operator`, `docs-lookup`, `agent-engineer`
-- **MCP Servers**: Nuxt docs, Nuxt UI docs, Playwright, Postman, SonarQube (enabled); Figma, Stitch (disabled)
+- **MCP Servers**: Nuxt docs, Nuxt UI docs, Playwright, Postman, SonarQube, Chrome DevTools, agent-browser, agentmemory (enabled); Figma, Stitch (disabled)
+- **Dev Loop**: `portless` for stable dev URLs + `chrome-devtools` MCP for navigation/screenshots/debugging + `agent-browser` for annotated screenshots/visual diff — all coordinated via `/dev-loop` command
 - **Built-in Agents Available**: `@planner`, `@explore`, `@scout`, `@general`, `@code-reviewer`, `@security-reviewer`, `@e2e-runner`, `@build-error-resolver`, `@refactor-cleaner`
 
 ## Mobile Development
