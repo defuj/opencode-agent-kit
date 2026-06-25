@@ -82,7 +82,11 @@ export async function doctor(options) {
   if (hasOpencode) {
     // 4a. Check agent prompts
     const agentsDir = join(opencodeDir, 'prompts', 'agents');
-    check(existsSync(agentsDir), '.opencode/prompts/agents/ found', '.opencode/prompts/agents/ missing');
+    check(
+      existsSync(agentsDir),
+      '.opencode/prompts/agents/ found',
+      '.opencode/prompts/agents/ missing',
+    );
 
     // 4b. Check instructions
     const instrDir = join(opencodeDir, 'instructions');

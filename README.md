@@ -244,16 +244,16 @@ cp .opencode/config.json /path/to/your-project/.opencode/config.json
 
 ### What Gets Copied
 
-| File/Folder               | Content                         | Required    |
-| ------------------------- | ------------------------------- | ----------- |
-| `opencode.json`           | Agent definitions, MCP settings | Yes         |
-| `.opencode/prompts/agents/`       | Custom agent prompts            | Yes         |
-| `.opencode/instructions/` | Global rules for all agents     | Yes         |
-| `.opencode/skills/`       | Domain-specific skills          | Recommended |
-| `.opencode/contexts/`     | Project context                 | Optional    |
-| `.opencode/commands/`     | Custom slash commands           | Optional    |
-| `.opencode/rules/`        | Coding rules                    | Optional    |
-| `.opencode/hooks/`        | Automation hooks                | Optional    |
+| File/Folder                 | Content                         | Required    |
+| --------------------------- | ------------------------------- | ----------- |
+| `opencode.json`             | Agent definitions, MCP settings | Yes         |
+| `.opencode/prompts/agents/` | Custom agent prompts            | Yes         |
+| `.opencode/instructions/`   | Global rules for all agents     | Yes         |
+| `.opencode/skills/`         | Domain-specific skills          | Recommended |
+| `.opencode/contexts/`       | Project context                 | Optional    |
+| `.opencode/commands/`       | Custom slash commands           | Optional    |
+| `.opencode/rules/`          | Coding rules                    | Optional    |
+| `.opencode/hooks/`          | Automation hooks                | Optional    |
 
 ### Integration with Global OpenCode
 
