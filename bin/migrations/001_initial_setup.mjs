@@ -1,6 +1,6 @@
 /**
  * Migration 001: Initial Setup
- * Version: 1.3.3
+ * Version: 1.3.4
  *
  * Establishes the migration system foundation:
  * - Ensures .kit-version file exists in target .opencode/
@@ -20,7 +20,7 @@
  * @param {object} opts.path - Node path module
  */
 export default {
-  version: '1.3.3',
+  version: '1.3.4',
   description:
     'Initialize migration system — establish .kit-version tracking and validate config structure',
 
@@ -36,7 +36,7 @@ export default {
     // Ensure .kit-version file exists
     const versionFile = path.join(opencodeDir, '.kit-version');
     if (!fs.existsSync(versionFile)) {
-      fs.writeFileSync(versionFile, '1.3.3\n', 'utf-8');
+      fs.writeFileSync(versionFile, '1.3.4\n', 'utf-8');
     }
 
     // Validate config has agent and permission fields

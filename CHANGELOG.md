@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.4] - 2026-06-25
+
+### Added
+
+- **SonarQube as primary agent** — mode changed from `subagent` to `primary`; SonarQube Quality Auditor can now be selected as a standalone agent, not just a subagent of IT Leader
+- **Bug/Error Fix Protocol** — new 4-step mandatory protocol in `it-leader.md`: classify issue → read context only (never edit) → delegate immediately to domain subagent → verify the fix; ensures leader never edits code directly
+
+### Changed
+
+- **Agent prompts relocated** — all 34 agent `.md` files moved from `.opencode/agents/` → `.opencode/prompts/agents/`; OpenCode auto-detection now driven solely by `opencode.json`
+- `opencode.json`: all `{file:.opencode/agents/...}` paths updated to `{file:.opencode/prompts/agents/...}`; SonarQube agent description updated
+- `opencode.example.json`: mirrored path and mode changes
+- `bin/commands/doctor.mjs`: agent path check updated to `prompts/agents/`
+- `bin/commands/init.mjs`: summary display updated to `prompts/agents/`
+- `bin/commands/validate.mjs`: agent validation directory updated to `prompts/agents/`
+- `AGENTS.md`, `README.md`, `CONTRIBUTING.md`: all `.opencode/agents/` references updated
+- `schema/opencode-config.schema.json`, `index-old.html`: example paths updated
+- `.opencode/prompts/agents/nuxt-frontend-developer-mentor.md`: internal cross-reference paths updated
+- `.opencode/skills/android-kotlin-compose/SKILL.md`: agent reference path updated
+- `it-leader.md`: added DELEGATION MANDATE, Bug/Error Fix classification, stronger delegation enforcement, and 10 new delegation examples for bug/error fixes
+
+---
+
 ## [1.3.3] - 2026-06-23
 
 ### Added

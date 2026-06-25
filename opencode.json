@@ -159,7 +159,7 @@
     "leader": {
       "description": "IT Leader & Technical Project Manager \u2014 analyzes requirements, designs architecture, decomposes tasks, delegates to subagents, and unifies outputs",
       "mode": "primary",
-      "prompt": "{file:.opencode/agents/it-leader.md}",
+      "prompt": "{file:.opencode/prompts/agents/it-leader.md}",
       "temperature": 0.4,
       "color": "#8b5cf6",
       "permission": {
@@ -206,7 +206,7 @@
     "frontend-nuxt": {
       "description": "Expert Vue/Nuxt frontend developer for Nuxt.js, Vue 3, Nuxt UI, and modern web technologies with MCP integration (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/nuxt-frontend-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/nuxt-frontend-developer.md}",
       "color": "#3b82f6",
       "permission": {
         "edit": "allow",
@@ -243,7 +243,7 @@
     "frontend-react": {
       "description": "Expert React/Next.js frontend developer for React 19, Next.js 15, Vite, shadcn/ui, and modern web technologies (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/react-frontend-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/react-frontend-developer.md}",
       "color": "#06b6d4",
       "permission": {
         "edit": "allow",
@@ -280,7 +280,7 @@
     "node-developer": {
       "description": "Expert Node.js backend developer for Express, Prisma, PostgreSQL, REST APIs, and JWT auth (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/node-backend-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/node-backend-developer.md}",
       "color": "#10b981",
       "permission": {
         "edit": "allow",
@@ -315,7 +315,7 @@
     "ci3": {
       "description": "CodeIgniter 3 MVC fullstack developer for REST API, JWT, MySQL/PostgreSQL (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/code-igniter-3-fullstack.md}",
+      "prompt": "{file:.opencode/prompts/agents/code-igniter-3-fullstack.md}",
       "color": "#84cc16",
       "permission": {
         "edit": "allow",
@@ -349,7 +349,7 @@
     "laravel": {
       "description": "Laravel backend engineer for REST API, Service/Repository, JWT, MySQL/PostgreSQL (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/laravel-advanced.md}",
+      "prompt": "{file:.opencode/prompts/agents/laravel-advanced.md}",
       "color": "#f97316",
       "permission": {
         "edit": "allow",
@@ -383,7 +383,7 @@
     "designer": {
       "description": "UI/UX Designer specializing in design systems, Google Stitch, Figma, accessibility, and design-to-code handoff (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/ui-ux-designer.md}",
+      "prompt": "{file:.opencode/prompts/agents/ui-ux-designer.md}",
       "color": "#f59e0b",
       "permission": {
         "edit": "allow",
@@ -419,7 +419,7 @@
     "reviewer": {
       "description": "Code Reviewer & QA Engineer specializing in code quality, security audit, testing strategy, and verification (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/code-reviewer.md}",
+      "prompt": "{file:.opencode/prompts/agents/code-reviewer.md}",
       "color": "#ef4444",
       "permission": {
         "edit": "allow",
@@ -456,7 +456,7 @@
     "database": {
       "description": "Database Specialist specializing in PostgreSQL schema design, query optimization, Prisma ORM, and migrations (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/database-specialist.md}",
+      "prompt": "{file:.opencode/prompts/agents/database-specialist.md}",
       "color": "#0891b2",
       "permission": {
         "edit": "allow",
@@ -490,7 +490,7 @@
     "devops": {
       "description": "DevOps Engineer specializing in CI/CD, deployment, Docker, monitoring, and infrastructure (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/devops-specialist.md}",
+      "prompt": "{file:.opencode/prompts/agents/devops-specialist.md}",
       "color": "#6366f1",
       "permission": {
         "edit": "allow",
@@ -525,7 +525,7 @@
     "seo": {
       "description": "SEO Specialist specializing in meta tags, structured data, Core Web Vitals, and content optimization (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/seo-specialist.md}",
+      "prompt": "{file:.opencode/prompts/agents/seo-specialist.md}",
       "color": "#65a30d",
       "permission": {
         "edit": "allow",
@@ -559,7 +559,7 @@
     "android": {
       "description": "Expert Android developer for Kotlin, Jetpack Compose, XML, Material Design 3, and Google Play (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/android-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/android-developer.md}",
       "color": "#22c55e",
       "permission": {
         "edit": "allow",
@@ -592,7 +592,7 @@
     "flutter": {
       "description": "Expert Flutter developer for Dart, Flutter SDK, Material Design 3, Firebase, and cross-platform mobile apps (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/flutter-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/flutter-developer.md}",
       "color": "#0284c7",
       "permission": {
         "edit": "allow",
@@ -623,9 +623,9 @@
       }
     },
     "sonarqube": {
-      "description": "SonarQube Quality Auditor & Fix Orchestrator \u2014 scans codebases, categorizes findings, creates TODOs, and delegates fixes to domain subagents (subagent of IT Leader)",
-      "mode": "subagent",
-      "prompt": "{file:.opencode/agents/sonarqube-quality.md}",
+      "description": "SonarQube Quality Auditor & Fix Orchestrator \u2014 scans codebases, categorizes findings, creates TODOs, and delegates fixes to domain subagents",
+      "mode": "primary",
+      "prompt": "{file:.opencode/prompts/agents/sonarqube-quality.md}",
       "color": "#eab308",
       "permission": {
         "edit": "allow",
@@ -659,7 +659,7 @@
     "python": {
       "description": "Python developer for Django, FastAPI, data science, and ML engineering",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/python-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/python-developer.md}",
       "color": "#3776AB",
       "permission": {
         "edit": "allow",
@@ -693,7 +693,7 @@
     "rust": {
       "description": "Rust systems programmer for performance-critical applications, CLI tools, and embedded systems",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/rust-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/rust-developer.md}",
       "color": "#DEA584",
       "permission": {
         "edit": "allow",
@@ -725,7 +725,7 @@
     "swift": {
       "description": "Swift/SwiftUI developer for iOS, macOS, and Apple platform applications",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/swift-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/swift-developer.md}",
       "color": "#F05138",
       "permission": {
         "edit": "allow",
@@ -757,7 +757,7 @@
     "dotnet": {
       "description": "C#/.NET/F# developer for ASP.NET Core, Blazor, MAUI, and Azure cloud applications",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/dotnet-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/dotnet-developer.md}",
       "color": "#512BD4",
       "permission": {
         "edit": "allow",
@@ -788,7 +788,7 @@
     "angular": {
       "description": "Angular/TypeScript frontend developer for web applications with standalone components, NgRx, and RxJS",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/angular-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/angular-developer.md}",
       "color": "#DD0031",
       "permission": {
         "edit": "allow",
@@ -820,7 +820,7 @@
     "cpp": {
       "description": "C++ developer for modern C++17/20/23 systems programming, performance-critical applications, and embedded systems",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/cpp-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/cpp-developer.md}",
       "color": "#00599C",
       "permission": {
         "edit": "allow",
@@ -854,7 +854,7 @@
     "java-developer": {
       "description": "Java/Spring Boot developer for REST APIs, JPA/Hibernate, microservices, and JVM ecosystem (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/java-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/java-developer.md}",
       "color": "#ED8B00",
       "permission": {
         "edit": "allow",
@@ -887,7 +887,7 @@
     "go-developer": {
       "description": "Go developer for REST APIs, microservices, CLI tools, and concurrent systems (subagent of IT Leader)",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/go-developer.md}",
+      "prompt": "{file:.opencode/prompts/agents/go-developer.md}",
       "color": "#00ADD8",
       "permission": {
         "edit": "allow",
@@ -918,7 +918,7 @@
     "python-reviewer": {
       "description": "Python code review specialist \u2014 reviews Python code for type safety, PEP 8, Django/FastAPI patterns, and security",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/python-reviewer.md}",
+      "prompt": "{file:.opencode/prompts/agents/python-reviewer.md}",
       "color": "#306998",
       "permission": {
         "edit": "allow",
@@ -952,7 +952,7 @@
     "rust-reviewer": {
       "description": "Rust code review specialist \u2014 reviews Rust code for memory safety, ownership, concurrency, and idiomatic patterns",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/rust-reviewer.md}",
+      "prompt": "{file:.opencode/prompts/agents/rust-reviewer.md}",
       "color": "#C67D4B",
       "permission": {
         "edit": "allow",
@@ -984,7 +984,7 @@
     "cpp-reviewer": {
       "description": "C++ code review specialist \u2014 reviews C++ code for memory safety, RAII, modern C++ patterns, and performance",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/cpp-reviewer.md}",
+      "prompt": "{file:.opencode/prompts/agents/cpp-reviewer.md}",
       "color": "#004477",
       "permission": {
         "edit": "allow",
@@ -1017,7 +1017,7 @@
     "java-reviewer": {
       "description": "Java/Spring Boot code review specialist \u2014 reviews Java code for JPA, Spring patterns, concurrency, and security",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/java-reviewer.md}",
+      "prompt": "{file:.opencode/prompts/agents/java-reviewer.md}",
       "color": "#CC7700",
       "permission": {
         "edit": "allow",
@@ -1050,7 +1050,7 @@
     "php-reviewer": {
       "description": "PHP/Laravel code review specialist \u2014 reviews PHP code for PSR standards, Laravel patterns, Eloquent, and security",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/php-reviewer.md}",
+      "prompt": "{file:.opencode/prompts/agents/php-reviewer.md}",
       "color": "#777BB4",
       "permission": {
         "edit": "allow",
@@ -1083,7 +1083,7 @@
     "kotlin-reviewer": {
       "description": "Kotlin/Android code review specialist \u2014 reviews Kotlin code for coroutines, Compose, clean architecture, and Android security",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/kotlin-reviewer.md}",
+      "prompt": "{file:.opencode/prompts/agents/kotlin-reviewer.md}",
       "color": "#7F52FF",
       "permission": {
         "edit": "allow",
@@ -1115,7 +1115,7 @@
     "go-reviewer": {
       "description": "Go code review specialist \u2014 reviews Go code for error handling, concurrency, idiomatic patterns, and security",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/go-reviewer.md}",
+      "prompt": "{file:.opencode/prompts/agents/go-reviewer.md}",
       "color": "#0088AA",
       "permission": {
         "edit": "allow",
@@ -1146,7 +1146,7 @@
     "harness-optimizer": {
       "description": "Agent harness optimizer \u2014 analyzes and improves agent configuration for reliability, cost efficiency, and throughput",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/harness-optimizer.md}",
+      "prompt": "{file:.opencode/prompts/agents/harness-optimizer.md}",
       "color": "#7C4FE0",
       "permission": {
         "edit": "allow",
@@ -1176,7 +1176,7 @@
     "loop-operator": {
       "description": "Autonomous loop operator \u2014 operates, monitors, and intervenes in autonomous agent loops with quality gates",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/loop-operator.md}",
+      "prompt": "{file:.opencode/prompts/agents/loop-operator.md}",
       "color": "#EC4899",
       "permission": {
         "edit": "allow",
@@ -1208,7 +1208,7 @@
     "docs-lookup": {
       "description": "Documentation lookup specialist \u2014 fetches current library and API documentation via MCP with code examples",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/docs-lookup.md}",
+      "prompt": "{file:.opencode/prompts/agents/docs-lookup.md}",
       "color": "#4F52B0",
       "permission": {
         "edit": "allow",
@@ -1238,7 +1238,7 @@
     "agent-engineer": {
       "description": "AI Agent Engineer \u2014 builds agent orchestration systems, evaluation harnesses, autonomous loops, and safety guardrails",
       "mode": "subagent",
-      "prompt": "{file:.opencode/agents/agent-engineer.md}",
+      "prompt": "{file:.opencode/prompts/agents/agent-engineer.md}",
       "color": "#6D28D9",
       "permission": {
         "edit": "allow",

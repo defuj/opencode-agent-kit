@@ -7,7 +7,7 @@ This is the Agent Kit: a portable meta-project containing OpenCode agent configu
 ## Project Structure
 
 - `.opencode/config.json` — Main OpenCode configuration with MCP servers and 33 agent definitions
-- `.opencode/agents/` — Custom agent prompts:
+- `.opencode/prompts/agents/` — Custom agent prompts:
   - **Primary**: `it-leader` (orchestrator)
   - **Web Frontend**: `nuxt-frontend-developer`, `react-frontend-developer`
   - **Backend**: `node-backend-developer`, `code-igniter-3-fullstack`, `laravel-advanced`, `java-developer`, `go-developer`

@@ -1527,4 +1527,4 @@ class ProductRepositoryTest {
 
 ---
 
-*Referenced by agent `@android`. For full agent profile, see `.opencode/agents/android-developer.md`.*
+*Referenced by agent `@android`. For full agent profile, see `.opencode/prompts/agents/android-developer.md`.*

@@ -326,7 +326,7 @@ export async function init(options) {
   console.log(`  ${C.dim}${'─'.repeat(30)}${C.reset}`);
   console.log(`  ${C.bold}What you got:${C.reset}`);
   console.log(`    • ${C.cyan}opencode.json${C.reset}          — 33 agents + 10 MCP servers`);
-  console.log(`    • ${C.cyan}.opencode/agents/${C.reset}      — 34 agent prompt files`);
+  console.log(`    • ${C.cyan}.opencode/prompts/agents/${C.reset}      — 34 agent prompt files`);
   console.log(`    • ${C.cyan}.opencode/skills/${C.reset}      — 200+ skill playbooks`);
   console.log(`    • ${C.cyan}.opencode/commands/${C.reset}    — 47 slash commands`);
   console.log(`    • ${C.cyan}.opencode/rules/${C.reset}       — Scoped coding rules`);

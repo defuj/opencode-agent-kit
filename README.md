@@ -39,7 +39,7 @@ This repository contains a complete OpenCode agent configuration with **Leader �
 ### Agent Config
 
 - **Active config**: `opencode.json` (source of truth)
-- Agent prompts: `.opencode/agents/`
+- Agent prompts: `.opencode/prompts/agents/`
   - `it-leader.md` — IT Leader & Technical Project Manager (primary)
   - `nuxt-frontend-developer.md` — Frontend Developer (Nuxt/Vue) — `@frontend-nuxt`
   - `react-frontend-developer.md` — Frontend Developer (React/Next.js) — `@frontend-react`
@@ -247,7 +247,7 @@ cp .opencode/config.json /path/to/your-project/.opencode/config.json
 | File/Folder               | Content                         | Required    |
 | ------------------------- | ------------------------------- | ----------- |
 | `opencode.json`           | Agent definitions, MCP settings | Yes         |
-| `.opencode/agents/`       | Custom agent prompts            | Yes         |
+| `.opencode/prompts/agents/`       | Custom agent prompts            | Yes         |
 | `.opencode/instructions/` | Global rules for all agents     | Yes         |
 | `.opencode/skills/`       | Domain-specific skills          | Recommended |
 | `.opencode/contexts/`     | Project context                 | Optional    |
@@ -262,12 +262,12 @@ This project config **does not modify** your global configuration. Just copy `.o
 To use a global agent instead of the project one, rename the file:
 
 ```bash
-mv .opencode/agents/code-reviewer.md .opencode/agents/code-reviewer-custom.md
+mv .opencode/prompts/agents/code-reviewer.md .opencode/prompts/agents/code-reviewer-custom.md
 ```
 
 ### Override Built-in Agents
 
-To **customize** a built-in agent, create an agent with the **same name** in `.opencode/agents/`. Project-level agents override built-in ones.
+To **customize** a built-in agent, create an agent with the **same name** in `.opencode/prompts/agents/`. Project-level agents override built-in ones.
 
 ## Available Agents
 
@@ -885,19 +885,19 @@ Agent documentation is available at `.opencode/docs/frontend/nuxt/`:
 
 - Active config: `opencode.json`
 - Example config (per-model): `.opencode/config.example.json`
-- IT Leader prompt (primary): `.opencode/agents/it-leader.md`
-- Frontend (Nuxt) prompt: `.opencode/agents/nuxt-frontend-developer.md`
-- Frontend (React) prompt: `.opencode/agents/react-frontend-developer.md`
-- Backend (Node) prompt: `.opencode/agents/node-backend-developer.md`
-- Backend (Laravel) prompt: `.opencode/agents/laravel-advanced.md`
-- Backend (CI3) prompt: `.opencode/agents/code-igniter-3-fullstack.md`
-- Designer prompt: `.opencode/agents/ui-ux-designer.md`
-- Reviewer prompt: `.opencode/agents/code-reviewer.md`
-- Database prompt: `.opencode/agents/database-specialist.md`
-- DevOps prompt: `.opencode/agents/devops-specialist.md`
-- SEO prompt: `.opencode/agents/seo-specialist.md`
-- Android prompt: `.opencode/agents/android-developer.md`
-- Flutter prompt: `.opencode/agents/flutter-developer.md`
+- IT Leader prompt (primary): `.opencode/prompts/agents/it-leader.md`
+- Frontend (Nuxt) prompt: `.opencode/prompts/agents/nuxt-frontend-developer.md`
+- Frontend (React) prompt: `.opencode/prompts/agents/react-frontend-developer.md`
+- Backend (Node) prompt: `.opencode/prompts/agents/node-backend-developer.md`
+- Backend (Laravel) prompt: `.opencode/prompts/agents/laravel-advanced.md`
+- Backend (CI3) prompt: `.opencode/prompts/agents/code-igniter-3-fullstack.md`
+- Designer prompt: `.opencode/prompts/agents/ui-ux-designer.md`
+- Reviewer prompt: `.opencode/prompts/agents/code-reviewer.md`
+- Database prompt: `.opencode/prompts/agents/database-specialist.md`
+- DevOps prompt: `.opencode/prompts/agents/devops-specialist.md`
+- SEO prompt: `.opencode/prompts/agents/seo-specialist.md`
+- Android prompt: `.opencode/prompts/agents/android-developer.md`
+- Flutter prompt: `.opencode/prompts/agents/flutter-developer.md`
 - Mobile commands: `.opencode/commands/android-build/`, `android-test/`, `flutter-build/`, `flutter-test/`, `gpc-release/`
 - Mobile rules: `.opencode/rules/android/`, `flutter/`, `mobile/`
 - Main docs: `.opencode/docs/frontend/nuxt/README.md`

@@ -126,7 +126,7 @@ async function validate(options = {}) {
     }
 
     // Check agent prompt files exist
-    const agentsDir = join(targetDir, '.opencode', 'agents');
+    const agentsDir = join(targetDir, '.opencode', 'prompts', 'agents');
     if (existsSync(agentsDir)) {
       const agentFiles = readdirSync(agentsDir).filter((f) => f.endsWith('.md'));
       const agentFileMap = {};
@@ -164,7 +164,7 @@ async function validate(options = {}) {
         }
       }
     } else {
-      warn('.opencode/agents/ directory not found');
+      warn('.opencode/prompts/agents/ directory not found');
     }
 
     // Check agent structure

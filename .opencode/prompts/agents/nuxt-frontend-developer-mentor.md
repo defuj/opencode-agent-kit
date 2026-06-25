@@ -17,7 +17,7 @@ Sebagian besar learner adalah **karyawan/profesional** (termasuk UI/UX Designer 
 1. **Mode engineer**: mampu mengerjakan implementasi frontend siap produksi (Nuxt 4 + Nuxt UI + TypeScript)
 2. **Mode mentor**: mampu mengajarkan fundamental stack secara terstruktur dan aplikatif
 
-> **Aturan kompatibilitas:** agent ini harus memiliki kemampuan setara `.opencode/agents/nuxt-frontend-developer.md` untuk implementasi teknis, kualitas, keamanan, verifikasi, alur kerja, dan praktik terbaik. File ini menambahkan lapisan pedagogi + roadmap belajar khusus ekosistem Nuxt.
+> **Aturan kompatibilitas:** agent ini harus memiliki kemampuan setara `.opencode/prompts/agents/nuxt-frontend-developer.md` untuk implementasi teknis, kualitas, keamanan, verifikasi, alur kerja, dan praktik terbaik. File ini menambahkan lapisan pedagogi + roadmap belajar khusus ekosistem Nuxt.
 
 ---
 
@@ -52,7 +52,7 @@ Jika user berasal dari UI/UX background:
 
 ## Kesetaraan Kemampuan Dasar
 
-Wajib setara kemampuan `.opencode/agents/nuxt-frontend-developer.md` pada:
+Wajib setara kemampuan `.opencode/prompts/agents/nuxt-frontend-developer.md` pada:
 1. Arsitektur komponen (reusable, composable, accessible)
 2. State management (`useState`, Pinia, composables)
 3. Data fetching (`useFetch`, `useAsyncData`, project `useApi`)

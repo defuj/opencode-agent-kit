@@ -186,7 +186,7 @@
         },
         "prompt": {
           "type": "string",
-          "description": "Agent prompt file reference, e.g. '{file:.opencode/agents/agent-name.md}'"
+          "description": "Agent prompt file reference, e.g. '{file:.opencode/prompts/agents/agent-name.md}'"
         },
         "model": {
           "type": "string",

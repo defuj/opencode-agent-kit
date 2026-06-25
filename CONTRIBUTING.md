@@ -93,7 +93,7 @@ Before submitting, ensure:
 
 To add a new agent to the kit:
 
-1. Create the agent prompt file in `template/.opencode/agents/<name>.md`
+1. Create the agent prompt file in `.opencode/prompts/agents/<name>.md`
 2. Add the agent to `template/opencode.json` under `agent` section
 3. Create relevant skills in `template/.opencode/skills/<name>/SKILL.md`
 4. Create commands in `template/.opencode/commands/<name>/`
