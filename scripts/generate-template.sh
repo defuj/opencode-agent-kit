@@ -17,7 +17,7 @@ mkdir -p template
 # Copy .opencode/ — exclude node_modules (they get installed in target project)
 echo "  Copying .opencode/ → template/.opencode/ ..."
 mkdir -p template/.opencode
-for dir in agents commands contexts docs hooks instructions plugins rules skills; do
+for dir in prompts commands contexts docs hooks instructions plugins rules skills; do
   if [ -d ".opencode/$dir" ]; then
     cp -r ".opencode/$dir" "template/.opencode/$dir"
   fi
