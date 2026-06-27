@@ -14,18 +14,71 @@ npx opencode-agent-kit init    # One command. Full team.
 
 ## Quick Install
 
+### Per-Project Install (Traditional)
+
 ```bash
 npx opencode-agent-kit init
 ```
 
-This copies the full agent configuration, skills, commands, and rules into your project. Smart merging preserves your existing setup.
+Copies the full agent configuration, skills, commands, and rules into `.opencode/` in your project.
 
-Global install:
+### Global Install (Recommended — All Projects)
+
+Install once, use in every project. OpenCode auto-detects the global config.
 
 ```bash
-npm install -g opencode-agent-kit
+# Step 1: Install globally (one time)
+npx opencode-agent-kit init --global
+
+# Step 2: Just use opencode in any project — no per-project setup needed
 cd /path/to/your-project
-opencode-agent-kit init
+opencode
+```
+
+The global install puts everything in the platform-specific OpenCode config directory:
+
+| Platform | Path                                                 |
+| -------- | ---------------------------------------------------- |
+| macOS    | `~/.config/opencode/`                                |
+| Linux    | `$XDG_CONFIG_HOME/opencode/` (`~/.config/opencode/`) |
+| Windows  | `%USERPROFILE%\.config\opencode\`                    |
+
+Override with `$OPENCODE_HOME` env var.
+
+### What Gets Installed Globally
+
+```
+~/.config/opencode/
+├── opencode.jsonc       ← merged config (preserves your providers/MCP)
+├── skills/              ← 200+ skill playbooks
+├── prompts/agents/      ← 34 agent prompt files
+├── commands/            ← 47 slash commands
+├── instructions/        ← Core rules for all agents
+├── hooks/               ← Automation hooks
+├── rules/               ← Scoped coding rules
+├── docs/                ← Reference documentation
+├── contexts/            ← Dev/research/review contexts
+├── plugins/             ← Agent plugins
+└── package.json         ← Dependencies
+```
+
+### Managing Global Install
+
+```bash
+# Check global install status
+opencode-agent-kit global status
+
+# Show global install path
+opencode-agent-kit global path
+
+# Update to latest version
+opencode-agent-kit global update
+
+# Link a project explicitly (macOS/Linux: auto-detected)
+opencode-agent-kit link
+
+# Force per-project copy (detach from global)
+npx opencode-agent-kit init --local
 ```
 
 ---
@@ -653,9 +706,20 @@ To enable Google Stitch MCP:
 export STITCH_API_KEY="your-api-key"
 ```
 
-## Global Config Setup
+## Global Install (Command)
 
-To make agents, skills, commands, and rules available across all projects, copy to the global OpenCode directory.
+The easiest way to make the agent kit available across all projects:
+
+```bash
+# Install globally (one command)
+npx opencode-agent-kit init --global
+```
+
+This installs everything to OpenCode's global config directory (`~/.config/opencode/` on macOS/Linux, `%USERPROFILE%\.config\opencode\` on Windows). OpenCode auto-detects it in every project.
+
+See the [Quick Install](#quick-install) section for complete details and management commands.
+
+## Manual Global Setup (Legacy)
 
 ### macOS & Linux
 

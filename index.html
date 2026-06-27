@@ -1812,6 +1812,91 @@
         flex-wrap: wrap;
       }
 
+      /* Install tabs */
+      .install-tab-bar {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 16px;
+        background: var(--bg-inset);
+        border: var(--border-default);
+        border-radius: var(--radius-lg);
+        padding: 4px;
+      }
+      .install-tab {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: var(--radius-md);
+        background: transparent;
+        color: var(--text-secondary);
+        font-family: var(--font-sans);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-medium);
+        cursor: pointer;
+        transition: all var(--duration-fast) var(--ease-out);
+      }
+      .install-tab:hover {
+        color: var(--text-primary);
+        background: var(--bg-hover);
+      }
+      .install-tab-active {
+        background: var(--bg-raised) !important;
+        color: var(--text-primary) !important;
+        box-shadow: var(--shadow-sm);
+      }
+      .install-badge {
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: var(--radius-full);
+        background: var(--primary-dim);
+        color: var(--primary);
+        font-weight: var(--weight-semibold);
+        letter-spacing: 0.02em;
+      }
+      .install-tab-content {
+        display: none;
+      }
+      .install-tab-content-active {
+        display: block;
+      }
+      .code-block-body-multi {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+      }
+      .code-line {
+        display: flex;
+        gap: 8px;
+        line-height: 1.8;
+      }
+      .code-output {
+        color: var(--text-muted);
+        font-size: var(--text-xs);
+      }
+      .code-highlight {
+        margin-top: 8px;
+      }
+      .install-sub-commands {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+      .install-sub-commands code {
+        font-family: var(--font-mono);
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+        padding: 4px 10px;
+        background: var(--bg-inset);
+        border: var(--border-default);
+        border-radius: var(--radius-sm);
+      }
+
       /* ============================================================
          13. CTA Section
          ============================================================ */
@@ -2252,7 +2337,7 @@ C3: HERO — Typographic Headline + Stat Counters
             </div>
             <div class="terminal-preview-body">
               <span class="terminal-preview-prompt">$</span> npx
-              opencode-agent-kit init
+              opencode-agent-kit init --global
               <span class="terminal-preview-cursor"></span>
             </div>
           </div>
@@ -2812,34 +2897,76 @@ C7: INSTALL — Minimal Code Block
       <div class="container">
         <div class="section-header reveal">
           <div class="section-tag">Install</div>
-          <h2>One command, <span class="text-primary">zero config</span></h2>
-          <p class="section-sub">Works in any project. Node.js 18+ required.</p>
+          <h2>One command, <span class="text-primary">any way you want</span></h2>
+          <p class="section-sub">Install per-project or globally &mdash; OpenCode auto-detects both. Node.js 18+ required.</p>
         </div>
 
-        <div class="install-block reveal">
-          <div class="code-block">
-            <div class="code-block-header">
-              <div class="code-dots" aria-hidden="true">
-                <span class="code-dot code-dot-red"></span>
-                <span class="code-dot code-dot-yellow"></span>
-                <span class="code-dot code-dot-green"></span>
+        <div class="install-tabs reveal">
+          <div class="install-tab-bar">
+            <button class="install-tab install-tab-active" data-tab="global" onclick="switchInstallTab('global')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Global Install <span class="install-badge">Recommended</span>
+            </button>
+            <button class="install-tab" data-tab="project" onclick="switchInstallTab('project')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              Per-Project
+            </button>
+          </div>
+
+          <!-- Global Install Tab -->
+          <div class="install-tab-content install-tab-content-active" id="tab-global">
+            <div class="code-block">
+              <div class="code-block-header">
+                <div class="code-dots" aria-hidden="true">
+                  <span class="code-dot code-dot-red"></span>
+                  <span class="code-dot code-dot-yellow"></span>
+                  <span class="code-dot code-dot-green"></span>
+                </div>
+                <span class="code-block-title">terminal — global install</span>
               </div>
-              <span class="code-block-title">terminal</span>
+              <div class="code-block-body code-block-body-multi">
+                <div class="code-line"><span class="code-prompt">$</span> <span class="code-command">npx opencode-agent-kit init --global</span></div>
+                <div class="code-line code-output"><span style="color: var(--text-muted)">  → OpenCode home: ~/.config/opencode/</span></div>
+                <div class="code-line code-output"><span style="color: var(--text-muted)">  → Copying skills, prompts, commands...</span></div>
+                <div class="code-line code-output"><span style="color: var(--success)">  ✓</span> <span style="color: var(--text-muted)">Dependencies installed</span></div>
+                <div class="code-line code-output"><span style="color: var(--success)">  ✓</span> <span style="color: var(--text-muted)">agentmemory ready</span></div>
+                <div class="code-line code-output code-highlight"><span style="color: var(--success)">  ✅</span> <span style="color: var(--text-primary)">opencode-agent-kit v1.3.6 installed globally!</span></div>
+              </div>
             </div>
-            <div class="code-block-body">
-              <span class="code-prompt">$</span>
-              <span class="code-command">npx opencode-agent-kit init</span>
+            <p class="install-footnote">
+              Install once. Use in every project. OpenCode auto-detects it at <code>~/.config/opencode/</code>
+            </p>
+            <div class="install-sub-commands">
+              <code>opencode-agent-kit global status</code>
+              <code>opencode-agent-kit global update</code>
+              <code>opencode-agent-kit global path</code>
             </div>
           </div>
-          <p class="install-footnote">
-            73 files created &middot; 33 agents online &middot; 207 skills
-            loaded
-          </p>
+
+          <!-- Per-Project Install Tab -->
+          <div class="install-tab-content" id="tab-project">
+            <div class="code-block">
+              <div class="code-block-header">
+                <div class="code-dots" aria-hidden="true">
+                  <span class="code-dot code-dot-red"></span>
+                  <span class="code-dot code-dot-yellow"></span>
+                  <span class="code-dot code-dot-green"></span>
+                </div>
+                <span class="code-block-title">terminal — per-project</span>
+              </div>
+              <div class="code-block-body">
+                <span class="code-prompt">$</span>
+                <span class="code-command">npx opencode-agent-kit init</span>
+              </div>
+            </div>
+            <p class="install-footnote">
+              73 files created &middot; 33 agents online &middot; 207 skills loaded
+            </p>
+          </div>
+
           <div class="install-actions">
-            <a href="https://github.com/defuj/opencode-agent-kit"
-              class="btn btn-primary btn-lg">Install Now</a>
-            <a href="https://npmjs.com/package/opencode-agent-kit"
-              class="btn btn-secondary btn-lg">npm</a>
+            <a href="https://github.com/defuj/opencode-agent-kit" class="btn btn-primary btn-lg">Install Now</a>
+            <a href="https://npmjs.com/package/opencode-agent-kit" class="btn btn-secondary btn-lg">npm</a>
           </div>
         </div>
       </div>
@@ -3184,24 +3311,28 @@ JAVASCRIPT
         if (termBody) {
           var termLines = [
             {
-              text: '<span class="terminal-preview-prompt">$</span> npx opencode-agent-kit init',
+              text: '<span class="terminal-preview-prompt">$</span> npx opencode-agent-kit init --global',
               delay: 500,
             },
             {
-              text: '<span style="color: var(--success)">  \u2192</span> Copying configuration...',
-              delay: 1200,
+              text: '<span style="color: var(--text-muted)">  → OpenCode home: ~/.config/opencode/</span>',
+              delay: 1000,
             },
             {
-              text: '<span style="color: var(--success)">  \u2192</span> Installing dependencies...',
-              delay: 2200,
+              text: '<span style="color: var(--text-muted)">  → Copying skills, prompts, commands...</span>',
+              delay: 1800,
             },
             {
-              text: '<span style="color: var(--success)">  \u2192</span> Setting up agentmemory...',
+              text: '<span style="color: var(--success)">  ✓</span> <span style="color: var(--text-muted)">Dependencies installed</span>',
+              delay: 2600,
+            },
+            {
+              text: '<span style="color: var(--success)">  ✓</span> <span style="color: var(--text-muted)">agentmemory ready</span>',
               delay: 3200,
             },
             {
-              text: '<span style="color: var(--success)">  \u2713</span> <span style="color: var(--text-muted)">Agent Kit v1.3.6 installed!</span>',
-              delay: 4200,
+              text: '<span style="color: var(--success)">  ✅</span> <span style="color: var(--text-primary)">opencode-agent-kit v1.3.6 installed globally</span>',
+              delay: 4000,
             },
           ];
           var lineIdx = 0;
@@ -3241,7 +3372,7 @@ JAVASCRIPT
           } else {
             // Show final state for reduced motion
             termBody.innerHTML =
-              '<span class="terminal-preview-prompt">$</span> npx opencode-agent-kit init<br><span style="color: var(--success)">  \u2713</span> <span style="color: var(--text-muted)">Agent Kit v1.3.6 installed!</span>';
+              '<span class="terminal-preview-prompt">$</span> npx opencode-agent-kit init --global<br><span style="color: var(--success)">  ✅</span> <span style="color: var(--text-primary)">opencode-agent-kit v1.3.6 installed globally</span>';
           }
         }
 
@@ -3308,6 +3439,25 @@ JAVASCRIPT
         mobilePanel.addEventListener('keydown', function (e) {
           if (e.key === 'Escape') toggleMenu(false);
         });
+
+        /* ------------------------------------------
+           INSTALL TAB SWITCHING
+        ------------------------------------------ */
+        window.switchInstallTab = function (tab) {
+          // Update tab buttons
+          document.querySelectorAll('.install-tab').forEach(function (btn) {
+            btn.classList.remove('install-tab-active');
+            if (btn.getAttribute('data-tab') === tab) {
+              btn.classList.add('install-tab-active');
+            }
+          });
+          // Update tab content
+          document.querySelectorAll('.install-tab-content').forEach(function (content) {
+            content.classList.remove('install-tab-content-active');
+          });
+          var target = document.getElementById('tab-' + tab);
+          if (target) target.classList.add('install-tab-content-active');
+        };
       })();
     </script>
   </body>
