@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.5] - 2026-06-26
+
+### Added
+
+- **`agent-memory-workflow` skill** — disciplined cross-session memory protocol: mandatory recall ritual at session start, structured save at session end, 5 memory categories (preference, architecture, convention, lesson, session), auto-save triggers, memory audit procedures, and cross-agent discipline (IT Leader mediates subagent memory writes)
+- **`agent-delegation-contract` skill** — structured contract template for agent-to-agent delegation with: scope & out-of-scope, input interface, expected output, verification criteria, memory context. Includes subagent response contract format, chain vs parallel rules, and contract violation protocol
+- **`progress-tracking` skill** — multi-step task tracking with lifecycle (BACKLOG → TODO → IN_PROGRESS → REVIEW → DONE), hierarchical task IDs (FE-001, BE-002), visual progress tables with emoji status markers, session-boundary handoff protocol, and cross-agent status protocol
+- **`/status` command** — one-shot visual progress report with task table, priority, blocker detection, and overall completion stats
+- **`/continue` command** — 3-step session recovery protocol after `/reset` or context compression: memory recall, codebase reconciliation, user-facing status report
+- **IT Leader prompt** — delegation protocol now uses structured contract template from `agent-delegation-contract` skill; new Progress Tracking section with task ID convention and visual reporting mandate
+
+### Changed
+
+- `opencode.json`: instructions array now includes 3 new skills (agent-memory-workflow, agent-delegation-contract, progress-tracking) — 16 total
+- `.opencode/instructions/INSTRUCTIONS.md`: 3 new subsections (Memory Workflow, Delegation Contracts, Progress Tracking)
+- `.opencode/skills/agent-session-workflow/SKILL.md`: session start template now mandates memory recall protocol + `/continue` for resumed sessions
+
 ## [1.3.4] - 2026-06-25
 
 ### Added

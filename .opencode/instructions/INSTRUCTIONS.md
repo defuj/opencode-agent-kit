@@ -427,6 +427,32 @@ The `agentmemory-capture.ts` plugin (registered in `opencode.json`) captures 22 
 
 The `agentmemory` skill (`.opencode/skills/agentmemory/SKILL.md`) teaches agents when and how to use the memory tools effectively.
 
+### Memory Workflow
+
+The `agent-memory-workflow` skill (`.opencode/skills/agent-memory-workflow/SKILL.md`) provides disciplined protocols:
+- **Session Start Ritual**: Mandatory memory recall before any productive work
+- **Session End Ritual**: Structured save before session ends or compacts
+- **Auto-Save Triggers**: When to save mid-session without waiting
+- **Memory Audit**: Periodic hygiene and deduplication
+- **Cross-Agent Memory**: Subagents don't write memory directly — IT Leader mediates
+
+### Delegation Contracts
+
+The `agent-delegation-contract` skill (`.opencode/skills/agent-delegation-contract/SKILL.md`) provides:
+- **Standard Contract Template**: Structured brief with scope, input interface, output contract
+- **Subagent Response Contract**: Mandatory result format including verification status
+- **Chain vs Parallel Rules**: When to sequence vs parallelise delegations
+- **Contract Violation Protocol**: How to handle out-of-scope work
+
+### Progress Tracking
+
+The `progress-tracking` skill (`.opencode/skills/progress-tracking/SKILL.md`) provides:
+- **Task Lifecycle**: BACKLOG → TODO → IN_PROGRESS → REVIEW → DONE
+- **Task ID Convention**: Hierarchical IDs (FE-001, BE-002) for cross-reference
+- **Visual Progress Reports**: Tables with status emojis for user communication
+- **Cross-Agent Protocol**: IT Leader maintains master list; subagents report results
+- **Session Handoff**: How to recover task state after `/reset` or new session
+
 ---
 
 ## opencode-agent-kit Version Check

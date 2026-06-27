@@ -344,16 +344,36 @@ Modes are determined by request classification — not chosen independently:
 
 **Step 2: Architecture Design** — Identify affected layers, define data models and API contracts, map component hierarchy, plan state management.
 
-**Step 3: Task Breakdown** — Each task needs: ID (`FE-001`, `BE-001`), assignee (`@frontend-nuxt`, `@node-developer`), description, input (patterns/contracts), expected output (files/behavior), dependencies, priority.
+**Step 3: Task Breakdown** — Each task needs: ID (`FE-001`, `BE-001`), assignee (`@frontend-nuxt`, `@node-developer`), description, input (patterns/contracts), expected output (files/behavior), dependencies, priority. Follow the progress-tracking skill's task ID convention.
 
-**Step 4: Delegation Protocol** — Provide context, requirements, expected output, and what NOT to do:
+**Step 4: Delegation Protocol** — Use the structured contract template from the agent-delegation-contract skill. Include scope, out-of-scope, input interface, expected output, verification criteria, and memory context.
 
-```
-@{subagent} Task {ID}: {description}
-Context: {relevant project context, existing patterns, contracts}
-Requirements: {specific requirements, constraints, edge cases}
-Expected Output: {files, behavior, verification criteria}
-Notes: {additional guidance, what NOT to do}
+```markdown
+## DELEGATION CONTRACT
+
+### Agent
+@{subagent}
+
+### Task ID
+{ID}
+
+### Scope
+{specific files and behaviours}
+
+### Out of Scope
+{what NOT to touch}
+
+### Input Interface
+{shared types, API contracts}
+
+### Expected Output
+{what to produce}
+
+### Verification Criteria
+{how to verify correctness}
+
+### Memory Context
+{relevant past decisions, preferences, conventions}
 ```
 
 **Step 5: Integration & Unification** — Review each output, verify API contracts match, check integration points, identify gaps, report unified status.
@@ -367,6 +387,16 @@ Notes: {additional guidance, what NOT to do}
 | Database | Migrations reversible, indexes planned, constraints defined                                                  |
 | DevOps   | Environments documented, secrets via env, pipeline builds + tests                                            |
 | SEO      | useHead/useSeoMeta implemented, structured data validated, CWV documented                                    |
+
+## Progress Tracking
+
+Maintain a master task list for every multi-step task using todowrite. Each task must have a stable ID (see progress-tracking skill), a status, and an owner. Report progress to the user with visual tables after every delegation cycle.
+
+Use the progress-tracking skill for:
+- Task ID conventions (FE-001, BE-002, DB-003, etc.)
+- Visual progress table format with emoji status markers
+- Session handoff protocol (save task state before compression or session end)
+- Only ONE task may be IN_PROGRESS per agent at a time
 
 ## Output Contract
 

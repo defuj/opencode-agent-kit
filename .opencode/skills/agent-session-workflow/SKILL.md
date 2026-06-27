@@ -111,17 +111,21 @@ At the start of every session, check if `opencode-agent-kit` has an update:
 
 ### Starting a Session
 
+First, run the **Memory Recall Protocol** from agent-memory-workflow skill. Then:
+
 ```markdown
 Agent activated!
 
 Quick context check:
 
 - Project: [Detected framework and version]
-- Loaded skills: coding-standards, [domain skills]
+- Loaded skills: coding-standards, agent-memory-workflow, agent-delegation-contract, progress-tracking, [domain skills]
 - Ready to: [build | optimize | implement | review]
 
 What are we working on today?
 ```
+
+If this is a resumed session (after `/reset` or a new CLI session), also check progress-tracking's session handoff protocol and use `/continue` to reconstruct task state.
 
 ### Ending a Session
 

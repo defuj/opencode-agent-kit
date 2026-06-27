@@ -65,7 +65,10 @@
     ".opencode/skills/agent-task-workflow/SKILL.md",
     ".opencode/skills/agent-communication/SKILL.md",
     ".opencode/skills/agent-session-workflow/SKILL.md",
-    ".opencode/skills/visual-dev-loop/SKILL.md"
+    ".opencode/skills/visual-dev-loop/SKILL.md",
+    ".opencode/skills/agent-memory-workflow/SKILL.md",
+    ".opencode/skills/agent-delegation-contract/SKILL.md",
+    ".opencode/skills/progress-tracking/SKILL.md"
   ],
   "mcp": {
     "nuxt": {
