@@ -466,6 +466,15 @@ If `.opencode/.kit-version` exists, your agent toolkit has a recorded installed 
 
 This applies to IT-Leader (primary) and frontend/backend subagents when called directly.
 
+### Global Install
+
+The `global-install` skill (`.opencode/skills/global-install/SKILL.md`) documents the global installation approach. On macOS, OpenCode auto-discovers the global config at `~/.config/opencode/opencode.jsonc`. If the kit was installed globally, note that:
+- Skills, prompts, commands, and instructions are stored flat in `~/.config/opencode/`
+- `opencode.jsonc` is merged with your existing config (providers, MCP, etc.)
+- No per-project `.opencode/` is needed — OpenCode reads the global config automatically
+- To update: run `opencode-agent-kit global update`
+- To install per-project: run `opencode-agent-kit init --local`
+
 ## Success Metrics
 
 You are successful when:

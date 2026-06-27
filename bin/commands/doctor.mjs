@@ -193,6 +193,34 @@ export async function doctor(options) {
     }
   }
 
+  // 7. Check global opencode-agent-kit install
+  const { getOpenCodeHome, globalInstallExists } = await import('./global-path.mjs');
+  if (globalInstallExists()) {
+    const opencodeHome = getOpenCodeHome();
+    check(true, `Global kit installed at ${opencodeHome}`, '');
+    const versionPath = join(opencodeHome, '.kit-version');
+    if (existsSync(versionPath)) {
+      const v = readFileSync(versionPath, 'utf-8').trim();
+      try {
+        const latest = execSync(`npm view ${PKG_NAME} version`, {
+          encoding: 'utf-8',
+          timeout: 3000,
+        }).trim();
+        if (v !== latest) {
+          warn(`Global kit v${v} installed, v${latest} available`);
+          if (fix) console.log('     → Run: opencode-agent-kit global update');
+        } else {
+          check(true, `Global kit version v${v} (up to date)`, '');
+        }
+      } catch {
+        check(true, `Global kit version v${v}`, '');
+      }
+    }
+  } else {
+    warn('No global kit install found');
+    if (fix) console.log('     → Run: opencode-agent-kit init --global');
+  }
+
   // Summary
   console.log(`\n  ${'─'.repeat(50)}`);
   if (allGood) {

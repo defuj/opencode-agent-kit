@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.3.5] - 2026-06-26
+## [1.3.5] - 2026-06-27
 
 ### Added
 
@@ -17,12 +17,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **`/status` command** — one-shot visual progress report with task table, priority, blocker detection, and overall completion stats
 - **`/continue` command** — 3-step session recovery protocol after `/reset` or context compression: memory recall, codebase reconciliation, user-facing status report
 - **IT Leader prompt** — delegation protocol now uses structured contract template from `agent-delegation-contract` skill; new Progress Tracking section with task ID convention and visual reporting mandate
+- **Global installation system** — `opencode-agent-kit init --global` installs the full kit to the platform-specific OpenCode config directory, where OpenCode discovers it automatically:
+  - macOS/Linux: `~/.config/opencode/` (respects `$XDG_CONFIG_HOME`)
+  - Windows: `%APPDATA%\opencode\`
+  - Override: `$OPENCODE_HOME` env var
+- **Flat install structure** — template's `.opencode/` contents are copied directly into the global directory (no `.opencode` wrapper), with config paths rewritten: `.opencode/skills/...` → `skills/...`
+- **JSONC config merging** — reads existing `opencode.jsonc` (JSON with comments), strips comments, merges with template's `opencode.json` entries (instructions, agents, MCP servers), preserves existing provider/model/MCP config
+- **`opencode-agent-kit link`** command — on macOS/Linux, reports that OpenCode auto-detects the global config; on Windows, creates a junction from `.opencode/` → global dir
+- **`opencode-agent-kit global`** command — subcommands: `path` (print path), `status` (show version + contents), `update` (re-install latest)
+- **Smart `init`** — now defaults to local copy (since OpenCode auto-discovers global config). Use `--global` for system-wide install, `--local` to force local copy
+- **`global-install` skill** — comprehensive documentation of the global install design, cross-platform path resolution, JSONC merging, and edge cases
+- **`bin/commands/global-path.mjs`** — shared utility: `getOpenCodeHome()`, `globalInstallExists()`
+- **JSONC parser** — `parseJsonc()` strips `//` and `/* */` comments and trailing commas for safe JSON parsing
+- **`doctor` command update** — checks for global install at `~/.config/opencode/`, reports version and status
 
 ### Changed
 
-- `opencode.json`: instructions array now includes 3 new skills (agent-memory-workflow, agent-delegation-contract, progress-tracking) — 16 total
-- `.opencode/instructions/INSTRUCTIONS.md`: 3 new subsections (Memory Workflow, Delegation Contracts, Progress Tracking)
+- `opencode.json`: instructions array now includes 4 new skills (agent-memory-workflow, agent-delegation-contract, progress-tracking, global-install) — 17 total
+- `.opencode/instructions/INSTRUCTIONS.md`: 4 new subsections (Memory Workflow, Delegation Contracts, Progress Tracking, Global Install)
 - `.opencode/skills/agent-session-workflow/SKILL.md`: session start template now mandates memory recall protocol + `/continue` for resumed sessions
+- `bin/commands/init.mjs`: refactored into 3 modes (`--global` installs flat into `~/.config/opencode/`, `--local` copies into `.opencode/`, default is local). Includes `parseJsonc()`, `rewriteTemplatePathsForGlobal()`, and `mergeJson()` with updated strategy
+- `bin/commands/global-path.mjs`: renamed to `getOpenCodeHome()` / `globalInstallExists()`, uses `~/.config/opencode/` (was `~/.config/opencode-agent-kit/kit/`)
+- `bin/init.mjs`: registered `link` and `global` subcommands with `--global`/`--local` flags on `init`
+- `bin/commands/global-cmd.mjs`: uses `getOpenCodeHome()`, reads `.kit-version` from OpenCode home
+- `bin/commands/doctor.mjs`: imports `getOpenCodeHome` from `global-path.mjs`
+- `bin/commands/link.mjs`: on macOS/Linux, reports auto-detection; on Windows, delegates to init's `linkProject`
 
 ## [1.3.4] - 2026-06-25
 

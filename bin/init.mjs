@@ -26,11 +26,34 @@ program
 
 program
   .command('init')
-  .description('Initialize .opencode/ configuration in current project')
+  .description(
+    'Initialize .opencode/ configuration in current project (or --global for system-wide install)',
+  )
   .option('-f, --force', 'Overwrite existing files without prompt')
   .option('-d, --dir <path>', 'Target project directory', process.cwd())
   .option('--skip-install', 'Skip npm/bun install step in .opencode/')
+  .option('--global', 'Install globally instead of per-project')
+  .option('--local', 'Force local copy even when global install exists')
   .action(init);
+
+program
+  .command('link')
+  .description('Link current project to an existing global install')
+  .option('-f, --force', 'Overwrite existing files without prompt')
+  .option('-d, --dir <path>', 'Target project directory', process.cwd())
+  .action(async (options) => {
+    const { linkProject } = await import('./commands/link.mjs');
+    await linkProject(options);
+  });
+
+program
+  .command('global')
+  .description('Manage global opencode-agent-kit install (path, update, status)')
+  .argument('[subcommand]', 'Subcommand: path, update, status', 'status')
+  .action(async (subcommand) => {
+    const { globalCmd } = await import('./commands/global-cmd.mjs');
+    await globalCmd(subcommand);
+  });
 
 program
   .command('upgrade')
