@@ -91,6 +91,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.opencode/skills/global-install/SKILL.md`: documented all 4 path rewrite locations with table
 - `package.json`: version bumped to 1.3.8
 
+### Fixed
+
+- **`copyRecursive` no longer overwrites existing files** — `copyFileSync` is now gated by `!existsSync(destPath)`. Previously every file in directories (skills/, prompts/, commands/, etc.) was overwritten on re-install, destroying any user modifications.
+- **`global update` no longer uses `--force`** — changed from `force: true` to `quiet: true`. Previously `global update` passed `force: true` which triggered `source-wins` strategy, overwriting all user-customized agents with template defaults. Now it uses merge strategy (preserves user changes).
+- **New `--yes` flag** — added `--yes` to `init` command for auto-confirm merge without overwriting. Semantics: `--yes` skips the confirmation prompt but still uses merge strategy. `--force` skips prompt AND overwrites with template (destructive).
+
+### Changed
+
+- `bin/commands/init.mjs`: `installGlobal()` prompt now checks `options.quiet` (auto-confirm) separately from `options.force` (overwrite). `copyRecursive()` only copies non-existing files. `init()` maps `--yes` → `options.quiet`.
+  |- `bin/commands/global-cmd.mjs`: `cmdUpdate()` passes `quiet: true` instead of `force: true` to `init()`.
+  |- `bin/init.mjs`: added `--yes` option to `init` command.
+
+## [1.3.9] - 2026-06-27
+
+### Fixed
+
+- **User config preservation on re-install** — three issues that caused user modifications to `opencode.jsonc` and global files to be lost:
+  - `copyRecursive()` no longer overwrites existing files (only copies new ones)
+  - `global update` uses `quiet: true` (merge) instead of `force: true` (overwrite)
+  - New `--yes` flag for safe auto-confirm merge (separate from destructive `--force`)
+
+### Changed
+
+- `bin/commands/init.mjs`: `copyRecursive()` gated by `!existsSync(destPath)`; `installGlobal()` uses `options.quiet` for prompt skip; `init()` maps `--yes` → `quiet`
+- `bin/commands/global-cmd.mjs`: `cmdUpdate()` passes `quiet: true` instead of `force: true`
+- `bin/init.mjs`: added `--yes` option to `init` command
+- `package.json`: version bumped to 1.3.9
+
 ## [1.3.4] - 2026-06-25
 
 ### Added

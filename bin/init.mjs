@@ -34,6 +34,7 @@ program
   .option('--skip-install', 'Skip npm/bun install step in .opencode/')
   .option('--global', 'Install globally instead of per-project')
   .option('--local', 'Force local copy even when global install exists')
+  .option('--yes', 'Auto-confirm merge without overwriting')
   .action(init);
 
 program

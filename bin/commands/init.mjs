@@ -56,7 +56,8 @@ function copyRecursive(src, dest) {
     const destPath = join(dest, entry.name);
     if (entry.isDirectory()) {
       copyRecursive(srcPath, destPath);
-    } else {
+    } else if (!existsSync(destPath)) {
+      // Only copy if destination does NOT exist — preserves user modifications
       copyFileSync(srcPath, destPath);
     }
   }
@@ -246,7 +247,7 @@ async function installGlobal(options) {
   // 2. Check if already installed
   const jsoncPath = join(opencodeHome, 'opencode.jsonc');
   const jsonPath = join(opencodeHome, 'opencode.json');
-  if ((existsSync(jsoncPath) || existsSync(jsonPath)) && !options.force) {
+  if ((existsSync(jsoncPath) || existsSync(jsonPath)) && !options.quiet && !options.force) {
     warn(`OpenCode config already exists at ${opencodeHome}`);
     const rl = await import('readline/promises');
     const readline = rl.createInterface({ input: process.stdin, output: process.stdout });
@@ -643,6 +644,9 @@ async function initLocal(options) {
  *   default   →  check global, then choose initLocal() (per-project)
  */
 export async function init(options) {
+  // Map --yes to quiet (auto-confirm merge without overwriting)
+  if (options.yes) options.quiet = true;
+
   if (options.global) return installGlobal(options);
   if (options.local) return initLocal(options);
 

@@ -153,10 +153,10 @@ async function cmdUpdate() {
 
   console.log(`  Current: v${currentVersion} → Latest: v${latestVersion}`);
 
-  // Re-run the global install (re-copy template)
+  // Re-run the global install (re-copy template, merge not overwrite)
   info('Updating global install...');
   const { init } = await import('./init.mjs');
-  await init({ global: true, force: true, skipInstall: false, dir: process.cwd() });
+  await init({ global: true, quiet: true, skipInstall: false, dir: process.cwd() });
 
   success(`Global install updated to v${latestVersion}`);
 }
