@@ -2897,24 +2897,34 @@ C7: INSTALL — Minimal Code Block
       <div class="container">
         <div class="section-header reveal">
           <div class="section-tag">Install</div>
-          <h2>One command, <span class="text-primary">any way you want</span></h2>
-          <p class="section-sub">Install per-project or globally &mdash; OpenCode auto-detects both. Node.js 18+ required.</p>
+          <h2>One command, <span class="text-primary">any way you
+              want</span></h2>
+          <p class="section-sub">Install per-project or globally &mdash;
+            OpenCode auto-detects both. Node.js 18+ required.</p>
         </div>
 
         <div class="install-tabs reveal">
           <div class="install-tab-bar">
-            <button class="install-tab install-tab-active" data-tab="global" onclick="switchInstallTab('global')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <button class="install-tab install-tab-active" data-tab="global"
+              onclick="switchInstallTab('global')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2"><circle cx="12" cy="12"
+                  r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
               Global Install <span class="install-badge">Recommended</span>
             </button>
-            <button class="install-tab" data-tab="project" onclick="switchInstallTab('project')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            <button class="install-tab" data-tab="project"
+              onclick="switchInstallTab('project')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2"><path
+                  d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" /></svg>
               Per-Project
             </button>
           </div>
 
           <!-- Global Install Tab -->
-          <div class="install-tab-content install-tab-content-active" id="tab-global">
+          <div class="install-tab-content install-tab-content-active"
+            id="tab-global">
             <div class="code-block">
               <div class="code-block-header">
                 <div class="code-dots" aria-hidden="true">
@@ -2925,16 +2935,32 @@ C7: INSTALL — Minimal Code Block
                 <span class="code-block-title">terminal — global install</span>
               </div>
               <div class="code-block-body code-block-body-multi">
-                <div class="code-line"><span class="code-prompt">$</span> <span class="code-command">npx opencode-agent-kit init --global</span></div>
-                <div class="code-line code-output"><span style="color: var(--text-muted)">  → OpenCode home: ~/.config/opencode/</span></div>
-                <div class="code-line code-output"><span style="color: var(--text-muted)">  → Copying skills, prompts, commands...</span></div>
-                <div class="code-line code-output"><span style="color: var(--success)">  ✓</span> <span style="color: var(--text-muted)">Dependencies installed</span></div>
-                <div class="code-line code-output"><span style="color: var(--success)">  ✓</span> <span style="color: var(--text-muted)">agentmemory ready</span></div>
-                <div class="code-line code-output code-highlight"><span style="color: var(--success)">  ✅</span> <span style="color: var(--text-primary)">opencode-agent-kit v1.3.6 installed globally!</span></div>
+                <div class="code-line"><span class="code-prompt">$</span> <span
+                    class="code-command">npx opencode-agent-kit init
+                    --global</span></div>
+                <div class="code-line code-output"><span
+                    style="color: var(--text-muted)"> → OpenCode home:
+                    ~/.config/opencode/</span></div>
+                <div class="code-line code-output"><span
+                    style="color: var(--text-muted)"> → Copying skills, prompts,
+                    commands...</span></div>
+                <div class="code-line code-output"><span
+                    style="color: var(--success)"> ✓</span> <span
+                    style="color: var(--text-muted)">Dependencies
+                    installed</span></div>
+                <div class="code-line code-output"><span
+                    style="color: var(--success)"> ✓</span> <span
+                    style="color: var(--text-muted)">agentmemory
+                    ready</span></div>
+                <div class="code-line code-output code-highlight"><span
+                    style="color: var(--success)"> ✅</span> <span
+                    style="color: var(--text-primary)">opencode-agent-kit v1.3.7
+                    installed globally!</span></div>
               </div>
             </div>
             <p class="install-footnote">
-              Install once. Use in every project. OpenCode auto-detects it at <code>~/.config/opencode/</code>
+              Install once. Use in every project. OpenCode auto-detects it at
+              <code>~/.config/opencode/</code>
             </p>
             <div class="install-sub-commands">
               <code>opencode-agent-kit global status</code>
@@ -2960,13 +2986,16 @@ C7: INSTALL — Minimal Code Block
               </div>
             </div>
             <p class="install-footnote">
-              73 files created &middot; 33 agents online &middot; 207 skills loaded
+              73 files created &middot; 33 agents online &middot; 207 skills
+              loaded
             </p>
           </div>
 
           <div class="install-actions">
-            <a href="https://github.com/defuj/opencode-agent-kit" class="btn btn-primary btn-lg">Install Now</a>
-            <a href="https://npmjs.com/package/opencode-agent-kit" class="btn btn-secondary btn-lg">npm</a>
+            <a href="https://github.com/defuj/opencode-agent-kit"
+              class="btn btn-primary btn-lg">Install Now</a>
+            <a href="https://npmjs.com/package/opencode-agent-kit"
+              class="btn btn-secondary btn-lg">npm</a>
           </div>
         </div>
       </div>
@@ -3331,7 +3360,7 @@ JAVASCRIPT
               delay: 3200,
             },
             {
-              text: '<span style="color: var(--success)">  ✅</span> <span style="color: var(--text-primary)">opencode-agent-kit v1.3.6 installed globally</span>',
+              text: '<span style="color: var(--success)">  ✅</span> <span style="color: var(--text-primary)">opencode-agent-kit v1.3.7 installed globally</span>',
               delay: 4000,
             },
           ];
@@ -3372,7 +3401,7 @@ JAVASCRIPT
           } else {
             // Show final state for reduced motion
             termBody.innerHTML =
-              '<span class="terminal-preview-prompt">$</span> npx opencode-agent-kit init --global<br><span style="color: var(--success)">  ✅</span> <span style="color: var(--text-primary)">opencode-agent-kit v1.3.6 installed globally</span>';
+              '<span class="terminal-preview-prompt">$</span> npx opencode-agent-kit init --global<br><span style="color: var(--success)">  ✅</span> <span style="color: var(--text-primary)">opencode-agent-kit v1.3.7 installed globally</span>';
           }
         }
 

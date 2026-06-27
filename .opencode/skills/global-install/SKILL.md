@@ -198,15 +198,21 @@ Explicitly copies everything locally (traditional behavior). Use when:
 
 On macOS and Linux, OpenCode automatically reads `~/.config/opencode/opencode.jsonc`. All skills, prompts, commands, and instructions are stored flat in that directory. When you run `opencode` in any project, OpenCode finds this global config and loads everything.
 
-The template's `opencode.json` paths (which use `.opencode/skills/...`) are rewritten during global install to flat paths (`skills/...`):
+The template's `opencode.json` paths (which use `.opencode/skills/...`) are rewritten during global install to **absolute paths** pointing into the global directory. This is critical — OpenCode resolves config paths relative to the **current project directory**, so relative paths like `skills/...` would break in every project. Absolute paths guarantee the files are found regardless of where you run `opencode`.
 
-| Template Path | Global Path |
-|---------------|-------------|
-| `.opencode/skills/coding-standards/SKILL.md` | `skills/coding-standards/SKILL.md` |
-| `.opencode/instructions/INSTRUCTIONS.md` | `instructions/INSTRUCTIONS.md` |
-| `.opencode/prompts/agents/it-leader.md` | `prompts/agents/it-leader.md` |
+For example, the resulting config will contain paths like:
 
-Your existing `opencode.jsonc` (with provider config, MCP servers, etc.) is preserved and merged with the new kit entries.
+```json
+{
+  "instructions": [
+    "/Users/me/.config/opencode/instructions/INSTRUCTIONS.md",
+    "/Users/me/.config/opencode/skills/coding-standards/SKILL.md",
+    "..."
+  ]
+}
+```
+
+Instead of broken relative paths like `skills/coding-standards/SKILL.md` that would resolve against whatever project directory you're in.
 
 ## Per-Project Setup
 

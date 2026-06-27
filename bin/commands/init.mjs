@@ -161,36 +161,38 @@ function mergeJson(target, source, strategy = {}) {
 }
 
 /**
- * Strip the `.opencode/` prefix from a path.
- * Used when installing globally: files from `.opencode/skills/...`
- * go directly to `skills/...` in the global dir.
- */
-function stripDotOpencode(path) {
-  if (path.startsWith('.opencode/')) {
-    return path.slice('.opencode/'.length);
-  }
-  return path;
-}
-
-/**
  * Rewrite template opencode.json paths for global install:
- *   .opencode/skills/...  →  skills/...
- *   .opencode/instructions/...  →  instructions/...
- *   .opencode/prompts/agents/...  →  prompts/agents/...
+ *   .opencode/skills/...  →  /abs/path/to/opencodeHome/skills/...
+ *   .opencode/instructions/...  →  /abs/path/to/opencodeHome/instructions/...
+ *   .opencode/prompts/agents/...  →  /abs/path/to/opencodeHome/prompts/agents/...
+ *
+ * Absolute paths are REQUIRED so OpenCode can find the files regardless
+ * of which project directory the user is currently in.
+ *
+ * @param {object} config - Parsed template opencode.json
+ * @param {string} opencodeHome - Absolute path to ~/.config/opencode/
+ * @returns {object} Config with paths rewritten to absolute
  */
-function rewriteTemplatePathsForGlobal(config) {
+function rewriteTemplatePathsForGlobal(config, opencodeHome) {
   const rewritten = JSON.parse(JSON.stringify(config));
+
+  function toGlobalPath(p) {
+    if (p.startsWith('.opencode/')) {
+      return join(opencodeHome, p.slice('.opencode/'.length));
+    }
+    return p;
+  }
 
   // Rewrite instructions
   if (Array.isArray(rewritten.instructions)) {
-    rewritten.instructions = rewritten.instructions.map((p) => stripDotOpencode(p));
+    rewritten.instructions = rewritten.instructions.map((p) => toGlobalPath(p));
   }
 
   // Rewrite agent prompt file paths
   if (rewritten.agent) {
     for (const [, agentConfig] of Object.entries(rewritten.agent)) {
       if (agentConfig.file) {
-        agentConfig.file = stripDotOpencode(agentConfig.file);
+        agentConfig.file = toGlobalPath(agentConfig.file);
       }
     }
   }
@@ -269,7 +271,7 @@ async function installGlobal(options) {
   const templateConfig = JSON.parse(readFileSync(templateConfigPath, 'utf-8'));
 
   // Rewrite paths for flat structure
-  const kitConfig = rewriteTemplatePathsForGlobal(templateConfig);
+  const kitConfig = rewriteTemplatePathsForGlobal(templateConfig, opencodeHome);
 
   // Read existing user config (JSONC or JSON)
   let userConfig = {};

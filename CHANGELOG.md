@@ -49,12 +49,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Windows global install path** — corrected from `%APPDATA%\opencode\` to `%USERPROFILE%\.config\opencode\` to match official OpenCode documentation. The previous path (`%APPDATA%`) would have caused OpenCode to not find the agent kit on Windows.
 - **Official path reference** — all paths now confirmed against [opencode.ai/docs/config/](https://opencode.ai/docs/config/) (Global: `~/.config/opencode/opencode.json` on macOS/Linux, `%USERPROFILE%\.config\opencode\` on Windows)
+- **Absolute paths in global config** — `rewriteTemplatePathsForGlobal()` now produces **absolute paths** (e.g. `/Users/user/.config/opencode/skills/...`) instead of relative paths (`skills/...`). This is critical because OpenCode resolves config paths relative to the **current project directory**, not relative to `~/.config/opencode/`. Relative paths would cause all skill, instruction, and agent references to fail in every project.
 
 ### Changed
 
 - `bin/commands/global-path.mjs`: Windows path uses `USERPROFILE` + `.config\opencode` instead of `APPDATA`
 - `package.json`: version bumped to 1.3.6
 - `.opencode/skills/global-install/SKILL.md`: all Windows path references corrected
+
+## [1.3.7] - 2026-06-27
+
+### Notes
+
+- **Prose `.opencode/` references** (64 occurrences across 17 skill/docs/prompt files) are intentionally **not rewritten** during global install. These are informational text for the LLM, not config paths resolved by OpenCode. The critical fix (absolute config paths in `opencode.jsonc`) was already shipped in v1.3.6.
+
+### Changed
+
+- `package.json`: version bumped to 1.3.7
 
 ## [1.3.4] - 2026-06-25
 
