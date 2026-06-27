@@ -22,8 +22,9 @@ export function getOpenCodeHome() {
   }
 
   if (platform() === 'win32') {
-    const appData = process.env.APPDATA || join(homedir(), 'AppData', 'Roaming');
-    return join(appData, 'opencode');
+    // Windows: %USERPROFILE%\.config\opencode\ (NOT %APPDATA%)
+    const userProfile = process.env.USERPROFILE || join(homedir(), 'AppData', 'Roaming');
+    return join(userProfile, '.config', 'opencode');
   }
 
   // macOS / Linux: XDG Base Directory Specification

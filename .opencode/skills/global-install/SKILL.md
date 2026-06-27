@@ -25,7 +25,7 @@ Install the kit **once** to a platform-appropriate global directory, then **link
 ┌──────────────────────────────────────────────────┐
 │         OpenCode Global Config Directory          │
 │  ~/.config/opencode/        (macOS/Linux)        │
-│  %APPDATA%\opencode\        (Windows)            │
+│  %USERPROFILE%\.config\opencode\  (Windows)       │
 │                                                   │
 │  The template's .opencode/ contents are copied    │
 │  FLAT into this directory (no .opencode wrapper): │
@@ -69,7 +69,7 @@ Install the kit **once** to a platform-appropriate global directory, then **link
 |----------|-------------|--------------|---------------|
 | macOS    | `~/.config/opencode/` | `OPENCODE_HOME` | `opencode.jsonc` |
 | Linux    | `$XDG_CONFIG_HOME/opencode/` (default: `~/.config/...`) | `OPENCODE_HOME` | `opencode.jsonc` |
-| Windows  | `%APPDATA%\opencode\` | `OPENCODE_HOME` | `opencode.json` |
+| Windows  | `%USERPROFILE%\.config\opencode\` | `OPENCODE_HOME` | `opencode.jsonc` |
 
 ### Implementation (Node.js)
 
@@ -83,8 +83,9 @@ function getOpenCodeHome() {
   }
 
   if (platform() === 'win32') {
-    const appData = process.env.APPDATA || join(homedir(), 'AppData', 'Roaming');
-    return join(appData, 'opencode');
+    // Windows: %USERPROFILE%\.config\opencode\ (NOT %APPDATA%)
+    const userProfile = process.env.USERPROFILE || join(homedir(), 'AppData', 'Roaming');
+    return join(userProfile, '.config', 'opencode');
   }
 
   const xdgConfig = process.env.XDG_CONFIG_HOME || join(homedir(), '.config');
@@ -154,7 +155,7 @@ On Windows, creates a junction from `.opencode/` → global config.
 ```
 $ opencode-agent-kit link
 
-  → Global install found at %APPDATA%\opencode\
+  → Global install found at %USERPROFILE%\.config\opencode\
   → Creating .opencode/ junction...
   → Creating opencode.json...
   → Updating .gitignore...
@@ -246,7 +247,7 @@ npx opencode-agent-kit doctor
 
 ## Windows-Specific Notes
 
-- On Windows, OpenCode reads from `%APPDATA%\opencode\opencode.json`
+- On Windows, OpenCode reads from `%USERPROFILE%\.config\opencode\opencode.jsonc`
 - Directory junctions (`fs.symlinkSync` with `'junction'` type) work without admin on NTFS
 - If junction creation fails, falls back to copying a minimal reference config
 

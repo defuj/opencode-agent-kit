@@ -43,6 +43,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `bin/commands/doctor.mjs`: imports `getOpenCodeHome` from `global-path.mjs`
 - `bin/commands/link.mjs`: on macOS/Linux, reports auto-detection; on Windows, delegates to init's `linkProject`
 
+## [1.3.6] - 2026-06-27
+
+### Fixed
+
+- **Windows global install path** — corrected from `%APPDATA%\opencode\` to `%USERPROFILE%\.config\opencode\` to match official OpenCode documentation. The previous path (`%APPDATA%`) would have caused OpenCode to not find the agent kit on Windows.
+- **Official path reference** — all paths now confirmed against [opencode.ai/docs/config/](https://opencode.ai/docs/config/) (Global: `~/.config/opencode/opencode.json` on macOS/Linux, `%USERPROFILE%\.config\opencode\` on Windows)
+
+### Changed
+
+- `bin/commands/global-path.mjs`: Windows path uses `USERPROFILE` + `.config\opencode` instead of `APPDATA`
+- `package.json`: version bumped to 1.3.6
+- `.opencode/skills/global-install/SKILL.md`: all Windows path references corrected
+
 ## [1.3.4] - 2026-06-25
 
 ### Added
