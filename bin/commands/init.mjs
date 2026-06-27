@@ -161,17 +161,17 @@ function mergeJson(target, source, strategy = {}) {
 }
 
 /**
- * Rewrite template opencode.json paths for global install:
- *   .opencode/skills/...  →  /abs/path/to/opencodeHome/skills/...
- *   .opencode/instructions/...  →  /abs/path/to/opencodeHome/instructions/...
- *   .opencode/prompts/agents/...  →  /abs/path/to/opencodeHome/prompts/agents/...
+ * Rewrite ALL .opencode/ paths in the config for global install.
  *
- * Absolute paths are REQUIRED so OpenCode can find the files regardless
- * of which project directory the user is currently in.
+ * Handles these locations where .opencode/ appears:
+ *   - instructions[]           →  absolute path
+ *   - agent.*.prompt           →  rewrites path inside {file:...} wrapper
+ *   - mcp.*.command[]          →  rewrites any array element starting with .opencode/
+ *   - plugin[]                 →  absolute path
  *
  * @param {object} config - Parsed template opencode.json
  * @param {string} opencodeHome - Absolute path to ~/.config/opencode/
- * @returns {object} Config with paths rewritten to absolute
+ * @returns {object} Config with all paths rewritten to absolute
  */
 function rewriteTemplatePathsForGlobal(config, opencodeHome) {
   const rewritten = JSON.parse(JSON.stringify(config));
@@ -183,18 +183,39 @@ function rewriteTemplatePathsForGlobal(config, opencodeHome) {
     return p;
   }
 
-  // Rewrite instructions
+  // 1. instructions array
   if (Array.isArray(rewritten.instructions)) {
     rewritten.instructions = rewritten.instructions.map((p) => toGlobalPath(p));
   }
 
-  // Rewrite agent prompt file paths
+  // 2. agent entries — prompt uses {file:.opencode/prompts/agents/...} format
   if (rewritten.agent) {
     for (const [, agentConfig] of Object.entries(rewritten.agent)) {
+      if (agentConfig.prompt && agentConfig.prompt.includes('{file:')) {
+        agentConfig.prompt = agentConfig.prompt.replace(
+          /\{file:(\.opencode\/[^}]+)\}/g,
+          (_, filePath) => `{file:${toGlobalPath(filePath)}}`,
+        );
+      }
+      // Also handle plain 'file' field if present
       if (agentConfig.file) {
         agentConfig.file = toGlobalPath(agentConfig.file);
       }
     }
+  }
+
+  // 3. mcp entries — command arrays may contain .opencode/ paths
+  if (rewritten.mcp) {
+    for (const [, mcpConfig] of Object.entries(rewritten.mcp)) {
+      if (Array.isArray(mcpConfig.command)) {
+        mcpConfig.command = mcpConfig.command.map((c) => toGlobalPath(c));
+      }
+    }
+  }
+
+  // 4. plugin array
+  if (Array.isArray(rewritten.plugin)) {
+    rewritten.plugin = rewritten.plugin.map((p) => toGlobalPath(p));
   }
 
   return rewritten;

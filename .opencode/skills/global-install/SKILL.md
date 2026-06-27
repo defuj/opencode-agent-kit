@@ -198,21 +198,18 @@ Explicitly copies everything locally (traditional behavior). Use when:
 
 On macOS and Linux, OpenCode automatically reads `~/.config/opencode/opencode.jsonc`. All skills, prompts, commands, and instructions are stored flat in that directory. When you run `opencode` in any project, OpenCode finds this global config and loads everything.
 
-The template's `opencode.json` paths (which use `.opencode/skills/...`) are rewritten during global install to **absolute paths** pointing into the global directory. This is critical — OpenCode resolves config paths relative to the **current project directory**, so relative paths like `skills/...` would break in every project. Absolute paths guarantee the files are found regardless of where you run `opencode`.
+During global install, **all `.opencode/` references in the config are rewritten to absolute paths**, in these locations:
 
-For example, the resulting config will contain paths like:
+| Config Section | Template Reference | Global Config (absolute) |
+|---|---|---|
+| `instructions[]` | `.opencode/instructions/INSTRUCTIONS.md` | `/Users/user/.config/opencode/instructions/INSTRUCTIONS.md` |
+| `agent.*.prompt` | `{file:.opencode/prompts/agents/...}` | `{file:/Users/user/.config/opencode/prompts/agents/...}` |
+| `mcp.*.command[]` | `.opencode/hooks/agentmemory-start.mjs` | `/Users/user/.config/opencode/hooks/agentmemory-start.mjs` |
+| `plugin[]` | `.opencode/plugins/agentmemory-capture.ts` | `/Users/user/.config/opencode/plugins/agentmemory-capture.ts` |
 
-```json
-{
-  "instructions": [
-    "/Users/me/.config/opencode/instructions/INSTRUCTIONS.md",
-    "/Users/me/.config/opencode/skills/coding-standards/SKILL.md",
-    "..."
-  ]
-}
-```
+**Why absolute?** OpenCode resolves paths in `opencode.jsonc` relative to the **current project directory**, not relative to `~/.config/opencode/`. Relative paths would fail in every project. Absolute paths guarantee the files are found regardless of where you run `opencode`.
 
-Instead of broken relative paths like `skills/coding-standards/SKILL.md` that would resolve against whatever project directory you're in.
+Note: prose `.opencode/` references inside skill `.md` files, agent prompts, and documentation files are informational text for the LLM and are not resolved by OpenCode — these are left as-is.
 
 ## Per-Project Setup
 

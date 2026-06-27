@@ -67,6 +67,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `package.json`: version bumped to 1.3.7
 
+### Fixed
+
+- **All `.opencode/` references in global config** — `rewriteTemplatePathsForGlobal()` now rewrites paths in all 4 locations:
+  - `instructions[]` — absolute path ✅
+  - `agent.*.prompt` — rewrites `{file:.opencode/...}` → `{file:/abs/path/...}` ✅
+  - `mcp.*.command[]` — rewrites `.opencode/hooks/...` in command arrays ✅
+  - `plugin[]` — rewrites `.opencode/plugins/...` → absolute path ✅
+
+### Notes
+
+- Prose `.opencode/` references inside skill files, agent prompts, and docs (64 occurrences across 17 files) are intentionally **not rewritten** — these are informational text for the LLM, not config paths resolved by OpenCode.
+
+## [1.3.8] - 2026-06-27
+
+### Fixed
+
+- **All `.opencode/` paths in global config** — `rewriteTemplatePathsForGlobal()` now rewrites paths in all config sections: `instructions[]`, `agent.*.prompt` (`{file:...}` wrapper), `mcp.*.command[]`, and `plugin[]`. Previously only `instructions[]` and `agent.*.file` were handled, leaving broken `.opencode/` references in MCP commands, agent prompts, and plugin paths.
+
+### Changed
+
+- `bin/commands/init.mjs`: `rewriteTemplatePathsForGlobal()` now handles 4 path locations with regex for `{file:...}` wrapper syntax, array mapping for MCP commands, and string mapping for plugins
+- `.opencode/skills/global-install/SKILL.md`: documented all 4 path rewrite locations with table
+- `package.json`: version bumped to 1.3.8
+
 ## [1.3.4] - 2026-06-25
 
 ### Added
