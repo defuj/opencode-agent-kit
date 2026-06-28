@@ -24,6 +24,8 @@
     <meta property="og:url"
       content="https://github.com/defuj/opencode-agent-kit" />
     <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#09090d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f0ede6" media="(prefers-color-scheme: light)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -585,9 +587,12 @@
         align-items: center;
         gap: var(--space-2);
       }
+      .nav-actions .btn-sm {
+        min-height: 44px;
+      }
       .theme-btn {
-        width: 36px;
-        height: 36px;
+        width: 44px;
+        height: 44px;
         border-radius: var(--radius-md);
         border: var(--border-default);
         background: transparent;
@@ -611,8 +616,8 @@
       }
       .mobile-btn {
         display: none;
-        width: 36px;
-        height: 36px;
+        width: 44px;
+        height: 44px;
         border-radius: var(--radius-md);
         border: var(--border-default);
         background: transparent;
@@ -714,10 +719,10 @@
       }
       .mobile-close-btn {
         position: absolute;
-        top: 18px;
-        right: var(--container-padding, 24px);
-        width: 36px;
-        height: 36px;
+        top: 14px;
+        right: calc(var(--container-padding, 24px) - 4px);
+        width: 44px;
+        height: 44px;
         border-radius: var(--radius-md);
         border: var(--border-default);
         background: transparent;
@@ -2298,6 +2303,7 @@ C2: NAVBAR
         <a href="#install" class="mobile-panel-link">Install</a>
       </div>
     </div>
+    <main>
 
     <!-- ============================================================
 C3: HERO — Typographic Headline + Stat Counters
@@ -2664,8 +2670,7 @@ C6B: VISUAL DEV LOOP
               <span class="code-block-title">dev loop session</span>
             </div>
             <div
-              class="code-block-body"
-              style="flex-direction: column; align-items: stretch; gap: 0">
+              class="code-block-body code-block-body-multi">
               <div class="devloop-cmd-line">
                 <span class="cmd-badge cmd-badge-start">/dev-loop</span>
                 <code>Buat halaman login dengan form email &amp; password</code>
@@ -3133,6 +3138,7 @@ C9: TECH MARQUEE
         </div>
       </div>
     </section>
+    </main>
 
     <!-- ============================================================
 C10: FOOTER
@@ -3215,6 +3221,8 @@ JAVASCRIPT
             'aria-label',
             currentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode',
           );
+          document.querySelector('meta[name="theme-color"]').content =
+            currentTheme === 'dark' ? '#09090d' : '#f0ede6';
         });
 
         /* ------------------------------------------
